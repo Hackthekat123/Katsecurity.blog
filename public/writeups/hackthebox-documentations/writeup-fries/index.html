@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Machine information Please allow up to 7 minutes for services to load. As is common in real life Windows penetration tests, you will start the Fries box with credentials for the following account : d.cooper@fries.htb / D4LE11maan!!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Fries] └─$ nmap 10.129.66.168 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-02 13:52 CET Nmap scan report for 10.129.66.168 Host is up (0.032s latency). Not shown: 984 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 53/tcp open domain 80/tcp open http 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 443/tcp open https 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-fries/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Machine information Please allow up to 7 minutes for services to load. As is common in real life Windows penetration tests, you will start the Fries box with credentials for the following account : d.cooper@fries.htb / D4LE11maan!!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Fries] └─$ nmap 10.129.66.168 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-02 13:52 CET Nmap scan report for 10.129.66.168 Host is up (0.032s latency). Not shown: 984 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 53/tcp open domain 80/tcp open http 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 443/tcp open https 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="936">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Machine information Please allow up to 7 minutes for services to load. As is common in real life Windows penetration tests, you will start the Fries box with credentials for the following account : d.cooper@fries.htb / D4LE11maan!!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Fries] └─$ nmap 10.129.66.168 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-02 13:52 CET Nmap scan report for 10.129.66.168 Host is up (0.032s latency). Not shown: 984 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 53/tcp open domain 80/tcp open http 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 443/tcp open https 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-fries/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="machine-information">Machine information</h1>
+<p>Please allow up to 7 minutes for services to load. As is common in real life Windows penetration tests, you will start the Fries box with credentials for the following account : <a href="mailto:d.cooper@fries.htb">d.cooper@fries.htb</a> / D4LE11maan!!</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Fries]
+└─$ nmap 10.129.66.168             
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-02 13:52 CET
+Nmap scan report for 10.129.66.168
+Host is up (0.032s latency).
+Not shown: 984 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+53/tcp   open  domain
+80/tcp   open  http
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+443/tcp  open  https
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+2179/tcp open  vmrdp
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+5985/tcp open  wsman
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Fries]
+└─$ nmap -p22,53,80,88,135,139,389,443,445,464,593,636,2179,3268,3269,5985 -sCV  10.129.66.168
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-02 13:54 CET
+Nmap scan report for 10.129.66.168
+Host is up (0.042s latency).
+
+PORT     STATE SERVICE       VERSION
+22/tcp   open  ssh           OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 b3:a8:f7:5d:60:e8:66:16:ca:92:f6:76:ba:b8:33:c2 (ECDSA)
+|_  256 07:ef:11:a6:a0:7d:2b:4d:e8:68:79:1a:7b:a7:a9:cd (ED25519)
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://fries.htb/
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-02 19:54:39Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: fries.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-02T19:56:01+00:00; +7h00m02s from scanner time.
+443/tcp  open  ssl/http      nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=pwm.fries.htb/organizationName=Fries Foods LTD/stateOrProvinceName=Madrid/countryName=SP
+| Not valid before: 2025-06-01T22:06:09
+|_Not valid after:  2026-06-01T22:06:09
+| tls-nextprotoneg: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Site doesn&#39;t have a title (text/html;charset=ISO-8859-1).
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fries.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-02T19:56:00+00:00; +7h00m01s from scanner time.
+2179/tcp open  vmrdp?
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: fries.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-02T19:56:01+00:00; +7h00m02s from scanner time.
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fries.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-02T19:56:00+00:00; +7h00m01s from scanner time.
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: Host: DC01; OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-02-02T19:55:24
+|_  start_date: N/A
+|_clock-skew: mean: 7h00m01s, deviation: 0s, median: 7h00m01s
+</code></pre><p>Zoals je kan zien hebben we usercredentials gekregen van in het begin. Maar ik ben deze gaan testen of dat ik deze kan gebruiken voor een connectie met de smb server, windows machine, voor het uitlezen van het domain, &hellip; maar de credentials werkte op geen enkel van deze manier. Ik heb dus ook gezien dat er een http poort openstaat, Ik zal dus eerst gaan kijken of er geen subdir bestaat waarnaar ik kan gaan kijken.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Fries]
+└─$ ffuf -u http://fries.htb -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt  -H &#34;HOST:FUZZ.fries.htb&#34; -ac
+code                    [Status: 200, Size: 13591, Words: 1048, Lines: 272, Duration: 62ms]
+Code                    [Status: 200, Size: 13591, Words: 1048, Lines: 272, Duration: 28ms]
+</code></pre><p>Ik zal deze nu gaan toevoegen aan de hosts file en eens gaan kijken wat er daarop te vinden is. Als ik nu naar de webpagina van code.fries.htb ga kijken, zal je kunnen zien dat we naar een gitea pagina geleid worden. Ik zal eens proberen inloggen met de user credentials die we al hadden.</p>
+<p>![[Pasted image 20260202140548.png]]</p>
+<p>Zoals je zelf wel zult kunnen zien hebben we met die user credentials kunnen inloggen. Eens als je ingelogd bent, kan je zien dat er een repo gevonden wordt met een Main website die kan worden opgezet door gebruik te maken van een docker container. Ik zal de repo dus nu eerst gaan downloaden naar mijn eigen machine. Eens dat dit gedownload is volg je de stappen die je ziet in de READme file. Daarmee zal je de management pagina gaan opzetten. Als je naar de mgmt pagina gaat kijken zal je weer kunnen inloggen met dezelfde usercredentials.</p>
+<p>![[Pasted image 20260202143702.png]]</p>
+<p>Ik ben gaan kijken naar wat er allemaal te vinden is binnen deze pagina maar er is niets te vinden. Ik heb de fries.htb server gevonden maar daarmee moet je inloggen met de root user credentials die ik niet heb. Ik ben dus weer gebruik gaan maken van de ffuf tool en daar heb ik gezien dat er een dir <code>change_password</code> bestaat. Ik ben daarnaar eens gaan kijken en daar heb ik een csrf token gevonden.</p>
+<pre tabindex="0"><code>csrf_token	&#34;IjNhYzcxZTUzM2ZhZTZhZWUzZTA5NjY1OGM5NTgxMmJiM2VjNzJmMjgi.aYEIqw.6eHZdPwVlhTrAZTKJFE_IiiYQ0A&#34;
+</code></pre><p>Maar hiermee kan je niets doen. Ik ben weer gaan kijken in de git pagina en daar kan je op de volgende url de root user credentials vinden. <a href="http://code.fries.htb/dale/fries.htb/commit/be59cceb54b56f00778822395bdf656216ab4b9f">http://code.fries.htb/dale/fries.htb/commit/be59cceb54b56f00778822395bdf656216ab4b9f</a></p>
+<pre tabindex="0"><code>DATABASE_URL=postgresql://root:PsqLR00tpaSS11@172.18.0.3:5432/ps_db
+SECRET_KEY=y0st528wn1idjk3b9a
+</code></pre><p>Zoals je nu kunt zien, zal je wel kunnen connecteren naar de server.</p>
+<p>![[Pasted image 20260202150719.png]]</p>
+<p>Nu dat we de admin user credentials hebben zal ik een revshell met de server gaan maken.
+<a href="https://www.rapid7.com/db/modules/exploit/multi/http/pgadmin_query_tool_authenticated/">https://www.rapid7.com/db/modules/exploit/multi/http/pgadmin_query_tool_authenticated/</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

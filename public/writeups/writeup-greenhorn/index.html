@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst ben ik gaan kijken welke poorten er allemaal open staan en welke informatie we eruit zouden kunnen halen. Dit heb ik gedaann aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.183.247 -vvvv Volgende poorten die openstonden:
+Op poort 80 zien we een FQDN staan. Deze zullen we moeten gaan toevoegen aan de host file. Dit zullen we gaan doen als volgt:
+We gaan aan de hand van het volgende commando de hosts file gaan editten. sudo nano /etc/hosts " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-greenhorn/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst ben ik gaan kijken welke poorten er allemaal open staan en welke informatie we eruit zouden kunnen halen. Dit heb ik gedaann aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.183.247 -vvvv Volgende poorten die openstonden:
+Op poort 80 zien we een FQDN staan. Deze zullen we moeten gaan toevoegen aan de host file. Dit zullen we gaan doen als volgt:
+We gaan aan de hand van het volgende commando de hosts file gaan editten. sudo nano /etc/hosts">
+  <meta itemprop="wordCount" content="693">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst ben ik gaan kijken welke poorten er allemaal open staan en welke informatie we eruit zouden kunnen halen. Dit heb ik gedaann aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.183.247 -vvvv Volgende poorten die openstonden:
+Op poort 80 zien we een FQDN staan. Deze zullen we moeten gaan toevoegen aan de host file. Dit zullen we gaan doen als volgt:
+We gaan aan de hand van het volgende commando de hosts file gaan editten. sudo nano /etc/hosts">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-greenhorn/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst ben ik gaan kijken welke poorten er allemaal open staan en welke informatie we eruit zouden kunnen halen. Dit heb ik gedaann aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.183.247 -vvvv
+</code></pre><p><img src="27131918.png" alt="image-20240807-163854.png"></p>
+<p>Volgende poorten die openstonden:</p>
+<p><img src="27164676.png" alt="image-20240807-163834.png"></p>
+<p>Op poort 80 zien we een FQDN staan. Deze zullen we moeten gaan toevoegen aan de host file. Dit zullen we gaan doen als volgt:</p>
+<ul>
+<li>We gaan aan de hand van het volgende commando de hosts file gaan editten.</li>
+</ul>
+<pre tabindex="0"><code>sudo nano /etc/hosts
+</code></pre><p><img src="27197441.png" alt="image-20240807-164325.png"></p>
+<ul>
+<li>Eens dat we in de hosts file zitten zullen we het ip address en de FQDN eraan toevoegen, Zullen we het document opslagen en exiten.</li>
+</ul>
+<p><img src="27131926.png" alt="image-20240807-164405.png"></p>
+<p>Eens dat deze gegevens toegevoegd zijn aan de hosts file kunnen we eensgaan kijken op de webserver of dat we kunnen surfen naar de webpagina.</p>
+<p>Nu zien we dat we de webpagina nu wel kunnen bereiken.</p>
+<p><img src="27099141.png" alt="image-20240807-164708.png"></p>
+<p>Als we gaan zoeken op de website maar op poort 3000, omdat deze daarop gehost wordt zullen we de volgende pagina gaan krijgen.</p>
+<p><img src="27328513.png" alt="image-20240807-175210.png"></p>
+<p>Als we in deze pagina op explore gaan drukken zullen we een user greenadmin te zien krijgen.</p>
+<p><img src="27295747.png" alt="image-20240807-175246.png"></p>
+<p>Binnen deze users krijgen we een aantal gegevens te zien waarbij de password te vinden is in het path hieronder:</p>
+<pre tabindex="0"><code>data/setting/pass.php --&gt; pass.php zal het ww daar staan
+</code></pre><p><img src="27328521.png" alt="image-20240807-175458.png"></p>
+<p>Zoals we hieronder zullen zien, zien we het ww dat de gebruiker greenadmin gebruikt voor in de pagina in teloggen die je hieronder te zien krijgt.</p>
+<p><img src="27295755.png" alt="image-20240807-175604.png"><img src="27262979.png" alt="image-20240807-175724.png"></p>
+<p>We zullen als eerst nu het password gaan omzetten naar leesbare data Dit zullen we gaan doen aan de hand van een online tool “CrackStation“. Zoals je hieronder zult kunnen zien, is het ww als volgt.</p>
+<p><a href="https://crackstation.net/">https://crackstation.net/</a></p>
+<p><img src="27328531.png" alt="image-20240807-175922.png"></p>
+<p>Als we deze nu in de pagina gaan invullen zal je zien dat we hebben kunnen inloggen als administrator.</p>
+<p><img src="27230222.png" alt="image-20240807-175957.png"></p>
+<p>We zullen later een module moeten gaan uploaden waarbij we een reversed sheel connectie kunnen gaan opstarten met de machine.</p>
+<p>Hiervoor zullen we als eerst een script moeten downloaden waarmee we een reversed shell connection zouden kunnen configureren en daarna zullen gaan toevoegen aan de modules van onze webpagina.</p>
+<p>Voor een reversed shell connectie heb ik de file van de volgende github pages gehaald.</p>
+<p><a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php?source=post_page-----e87e1cc07864--------------------------------">https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php?source=post_page&mdash;&ndash;e87e1cc07864&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</a></p>
+<p>We zullen het ip address moeten veranderen ion het scriptje en dan kunnen we deze gaan zippen en daarna kunnen we de file gaan uploaden.</p>
+<ul>
+<li>Veranderen van de IP address</li>
+</ul>
+<p>sudo nano xxx.php = De file waarin we de IP zullen moeten veranderen</p>
+<p><img src="27328541.png" alt="image-20240807-181705.png"></p>
+<ul>
+<li>Nu zullen we dit bestan moeten opzetten naar een zip bestand.</li>
+</ul>
+<p><img src="27230231.png" alt="image-20240807-181946.png"></p>
+<ul>
+<li>file dat we zonet hebben aangemaakt gaan uploaden op de website, daarna op een andere tablat naar de path gaan dat hieronder beschreven is:</li>
+</ul>
+<p><a href="http://greenhorn.htb/data/modules/(naam">http://greenhorn.htb/data/modules/(naam</a> zip file die net aangemaakt is geweest)/(naam PhP file dat net aangemaakt is geweest)</p>
+<p><img src="27328560.png" alt="image-20240807-194639.png"></p>
+<ul>
+<li>connection starten met de poort die we zonet hebben meegegeven in de reversed shell file.</li>
+</ul>
+<p><img src="27295775.png" alt="image-20240807-194403.png"></p>
+<p>Nu kunnen we binnen de user junior de eerste flag gaan openen.</p>
+<p>![[Pasted image 20250122152947.png]]</p>
+<p>We zien ook dat er een andere file te vinden is binnen de bestanden van deze user. Deze zullen we gaan downloaden aan de hand van volgende commando uittevoeren op de host machine en op de reversed shell.</p>
+<ul>
+<li>host machine</li>
+</ul>
+<pre tabindex="0"><code>wget http://10.129.183.247:8000/&#39;Using OpenVAS.pdf&#39;
+</code></pre><ul>
+<li>reversed shell machine</li>
+</ul>
+<pre tabindex="0"><code>pyhton3 -m http.server
+</code></pre><p>als we deze file gaan openen op de host machine krijgen we volgende informatie te zien.</p>
+<p><img src="27328569.png" alt="image-20240807-195331.png"></p>
+<p>Als je op het internet zal gaan zoeken naar een tool waarmee we blured informatie kunnen gaan omzetten naar zichtbare tekst, Zullen we gaan uitkomen op de tool depix. Hiermee kunnen we de data weer gaan omzetten naar zichtbare en leesbare tekst.</p>
+<p><a href="https://github.com/spipm/Depix?source=post_page-----e87e1cc07864--------------------------------">https://github.com/spipm/Depix?source=post_page&mdash;&ndash;e87e1cc07864&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</a></p>
+<p>Als we de readme gaan checken van deze tool zullen we de volgende informatie te zien krijgen. Dit is hoe we de image weer zullen zetten in een zichtbare tekst.</p>
+<p><img src="27295788.png" alt="image-20240807-195824.png"></p>
+<p>Aan de hand van de tekst die we zonet hebben gedeblured kunnen we gaan aanloggen met de user root. Dit zullen we gaan doen aan de hand van dit password.</p>
+<p>![[Pasted image 20250122152931.png]]<img src="27230257.png" alt="image-20240807-200158.png"></p>
+<p>Als we dan zullen navigeren naar de root subdirectory dan zullen we zien dat we daar de root flag hebben staan. Als we deze zullen gaan openen aan de hand van het cat commando, krijgen we de volgende informatie te zien.</p>
+<p><img src="27230264.png" alt="image-20240807-200321.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

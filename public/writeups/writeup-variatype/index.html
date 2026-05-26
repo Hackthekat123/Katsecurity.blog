@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~] └──╼ [★]$ nmap 10.129.11.200 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-03-31 12:42 CDT Nmap scan report for 10.129.11.200 Host is up (0.0084s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-variatype/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~] └──╼ [★]$ nmap 10.129.11.200 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-03-31 12:42 CDT Nmap scan report for 10.129.11.200 Host is up (0.0084s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="657">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~] └──╼ [★]$ nmap 10.129.11.200 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-03-31 12:42 CDT Nmap scan report for 10.129.11.200 Host is up (0.0084s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-variatype/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~]
+└──╼ [★]$ nmap 10.129.11.200
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-03-31 12:42 CDT
+Nmap scan report for 10.129.11.200
+Host is up (0.0084s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~]
+└──╼ [★]$ nmap -p22,80 -sCV 10.129.11.200
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-03-31 12:42 CDT
+Nmap scan report for 10.129.11.200
+Host is up (0.0076s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)
+| ssh-hostkey: 
+|   256 e0:b2:eb:88:e3:6a:dd:4c:db:c1:38:65:46:b5:3a:1e (ECDSA)
+|_  256 ee:d2:bb:81:4d:a2:8f:df:1c:50:bc:e1:0e:0a:d1:22 (ED25519)
+80/tcp open  http    nginx 1.22.1
+|_http-server-header: nginx/1.22.1
+|_http-title: Did not follow redirect to http://variatype.htb/
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben de domain gaan toevoegen aan de hosts file en ben gaan kijken naar de webpagina.</p>
+<p>Zoals je kan zien kan je een bestand uploaden. Mss kan dit bruikbaar zijn, voor exploiten van de webpagina.</p>
+<p>![[Pasted image 20260331194818.png]]</p>
+<h3 id="fuzzing-subdomains">Fuzzing Subdomains</h3>
+<p>Hier kan je zien dat er een portal subdomain bestaat. We gaan deze toevoegen in de hosts file en gaan dan gaan kijken naar de portal.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~]
+└──╼ [★]$ ffuf -u http://variatype.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H &#34;HOST:FUZZ.variatype.htb&#34; -ac
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://variatype.htb
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt
+ :: Header           : Host: FUZZ.variatype.htb
+ :: Follow redirects : false
+ :: Calibration      : true
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+portal                  [Status: 200, Size: 2494, Words: 445, Lines: 59, Duration: 11ms]
+</code></pre><p>Als we gaan kijken naar de portal, kan je zien dat er een versie gekent is. De versie waarop de portal gedraait wordt is VT-VALID-2.1.4</p>
+<p>![[Pasted image 20260331195029.png]]</p>
+<p>Hier zijn we vrij weinig mee voor het moment. ik ben eens gaan kijken welke directories en files er waren voor de portal en daar kan je zien dat The portal subdomain has an exposed .git directory:</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~]
+└──╼ [★]$ ffuf -u http://portal.variatype.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -ac
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://portal.variatype.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt
+ :: Follow redirects : false
+ :: Calibration      : true
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+index.php               [Status: 200, Size: 2494, Words: 445, Lines: 59, Duration: 9ms]
+download.php            [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 10ms]
+auth.php                [Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 8ms]
+view.php                [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 9ms]
+.                       [Status: 200, Size: 2494, Words: 445, Lines: 59, Duration: 8ms]
+styles.css              [Status: 200, Size: 8789, Words: 1020, Lines: 370, Duration: 7ms]
+dashboard.php           [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 13ms]
+.git 
+</code></pre><p>Ik zal dus nu aan de hand van githacker alle gegevens vanuit de .git folder gaan halen en deze gaan downloaden naar de eigen machine</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~]
+└──╼ [★]$ githacker --url http://portal.variatype.htb/.git/ --output-folder variatype
+</code></pre><p>Hier kan je zien dat er een login gevonden is. Ik zal hiermee proberen inloggen op de portal</p>
+<pre tabindex="0"><code>─[eu-dedivip-2]─[10.10.15.139]─[hackthekat123@htb-siv2baq7sw]─[~/variatype/fe084969f47205bd4b423de40c823802]
+└──╼ [★]$ cat auth.php 
+&lt;?php
+session_start();
+$USERS = [
+    &#39;gitbot&#39; =&gt; &#39;G1tB0t_Acc3ss_2025!&#39;
+];
+</code></pre><p>Zoals je kunt zien ben ik daarmee kunnen inloggen</p>
+<p>![[Pasted image 20260331203155.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

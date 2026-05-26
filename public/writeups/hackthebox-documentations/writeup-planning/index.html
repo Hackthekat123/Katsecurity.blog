@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Machine Information
+As is common in real life pentests, you will start the Planning box with credentials for the following account: admin / 0D5oT70Fq13EvB5r This account can be used to login on the webpage.
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.226.83 Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-13 03:24 CEST Nmap scan report for 10.129.226.83 Host is up (0.019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 8.53 seconds Detailed port scan At the gedetialized port scan go to get more information from the services who are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-planning/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Machine Information
+As is common in real life pentests, you will start the Planning box with credentials for the following account: admin / 0D5oT70Fq13EvB5r This account can be used to login on the webpage.
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.226.83 Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-13 03:24 CEST Nmap scan report for 10.129.226.83 Host is up (0.019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 8.53 seconds Detailed port scan At the gedetialized port scan go to get more information from the services who are open on the ip address.">
+  <meta itemprop="wordCount" content="1399">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Machine Information
+As is common in real life pentests, you will start the Planning box with credentials for the following account: admin / 0D5oT70Fq13EvB5r This account can be used to login on the webpage.
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.226.83 Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-13 03:24 CEST Nmap scan report for 10.129.226.83 Host is up (0.019s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 8.53 seconds Detailed port scan At the gedetialized port scan go to get more information from the services who are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-planning/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Machine Information</p>
+<p>As is common in real life pentests, you will start the Planning box with credentials for the following account: admin / 0D5oT70Fq13EvB5r
+This account can be used to login on the webpage.</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap -p- 10.129.226.83
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-13 03:24 CEST
+Nmap scan report for 10.129.226.83
+Host is up (0.019s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 8.53 seconds
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedetialized port scan go to get more information from the services who are open on the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80 -sCV 10.129.226.83 -vvvv
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-05-13 03:26 CEST
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+Initiating Ping Scan at 03:26
+Scanning 10.129.226.83 [4 ports]
+Completed Ping Scan at 03:26, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 03:26
+Completed Parallel DNS resolution of 1 host. at 03:26, 0.01s elapsed
+DNS resolution of 1 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 03:26
+Scanning 10.129.226.83 [2 ports]
+Discovered open port 80/tcp on 10.129.226.83
+Discovered open port 22/tcp on 10.129.226.83
+Completed SYN Stealth Scan at 03:26, 0.06s elapsed (2 total ports)
+Initiating Service scan at 03:26
+Scanning 2 services on 10.129.226.83
+Completed Service scan at 03:26, 6.06s elapsed (2 services on 1 host)
+NSE: Script scanning 10.129.226.83.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 1.43s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.22s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+Nmap scan report for 10.129.226.83
+Host is up, received echo-reply ttl 63 (0.021s latency).
+Scanned at 2025-05-13 03:26:19 CEST for 8s
+
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 9.6p1 Ubuntu 3ubuntu13.11 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 62:ff:f6:d4:57:88:05:ad:f4:d3:de:5b:9b:f8:50:f1 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMv/TbRhuPIAz+BOq4x+61TDVtlp0CfnTA2y6mk03/g2CffQmx8EL/uYKHNYNdnkO7MO3DXpUbQGq1k2H6mP6Fg=
+|   256 4c:ce:7d:5c:fb:2d:a0:9e:9f:bd:f5:5c:5e:61:50:8a (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKpJkWOBF3N5HVlTJhPDWhOeW+p9G7f2E9JnYIhKs6R0
+80/tcp open  http    syn-ack ttl 63 nginx 1.24.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.24.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://planning.htb/
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:26
+Completed NSE at 03:26, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.19 seconds
+           Raw packets sent: 6 (240B) | Rcvd: 5 (196B)
+</code></pre><p>Hierboven kan je zien dat er een url te zien is die dat niet worden geredirect. De url zal je dus moeten toevoegen aan de hosts file.</p>
+<pre tabindex="0"><code>cat /etc/hosts
+
+10.129.226.83 planning.htb
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+</code></pre><p>Nu dat de url is toegevoegd, kan je naar de webpagina gaan surfen, dan kom je op de volgende pagina terecht.</p>
+<p>![[Pasted image 20250512194916.png]]</p>
+<p>Ik heb gezien dat ik niets kan doen op deze webpage, ik ben dus Subdomain discovery gaan doen.</p>
+<h2 id="subdomain-discovery">Subdomain Discovery</h2>
+<p>Ik ben gaan fuzzen op subdomains. Dit ben ik gaan doen door het volgende commando.</p>
+<pre tabindex="0"><code>wfuzz -c -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u &#39;http://planning.htb/&#39; -H &#34;Host: FUZZ.planning.htb&#34; --hw 12
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz&#39;s documentation for more information.
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://planning.htb/
+Total requests: 100000
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                  
+=====================================================================
+
+000024093:   302        2 L      2 W        29 Ch       &#34;grafana&#34;                                
+^C /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:80: UserWarning:Finishing pending requests...
+
+Total time: 221.7918
+Processed Requests: 56125
+Filtered Requests: 56124
+Requests/sec.: 253.0526
+</code></pre><p>Ik ben deze dus gaan toevoegen aan de hosts file voor het zien of ik daarnaar kan surfen. Zoals je hieronder kunt zien kan ik naar de webpagina <a href="http://grafana.planning.htb">http://grafana.planning.htb</a> surfen.</p>
+<p>![[Pasted image 20250512200427.png]]</p>
+<p>Ik zal nu dus de credentials gaan gebruiken die dat in de machine information mee werden gegeven voor het zien of dat ik met die credentials in kan loggen. Zoals je hieronder zult kunnen zien kan ik inloggen met de credentials die dat we al hadden.</p>
+<p>![[Pasted image 20250512200625.png]]</p>
+<p>Nu ben ik dus gaan zoeken naar de versie van grafana die dat op deze webversie wordt gedraaid, Dit zodat ik deze kan gaan gebruiken naar het zoeken van een exploit. Als je rechts boven op het vraagteken klikt dan kan je zien dat de grafana op deze webserver versie v11.0.0 heeft.
+Ik ben nu dus gaan zoeken naar een exploit die dat ik kan gebruiken voor deze versie van grafana en hierbij ben ik op de volgende exploit gekomen. <a href="https://github.com/z3k0sec/CVE-2024-9264-RCE-Exploit">https://github.com/z3k0sec/CVE-2024-9264-RCE-Exploit</a></p>
+<p>Deze exploit ben ik gaan gebruiken voor toegang te krijgen tot de server van grafana.</p>
+<p>![[Pasted image 20250512202036.png]]</p>
+<p>Na het zoeken ben ik op de volgende path ben gekomen waardat ik de user credentials voor de ssh login heb gevonden.</p>
+<pre tabindex="0"><code>cat environ 
+AWS_AUTH_SESSION_DURATION=15mHOSTNAME=7ce659d667d7PWD=/usr/share/grafanaAWS_AUTH_AssumeRoleEnabled=trueGF_PATHS_HOME=/usr/share/grafanaAWS_CW_LIST_METRICS_PAGE_LIMIT=500HOME=/usr/share/grafanaAWS_AUTH_EXTERNAL_ID=SHLVL=1GF_PATHS_PROVISIONING=/etc/grafana/provisioningGF_SECURITY_ADMIN_PASSWORD=RioTecRANDEntANT!GF_SECURITY_ADMIN_USER=enzoGF_PATHS_DATA=/var/lib/grafanaGF_PATHS_LOGS=/var/log/grafanaPATH=/usr/local/bin:/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/binAWS_AUTH_AllowedAuthProviders=default,keys,credentialsGF_PATHS_PLUGINS=/var/lib/grafana/pluginsGF_PATHS_CONFIG=/etc/grafana/grafana.ini_=/usr/bin/sh# cd /usr/share/grafana
+</code></pre><p>In deze code kan je de volgende credentials zien.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>enzo</td>
+          <td>RioTecRANDEntANT!</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="login-as-enzo">Login as Enzo</h2>
+<pre tabindex="0"><code>ssh enzo@planning.htb     
+enzo@planning.htb&#39;s password: 
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-59-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon May 12 06:40:20 PM UTC 2025
+
+  System load:           0.06
+  Usage of /:            66.8% of 6.30GB
+  Memory usage:          42%
+  Swap usage:            0%
+  Processes:             231
+  Users logged in:       0
+  IPv4 address for eth0: 10.129.226.83
+  IPv6 address for eth0: dead:beef::250:56ff:fe94:f2e2
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Last login: Mon May 12 18:40:21 2025 from 10.10.16.26
+enzo@planning:~$ 
+</code></pre><p>User flag: b5117b425ca81b9ce26e78199247b593</p>
+<pre tabindex="0"><code>enzo@planning:~$ cat user.txt
+b5117b425ca81b9ce26e78199247b593
+</code></pre><p>Did some Linpeas on the ssh server and there i found out that the localhost is running a webserver on port 8000. So i did some port forwarding to this webpage by this ssh command:</p>
+<pre tabindex="0"><code>ssh enzo@planning.htb -L 8000:127.0.0.1:8000
+enzo@planning.htb&#39;s password: 
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-59-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon May 12 07:04:51 PM UTC 2025
+
+  System load:           0.0
+  Usage of /:            67.1% of 6.30GB
+  Memory usage:          53%
+  Swap usage:            0%
+  Processes:             234
+  Users logged in:       0
+  IPv4 address for eth0: 10.129.226.83
+  IPv6 address for eth0: dead:beef::250:56ff:fe94:f2e2
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Mon May 12 19:04:52 2025 from 10.10.16.26
+enzo@planning:~$
+</code></pre><p>Now i</p>
+<pre tabindex="0"><code>cat crontab.db 
+{&#34;name&#34;:&#34;Grafana backup&#34;,&#34;command&#34;:&#34;/usr/bin/docker save root_grafana -o /var/backups/grafana.tar &amp;&amp; /usr/bin/gzip /var/backups/grafana.tar &amp;&amp; zip -P P4ssw0rdS0pRi0T3c /var/backups/grafana.tar.gz.zip /var/backups/grafana.tar.gz &amp;&amp; rm /var/backups/grafana.tar.gz&#34;,&#34;schedule&#34;:&#34;@daily&#34;,&#34;stopped&#34;:false,&#34;timestamp&#34;:&#34;Fri Feb 28 2025 20:36:23 GMT+0000 (Coordinated Universal Time)&#34;,&#34;logging&#34;:&#34;false&#34;,&#34;mailing&#34;:{},&#34;created&#34;:1740774983276,&#34;saved&#34;:false,&#34;_id&#34;:&#34;GTI22PpoJNtRKg0W&#34;}
+{&#34;name&#34;:&#34;Cleanup&#34;,&#34;command&#34;:&#34;/root/scripts/cleanup.sh&#34;,&#34;schedule&#34;:&#34;* * * * *&#34;,&#34;stopped&#34;:false,&#34;timestamp&#34;:&#34;Sat Mar 01 2025 17:15:09 GMT+0000 (Coordinated Universal Time)&#34;,&#34;logging&#34;:&#34;false&#34;,&#34;mailing&#34;:{},&#34;created&#34;:1740849309992,&#34;saved&#34;:false,&#34;_id&#34;:&#34;gNIRXh1WIc9K7BYX&#34;}
+</code></pre><p>Ben ik gegaan naar de webpagina die dat ik zonet heb geforward met de port forwarding. Daar kan je nu dus een nieuwe cronjob gaan maken die dat je code doorpushed naar de ssh server.</p>
+<p>![[Pasted image 20250512213331.png]]</p>
+<p>Hiermee kunnen we erna op de ssh server een /bin/bash shell starten als root user en zo kan je dan de root flag behalen.</p>
+<pre tabindex="0"><code>enzo@planning:~$ /tmp/bash -p
+bash-5.2# ls
+linpeas_linux_amd64  user.txt
+</code></pre><p>Root Flag: a6d634d2189b17cb3aa07d28fe521002</p>
+<pre tabindex="0"><code>cat root.txt
+a6d634d2189b17cb3aa07d28fe521002
+</code></pre><p>![[Pasted image 20250512213451.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Detailed Port scan As always, I will start with a full Detailed port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- -sCV 10.129.36.206 -vvvv Directory Fuzzing A directory fuzzing approach was used to discover hidden directories and files on the web server. This was done using tools such as Gobuster or FFUF. Use the following example command:
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-linkvortex/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Detailed Port scan As always, I will start with a full Detailed port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- -sCV 10.129.36.206 -vvvv Directory Fuzzing A directory fuzzing approach was used to discover hidden directories and files on the web server. This was done using tools such as Gobuster or FFUF. Use the following example command:">
+  <meta itemprop="wordCount" content="333">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Detailed Port scan As always, I will start with a full Detailed port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- -sCV 10.129.36.206 -vvvv Directory Fuzzing A directory fuzzing approach was used to discover hidden directories and files on the web server. This was done using tools such as Gobuster or FFUF. Use the following example command:">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-linkvortex/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-detailed-port-scan">Full Detailed Port scan</h3>
+<p>As always, I will start with a full Detailed port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.36.206 -vvvv
+</code></pre><p><img src="AD_4nXdgzxdYRCgWoN_JoadAt5zAbf-DHPX9xf-xeNpr-iIJqka9_lzeTvkk6I7qpflYAdIJuo69hJ-BR7eyw9LyqwF8-MpjnWylZWintsVaKa3d8WDFT4HvivlTHNzMBbObyKXqoTbx.png" alt=""><img src="AD_4nXe0iZZNJ1aHgDJs8sRHoyng8tQ7zrVlzecJEbz8oyLWZK2ycPEfxewCUYwfm6j0HussLZC8XNt1q86zrhFSRPzc9BXIcOsHfR6ITMMBSPE-BZnKb7_9EyAr0BbrMidIYi7yrfRdxQ.png" alt=""></p>
+<h2 id="directory-fuzzing">Directory Fuzzing</h2>
+<p>A directory fuzzing approach was used to discover hidden directories and files on the web server. This was done using tools such as <strong>Gobuster</strong> or <strong>FFUF</strong>. Use the following example command:</p>
+<pre tabindex="0"><code>ffuf -u http://linkvortex.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt -fs 0 -c
+</code></pre><p><img src="AD_4nXfOWBvtk91rNiiyj7s_fNGiyXnAZbLGLDxNWPY-6SLyO0JU-g733zisLwgbHJ3RmBIQhjWb8WOpAcA8sSahz7fyc-Fw-yA5YmpEnJNGDbx4K0EfbPbqWvskPYpQoZ2qPM0D-KRWSA.png" alt=""></p>
+<pre tabindex="0"><code>ffuf -u http://linkvortex.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-small-files.txt -fs 0 -c
+</code></pre><p><img src="AD_4nXduudoL4bWv3yrCwhwXnCQRFjo60CB81RGtBvFuAqXkb04Sbr87j-7VCe8fX7hD-7XIClbGmF90L7L2V_AtYzUCkGwUPKymy9radUx2XLze2M4XsiT-8iDIuEYWmOLhWubHRmkr.png" alt=""></p>
+<p>email founded in the git/logs.</p>
+<p>To get all the content that is in the git subfolder will first need to install a git-dumper. There for i will install GitHack.py <code>https://github.com/lijiejie/GitHack/tree/master</code></p>
+<p><img src="AD_4nXfvn2szgGeARH1WsR6y0EWVD-vRtGZ2VHRfkRkkzsLm5NqOt2gYC3X8JS98mATP7f14S99aMofPb0SoEMnNX3PjdTKkPDxWxQX-sPJ7rXr-JaALF2iQs4MynNY5uKpkrCVJXNed.png" alt=""><img src="AD_4nXdJd3nrCZ_iyzSlYBZCtmiI6--D8lukb6EfAg1HYfOjcy1AJbroXfJlUYRIdMLP4OGh7QkyJpKt7N1F1gAU8LMglzhaWYv7NKc2OiTRKd9xVbl-IA2MXLnAiDBHOVO0EtVwFdL7SA.png" alt=""><img src="AD_4nXddojO3VPXMVIrt_bNwMAP553X-CiabreZpRaFKb8C9sXUUqTPPTgqcpNh8MFb0cRoVvfuzDtDQipTjMjzgpey-s7IhVmnx5XLVXAVEFUgsPcA_2nBl4aeggnOObcnMM_wdXajn.png" alt=""></p>
+<p>Here above we can find different path where i will find a password.</p>
+<p>I have found in the Authentication file from the path of above. In this file, have i executed the following command to find passwords which we can find in the authentication file.</p>
+<pre tabindex="0"><code>cat authentication.test.js | grep password
+</code></pre><p><img src="AD_4nXfQDAz1j5_brZJFoeYi5h5y86KFe3jOibdsbxpSG0AUfKRFPfBQo1VrkS_-JaipqS2Ku_z5af2X_xxEDPT1oUz4SC7Tn-4g-aT2pG3cfO4GVuZ-t8BZeIIyu6uhglnAzRaBTQwjPg.png" alt=""></p>
+<p>Here above we can find the password we will use to login on the following login page.
+`<a href="http://linkvortex.htb/ghost/#/signin">http://linkvortex.htb/ghost/#/signin</a> 
+Now we can login by using the following credentials:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="mailto:admin@linkvortex.htb">admin@linkvortex.htb</a></td>
+          <td>OctopiFociPilfer45</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="AD_4nXfjK4jUaVUxCGZNk2F8OyIWDzyoOuE_e1Ddei_taBZUmj2PI-tvMbvypVt6MvBKs1pIuGWX2vTHZEsSC2MX07lzy-A1SyayHeMRGSA19drWAeNP_a1z1XzKeImmv67HWTUiNi7B_Q.png" alt=""></p>
+<p>I logged in on the admin panel and will try to find the version the admin panel is turning on. I have found that the admin panel is using the 5.58 version, so I have found the following github exploit for the admin panel which is version 5.58.
+<a href="https://github.com/0xyassine/CVE-2023-40028/tree/master">https://github.com/0xyassine/CVE-2023-40028/tree/master</a></p>
+<p><img src="AD_4nXdV5bPF8krkX8xqH9PFOumhhvxc7fv7sDontwzegzsgaBXjyG5IDBViO7rVEKm0djtn4sdw24TniN5zJoCWbc54Hkyd1oEZz4dfQr6ioCIbWi4vIb9C9gbZ40P8oRkxEOLsxM7bMw.png" alt=""><img src="AD_4nXf67l0KGFwOiC_ega_XPfSi0IDefSGF7Ihb2JrbuhE4Y5iuRmH5bEHvjoCsk5D3DWmWiKuzWxJ0MHz3Tc9NJmDEAwaRwqtHvpoK25Xr72q3_A6M2R99-s2ozLrSH0tj0yDwx4mwFA.png" alt=""><img src="AD_4nXcyMk1XcqtrGPSmPkUATmG2VozVjVKk9cULeChG2kxSO1Y7lJQzdN9HB_j18h9kIbbIC8Rs-qJX7ClL-IByvPoLu6hXS0WglIPYW9n4EeyuaDEOkxjBi-k1PDLwS1o99_2zQIrI.png" alt=""></p>
+<p>Login credentials for SSH Connection:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="mailto:bob@linkvortex.htb">bob@linkvortex.htb</a></td>
+          <td>fibber-talented-worth</td>
+      </tr>
+      <tr>
+          <td>FORGET to take a picture of the User flag</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>With the command <code>sudo -l</code> will i see if i can execute a command without knowing the administrator password.</p>
+<pre tabindex="0"><code>sudo -l
+</code></pre><p><img src="73859131.png" alt="image-20241229-201523.png">
+We are goiing to make a symbolic link from the root user to the user bob. Then we will use the command check_content to see what the root flag is.</p>
+<pre tabindex="0"><code>ln -s /root/root.txt wow.txt
+ln -s /home/bob/wow.txt wow.png
+sudo CHECK_CONTENT=true /usr/bin/bash /opt/ghost/clean_symlink.sh /home/bob/wow.png
+</code></pre><p><img src="AD_4nXfDzevKJpNl5Q_RWyb7g69fxL5UwWYT8XeEx-seJ0LU8d-lpjS0S08at3jn2gXipplV3B_zT0ZWADFYEJhQTpgYlW6Svo-VHob9pSa5o61kgKoobiykFf9zWLDnq8PVezPTbalG8A.png" alt=""></p>
+<p>![[Pasted image 20250210145723.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

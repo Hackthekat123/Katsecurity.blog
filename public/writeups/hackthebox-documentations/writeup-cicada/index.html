@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst heb ik de poorten gescanned en heb ik gezien dat er 13 poorten open waren
+Aan de volgende foto kan je zien dat dit een Active Directory box is met een domain controller.
+![[Pasted image 20250122150554.png]]
+We gaan gaan enumeraten op de smb server. Dit zullen we gaan doen aan de hand van het smbmap commando. Hiermee kunnen we gaan zien op welke map we met de user kunnen gaan connecteren of niet en welke permissions we op deze map hebben.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-cicada/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst heb ik de poorten gescanned en heb ik gezien dat er 13 poorten open waren
+Aan de volgende foto kan je zien dat dit een Active Directory box is met een domain controller.
+![[Pasted image 20250122150554.png]]
+We gaan gaan enumeraten op de smb server. Dit zullen we gaan doen aan de hand van het smbmap commando. Hiermee kunnen we gaan zien op welke map we met de user kunnen gaan connecteren of niet en welke permissions we op deze map hebben.">
+  <meta itemprop="wordCount" content="670">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst heb ik de poorten gescanned en heb ik gezien dat er 13 poorten open waren
+Aan de volgende foto kan je zien dat dit een Active Directory box is met een domain controller.
+![[Pasted image 20250122150554.png]]
+We gaan gaan enumeraten op de smb server. Dit zullen we gaan doen aan de hand van het smbmap commando. Hiermee kunnen we gaan zien op welke map we met de user kunnen gaan connecteren of niet en welke permissions we op deze map hebben.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-cicada/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst heb ik de poorten gescanned en heb ik gezien dat er 13 poorten open waren</p>
+<p><img src="77168662.png" alt="image-20250105-165359.png"></p>
+<p>Aan de volgende foto kan je zien dat dit een Active Directory box is met een domain controller.</p>
+<p>![[Pasted image 20250122150554.png]]</p>
+<p>We gaan gaan enumeraten op de smb server. Dit zullen we gaan doen aan de hand van het smbmap commando. Hiermee kunnen we gaan zien op welke map we met de user kunnen gaan connecteren of niet en welke permissions we op deze map hebben.</p>
+<p>Dit heb ik gedaan aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>smbmap -H 10.129.6.130 -u ananymous
+</code></pre><p><img src="77168673.png" alt="image-20250105-170029.png"></p>
+<p>We zullen nu gaan connecteren met de smb server. Dit zullen we gaan doen aan de hand van het volkgende commando</p>
+<pre tabindex="0"><code>smbclient \\\\10.129.6.130\\HR -U &#34;anonmyous&#34;
+</code></pre><p>Als we gaan kijken naar wat er nu in de subdirectory HR zit zullen we gaan zien dat er een document in deze directory is. We zullen dit document naar onze eigen machine gaan downloaden aan de hand van het get commando:</p>
+<pre tabindex="0"><code>get &#34;Notice from HR.txt&#34;
+</code></pre><p><img src="77135912.png" alt="image-20250105-170239.png"></p>
+<p>Als we in het zonet bekeken document gaan kijken, zien we een password. Dit is het default password van een user die we straks zullen gaan achterhalen.</p>
+<p><img src="77168682.png" alt="image-20250105-170918.png"></p>
+<p>We zullen nu gaan enumeraten op de users. De enumeraten van de users gaat als volgt:</p>
+<pre tabindex="0"><code>nxc smb 10.129.6.130 -u &#39;anonymous&#39; -p &#39;&#39; --rid-brute
+</code></pre><p><img src="76873758.png" alt="image-20250105-171049.png"><img src="77070367.png" alt="image-20250105-171119.png"></p>
+<p>Voor een mooi overzicht te hebben van alle users heb ik deze in een aparte file users.txt gezet.</p>
+<p><img src="76873764.png" alt="image-20250105-171223.png"></p>
+<p>Nu gaan we zoeken achter welke user het password is van defile die we zonet in de Notice \ from\ HR.txt file hebben gevonden. Dit zullen we gaan doen aan de hand van het volgende commando.</p>
+<pre tabindex="0"><code>nxc smb 10.129.6.130 -u users.txt -p &#39;Cicada$M6Corpb*@Lp#nZp!8&#39;
+</code></pre><p>Deze code heb ik gevonden door samen te werken met chatgpt.</p>
+<p><img src="77168693.png" alt="image-20250105-171601.png"></p>
+<p>Zoals je hierboven kunt zien is het de user michael dat overeenkomt met het zonet gevonden wachtwoord. Als we nu is gaan zoeken naar de gebruikerslijsten die de user kan gaan zien op de SMB server. Waarmee we dit zullen gaan doen door het volgende commando te gaan gebruiken.</p>
+<pre tabindex="0"><code>nxc smb 10.129.6.130 -u &#39;michael.wrightson&#39; -p &#39;Cicada$M6Corpb*@Lp#nZp!8&#39; --users
+</code></pre><p>We krijgen hierbij dus het password van een user te zien die dat we daarstraks hadden genumerate van de SMB server.</p>
+<p><img src="77135922.png" alt="image-20250105-172136.png"></p>
+<p>Ik ben nu aan de hand van de gegevens dat ik nu wist van david is gaan kijken op welke subdirectories deze user kon gaan readen of writen van de SMB Server.</p>
+<p>Hierbij kan je zien dat de user tot 5 disk read rechten heeft.</p>
+<p><img src="76873774.png" alt="image-20250105-172310.png"></p>
+<p>Ik zal als eerst een keer een smbclient gaan starten naar de DEV disk. Dit is gewoon omdat ik van boven naar benedan zal te werk gaan. Zoals je op de foto hieronder zult kunnen zien is er een powershell script gevonden. Dit script zal ik gaan downloaden naar mijn eigen machine. Dit zal ik ook weer gaan doen aan de hand van het get commando.</p>
+<p><img src="77135929.png" alt="image-20250105-172503.png"></p>
+<p>Als we deze powershell file zullen gaan bekijken met het cat commando zullen we daar een username en een password zullen zien staan die dat we weer kunnen gaan gebruiken voor een evil-winrm te kunnen gaan opstarten naar de machine van emily de gevonden user van het powershell script file.</p>
+<p><img src="77070378.png" alt="image-20250105-172853.png"></p>
+<p>Met het volgende commando maak je een verbinding met een Windows-systeem via de Windows Remote Management (WinRM)-service, een standaard Windows-service die beheer op afstand mogelijk maakt.</p>
+<pre tabindex="0"><code>evil-winrm -i 10.129.6.130 -u &#39;emily.oscars&#39; -p &#39;Q!3@Lp#M6b*7t*Vt&#39;
+</code></pre><p><img src="77070384.png" alt="image-20250105-173146.png"></p>
+<p>Als ik nu zal gaan navigeren naar de Desktop, dan zal je daar de eerste flag hebben.</p>
+<p>user flag: 13745a6d63034d45218865ca910600cb</p>
+<p><img src="77168709.png" alt="image-20250105-173249.png"></p>
+<p>Nu moeten we onze privileges escaleren. De eerste gebruikelijke manier om dit te controleren is door het commando whoami /priv te gebruiken om te kijken of er privileges zijn die we kunnen misbruiken.</p>
+<p><img src="76873785.png" alt="image-20250105-173425.png"></p>
+<p>Ik ben vanaf daar gaan zoeken naar de SeBackupPrivilege Of dat er hiervoor geen methode of exploit te vinden is.</p>
+<p>Dan heb ik deze link gevonden:</p>
+<p><a href="https://www.hackingarticles.in/windows-privilege-escalation-sebackupprivilege/">https://www.hackingarticles.in/windows-privilege-escalation-sebackupprivilege/</a></p>
+<p>Vanaf hier volg je de exploit en dan kom je uiteindelijk in de administrator zijn shell en hebje de root user behaald.</p>
+<p>root flag: 02c3aec52605511c1f84009dba8060ea</p>
+<p><img src="77168719.png" alt="image-20250105-173813.png"></p>
+<p><img src="77135940.png" alt="image-20250105-173840.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

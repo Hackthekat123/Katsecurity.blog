@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.234.46 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-16 15:23 EST Nmap scan report for 10.129.234.46 Host is up (0.027s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 8080/tcp open http-proxy 9000/tcp open cslistener Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/hackthebox-documentations/writeup-barrier/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.234.46 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-16 15:23 EST Nmap scan report for 10.129.234.46 Host is up (0.027s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 8080/tcp open http-proxy 9000/tcp open cslistener Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="746">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌──(kali㉿kali)-[~] └─$ nmap 10.129.234.46 Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-16 15:23 EST Nmap scan report for 10.129.234.46 Host is up (0.027s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 8080/tcp open http-proxy 9000/tcp open cslistener Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/hackthebox-documentations/writeup-barrier/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nmap 10.129.234.46
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-16 15:23 EST
+Nmap scan report for 10.129.234.46
+Host is up (0.027s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+8080/tcp open  http-proxy
+9000/tcp open  cslistener
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌──(kali㉿kali)-[~]
+└─$ nmap -p22,8080,9000 -sCV 10.129.234.46
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-16 15:24 EST
+Nmap scan report for 10.129.234.46
+Host is up (0.020s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|_  3072 f3:6c:aa:fe:2c:20:f6:55:a0:5b:61:54:cf:39:17:d0 (RSA)
+8080/tcp open  http    Apache Tomcat
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Apache Tomcat
+9000/tcp open  http    Golang net/http server
+| http-robots.txt: 1 disallowed entry 
+|_/
+| http-title: authentik
+|_Requested resource was /if/flow/default-authentication-flow/?next=%2F
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Content-Length: 3556
+|     Content-Type: text/html; charset=utf-8
+|     Date: Mon, 16 Feb 2026 20:24:46 GMT
+|     Referrer-Policy: same-origin
+|     Vary: Accept-Encoding
+|     Vary: Cookie
+|     X-Authentik-Id: 12a5ab3a9b6041c2a57d74043e862549
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-Powered-By: authentik
+|     &lt;!DOCTYPE html&gt;
+|     &lt;html&gt;
+|     &lt;head&gt;
+|     &lt;meta charset=&#34;UTF-8&#34;&gt;
+|     &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1, maximum-scale=1&#34;&gt;
+|     &lt;title&gt;
+|     authentik
+|     &lt;/title&gt;
+|     &lt;link rel=&#34;icon&#34; href=&#34;/static/dist/assets/icons/icon.png&#34;&gt;
+|     &lt;link rel=&#34;shortcut icon&#34; href=&#34;/static/dist/assets/icons/icon.png&#34;&gt;
+|     &lt;link rel=&#34;prefetch&#34; href=&#34;/static/dist/assets/images/flow_background.jpg&#34; /&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/static/dist/patternfly.min.css&#34;&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;/static/dist/theme-dar
+|   GenericLines, Help, RTSPRequest, SSLSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 302 Found
+|     Content-Length: 0
+|     Content-Type: text/html; charset=utf-8
+|     Date: Mon, 16 Feb 2026 20:24:28 GMT
+|     Location: /flows/-/default/authentication/?next=/
+|     Referrer-Policy: same-origin
+|     Vary: Accept-Encoding
+|     Vary: Cookie
+|     X-Authentik-Id: 4d27cade1d91498198ecce2140483a41
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-Powered-By: authentik
+|   HTTPOptions: 
+|     HTTP/1.0 302 Found
+|     Content-Length: 0
+|     Content-Type: text/html; charset=utf-8
+|     Date: Mon, 16 Feb 2026 20:24:28 GMT
+|     Location: /flows/-/default/authentication/?next=/
+|     Referrer-Policy: same-origin
+|     Vary: Accept-Encoding
+|     Vary: Cookie
+|     X-Authentik-Id: a31d65c0890e41a098d8dfdb2c66a135
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|_    X-Powered-By: authentik
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9000-TCP:V=7.95%I=7%D=2/16%Time=69937CFB%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,&#34;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request&#34;)%r(GetRequest,16F,&#34;HTTP/1\.0\x20302\x20Found\r\nContent-Leng
+SF:th:\x200\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x20Mo
+SF:n,\x2016\x20Feb\x202026\x2020:24:28\x20GMT\r\nLocation:\x20/flows/-/def
+SF:ault/authentication/\?next=/\r\nReferrer-Policy:\x20same-origin\r\nVary
+SF::\x20Accept-Encoding\r\nVary:\x20Cookie\r\nX-Authentik-Id:\x204d27cade1
+SF:d91498198ecce2140483a41\r\nX-Content-Type-Options:\x20nosniff\r\nX-Fram
+SF:e-Options:\x20DENY\r\nX-Powered-By:\x20authentik\r\n\r\n&#34;)%r(HTTPOption
+SF:s,16F,&#34;HTTP/1\.0\x20302\x20Found\r\nContent-Length:\x200\r\nContent-Typ
+SF:e:\x20text/html;\x20charset=utf-8\r\nDate:\x20Mon,\x2016\x20Feb\x202026
+SF:\x2020:24:28\x20GMT\r\nLocation:\x20/flows/-/default/authentication/\?n
+SF:ext=/\r\nReferrer-Policy:\x20same-origin\r\nVary:\x20Accept-Encoding\r\
+SF:nVary:\x20Cookie\r\nX-Authentik-Id:\x20a31d65c0890e41a098d8dfdb2c66a135
+SF:\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nX
+SF:-Powered-By:\x20authentik\r\n\r\n&#34;)%r(RTSPRequest,67,&#34;HTTP/1\.1\x20400\
+SF:x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nC
+SF:onnection:\x20close\r\n\r\n400\x20Bad\x20Request&#34;)%r(Help,67,&#34;HTTP/1\.1
+SF:\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=ut
+SF:f-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&#34;)%r(SSLSession
+SF:Req,67,&#34;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/pla
+SF:in;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Reque
+SF:st&#34;)%r(FourOhFourRequest,F27,&#34;HTTP/1\.0\x20404\x20Not\x20Found\r\nConte
+SF:nt-Length:\x203556\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nD
+SF:ate:\x20Mon,\x2016\x20Feb\x202026\x2020:24:46\x20GMT\r\nReferrer-Policy
+SF::\x20same-origin\r\nVary:\x20Accept-Encoding\r\nVary:\x20Cookie\r\nX-Au
+SF:thentik-Id:\x2012a5ab3a9b6041c2a57d74043e862549\r\nX-Content-Type-Optio
+SF:ns:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nX-Powered-By:\x20authenti
+SF:k\r\n\r\n\n\n\n\n&lt;!DOCTYPE\x20html&gt;\n\n&lt;html&gt;\n\x20\x20\x20\x20&lt;head&gt;\n
+SF:\x20\x20\x20\x20\x20\x20\x20\x20&lt;meta\x20charset=\&#34;UTF-8\&#34;&gt;\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20&lt;meta\x20name=\&#34;viewport\&#34;\x20content=\&#34;width=dev
+SF:ice-width,\x20initial-scale=1,\x20maximum-scale=1\&#34;&gt;\n\x20\x20\x20\x20\
+SF:x20\x20\x20\x20&lt;title&gt;\nauthentik\n&lt;/title&gt;\n\x20\x20\x20\x20\x20\x20\x
+SF:20\x20&lt;link\x20rel=\&#34;icon\&#34;\x20href=\&#34;/static/dist/assets/icons/icon\.p
+SF:ng\&#34;&gt;\n\x20\x20\x20\x20\x20\x20\x20\x20&lt;link\x20rel=\&#34;shortcut\x20icon\
+SF:&#34;\x20href=\&#34;/static/dist/assets/icons/icon\.png\&#34;&gt;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\n&lt;link\x20rel=\&#34;prefetch\&#34;\x20href=\&#34;/static/dist/assets/
+SF:images/flow_background\.jpg\&#34;\x20/&gt;\n&lt;link\x20rel=\&#34;stylesheet\&#34;\x20typ
+SF:e=\&#34;text/css\&#34;\x20href=\&#34;/static/dist/patternfly\.min\.css\&#34;&gt;\n&lt;link\x2
+SF:0rel=\&#34;stylesheet\&#34;\x20type=\&#34;text/css\&#34;\x20href=\&#34;/static/dist/theme-d
+SF:ar&#34;);
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben eens gaan kijken naar de verschillende poorten en daar heb ik gezien dat er een authentik en apache page is. Maar deze informatie ben ik helemaal niets. Ik ben dus gaan kijken of dat er geen subdirectory is en daar heb ik gezien dat er een gitlab subdomain gevonden is. Ik zal deze gaan toevoegen aan de hosts file en dan eens gaan kijken wat ik op de gitlab page kan doen.</p>
+<p>![[Pasted image 20260216221459.png]]</p>
+<p>Zoals je zelf zult weten heb je geen login gevonden voor inteloggen op deze pagina. Hiermee ben ik naar de explore tab onderaan geweest want dan kan je wel bekijken welke projects er zijn en wat er in gesubmit is geweest. Daarin kan je zien dat er een <code>satoru/gitconnect</code> project is en dat deze 2 keer gecommit is geweest. Als je gaat kijken naar de eerst commitment zal je een username en een password vinden.</p>
+<p>![[Pasted image 20260216221806.png]]</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>satoru</td>
+          <td><code>dGJ2V72SUEMsM3Ca</code></td>
+      </tr>
+      <tr>
+          <td>Ik zal nu aan de hand van deze login gaan inloggen op de volgende 3 verschillende url&rsquo;s:</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><a href="http://gitlab.barrier.vl">http://gitlab.barrier.vl</a> &ndash;&gt; SuccessFull</li>
+<li><a href="http://barrier.vl:8080">http://barrier.vl:8080</a> &ndash;&gt; Not Succesfull</li>
+<li><a href="http://barrier.vl:9000">http://barrier.vl:9000</a> &ndash;&gt; Succesfull</li>
+</ul>
+<p>Je kan op de gitlab page geen andere informatie voor het moment vinden, dus ben ik gaan inloggen op de authentik page en daar kan je zien dat er een 2 applications bestaan.</p>
+<ul>
+<li>Gitlab</li>
+<li>Guacamole
+![[Pasted image 20260216222229.png]]
+Ik ben eens gaan kijken op de guacamole application maar er was ook niets te vinden. Ik ben nog eens gaan kijken naar de web-admin login page van poort 8080 en als je daar op cancel drukt bij het vragen van de usercredentials, kom je op de volgende pagina terecht.</li>
+</ul>
+<p>![[Pasted image 20260216225302.png]]
+Hier kan je zien dat er login credentials te zien zijn. Ik zal deze gebruiken voor inteloggen op de pagina</p>
+<table>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Password</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>tomcat</td>
+          <td>s3cret</td>
+      </tr>
+  </tbody>
+</table>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>

