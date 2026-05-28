@@ -1,0 +1,6 @@
+name = "katsecurity-blog.katsecurity.workers.dev"
+compatibility_date = "2026-05-28"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
