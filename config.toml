@@ -1,4 +1,4 @@
-baseURL   = "https://katsecurity.blog/"
+baseURL   = "http://www.katsecurity.blog/"
 languageCode = "en-us"
 title     = "Hackthekat home"
 theme     = "hello-4s3ti"
@@ -21,6 +21,6 @@ theme     = "hello-4s3ti"
 
   [[menu.main]]
     name = "Machines"
-    url = "/tags/machines/"
+    url = "/writeups/"
     weight = 5
     parent = "htb"       # This makes it a submenu under Hack The Box
