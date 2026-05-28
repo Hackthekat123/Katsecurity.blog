@@ -1,4 +1,4 @@
-baseURL   = "http://www.katsecurity.blog/"
+baseURL   = "https://www.katsecurity.blog/"
 languageCode = "en-us"
 title     = "Hackthekat home"
 theme     = "hello-4s3ti"
